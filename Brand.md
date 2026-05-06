@@ -283,23 +283,23 @@ Konfigurator für Gewerbeflächen — Raumaufteilung und Ausstattung digital kon
 
 ### Nutzen-Säulen (Value Pillars)
 
-#### Säule 1: [Name]
-- **Aussage:** [Kernbotschaft dieser Säule]
-- **Beweis:** [Daten, Fallstudien, Testimonials]
-- **Für wen:** [Welche Persona spricht das an?]
+#### Säule 1: Automatisierung & Effizienz
+- **Aussage:** Alle Kundenfragen werden in 2 Klicks beantwortet — 24/7, ohne manuelle Beratung
+- **Beweis:** +17 Minuten Stay Time vs. 90 Sekunden auf klassischer Projektwebsite; 48 Mio. Klicks
+- **Für wen:** Segment A (Bauträger), Segment C (Vermarkter)
 
-#### Säule 2: [Name]
-- **Aussage:**
-- **Beweis:**
-- **Für wen:**
+#### Säule 2: Realtime-Erlebnisse
+- **Aussage:** Fotorealistische Erlebnisse bevor der erste Stein gelegt ist — interaktiv, direkt im Browser
+- **Beweis:** Navigator 5.0, Realtime Tour 4.0, Living Configurator 5.0
+- **Für wen:** Segment A (Bauträger), Segment B (Neubau)
 
-#### Säule 3: [Name]
-- **Aussage:**
-- **Beweis:**
-- **Für wen:**
+#### Säule 3: Ecosystem statt Insellösung
+- **Aussage:** Alles aus einer Hand — vom Grossen ins Kleine, von aussen nach innen, vernetzt
+- **Beweis:** 5 Produkte + 7 Add-Ons, modular integrierbar, Price-Range bis Portfolio
+- **Für wen:** Alle Segmente, besonders Segment B (Asset Manager)
 
 ### Differentiation Statement
-[Warum Beyonity statt Wettbewerber X? In 1–2 Sätzen.]
+Beyonity ist die einzige Lösung, die den gesamten Immobilien-Lebenszyklus abdeckt — von der Bedarfsanalyse in der Entwicklungsphase bis zum Portfolio-Management im Betrieb. Kein anderer Anbieter kombiniert Realtime-Visualisierung, Automatisierung und Daten-Intelligence in einem vernetzten Ecosystem.
 
 ---
 
