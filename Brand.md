@@ -155,6 +155,124 @@ Beyonity adressiert drei Hauptsegmente nach primärem Geschäftsmodell.
 
 ---
 
+
+## 3.5 Produkte
+
+Beyonity bietet fünf miteinander vernetzte Produkte — das **Ecosystem of Experience**.
+Tagline: *"Ganzheitlich. Vernetzt. Auf Sie zugeschnitten."*
+
+> "Wir bieten eine All-In-One-Lösung und sind Vorreiter für Echtzeit-Innovationen für einzigartige Erlebnisse und automatisierte Prozesse im Immobilienmarketing."
+
+---
+
+### 1. Navigator 5.0 ⭐ Topseller
+**"Beantworten Sie alle Kundenfragen innerhalb von 2 Klicks — hinter unserer Technologie steckt eine Wissenschaft."**
+
+Herzstück des Ecosystems und jeder Projektwebsite. Bietet Interessenten klare Einblicke unabhängig von der Projektphase. Kunden verweilen messbar länger auf dem Navigator als auf klassischen Projektwebsites.
+
+- **Version:** 5.0
+- **Segment:** A (Bauträger), C (Vermarkter)
+
+**Features:**
+| Feature | Beschreibung |
+|---|---|
+| DMS / CRM Connection | Verbindung mit jedem CRM — automatisch synchronisiert, immer aktuell |
+| Filter & Print | Nach Preis, Fläche, Zimmer, Verfügbarkeit filtern — Ergebnisse druckbar |
+| Multilanguage | 9 Sprachen: DE, EN, AR, RU, ES, IT, PT, FR, ZH |
+| Favorite, Share, Call to Action | Favoriten speichern, teilen, direkter Kontakt zum Vermarkter |
+| Downloads | Grundrisse, FAQs, Dokumente zentral abrufbar |
+
+**Die 4 Projektphasen:**
+| Phase | Fokus | Kernnutzen |
+|---|---|---|
+| Development | Demand-based project development | A/B Testing, Wohnbedürfnisse analysieren |
+| Pricing | Optimising returns | Price Range, beste Verkaufspreise erzielen |
+| Sales | Efficient marketing | Prozessautomatisierung, Echtzeit-Daten, Cross-Selling |
+| Portfolio | Never lose prospective customers again | Warteliste, Matching, Kundenbindung |
+
+**Benefits & Kennzahlen:**
+- **+17 Minuten** Stay Time vs. 90 Sekunden auf klassischer Projektwebsite
+- **+3% Conversion Rate** durch bessere Shopping-Experience
+- Real-Time Data Dashboard: Browsing Duration, Conversion Rate, Bounce Rate
+
+**Credibility:**
+> "Our products are based on verified data, and profound analyses, many years of experience and proven know-how in development, design and usability."
+
+**Add-Ons (7):**
+| Add-On | Beschreibung |
+|---|---|
+| Integrated Website | Website direkt in Navigator — kein separater Webauftritt nötig |
+| Sun Simulation | Dynamischer Sonnenverlauf mit realen Schatten nach Tageszeit |
+| Data Dashboard | Real-Time KPIs über gesamten Lebenszyklus |
+| Parking Navigator | Parkplätze + Hobbyräume mit allen Merkmalen |
+| Info Flags & Building Highlights | Symbole für Infrastruktur und Vorteile, verlinkbar |
+| POI Panorama | 360° Umgebungspanorama mit Links zu Google Maps |
+| Balcony Views | 180° Drohnen-Panorama der echten Aussicht pro Wohnung |
+
+---
+
+### 2. Realtime Tour 4.0
+**"Wohnungen und Aussicht erleben."**
+
+Virtuelle Echtzeit-Begehung durch noch nicht gebaute Wohnungen. Fotorealistisch, interaktiv, direkt im Browser — kein App-Download.
+
+- **Version:** 4.0
+- **Segment:** A (Bauträger), B (Neubau)
+- **Kernnutzen:** Kaufentscheidung beschleunigen, Besichtigungsaufwand reduzieren
+
+---
+
+### 3. Portfolio Overview 5.0
+**"Komplette Übersicht über das ganze Portfolio."**
+
+Dashboard für Asset Manager — alle Projekte, Einheiten, Verfügbarkeiten vernetzt. Nie wieder einen Interessenten verlieren.
+
+- **Version:** 5.0
+- **Segment:** B (Institutionelle), Asset Manager
+- **Kernnutzen:** Transparenz, Leerstandsmanagement, Warteliste/Matching
+
+---
+
+### 4. Living Configurator 5.0
+**"Individuelle Gestaltung des Innenausbaus."**
+
+Wohnungskonfigurator: Ausstattungspakete, Materialien und Optionen interaktiv wählen.
+
+- **Version:** 5.0
+- **Segment:** A (Verkauf), B (Neubau)
+- **Kernnutzen:** Käuferbetreuung automatisieren, Upselling
+
+---
+
+### 5. Commercial Configurator 4.0
+**"Gewerbeflächen einfach und schnell kombinieren."**
+
+Konfigurator für Gewerbeflächen — Raumaufteilung und Ausstattung digital konfigurierbar.
+
+- **Version:** 4.0
+- **Segment:** B (Bestand + Neubau), C (Vermarkter)
+- **Kernnutzen:** Leerstände reduzieren, Interessenten selbst qualifizieren
+
+---
+
+### Produkt-Übersicht
+
+| Produkt | Version | Subtitle | A | B | C |
+|---|---|---|---|---|---|
+| Navigator ⭐ | 5.0 | Einheiten finden | ✅ | ✅ | ✅ |
+| Realtime Tour | 4.0 | Wohnungen und Aussicht erleben | ✅ | ✅ | ✅ |
+| Portfolio Overview | 5.0 | Komplette Übersicht über das ganze Portfolio | — | ✅ | — |
+| Living Configurator | 5.0 | Individuelle Gestaltung des Innenausbaus | ✅ | ✅ | — |
+| Commercial Configurator | 4.0 | Gewerbeflächen einfach und schnell kombinieren | — | ✅ | ✅ |
+
+### Namens-Konventionen
+- "Navigator 5.0" — nie "navigator" oder "Nav"
+- "Living Configurator" — nie "Living Configuration"
+- "Commercial Configurator" — nie "Commercial Configuration"
+- "Portfolio Overview" — nie nur "Portfolio"
+- "Realtime Tour" — nie "Real Time Tour" oder "VR Tour"
+- "Ecosystem of Experience" — immer englisch, nie "Ökosystem"
+
 ## 4. Messaging Framework
 
 ### Hauptbotschaft (Core Message)
