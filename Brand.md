@@ -223,13 +223,42 @@ Virtuelle Echtzeit-Begehung durch noch nicht gebaute Wohnungen. Fotorealistisch,
 ---
 
 ### 3. Portfolio Overview 5.0
-**"Komplette Übersicht über das ganze Portfolio."**
+**"Die Portfolio Overview ist der Schlüssel zu Ihrem Immobilienerfolg."**
 
-Dashboard für Asset Manager — alle Projekte, Einheiten, Verfügbarkeiten vernetzt. Nie wieder einen Interessenten verlieren.
+Vereint alle Navigatoren und bündelt Immobilien übersichtlich an einem Ort. Egal ob Bestandesliegenschaften oder Erstvermietung, Gewerbe oder Wohnen.
 
 - **Version:** 5.0
 - **Segment:** B (Institutionelle), Asset Manager
 - **Kernnutzen:** Transparenz, Leerstandsmanagement, Warteliste/Matching
+
+**Benefits & KPIs:**
+| KPI | Wert | Beschreibung |
+|---|---|---|
+| **Verfügbarkeit** | 24/7 | Jede Immobilie jederzeit online — keine begrenzten Besichtigungstermine mehr |
+| **Reduzierte Zwischenleerstände** | –25% | Automatisierte Präsentation → schneller informierte Interessenten → optimierte Vermietungsquoten |
+| **Senkung der Kosten** | +7% Effizienz | Digitalisierung senkt Verwaltungsaufwände — ohne Abstriche bei der Servicequalität |
+
+**Features:**
+| Feature | Beschreibung |
+|---|---|
+| **Search & Favourite** | Gezielte Suche im gesamten Portfolio. Favoriten speichern, jederzeit im Überblick. |
+| **Filter** | Nach Verfügbarkeit, Grösse, Preis filtern — für Wohnungen und Gewerbeflächen. |
+| **Gallery** | Renderings, 360° Panorama, Fotos und Videos der Liegenschaft. |
+| **Downloads & Links** | Alle Infos 24/7 mit einem Klick — kein manuelles Dokumente-Versenden. |
+| **Property Overview** | Aktuelle Leerstände und freie Flächen — automatisch via CRM synchronisiert. |
+
+**Weitere Pluspunkte:**
+| Pluspunkt | Beschreibung |
+|---|---|
+| **Mietertreue / Verschiebung** | Mietern ermöglichen, bei ändernden Bedürfnissen innerhalb des Portfolios zu wechseln — Mieter bleiben länger. |
+| **Portfolio-Zugang mit einem Klick** | Alle Objekte, Flächen, Wohnungen, Parkplätze auf einen Blick — 24/7. |
+| **Cross-Selling** | Weitere Dienstleistungen anbinden (z.B. Versicherungen) — neue Vertriebskanäle. |
+
+**Add-Ons:**
+| Add-On | Beschreibung |
+|---|---|
+| **Multilanguage** | Portfolio Overview in verschiedenen Sprachen — national und international. |
+| **CRM / Datenbank-Anbindung** | Automatische Synchronisierung — Daten immer aktuell. |
 
 ---
 
