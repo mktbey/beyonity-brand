@@ -34,33 +34,87 @@
 
 ## 2. Zielgruppe & ICP
 
-### Ideal Customer Profile (ICP)
-| Attribut | Beschreibung |
+Beyonity adressiert drei Hauptsegmente nach primärem Geschäftsmodell.
+
+---
+
+### Segment A: Meist Verkauf — Bauträger / Projektentwickler
+*Beispiele: Instone, Implenia, Halter etc.*
+
+| | |
 |---|---|
-| Unternehmensgrösse | [z.B. 50–500 Mitarbeitende] |
-| Branche | [z.B. B2B SaaS, Immobilien, etc.] |
-| Geografie | [z.B. DACH, Europa] |
-| Entscheider-Rolle | [z.B. CMO, Head of Marketing] |
-| Kernproblem | [Was hält sie nachts wach?] |
-| Kauftrigger | [Was bringt sie dazu, jetzt zu kaufen?] |
+| **Primäres Ziel** | Bestmöglicher Ertrag (Zeit vs. Geld), Absatzgeschwindigkeit |
+| **Need** | Risikominimierung, tiefstmögliche Kosten, wenig Aufwand, Selbstprofilierung |
+| **Hauptrisiken** | Knappe Rendite, zu wenig Nachfrage, Kostensteigerungen im Projekt |
+| **Painpoints** | Komplexe Genehmigungen, Budgetüberschreitungen, manuelle Käuferbetreuung |
+
+**Lösung Beyonity:** Alles aus einer Hand (Marketing + Bildwelten), Price-Range-Phase für höheren Gewinn, Konfigurator zur Einsparung der Käuferbetreuung
+
+---
+
+### Segment B: Meist Miete — Institutionelle Eigentümer
+*Fonds, Versicherungen, Pensionskassen etc.*
+
+| | |
+|---|---|
+| **Need Neubau** | Hohe Rendite, wenig Risiko, bequem, wenig Aufwand, tiefstmögliche Kosten |
+| **Need Bestand** | Hohe Rendite, Kontrolle/Transparenz, Leerstände reduzieren |
+| **Hauptrisiken** | Leerstände, hohe laufende Kosten, knappe Rendite, Marktlage |
+| **Painpoints** | Langsame Entscheidungswege, viele Involvierte, konservativ, unsicher |
+
+**Lösung Beyonity:** Alles aus einer Hand, Price-Range-Phase, Weiterführung in Betrieb zur Leerstandsreduktion, Standardisierung / Automatisierung
+
+---
+
+### Segment C: Miete/Verkauf — Vermarkter
+*Intercity, H&B, Engel & Völkers DE etc.*
+
+| | |
+|---|---|
+| **Need** | Hohe Provision, Selbstprofilierung, schnelle Abschlussquote |
+| **Ertragsrisiko** | Honorardruck durch Konkurrenz, Ineffizienz in Prozessen |
+| **Absatzrisiko** | Ertrag abhängig vom Absatz, volatiler Markt, kein Einfluss auf Preis/Produkt |
+| **Painpoints** | Kaum Einflussbereich, sehr kritisch mit Produkten, nicht verlässliche Partner |
+
+**Lösung Beyonity:** Bessere Positionierung bei Auftraggebern, selbst digital sein, qualifizierte Leads (weniger Aufwand)
+
+---
+
+### ICP-Übersicht
+
+| | Segment A | Segment B | Segment C |
+|---|---|---|---|
+| **Typ** | Bauträger / Projektentwickler | Institutionelle Eigentümer | Vermarkter |
+| **Fokus** | Meist Verkauf | Meist Miete | Miete + Verkauf |
+| **Motivation** | Ertrag + Geschwindigkeit | Rendite + Leerstandsreduktion | Provision + Positionierung |
+| **Entscheider** | CEO / Projektleitung | Asset Manager | GF / Senior Broker |
+| **Kauftrigger** | Neues Projekt in Vermarktung | Leerstand steigt / neues Projekt | Auftrag + Konkurrenz-Druck |
+| **Beyonity-Kern** | Konfigurator, Price-Range | Automatisierung, Bestand-Tool | Digital-Positionierung, Leads |
+
+---
 
 ### Buyer Personas
 
-#### Persona A: [Name]
-- **Rolle:** [Job-Titel]
-- **Ziele:** [Was will sie erreichen?]
-- **Frustration:** [Was nervt sie?]
-- **Wie sie kommuniziert:** [Direkt, formal, schnell, detailverliebt?]
-- **Bevorzugte Kanäle:** [LinkedIn, E-Mail, etc.]
+#### Persona A: Der Projektentwickler
+- **Rolle:** CEO / Head of Sales beim Bauträger
+- **Ziele:** Projekt schnell und profitabel vermarkten, Käuferbetreuung automatisieren
+- **Frustration:** Interessenten wollen sehen was noch nicht gebaut ist; zu viele manuelle Anfragen
+- **Ton:** Direkt, ergebnisorientiert, wenig Zeit
+- **Kanäle:** Persönliches Netzwerk, Messen, LinkedIn
 
-#### Persona B: [Name]
-- **Rolle:**
-- **Ziele:**
-- **Frustration:**
-- **Wie sie kommuniziert:**
-- **Bevorzugte Kanäle:**
+#### Persona B: Der Asset Manager
+- **Rolle:** Asset Manager bei Fonds / Versicherung / Pensionskasse
+- **Ziele:** Rendite maximieren, Leerstände minimieren, Prozesse standardisieren
+- **Frustration:** Viele Involvierte, langsame Entscheidungen, Abhängigkeit von externen Dienstleistern
+- **Ton:** Konservativ, datengetrieben, braucht Vertrauen
+- **Kanäle:** Direkte Ansprache, Referenzen, Branchenevents
 
----
+#### Persona C: Der Vermarkter
+- **Rolle:** Senior Broker / GF Vermarktungsagentur
+- **Ziele:** Hohe Abschlussquote, Differenzierung, Eigentümer gewinnen
+- **Frustration:** Honorardruck, volatiler Markt, keine Kontrolle über Preis/Produkt
+- **Ton:** Skeptisch, überzeugt durch Referenzen und ROI
+- **Kanäle:** Netzwerk, LinkedIn, Branchenpresse
 
 ## 3. Tone of Voice
 
