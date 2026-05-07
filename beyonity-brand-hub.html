@@ -9,6 +9,18 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
+#pw-overlay{position:fixed;inset:0;background:var(--dark,#001a64);display:flex;align-items:center;justify-content:center;z-index:9999}
+#pw-box{background:#fff;border-radius:18px;padding:40px 36px;width:340px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.3)}
+#pw-box svg{width:110px;margin-bottom:24px}
+#pw-box h2{font:800 18px/1.2 'Sora',sans-serif;color:#001a64;margin-bottom:8px}
+#pw-box p{font-size:13px;color:#666;margin-bottom:24px}
+#pw-input{width:100%;padding:12px 16px;border:2px solid #d8ddf9;border-radius:50px;font:600 15px 'Sora',sans-serif;color:#001a64;outline:none;text-align:center;transition:border .15s}
+#pw-input:focus{border-color:#3c57e1}
+#pw-input.shake{animation:shake .3s}
+#pw-btn{margin-top:14px;width:100%;padding:13px;background:#f8ff76;border:none;border-radius:50px;font:800 14px 'Sora',sans-serif;color:#001a64;cursor:pointer;transition:box-shadow .15s}
+#pw-btn:hover{box-shadow:0 0 6px rgba(0,0,0,.25)}
+#pw-err{margin-top:10px;font-size:12px;color:#ff7575;min-height:16px}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 :root {
   --blue:#3c57e1; --yellow:#f8ff76; --dark:#001a64; --lb:#d8ddf9;
   --white:#ffffff; --gray:#efefef; --green:#a7faa9; --red:#ff7575;
@@ -252,6 +264,19 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
 </style>
 </head>
 <body>
+
+<div id="pw-overlay">
+  <div id="pw-box">
+    <svg viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="38" font-family="Sora,sans-serif" font-weight="800" font-size="40" fill="#001a64">beyonity</text>
+    </svg>
+    <h2>Brand Hub</h2>
+    <p>Bitte Passwort eingeben, um fortzufahren.</p>
+    <input id="pw-input" type="password" placeholder="Passwort" autocomplete="current-password" />
+    <button id="pw-btn" onclick="checkPW()">Weiter</button>
+    <div id="pw-err"></div>
+  </div>
+</div>
 
 
 <aside class="sidebar">
@@ -1117,6 +1142,30 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
 </main>
 
 <script>
+function checkPW() {
+  const val = document.getElementById('pw-input').value;
+  const err = document.getElementById('pw-err');
+  const inp = document.getElementById('pw-input');
+  if (val === 'beyonity2025') {
+    document.getElementById('pw-overlay').style.display = 'none';
+    sessionStorage.setItem('byhub_auth', '1');
+  } else {
+    err.textContent = 'Falsches Passwort. Bitte erneut versuchen.';
+    inp.value = '';
+    inp.classList.add('shake');
+    setTimeout(() => inp.classList.remove('shake'), 350);
+    inp.focus();
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  if (sessionStorage.getItem('byhub_auth') === '1') {
+    document.getElementById('pw-overlay').style.display = 'none';
+  }
+  document.getElementById('pw-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkPW();
+  });
+});
+
 function show(id, btn) {
   document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('on'));
