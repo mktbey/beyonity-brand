@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyonity Brand Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:#3c57e1; --yellow:#f8ff76; --dark:#001a64; --lb:#d8ddf9;
+  --white:#ffffff; --gray:#efefef; --green:#a7faa9; --red:#ff7575;
+  --sw:220px; --r:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-height:100vh;display:flex}
+
+/* ── SIDEBAR ── */
+.sidebar{width:var(--sw);background:var(--dark);position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:10;overflow-y:auto}
+.sb-logo{padding:22px 20px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+.sb-logo svg{width:128px;display:block}
+.sb-tag{padding:18px 20px 5px;font-size:10px;font-weight:800;letter-spacing:.14em;color:rgba(255,255,255,.3);text-transform:uppercase}
+.nav-btn{width:100%;display:flex;align-items:center;gap:9px;padding:10px 20px;background:none;border:none;border-left:3px solid transparent;cursor:pointer;color:rgba(255,255,255,.58);font:600 13px/1 'Sora',sans-serif;text-align:left;transition:all .12s}
+.nav-btn:hover{color:#fff;background:rgba(255,255,255,.05)}
+.nav-btn.on{color:var(--yellow);border-left-color:var(--yellow);background:rgba(248,255,118,.06)}
+.nav-btn span{font-size:13px;width:18px;text-align:center;flex-shrink:0}
+.sb-foot{padding:14px 20px;border-top:1px solid rgba(255,255,255,.08);font-size:11px;color:rgba(255,255,255,.22)}
+
+/* ── MAIN ── */
+.main{margin-left:var(--sw);flex:1;padding:44px 52px 80px;max-width:calc(100vw - var(--sw))}
+.sec{display:none}
+.sec.on{display:block}
+.ph{margin-bottom:30px}
+.ph h1{font-size:28px;font-weight:800;line-height:1.2}
+.ph p{margin-top:7px;font-size:14px;color:rgba(0,26,100,.52);line-height:1.55}
+
+/* ── CARDS ── */
+.card{background:var(--white);border-radius:var(--r);padding:26px;margin-bottom:18px}
+.card h2{font-size:17px;font-weight:800;margin-bottom:14px}
+.card h3{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;margin-bottom:9px;color:rgba(0,26,100,.55)}
+
+/* ── GRIDS ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mb18{margin-bottom:18px}
+
+/* ── IDENTITÄT ── */
+.dark-card{background:var(--dark);border-radius:var(--r);padding:26px;margin-bottom:18px}
+.dark-card h2{font-size:17px;font-weight:800;color:var(--yellow);margin-bottom:10px}
+.dark-card p{font-size:15px;font-weight:600;line-height:1.65;color:rgba(255,255,255,.88)}
+.value-list{list-style:none}
+.value-list li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--gray);font-size:14px;line-height:1.55}
+.value-list li:last-child{border-bottom:none}
+.vn{font-weight:800;min-width:165px;color:var(--blue);flex-shrink:0}
+.pos-card{background:var(--dark);border-radius:var(--r);padding:26px;margin-bottom:18px}
+.pos-card .eyebrow{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:10px}
+.pos-card p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.85)}
+.pos-card .tag{margin-top:14px;display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;background:rgba(248,255,118,.12);color:var(--yellow);padding:4px 12px;border-radius:100px}
+
+/* ── UNTERNEHMEN ── */
+.stat-card{background:var(--white);border-radius:var(--r);padding:22px;text-align:center}
+.stat-v{font-size:36px;font-weight:800;color:var(--blue);line-height:1}
+.stat-l{font-size:13px;color:rgba(0,26,100,.52);margin-top:5px}
+.ceo-card{background:var(--dark);border-radius:var(--r);padding:26px;display:flex;gap:22px;align-items:flex-start;margin-bottom:18px}
+.ceo-av{width:58px;height:58px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--yellow);flex-shrink:0}
+.ceo-name{font-size:19px;font-weight:800;color:#fff}
+.ceo-title{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px}
+.ceo-bio{font-size:13px;color:rgba(255,255,255,.78);margin-top:10px;line-height:1.65}
+.regions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.rtag{background:var(--lb);color:var(--dark);padding:6px 14px;border-radius:100px;font-size:13px;font-weight:600}
+.award-card{background:var(--yellow);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:14px}
+.award-icon{font-size:26px}
+.award-name{font-size:14px;font-weight:800;color:var(--dark)}
+.award-yr{font-size:12px;color:rgba(0,26,100,.52);margin-top:2px}
+
+/* ── ZIELGRUPPEN ── */
+.seg{border-radius:var(--r);padding:26px;margin-bottom:18px}
+.seg-a{background:var(--lb)}
+.seg-b{background:var(--dark)}
+.seg-c{background:var(--green)}
+.seg-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 11px;border-radius:100px;margin-bottom:10px}
+.seg-a .seg-badge{background:rgba(60,87,225,.14);color:var(--blue)}
+.seg-b .seg-badge{background:rgba(255,255,255,.1);color:rgba(255,255,255,.65)}
+.seg-c .seg-badge{background:rgba(0,26,100,.1);color:var(--dark)}
+.seg-title{font-size:21px;font-weight:800;margin-bottom:3px}
+.seg-b .seg-title{color:#fff}
+.seg-ex{font-size:12px;opacity:.6;margin-bottom:18px}
+.seg-b .seg-ex{color:rgba(255,255,255,.55);opacity:1}
+.seg-row-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.5;margin-bottom:4px}
+.seg-b .seg-row-lbl{color:rgba(255,255,255,.45);opacity:1}
+.seg-row-val{font-size:13px;line-height:1.5}
+.seg-b .seg-row-val{color:rgba(255,255,255,.88)}
+.seg-sol{border-radius:10px;padding:13px 16px;font-size:13px;line-height:1.55;margin-top:14px}
+.seg-a .seg-sol{background:rgba(60,87,225,.1)}
+.seg-b .seg-sol{background:rgba(255,255,255,.07);color:rgba(255,255,255,.88)}
+.seg-c .seg-sol{background:rgba(0,26,100,.08)}
+
+/* ── PRODUKTE ── */
+.hero{background:var(--dark);border-radius:20px;padding:34px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:var(--yellow);border-radius:50%;opacity:.06;pointer-events:none}
+.topseller{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);color:var(--dark);font-size:11px;font-weight:800;padding:4px 12px;border-radius:100px;margin-bottom:13px}
+.hero h2{font-size:24px;font-weight:800;color:#fff;margin-bottom:6px}
+.hero-tl{font-size:14px;color:rgba(255,255,255,.68);line-height:1.55;margin-bottom:6px}
+.hero-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:22px}
+.metrics{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.metric{background:rgba(255,255,255,.07);border-radius:11px;padding:13px 17px}
+.metric-v{font-size:21px;font-weight:800;color:var(--yellow)}
+.metric-l{font-size:11px;color:rgba(255,255,255,.48);margin-top:2px}
+.ft{width:100%;border-collapse:collapse;font-size:13px}
+.ft thead th{text-align:left;padding:7px 12px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.45);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}
+.ft thead th:first-child{border-radius:6px 0 0 6px}
+.ft thead th:last-child{border-radius:0 6px 6px 0}
+.ft tbody td{padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5;color:rgba(255,255,255,.78)}
+.ft tbody td:first-child{font-weight:700;color:var(--yellow)}
+.ft tbody tr:last-child td{border-bottom:none}
+.timeline{display:flex;border-radius:var(--r);overflow:hidden;margin-top:4px}
+.tph{flex:1;padding:18px 16px}
+.tph:nth-child(1){background:var(--lb)}
+.tph:nth-child(2){background:#bec8f4}
+.tph:nth-child(3){background:var(--blue)}
+.tph:nth-child(4){background:var(--dark)}
+.tph-n{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.45;margin-bottom:5px}
+.tph:nth-child(3) .tph-n,.tph:nth-child(4) .tph-n{color:rgba(255,255,255,.45);opacity:1}
+.tph-name{font-size:14px;font-weight:800;margin-bottom:4px}
+.tph:nth-child(3) .tph-name,.tph:nth-child(4) .tph-name{color:#fff}
+.tph-desc{font-size:12px;opacity:.6;line-height:1.45}
+.tph:nth-child(3) .tph-desc,.tph:nth-child(4) .tph-desc{color:rgba(255,255,255,.6);opacity:1}
+.prod-card{background:var(--white);border-radius:var(--r);padding:22px}
+.prod-ver{font-size:10px;font-weight:800;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.prod-card h3{font-size:16px;font-weight:800;letter-spacing:0;text-transform:none;color:var(--dark);margin-bottom:6px}
+.prod-sub{font-size:13px;color:rgba(0,26,100,.58);margin-bottom:12px;line-height:1.5}
+.stag{display:inline-block;font-size:11px;font-weight:700;background:var(--lb);color:var(--dark);padding:3px 9px;border-radius:100px;margin-right:4px}
+.addon{background:var(--white);border-radius:12px;padding:15px}
+.addon h4{font-size:13px;font-weight:800;color:var(--dark);margin-bottom:4px}
+.addon p{font-size:12px;color:rgba(0,26,100,.52);line-height:1.45}
+
+/* ── VISUELLES ── */
+.sw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sw{border-radius:12px;overflow:hidden}
+.sw-col{height:68px}
+.sw-info{background:var(--white);padding:10px 12px}
+.sw-name{font-size:13px;font-weight:800}
+.sw-hex{font-size:12px;font-family:'Courier New',monospace;color:rgba(0,26,100,.42);margin-top:1px}
+.sw-use{font-size:11px;color:rgba(0,26,100,.38);margin-top:3px}
+.specimen{background:var(--white);border-radius:var(--r);padding:24px}
+.spec-lbl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:9px}
+.spec-big{font-size:40px;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:13px}
+.spec-row{display:flex;align-items:baseline;gap:12px;padding:7px 0;border-bottom:1px solid var(--gray)}
+.spec-row:last-child{border-bottom:none}
+.spec-wl{font-size:11px;color:rgba(0,26,100,.38);min-width:88px}
+.logo-wrap{border-radius:var(--r);padding:30px;display:flex;align-items:center;justify-content:center;min-height:108px}
+.logo-wrap svg{width:148px}
+.logo-lbl{font-size:12px;color:rgba(0,26,100,.42);text-align:center;margin-top:8px}
+
+/* ── TONE ── */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.do-col{background:rgba(167,250,169,.22);border-radius:var(--r);padding:22px}
+.dont-col{background:rgba(255,117,117,.1);border-radius:var(--r);padding:22px}
+.do-col h3{color:#1d6b1f}
+.dont-col h3{color:#b83232}
+.tov-list{list-style:none;margin-top:8px}
+.tov-list li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px;line-height:1.5}
+.tov-list li:last-child{border-bottom:none}
+.golden-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gsamp{background:var(--white);border-radius:var(--r);padding:22px;border-left:4px solid var(--blue)}
+.gsamp-ctx{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:8px}
+.gsamp-q{font-size:14px;font-weight:600;color:var(--dark);line-height:1.65}
+
+/* ── LLM ── */
+.code-wrap{background:#0d1117;border-radius:var(--r);padding:24px;overflow-x:auto}
+.code-fn{font:800 10px/1 'Sora',sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#6e7681;margin-bottom:14px}
+.code-wrap pre{font:13px/1.85 'Courier New',Courier,monospace;color:#e6edf3;white-space:pre-wrap}
+.ck{color:#79c0ff}.cv{color:#a5d6ff}.cs{color:#a8d0a8}.cc{color:#6e7681}
+.rule-card{background:var(--white);border-radius:var(--r);padding:22px}
+.rule-card h2{font-size:17px;font-weight:800;margin-bottom:12px}
+.rule-list{list-style:none}
+.rule-list li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--gray);font-size:13px;line-height:1.5}
+.rule-list li:last-child{border-bottom:none}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(0,26,100,.18);border-radius:3px}
+
+/* ── PRODUCT IMAGES ── */
+.prod-img-area{height:140px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;border-radius:10px;overflow:hidden;background:var(--lb)}
+.prod-img-area img{max-height:140px;max-width:100%;object-fit:contain;display:block}
+.hero-prod-img{position:absolute;right:0;bottom:0;height:88%;max-width:42%;object-fit:contain;pointer-events:none;z-index:2;filter:drop-shadow(0 8px 24px rgba(0,0,0,.4))}
+.prod-tagline{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:5px}
+
+/* ── LEADERSHIP ── */
+.leadership-card{background:var(--dark);border-radius:var(--r);padding:26px;margin-bottom:18px}
+.leadership-card h2{font-size:17px;font-weight:800;color:#fff;margin-bottom:16px}
+.leader-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.leader{background:rgba(255,255,255,.06);border-radius:12px;padding:15px 16px;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px}
+.l-av{width:38px;height:38px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--yellow);flex-shrink:0;letter-spacing:.02em}
+.l-name{font-size:13px;font-weight:800;color:#fff;line-height:1.3}
+.l-role{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
+/* featured stat */
+.stat-card-featured{background:var(--dark);border-radius:var(--r);padding:22px;text-align:center;grid-column:1/-1}
+.stat-card-featured .stat-v{color:var(--yellow)}
+.stat-card-featured .stat-l{color:rgba(255,255,255,.52)}
+
+/* ── ADDONS DARK ── */
+.addon-dark-wrap{background:#001a64;border-radius:var(--r);padding:24px;margin-bottom:18px}
+.addon-dark-wrap h2{font-size:17px;font-weight:800;color:#fff;margin-bottom:16px}
+.addon-dark-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.addon-d{background:rgba(255,255,255,.05);border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,.08);transition:background .12s,border-color .12s;cursor:default}
+.addon-d:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18)}
+.addon-d-icon{font-size:22px;margin-bottom:9px;display:block}
+.addon-d h4{font-size:13px;font-weight:800;color:#fff;margin-bottom:5px}
+.addon-d p{font-size:12px;color:rgba(255,255,255,.5);line-height:1.45}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sb-logo">
+    <!-- Logo white inline SVG -->
+    <svg viewBox="0 0 185.5 27.6" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#fff">
+        <polygon points="139.4,0 139.4,4.8 147.5,4.8 147.5,27.6 152.6,27.6 152.6,4.8 160.7,4.8 160.7,0"/>
+        <rect x="131.3" width="4.9" height="27.5"/>
+        <polygon points="119.9,0 120.1,27.1 111,0 100.9,0 100.9,27.6 106,27.6 105.8,0.5 114.9,27.6 124.9,27.6 124.9,0"/>
+        <polygon points="26.4,0 26.4,27.6 44.3,27.6 44.3,22.8 31.5,22.8 31.5,15.4 44.3,15.4 44.3,11.4 31.5,11.4 31.5,4.8 44.3,4.8 44.3,0"/>
+        <polygon points="48.8,0 57.3,18.1 53,27.6 58.5,27.6 71.6,0 66,0 60.2,12.9 54.4,0"/>
+        <polygon points="162.7,0 171.3,18.1 166.9,27.6 172.4,27.6 185.5,0 179.9,0 174.1,12.9 168.3,0"/>
+        <path d="M20.3,8.6c0-.2,0-.5,0-.7s0-.5,0-.7C19.9,3.2,16.5,0,12.4,0H0v27.5h12.4c4.1,0,7.5-3.2,7.9-7.2 c0-.2,0-.5,0-.7s0-.5,0-.7c-.2-2-1.1-3.9-2.5-5.2C19.1,12.5,20.1,10.7,20.3,8.6 M11.5,22.8H4.8v-6.9h6.7 c1.9,0,3.4,1.5,3.4,3.4C15,21.2,13.4,22.8,11.5,22.8 M11.5,11.7H4.9V4.8h6.7c1.9,0,3.4,1.5,3.4,3.4S13.4,11.7,11.5,11.7"/>
+        <path d="M86.9,0.1c-.9.4-2,.9-2.8,1.8c2.3,2.5,4.4,7,4.4,11.9s-2.1,9.4-4.4,11.9c.8.9,1.9,1.4,2.8,1.8 c4.2-.9,7.4-6.7,7.4-13.6C94.3,6.8,91.1,1,86.9,0.1"/>
+        <path d="M85.4,0h-6.2c-3.8,1.4-6.7,6.9-6.8,13.7v0.2c0,6.7,2.9,12.3,6.8,13.7h6.2c-3.9-1.4-6.8-7-6.8-13.8 S81.5,1.4,85.4,0"/>
+      </g>
+    </svg>
+  </div>
+  <div class="sb-tag">Brand Hub</div>
+  <nav>
+    <button class="nav-btn on" onclick="show('identitaet',this)"><span>◆</span>Identität</button>
+    <button class="nav-btn" onclick="show('unternehmen',this)"><span>▣</span>Unternehmen</button>
+    <button class="nav-btn" onclick="show('zielgruppen',this)"><span>◉</span>Zielgruppen</button>
+    <button class="nav-btn" onclick="show('produkte',this)"><span>▤</span>Produkte</button>
+    <button class="nav-btn" onclick="show('visuelles',this)"><span>◐</span>Visuelles</button>
+    <button class="nav-btn" onclick="show('tone',this)"><span>✦</span>Tone of Voice</button>
+    <button class="nav-btn" onclick="show('llm',this)"><span>⌘</span>LLM / AI</button>
+  </nav>
+  <div class="sb-foot">v1.0 &nbsp;·&nbsp; Mai 2026</div>
+</aside>
+
+<main class="main">
+
+  <!-- ══════════════════════════════════════
+       1. IDENTITÄT
+  ══════════════════════════════════════ -->
+  <section id="identitaet" class="sec on">
+    <div class="ph">
+      <h1>Identität</h1>
+      <p>Wofür Beyonity steht — Mission, Vision, Werte und Positionierung.</p>
+    </div>
+
+    <div class="dark-card">
+      <h2>Mission</h2>
+      <p>Die Grenzen des Möglichen in der Immobilienvermarktung immer wieder verschieben und neu definieren.</p>
+    </div>
+
+    <div class="dark-card">
+      <h2>Vision</h2>
+      <p>Pionierhafte Lösungen in Realtime — realitätsnahe Erlebnisse, wie es sie vorher in der Immobilienvermarktung nicht gab.</p>
+    </div>
+
+    <div class="card">
+      <h2>5 Werte</h2>
+      <ul class="value-list">
+        <li><span class="vn">Innovation</span><span>Pionierhafte Lösungen, die den Status quo der Branche herausfordern</span></li>
+        <li><span class="vn">Vernetzung</span><span>Intelligent vernetzte Erlebnisse statt Insellösungen</span></li>
+        <li><span class="vn">Partnerschaft</span><span>Nachhaltiger Partner — nicht nur Lieferant</span></li>
+        <li><span class="vn">Präzision</span><span>Realitätsnahe Erlebnisse mit technischer Exzellenz</span></li>
+        <li><span class="vn">Menschlichkeit</span><span>Tech-getrieben, aber warm und sympathisch</span></li>
+      </ul>
+    </div>
+
+    <div class="pos-card">
+      <div class="eyebrow">Positionierung</div>
+      <p>Beyonity ist ein Schweizer PropTech-Unternehmen, das E-Commerce-Prinzipien auf die Vermarktung und den Vertrieb von Immobilienprojekten überträgt. Kein singuläres Tool — ein nachhaltiger Partner. Vom Grossen ins Kleine. Von Aussen nach Innen. Alles aus einer Hand.</p>
+      <div class="tag">Ecosystem of Experience</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       2. UNTERNEHMEN
+  ══════════════════════════════════════ -->
+  <section id="unternehmen" class="sec">
+    <div class="ph">
+      <h1>Unternehmen</h1>
+      <p>Wer wir sind — Team, Zahlen, Regionen und Auszeichnungen.</p>
+    </div>
+
+    <div class="g3 mb18">
+      <div class="stat-card"><div class="stat-v">50+</div><div class="stat-l">Mitarbeitende</div></div>
+      <div class="stat-card"><div class="stat-v">12</div><div class="stat-l">Nationalitäten</div></div>
+      <div class="stat-card"><div class="stat-v">20+</div><div class="stat-l">Sprachen</div></div>
+      <div class="stat-card"><div class="stat-v">5</div><div class="stat-l">Regionen</div></div>
+      <div class="stat-card"><div class="stat-v">2</div><div class="stat-l">Awards</div></div>
+      <div class="stat-card"><div class="stat-v">48M</div><div class="stat-l">Klicks verarbeitet</div></div>
+      <div class="stat-card-featured"><div class="stat-v">USD 45 Mio.</div><div class="stat-l">Mehreinnahmen für Kunden</div></div>
+    </div>
+
+    <div class="ceo-card">
+      <div class="ceo-av">OG</div>
+      <div>
+        <div class="ceo-name">Oliver Grimm</div>
+        <div class="ceo-title">CEO &amp; Co-Founder</div>
+        <div class="ceo-bio">Oliver Grimm führt Beyonity als CEO und ist Treiber der Vision, Immobilienmarketing durch Echtzeit-Technologie neu zu definieren. Mit seinem Team entwickelt er das Ecosystem of Experience — fünf vernetzte Produkte für Bauträger, institutionelle Eigentümer und Vermarkter in fünf Regionen.</div>
+      </div>
+    </div>
+
+    <div class="leadership-card">
+      <h2>Leadership Team</h2>
+      <div class="leader-grid">
+        <div class="leader"><div class="l-av">OG</div><div><div class="l-name">Oliver Grimm</div><div class="l-role">CEO</div></div></div>
+        <div class="leader"><div class="l-av">CG</div><div><div class="l-name">Christina Grimm</div><div class="l-role">CIO</div></div></div>
+        <div class="leader"><div class="l-av">YH</div><div><div class="l-name">Yannick Hediger</div><div class="l-role">Operational Board</div></div></div>
+        <div class="leader"><div class="l-av">MK</div><div><div class="l-name">Michael König</div><div class="l-role">CTO</div></div></div>
+        <div class="leader"><div class="l-av">MR</div><div><div class="l-name">Mattia Rüfenacht</div><div class="l-role">CPO</div></div></div>
+        <div class="leader"><div class="l-av">CS</div><div><div class="l-name">Christian Stucki</div><div class="l-role">CFO</div></div></div>
+        <div class="leader"><div class="l-av">JJ</div><div><div class="l-name">Jan Jürgensen</div><div class="l-role">CHRO</div></div></div>
+      </div>
+    </div>
+
+    <div class="card mb18">
+      <h2>Regionen</h2>
+      <div class="regions">
+        <span class="rtag">🇨🇭 Schweiz — Lengnau · Hauptsitz</span>
+        <span class="rtag">🇩🇪 Deutschland — Berlin</span>
+        <span class="rtag">🇪🇸 Iberia — Madrid</span>
+        <span class="rtag">🇸🇦 MENA — Riyadh</span>
+        <span class="rtag">🇺🇸 America — Miami</span>
+      </div>
+    </div>
+
+    <div class="g2">
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div>
+          <div class="award-name">Swiss Real Estate Award 2021</div>
+          <div class="award-yr">BäreTower</div>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-icon">🏆</div>
+        <div>
+          <div class="award-name">SVIT Award 2023</div>
+          <div class="award-yr">Portfolio Navigator Previs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       3. ZIELGRUPPEN
+  ══════════════════════════════════════ -->
+  <section id="zielgruppen" class="sec">
+    <div class="ph">
+      <h1>Zielgruppen</h1>
+      <p>Drei Segmente — unterschiedliche Needs, ein Ecosystem als Antwort.</p>
+    </div>
+
+    <!-- Segment A -->
+    <div class="seg seg-a">
+      <div class="seg-badge">Segment A &nbsp;·&nbsp; Meist Verkauf</div>
+      <div class="seg-title">Bauträger / Projektentwickler</div>
+      <div class="seg-ex">Instone, Implenia, Halter u.a.</div>
+      <div class="g3">
+        <div>
+          <div class="seg-row-lbl">Primäres Ziel</div>
+          <div class="seg-row-val">Bestmöglicher Ertrag (Zeit vs. Geld), Absatzgeschwindigkeit</div>
+        </div>
+        <div>
+          <div class="seg-row-lbl">Need</div>
+          <div class="seg-row-val">Risikominimierung, tiefstmögliche Kosten, wenig Aufwand, Selbstprofilierung</div>
+        </div>
+        <div>
+          <div class="seg-row-lbl">Hauptrisiken</div>
+          <div class="seg-row-val">Knappe Rendite, zu wenig Nachfrage, Kostensteigerungen im Projekt</div>
+        </div>
+      </div>
+      <div class="seg-sol"><strong>Beyonity-Lösung:</strong> Alles aus einer Hand (Marketing + Bildwelten), Price-Range-Phase für höheren Gewinn, Konfigurator zur Einsparung der Käuferbetreuung</div>
+    </div>
+
+    <!-- Segment B -->
+    <div class="seg seg-b">
+      <div class="seg-badge">Segment B &nbsp;·&nbsp; Meist Miete</div>
+      <div class="seg-title">Institutionelle Eigentümer</div>
+      <div class="seg-ex">Fonds, Versicherungen, Pensionskassen u.a.</div>
+      <div class="g3">
+        <div>
+          <div class="seg-row-lbl">Need Neubau</div>
+          <div class="seg-row-val">Hohe Rendite, wenig Risiko, bequem, wenig Aufwand, tiefstmögliche Kosten</div>
+        </div>
+        <div>
+          <div class="seg-row-lbl">Need Bestand</div>
+          <div class="seg-row-val">Hohe Rendite, Kontrolle / Transparenz, Leerstände reduzieren</div>
+        </div>
+        <div>
+          <div class="seg-row-lbl">Hauptrisiken</div>
+          <div class="seg-row-val">Leerstände, hohe laufende Kosten, knappe Rendite, Marktlage</div>
+        </div>
+      </div>
+      <div class="seg-sol"><strong>Beyonity-Lösung:</strong> Alles aus einer Hand, Price-Range-Phase, Weiterführung in Betrieb zur Leerstandsreduktion, Standardisierung / Automatisierung</div>
+    </div>
+
+    <!-- Segment C -->
+    <div class="seg seg-c">
+      <div class="seg-badge">Segment C &nbsp;·&nbsp; Miete / Verkauf</div>
+      <div class="seg-title">Vermarkter</div>
+      <div class="seg-ex">Intercity, H&amp;B, Engel &amp; Völkers DE u.a.</div>
+      <div class="g3">
+        <div>
+          <div class="seg-row-lbl">Need</div>
+          <div class="seg-row-val">Hohe Provision, Selbstprofilierung, schnelle Abschlussquote</div>
+        </div>
+        <div>
+          <div class="seg-row-lbl">Risiken</div>
+          <div class="seg-row-val">Honorardruck durch Konkurrenz, Ineffizienz in Prozessen, volatiler Markt</div>
+        </div>
+        <div>
+          <div class="seg-row-lbl">Painpoints</div>
+          <div class="seg-row-val">Kaum Einflussbereich, sehr kritisch mit Produkten, unzuverlässige Partner</div>
+        </div>
+      </div>
+      <div class="seg-sol"><strong>Beyonity-Lösung:</strong> Bessere Positionierung bei Auftraggebern, selbst digital sein, qualifizierte Leads (weniger Aufwand)</div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       4. PRODUKTE
+  ══════════════════════════════════════ -->
+  <section id="produkte" class="sec">
+    <div class="ph">
+      <h1>Produkte</h1>
+      <p>Das Ecosystem of Experience — fünf vernetzte Produkte, sieben Add-Ons.</p>
+    </div>
+
+    <!-- Navigator Hero Card -->
+    <div class="hero">
+      <img src="../beyonity-brand/assets/products/Navigator.png" class="hero-prod-img" onerror="this.style.display='none'" alt="Navigator 5.0">
+      <div class="topseller">&#9733; Topseller</div>
+      <h2>Navigator 5.0</h2>
+      <div class="hero-tl">Beantworten Sie alle Kundenfragen innerhalb von 2 Klicks — hinter unserer Technologie steckt eine Wissenschaft.</div>
+      <div class="hero-desc">Herzstück des Ecosystems und jeder Projektwebsite. Bietet Interessenten klare Einblicke unabhängig von der Projektphase. Kunden verweilen messbar länger auf dem Navigator als auf klassischen Projektwebsites.</div>
+      <div class="metrics">
+        <div class="metric"><div class="metric-v">+17 Min</div><div class="metric-l">Stay Time vs. 90 Sek. Standard</div></div>
+        <div class="metric"><div class="metric-v">3×</div><div class="metric-l">mehr Conversions</div></div>
+        <div class="metric"><div class="metric-v">9</div><div class="metric-l">Sprachen</div></div>
+        <div class="metric"><div class="metric-v">48M</div><div class="metric-l">Klicks verarbeitet</div></div>
+      </div>
+      <table class="ft">
+        <thead><tr><th>Feature</th><th>Beschreibung</th></tr></thead>
+        <tbody>
+          <tr><td>DMS / CRM Connection</td><td>Verbindung mit jedem CRM — automatisch synchronisiert, immer aktuell</td></tr>
+          <tr><td>Filter &amp; Print</td><td>Nach Preis, Fläche, Zimmer, Verfügbarkeit filtern — Ergebnisse druckbar</td></tr>
+          <tr><td>Multilanguage</td><td>9 Sprachen: DE, EN, AR, RU, ES, IT, PT, FR, ZH</td></tr>
+          <tr><td>Favorite, Share, CTA</td><td>Favoriten speichern, teilen, direkter Kontakt zum Vermarkter</td></tr>
+          <tr><td>Downloads</td><td>Grundrisse, FAQs, Dokumente zentral abrufbar</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4-Phase Timeline -->
+    <div class="card">
+      <h2>4 Projektphasen</h2>
+      <div class="timeline">
+        <div class="tph"><div class="tph-n">Phase 1</div><div class="tph-name">Development</div><div class="tph-desc">A/B Testing, Wohnbedürfnisse analysieren</div></div>
+        <div class="tph"><div class="tph-n">Phase 2</div><div class="tph-name">Pricing</div><div class="tph-desc">Price Range, beste Verkaufspreise erzielen</div></div>
+        <div class="tph"><div class="tph-n">Phase 3</div><div class="tph-name">Sales</div><div class="tph-desc">Prozessautomatisierung, Echtzeit-Daten, Cross-Selling</div></div>
+        <div class="tph"><div class="tph-n">Phase 4</div><div class="tph-name">Portfolio</div><div class="tph-desc">Warteliste, Matching, Kundenbindung</div></div>
+      </div>
+    </div>
+
+    <!-- 4 Product Cards -->
+    <div class="g2 mb18">
+      <div class="prod-card">
+        <div class="prod-img-area"><img src="../beyonity-brand/assets/products/Realtime_Tour.png" onerror="this.closest('.prod-img-area').style.display='none'" alt="Realtime Tour"></div>
+        <div class="prod-ver">Version 4.0</div>
+        <h3>Realtime Tour</h3>
+        <div class="prod-tagline">Wohnungen und Aussicht erleben</div>
+        <div class="prod-sub">Virtuelle Echtzeit-Begehung durch noch nicht gebaute Wohnungen — fotorealistisch, interaktiv, direkt im Browser. Kein App-Download.</div>
+        <span class="stag">Segment A</span><span class="stag">Segment B</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img-area"><img src="../beyonity-brand/assets/products/Portfolio_Overview.png" onerror="this.closest('.prod-img-area').style.display='none'" alt="Portfolio Overview"></div>
+        <div class="prod-ver">Version 5.0</div>
+        <h3>Portfolio Overview</h3>
+        <div class="prod-tagline">Projekte miteinander vernetzen</div>
+        <div class="prod-sub">Vereint alle Navigatoren — Bestand und Neubau, Gewerbe und Wohnen. –25% Zwischenleerstände, 24/7 verfügbar.</div>
+        <span class="stag">Segment B</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img-area"><img src="../beyonity-brand/assets/products/Living_Configuration.png" onerror="this.closest('.prod-img-area').style.display='none'" alt="Living Configurator"></div>
+        <div class="prod-ver">Version 5.0</div>
+        <h3>Living Configurator</h3>
+        <div class="prod-tagline">Individuelle Gestaltung des Innenausbaus</div>
+        <div class="prod-sub">Ausstattungspakete, Materialien und Optionen interaktiv wählen — Käuferbetreuung automatisieren, Upselling aktivieren.</div>
+        <span class="stag">Segment A</span><span class="stag">Segment B</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img-area"><img src="../beyonity-brand/assets/products/Commercial_Configuration.png" onerror="this.closest('.prod-img-area').style.display='none'" alt="Commercial Configurator"></div>
+        <div class="prod-ver">Version 4.0</div>
+        <h3>Commercial Configurator</h3>
+        <div class="prod-tagline">Gewerbeflächen einfach und schnell kombinieren</div>
+        <div class="prod-sub">Raumaufteilung und Ausstattung digital konfigurierbar — Leerstände reduzieren, Interessenten selbst qualifizieren.</div>
+        <span class="stag">Segment B</span><span class="stag">Segment C</span>
+      </div>
+    </div>
+
+    <!-- 7 Add-Ons -->
+    <div class="addon-dark-wrap">
+      <h2>7 Add-Ons — Navigator 5.0</h2>
+      <div class="addon-dark-grid">
+        <div class="addon-d"><span class="addon-d-icon">🌐</span><h4>Integrated Website</h4><p>Website direkt in Navigator — kein separater Webauftritt nötig</p></div>
+        <div class="addon-d"><span class="addon-d-icon">☀️</span><h4>Sun Simulation</h4><p>Dynamischer Sonnenverlauf mit realen Schatten nach Tageszeit</p></div>
+        <div class="addon-d"><span class="addon-d-icon">📊</span><h4>Data Dashboard</h4><p>Real-Time KPIs über den gesamten Lebenszyklus</p></div>
+        <div class="addon-d"><span class="addon-d-icon">🅿️</span><h4>Parking Navigator</h4><p>Parkplätze + Hobbyräume mit allen Merkmalen</p></div>
+        <div class="addon-d"><span class="addon-d-icon">📍</span><h4>Info Flags &amp; Building Highlights</h4><p>Symbole für Infrastruktur und Vorteile, verlinkbar</p></div>
+        <div class="addon-d"><span class="addon-d-icon">🔭</span><h4>POI Panorama</h4><p>360° Umgebungspanorama mit Links zu Google Maps</p></div>
+        <div class="addon-d"><span class="addon-d-icon">🏙️</span><h4>Balcony Views</h4><p>180° Drohnen-Panorama der echten Aussicht pro Wohnung</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       5. VISUELLES
+  ══════════════════════════════════════ -->
+  <section id="visuelles" class="sec">
+    <div class="ph">
+      <h1>Visuelles Brand</h1>
+      <p>Farben, Typografie und Logo-System.</p>
+    </div>
+
+    <!-- 8 Color Swatches -->
+    <div class="card">
+      <h2>Farben</h2>
+      <div class="sw-grid">
+        <div class="sw">
+          <div class="sw-col" style="background:#3c57e1"></div>
+          <div class="sw-info"><div class="sw-name">Primary Blue</div><div class="sw-hex">#3c57e1</div><div class="sw-use">Hauptakzente, Links, Buttons</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#f8ff76;border-bottom:1px solid rgba(0,0,0,.06)"></div>
+          <div class="sw-info"><div class="sw-name">Yellow</div><div class="sw-hex">#f8ff76</div><div class="sw-use">CTAs, Badges, Highlights</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#001a64"></div>
+          <div class="sw-info"><div class="sw-name">Dark Blue</div><div class="sw-hex">#001a64</div><div class="sw-use">Hintergrund dunkel, Primärtext</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#d8ddf9"></div>
+          <div class="sw-info"><div class="sw-name">Light Blue</div><div class="sw-hex">#d8ddf9</div><div class="sw-use">Hintergrund hell, Segment A</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#ffffff;border-bottom:1px solid rgba(0,0,0,.08)"></div>
+          <div class="sw-info"><div class="sw-name">White</div><div class="sw-hex">#ffffff</div><div class="sw-use">Cards, Hintergrund</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#efefef"></div>
+          <div class="sw-info"><div class="sw-name">Gray</div><div class="sw-hex">#efefef</div><div class="sw-use">Page background, Divider</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#ff7575"></div>
+          <div class="sw-info"><div class="sw-name">Error Red</div><div class="sw-hex">#ff7575</div><div class="sw-use">Fehler, Don't-Marker</div></div>
+        </div>
+        <div class="sw">
+          <div class="sw-col" style="background:#a7faa9"></div>
+          <div class="sw-info"><div class="sw-name">Success Green</div><div class="sw-hex">#a7faa9</div><div class="sw-use">Erfolg, Do-Marker, Segment C</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Font Specimens -->
+    <div class="g2 mb18">
+      <div class="specimen">
+        <div class="spec-lbl">Schrift in Verwendung — Sora (Google Fonts)</div>
+        <div class="spec-big">Sora</div>
+        <div class="spec-row"><span class="spec-wl">800 ExtraBold</span><span style="font-weight:800;font-size:18px">Headlines, CTAs</span></div>
+        <div class="spec-row"><span class="spec-wl">600 SemiBold</span><span style="font-weight:600;font-size:18px">Subheads, Labels</span></div>
+        <div class="spec-row"><span class="spec-wl">400 Regular</span><span style="font-weight:400;font-size:18px">Body, Beschreibungen</span></div>
+      </div>
+      <div class="specimen">
+        <div class="spec-lbl">Primärschrift — Bw Gradual (Brand Font)</div>
+        <div class="spec-big" style="color:var(--blue)">Bw Gradual</div>
+        <div style="font-size:13px;line-height:1.8;color:rgba(0,26,100,.6)">
+          <p><strong style="color:var(--dark)">Bw Gradual ExtraBold</strong> — Headlines</p>
+          <p><strong style="color:var(--dark)">Bw Gradual Medium</strong> — Body Copy</p>
+          <p style="margin-top:10px">Fallback: <strong>Sora</strong> (Google Fonts)</p>
+          <p>Line-height: <strong>120%</strong> Headlines &nbsp;·&nbsp; <strong>140%</strong> Body</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Logo Variants -->
+    <div class="card">
+      <h2>Logo-Varianten</h2>
+      <div class="g3">
+        <div>
+          <div class="logo-wrap" style="background:#fff;border:1px solid var(--gray)">
+            <!-- Dark blue logo -->
+            <svg viewBox="0 0 185.5 27.6" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#001a64">
+                <polygon points="139.4,0 139.4,4.8 147.5,4.8 147.5,27.6 152.6,27.6 152.6,4.8 160.7,4.8 160.7,0"/>
+                <rect x="131.3" width="4.9" height="27.5"/>
+                <polygon points="119.9,0 120.1,27.1 111,0 100.9,0 100.9,27.6 106,27.6 105.8,0.5 114.9,27.6 124.9,27.6 124.9,0"/>
+                <polygon points="26.4,0 26.4,27.6 44.3,27.6 44.3,22.8 31.5,22.8 31.5,15.4 44.3,15.4 44.3,11.4 31.5,11.4 31.5,4.8 44.3,4.8 44.3,0"/>
+                <polygon points="48.8,0 57.3,18.1 53,27.6 58.5,27.6 71.6,0 66,0 60.2,12.9 54.4,0"/>
+                <polygon points="162.7,0 171.3,18.1 166.9,27.6 172.4,27.6 185.5,0 179.9,0 174.1,12.9 168.3,0"/>
+                <path d="M20.3,8.6c0-.2,0-.5,0-.7s0-.5,0-.7C19.9,3.2,16.5,0,12.4,0H0v27.5h12.4c4.1,0,7.5-3.2,7.9-7.2c0-.2,0-.5,0-.7s0-.5,0-.7c-.2-2-1.1-3.9-2.5-5.2C19.1,12.5,20.1,10.7,20.3,8.6 M11.5,22.8H4.8v-6.9h6.7c1.9,0,3.4,1.5,3.4,3.4C15,21.2,13.4,22.8,11.5,22.8 M11.5,11.7H4.9V4.8h6.7c1.9,0,3.4,1.5,3.4,3.4S13.4,11.7,11.5,11.7"/>
+                <path d="M86.9,0.1c-.9.4-2,.9-2.8,1.8c2.3,2.5,4.4,7,4.4,11.9s-2.1,9.4-4.4,11.9c.8.9,1.9,1.4,2.8,1.8c4.2-.9,7.4-6.7,7.4-13.6C94.3,6.8,91.1,1,86.9,0.1"/>
+                <path d="M85.4,0h-6.2c-3.8,1.4-6.7,6.9-6.8,13.7v0.2c0,6.7,2.9,12.3,6.8,13.7h6.2c-3.9-1.4-6.8-7-6.8-13.8S81.5,1.4,85.4,0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="logo-lbl">Dark Blue · Auf hellem Hintergrund</div>
+        </div>
+        <div>
+          <div class="logo-wrap" style="background:#001a64">
+            <!-- White logo -->
+            <svg viewBox="0 0 185.5 27.6" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#ffffff">
+                <polygon points="139.4,0 139.4,4.8 147.5,4.8 147.5,27.6 152.6,27.6 152.6,4.8 160.7,4.8 160.7,0"/>
+                <rect x="131.3" width="4.9" height="27.5"/>
+                <polygon points="119.9,0 120.1,27.1 111,0 100.9,0 100.9,27.6 106,27.6 105.8,0.5 114.9,27.6 124.9,27.6 124.9,0"/>
+                <polygon points="26.4,0 26.4,27.6 44.3,27.6 44.3,22.8 31.5,22.8 31.5,15.4 44.3,15.4 44.3,11.4 31.5,11.4 31.5,4.8 44.3,4.8 44.3,0"/>
+                <polygon points="48.8,0 57.3,18.1 53,27.6 58.5,27.6 71.6,0 66,0 60.2,12.9 54.4,0"/>
+                <polygon points="162.7,0 171.3,18.1 166.9,27.6 172.4,27.6 185.5,0 179.9,0 174.1,12.9 168.3,0"/>
+                <path d="M20.3,8.6c0-.2,0-.5,0-.7s0-.5,0-.7C19.9,3.2,16.5,0,12.4,0H0v27.5h12.4c4.1,0,7.5-3.2,7.9-7.2c0-.2,0-.5,0-.7s0-.5,0-.7c-.2-2-1.1-3.9-2.5-5.2C19.1,12.5,20.1,10.7,20.3,8.6 M11.5,22.8H4.8v-6.9h6.7c1.9,0,3.4,1.5,3.4,3.4C15,21.2,13.4,22.8,11.5,22.8 M11.5,11.7H4.9V4.8h6.7c1.9,0,3.4,1.5,3.4,3.4S13.4,11.7,11.5,11.7"/>
+                <path d="M86.9,0.1c-.9.4-2,.9-2.8,1.8c2.3,2.5,4.4,7,4.4,11.9s-2.1,9.4-4.4,11.9c.8.9,1.9,1.4,2.8,1.8c4.2-.9,7.4-6.7,7.4-13.6C94.3,6.8,91.1,1,86.9,0.1"/>
+                <path d="M85.4,0h-6.2c-3.8,1.4-6.7,6.9-6.8,13.7v0.2c0,6.7,2.9,12.3,6.8,13.7h6.2c-3.9-1.4-6.8-7-6.8-13.8S81.5,1.4,85.4,0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="logo-lbl">White · Auf dunklem Hintergrund</div>
+        </div>
+        <div>
+          <div class="logo-wrap" style="background:var(--lb)">
+            <!-- Blue logo (brand blue) -->
+            <svg viewBox="0 0 185.5 27.6" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#3c57e1">
+                <polygon points="139.4,0 139.4,4.8 147.5,4.8 147.5,27.6 152.6,27.6 152.6,4.8 160.7,4.8 160.7,0"/>
+                <rect x="131.3" width="4.9" height="27.5"/>
+                <polygon points="119.9,0 120.1,27.1 111,0 100.9,0 100.9,27.6 106,27.6 105.8,0.5 114.9,27.6 124.9,27.6 124.9,0"/>
+                <polygon points="26.4,0 26.4,27.6 44.3,27.6 44.3,22.8 31.5,22.8 31.5,15.4 44.3,15.4 44.3,11.4 31.5,11.4 31.5,4.8 44.3,4.8 44.3,0"/>
+                <polygon points="48.8,0 57.3,18.1 53,27.6 58.5,27.6 71.6,0 66,0 60.2,12.9 54.4,0"/>
+                <polygon points="162.7,0 171.3,18.1 166.9,27.6 172.4,27.6 185.5,0 179.9,0 174.1,12.9 168.3,0"/>
+                <path d="M20.3,8.6c0-.2,0-.5,0-.7s0-.5,0-.7C19.9,3.2,16.5,0,12.4,0H0v27.5h12.4c4.1,0,7.5-3.2,7.9-7.2c0-.2,0-.5,0-.7s0-.5,0-.7c-.2-2-1.1-3.9-2.5-5.2C19.1,12.5,20.1,10.7,20.3,8.6 M11.5,22.8H4.8v-6.9h6.7c1.9,0,3.4,1.5,3.4,3.4C15,21.2,13.4,22.8,11.5,22.8 M11.5,11.7H4.9V4.8h6.7c1.9,0,3.4,1.5,3.4,3.4S13.4,11.7,11.5,11.7"/>
+                <path d="M86.9,0.1c-.9.4-2,.9-2.8,1.8c2.3,2.5,4.4,7,4.4,11.9s-2.1,9.4-4.4,11.9c.8.9,1.9,1.4,2.8,1.8c4.2-.9,7.4-6.7,7.4-13.6C94.3,6.8,91.1,1,86.9,0.1"/>
+                <path d="M85.4,0h-6.2c-3.8,1.4-6.7,6.9-6.8,13.7v0.2c0,6.7,2.9,12.3,6.8,13.7h6.2c-3.9-1.4-6.8-7-6.8-13.8S81.5,1.4,85.4,0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="logo-lbl">Blue · Akzentvariante</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;padding:14px 16px;background:var(--lb);border-radius:10px;font-size:13px;line-height:1.7;color:var(--dark)">
+        <strong>Nicht erlaubt:</strong>&nbsp; Strecken &nbsp;·&nbsp; Drehen &nbsp;·&nbsp; Farbe ändern &nbsp;·&nbsp; Auf ähnlichem Hintergrund &nbsp;·&nbsp; Clear Space unterschreiten (= Höhe des Schriftzugs auf allen Seiten)
+      </div>
+    </div>
+
+    <!-- Shape rules -->
+    <div class="card">
+      <h2>Formen &amp; Regeln</h2>
+      <div class="g2">
+        <div>
+          <h3>Erlaubt</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;font-size:13px;line-height:1.5">
+            <li>&#10003; Kreise und abgerundete Rechtecke</li>
+            <li>&#10003; Konsistente border-radius innerhalb eines Mediums</li>
+            <li>&#10003; Schatten nur auf Hover / klickbaren Elementen</li>
+            <li>&#10003; <code style="background:var(--lb);padding:2px 6px;border-radius:4px;font-size:12px">box-shadow: 0 0 6px rgba(0,0,0,.5)</code> bei Hover</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Nicht erlaubt</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:8px;font-size:13px;line-height:1.5">
+            <li>&#10007; Scharfe Ecken (border-radius: 0)</li>
+            <li>&#10007; Schatten auf statischen, nicht klickbaren Elementen</li>
+            <li>&#10007; Unterschiedliche Radien im selben Medium</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       6. TONE OF VOICE
+  ══════════════════════════════════════ -->
+  <section id="tone" class="sec">
+    <div class="ph">
+      <h1>Tone of Voice</h1>
+      <p>Wie Beyonity klingt — mutig, lösungsorientiert, menschlich.</p>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-col">
+        <h3>&#10003; So klingt Beyonity</h3>
+        <ul class="tov-list">
+          <li><span>&#10003;</span><span>Direkte Nutzenaussagen: <em>„48 Mio. Klicks — automatisiert, in Echtzeit."</em></span></li>
+          <li><span>&#10003;</span><span>Konkrete Zahlen statt Adjektive: <em>„+17 Minuten Stay Time"</em></span></li>
+          <li><span>&#10003;</span><span>Aktive Formulierungen: <em>„Beyonity löst …"</em> statt Passiv</span></li>
+          <li><span>&#10003;</span><span>Sie-Form im Deutschen — professionell, auf Augenhöhe</span></li>
+          <li><span>&#10003;</span><span>Headlines gerne englisch: <em>„See in Action", „Ecosystem of Experience"</em></span></li>
+          <li><span>&#10003;</span><span>CTAs: <em>„Jetzt entdecken", „Demo buchen", „See in Action"</em></span></li>
+          <li><span>&#10003;</span><span>Mutig: <em>„kein anderer Anbieter kombiniert …"</em> — mit Beleg</span></li>
+        </ul>
+      </div>
+      <div class="dont-col">
+        <h3>&#10007; So nicht</h3>
+        <ul class="tov-list">
+          <li><span>&#10007;</span><span>Buzzwords ohne Beleg: <em>„revolutionär", „disruptiv", „synergetisch"</em></span></li>
+          <li><span>&#10007;</span><span>Vage Aussagen: <em>„deutlich besser", „führend"</em> ohne Zahlen</span></li>
+          <li><span>&#10007;</span><span>Passive Konstruktionen: <em>„Es wird ermöglicht …"</em></span></li>
+          <li><span>&#10007;</span><span>CTA: <em>„Mehr erfahren"</em> — nie verwenden</span></li>
+          <li><span>&#10007;</span><span><em>„best-in-class"</em> ohne konkreten Beweis</span></li>
+          <li><span>&#10007;</span><span>Kalt und technisch ohne menschlichen Bezug</span></li>
+          <li><span>&#10007;</span><span>Wettbewerber namentlich negativ erwähnen</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb18">
+      <h2>Sprache &amp; Stil</h2>
+      <div class="g2" style="font-size:14px;line-height:1.8">
+        <div>
+          <p><strong>Anrede:</strong> Sie-Form (Deutsch) · Du bei Social / informal</p>
+          <p><strong>Satzlänge:</strong> Kurz und direkt. Keine Schachtelsätze.</p>
+          <p><strong>Fachbegriffe:</strong> Branchenspezifisch ok, Jargon vermeiden</p>
+        </div>
+        <div>
+          <p><strong>Zahlen &amp; Daten:</strong> Immer konkret — <em>„+3% Conversion Rate"</em> statt <em>„messbar mehr"</em></p>
+          <p><strong>Produktnamen:</strong> Exakt wie definiert — <em>Navigator 5.0</em>, nie <em>„Nav"</em></p>
+          <p><strong>Sprache:</strong> Deutsch primär · Englisch für Headlines / Produktnamen ok</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Golden Samples</h2>
+      <div class="golden-grid">
+        <div class="gsamp">
+          <div class="gsamp-ctx">LinkedIn Headline</div>
+          <div class="gsamp-q">„Interessenten verweilen 17 Minuten im Navigator 5.0. Auf klassischen Projektwebsites: 90 Sekunden. Das ist kein Zufall — das ist Wissenschaft."</div>
+        </div>
+        <div class="gsamp">
+          <div class="gsamp-ctx">Website Hero</div>
+          <div class="gsamp-q">„Beantworten Sie alle Kundenfragen in 2 Klicks — 24/7, ohne manuelle Beratung, in 9 Sprachen."</div>
+        </div>
+        <div class="gsamp">
+          <div class="gsamp-ctx">E-Mail Betreffzeile</div>
+          <div class="gsamp-q">„Ihr nächstes Projekt: 48 Mio. Klicks zeigen, wie Interessenten wirklich suchen."</div>
+        </div>
+        <div class="gsamp">
+          <div class="gsamp-ctx">Elevator Pitch</div>
+          <div class="gsamp-q">„Beyonity ist das Ecosystem of Experience für Immobilien. Fünf vernetzte Produkte — vom ersten Planungs-Klick bis zum letzten Leerstand."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       7. LLM / AI
+  ══════════════════════════════════════ -->
+  <section id="llm" class="sec">
+    <div class="ph">
+      <h1>LLM / AI</h1>
+      <p>System-Prompt und Anweisungen für KI-Tools — Claude, GPT, Cursor, Copilot u.a.</p>
+    </div>
+
+    <div class="card mb18">
+      <h2>System Prompt — Beyonity</h2>
+      <p style="font-size:13px;color:rgba(0,26,100,.52);margin-bottom:16px;line-height:1.5">Diesen Block am Anfang jedes KI-Prompts einfügen, der Beyonity-Content erstellt oder prüft.</p>
+      <div class="code-wrap">
+        <div class="code-fn">system_prompt.txt</div>
+        <pre><span class="cc"># Beyonity Brand Context — v1.0 Mai 2026</span>
+
+<span class="ck">UNTERNEHMEN:</span>
+<span class="cs">  Beyonity ist eine PropTech-Plattform, die Bauträgern, institutionellen
+  Eigentümern und Vermarktern hilft, Immobilien digital zu vermarkten —
+  durch das Ecosystem of Experience: fünf vernetzte Produkte für jeden
+  Projektmoment. CEO: Oliver Grimm. 50+ Mitarbeitende, 5 Regionen.</span>
+
+<span class="ck">ZIELGRUPPE:</span>
+<span class="cs">  Segment A — Bauträger / Projektentwickler (Instone, Implenia, Halter)
+  Segment B — Institutionelle Eigentümer (Fonds, Versicherungen, Pensionskassen)
+  Segment C — Vermarkter (Intercity, H&B, Engel & Völkers DE)
+  Entscheider-Niveau: C-Level, Asset Manager, Senior Broker.</span>
+
+<span class="ck">TON:</span>
+<span class="cs">  Direkt, lösungsorientiert, menschlich — tech-driven aber nicht kalt.
+  Mutig ohne Buzzwords. Konkrete Zahlen statt vage Adjektive.
+  Sie-Form (Deutsch). Englisch für Headlines und Produktnamen ok.</span>
+
+<span class="ck">PRODUKTE:</span>
+<span class="cs">  Navigator 5.0 (Topseller) · Realtime Tour 4.0 · Portfolio Overview 5.0
+  Living Configurator 5.0 · Commercial Configurator 4.0 · 7 Add-Ons
+  Overarching: Ecosystem of Experience</span>
+
+<span class="ck">KENNZAHLEN:</span>
+<span class="cs">  +17 Minuten Stay Time (vs. 90 Sek. Standard) · +3% Conversion Rate
+  48 Mio. Klicks verarbeitet · –25% Zwischenleerstände (Portfolio Overview)</span>
+
+<span class="ck">VERMEIDEN:</span>
+<span class="cs">  "revolutionär" · "disruptiv" · "synergetisch" · "best-in-class" (ohne Beleg)
+  "Mehr erfahren" · passive Konstruktionen · vage Aussagen ohne Zahlen
+  Wettbewerber namentlich negativ erwähnen</span>
+
+<span class="ck">IMMER:</span>
+<span class="cs">  Konkrete Nutzenaussagen mit Zahlen. Produktnamen exakt wie definiert.
+  CTAs: "Jetzt entdecken" · "Demo buchen" · "See in Action"
+  Keine Aussagen, die nicht durch Brand.md gedeckt sind.</span>
+
+<span class="ck">DIFFERENZIERUNG:</span>
+<span class="cs">  Einzige Lösung, die den gesamten Immobilien-Lebenszyklus abdeckt —
+  von der Bedarfsanalyse in der Entwicklungsphase bis zum Portfolio-
+  Management im Betrieb. Realtime-Visualisierung + Automatisierung +
+  Daten-Intelligence in einem vernetzten Ecosystem.</span></pre>
+      </div>
+    </div>
+
+    <div class="g2 mb18">
+      <div class="rule-card">
+        <h2>Was KI tun darf</h2>
+        <ul class="rule-list">
+          <li><span>&#10003;</span><span>Texte im Beyonity-Stil erstellen und variieren</span></li>
+          <li><span>&#10003;</span><span>Headlines und CTAs vorschlagen</span></li>
+          <li><span>&#10003;</span><span>Inhalte für verschiedene Kanäle adaptieren</span></li>
+          <li><span>&#10003;</span><span>Code und UI-Texte auf Markenkonsistenz prüfen</span></li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <h2>Was KI nicht tun darf</h2>
+        <ul class="rule-list">
+          <li><span>&#10007;</span><span>Marken-Infos aus öffentlichen Quellen ergänzen oder interpolieren</span></li>
+          <li><span>&#10007;</span><span>Aussagen machen, die nicht durch Brand.md gedeckt sind</span></li>
+          <li><span>&#10007;</span><span>Wettbewerber namentlich negativ erwähnen</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Prompt-Struktur für Content-Aufgaben</h2>
+      <p style="font-size:13px;color:rgba(0,26,100,.52);margin-bottom:16px;line-height:1.5">Immer nach System-Prompt einfügen — für konsistente, verwendbare Ergebnisse.</p>
+      <div class="code-wrap">
+        <div class="code-fn">prompt_template.txt</div>
+        <pre><span class="cc">[System-Prompt von oben einfügen]</span>
+
+<span class="ck">Aufgabe:</span>      <span class="cs">Schreibe [LinkedIn-Post / E-Mail / Website-Headline / etc.]</span>
+<span class="ck">Kanal:</span>        <span class="cs">LinkedIn / E-Mail / Website / Pitch-Deck / Pressemitteilung</span>
+<span class="ck">Zielgruppe:</span>   <span class="cs">Segment A (Bauträger) / B (Asset Manager) / C (Vermarkter)</span>
+<span class="ck">Ziel:</span>         <span class="cs">Awareness / Lead-Gen / Nurturing / Conversion</span>
+<span class="ck">Kernbotschaft:</span> <span class="cs">Was ist die eine Aussage?</span>
+<span class="ck">Länge:</span>        <span class="cs">max. 1500 Zeichen (LinkedIn) / 50 Zeichen (Betreff) / etc.</span>
+<span class="ck">Produkt:</span>      <span class="cs">Navigator 5.0 / Realtime Tour / Portfolio Overview / etc.</span>
+<span class="ck">Besonderheiten:</span> <span class="cs">Aktuelle Kampagne referenzieren / Tonabweichung / etc.</span></pre>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
