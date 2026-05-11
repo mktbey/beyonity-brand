@@ -5,10 +5,10 @@ Interaktiver Brand Hub für Beyonity — Single Source of Truth für CI, Produkt
 
 ## Dateipfad
 Alle Änderungen direkt in:
-~/beyonity-brand/beyonity-brand-hub.html
+~/Dev/beyonity-brand/beyonity-brand-hub.html
 
 ## Deploy-Befehl (nach jeder Änderung)
-cd ~/beyonity-brand && git add -A && git commit -m "feat/fix: [beschreibung]" && git push
+cd ~/Dev/beyonity-brand && git add -A && git commit -m "feat/fix: [beschreibung]" && git push
 
 ## Live URL
 https://mktbey.github.io/beyonity-brand/
