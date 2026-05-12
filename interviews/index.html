@@ -183,6 +183,12 @@
     .pb.awareness-on { background: #f8ff76; border-color: #c8cf00; color: #001a64; }
 
     .q-stars { display: flex; gap: 2px; flex-shrink: 0; }
+    .rating-info{position:relative;display:inline-flex;align-items:center;margin-left:6px;cursor:help}
+    .rating-info-icon{width:16px;height:16px;border-radius:50%;background:rgba(0,26,100,.12);border:1px solid rgba(0,26,100,.2);color:rgba(0,26,100,.5);font:700 10px/16px 'Sora',sans-serif;text-align:center;display:inline-block;transition:background .15s}
+    .rating-info:hover .rating-info-icon{background:var(--blue);border-color:var(--blue);color:#fff}
+    .rating-info-tooltip{position:absolute;bottom:calc(100% + 8px);right:0;background:var(--dark);color:#fff;font:400 12px/1.5 'Sora',sans-serif;padding:10px 14px;border-radius:10px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;z-index:300;box-shadow:0 4px 16px rgba(0,26,100,.2)}
+    .rating-info-tooltip::after{content:'';position:absolute;top:100%;right:10px;border:6px solid transparent;border-top-color:var(--dark)}
+    .rating-info:hover .rating-info-tooltip{opacity:1}
     .qs-star {
       background: none; border: none; cursor: pointer;
       font-size: 16px; line-height: 1; padding: 2px;
@@ -696,7 +702,13 @@ function buildQuestion(rk, idx, q) {
       <div class="chips">${chips}</div>
       <div class="q-footer">
         <div class="phase-btns">${phaseBtns}</div>
-        <div class="q-stars">${stars}</div>
+        <div style="display:flex;align-items:center">
+          <div class="q-stars">${stars}</div>
+          <div class="rating-info">
+            <span class="rating-info-icon">i</span>
+            <div class="rating-info-tooltip">${lang.startsWith('en') ? 'Rate how relevant this phase is<br>for your region (1 = low, 5 = high)' : lang.startsWith('es') ? 'Valora la relevancia de esta fase<br>para tu región (1 = baja, 5 = alta)' : 'Bewerte wie relevant diese Phase<br>für deine Region ist (1 = gering, 5 = hoch)'}</div>
+          </div>
+        </div>
       </div>
     </div>
   ` + milestoneAfter;
