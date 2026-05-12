@@ -52,6 +52,7 @@
       background: var(--dark);
       border-bottom: 2px solid rgba(255,255,255,.06);
       padding: 0;
+      position: sticky; top: 58px; z-index: 198;
     }
     .tabs-inner { max-width: 860px; margin: 0 auto; width: 100%; padding: 0 48px; display: flex; overflow-x: auto; scrollbar-width: none; }
     .tabs-inner::-webkit-scrollbar { display: none; }
@@ -265,7 +266,7 @@
     #toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
 
     /* ── PROGRESS BAR ── */
-    .progress-bar-wrap{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:58px;z-index:199}
+    .progress-bar-wrap{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:105px;z-index:197}
     .progress-bar-inner{max-width:860px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px}
     .progress-bar-track{flex:1;height:8px;background:var(--border);border-radius:8px;overflow:hidden}
     .progress-bar-fill{height:100%;background:var(--blue);border-radius:8px;transition:width .4s ease;width:0%}
