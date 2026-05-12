@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
   <style>
     :root {
       --blue:   #3c57e1;
@@ -262,8 +263,23 @@
     }
     #toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
 
+    /* ── PROGRESS BAR ── */
+    .progress-bar-wrap{background:#fff;border-bottom:1px solid var(--border);padding:10px 48px;display:flex;align-items:center;gap:14px;position:sticky;top:58px;z-index:199}
+    .progress-bar-track{flex:1;height:4px;background:var(--border);border-radius:4px;overflow:hidden}
+    .progress-bar-fill{height:100%;background:var(--blue);border-radius:4px;transition:width .4s ease;width:0%}
+    .progress-label{font:600 11px/1 'Sora',sans-serif;color:rgba(0,26,100,.5);white-space:nowrap}
+
+    /* ── GAMIFICATION TOAST ── */
+    .game-toast{position:fixed;top:80px;right:24px;background:var(--yellow);color:var(--dark);font:700 13px/1 'Sora',sans-serif;padding:10px 20px;border-radius:100px;box-shadow:0 4px 20px rgba(0,26,100,.15);transform:translateY(-20px);opacity:0;transition:all .3s ease;z-index:500;pointer-events:none}
+    .game-toast.show{transform:translateY(0);opacity:1}
+
+    /* ── MILESTONE CARDS ── */
+    .milestone-card{background:#d8ddf9;border:1px solid rgba(60,87,225,.2);border-radius:12px;padding:14px 20px;margin:8px 0 16px;font:600 13px/1.4 'Sora',sans-serif;color:var(--dark);opacity:0;transform:translateY(8px);transition:all .4s ease}
+    .milestone-card.show{opacity:1;transform:translateY(0)}
+
     @media (max-width: 640px) {
       .hdr, .tabs { padding: 0 20px; }
+      .progress-bar-wrap { padding: 10px 20px; }
       .wrap, #confirm { padding: 36px 20px 64px; }
       .greeting h1 { font-size: 30px; letter-spacing: -1px; }
       .mic-btn { width: 60px; font-size: 9.5px; }
@@ -286,12 +302,18 @@
 
 <nav class="tabs" id="tabs"></nav>
 
+<div class="progress-bar-wrap" id="progress-wrap">
+  <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill"></div></div>
+  <span class="progress-label" id="progress-label">0 / 12</span>
+</div>
+
 <div id="main">
   <div id="panels"></div>
 </div>
 
 <div id="confirm"></div>
 <div id="toast"></div>
+<div class="game-toast" id="game-toast"></div>
 
 <script>
 // ═══════════════════════════════════════════════════════
@@ -612,6 +634,22 @@ function buildQuestion(rk, idx, q) {
     `<button class="qs-star" id="st-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
   ).join('');
 
+  const milestoneAfter = (() => {
+    if (idx === 3) {
+      const msg = lang.startsWith('en') ? '✅ Market context done — on to the journey!'
+                : lang.startsWith('es') ? '✅ ¡Contexto de mercado listo — a por el journey!'
+                : '✅ Marktkontext verstanden — jetzt zur Customer Journey!';
+      return `<div class="milestone-card" id="milestone-${rk}-4">${msg}</div>`;
+    }
+    if (idx === 7) {
+      const msg = lang.startsWith('en') ? '🚀 Almost there — 4 Awareness questions to go!'
+                : lang.startsWith('es') ? '🚀 ¡Casi! — ¡solo 4 preguntas de Awareness!'
+                : '🚀 Fast da — noch 4 Awareness-Fragen!';
+      return `<div class="milestone-card" id="milestone-${rk}-8">${msg}</div>`;
+    }
+    return '';
+  })();
+
   return divider + `
     <div class="q-card">
       <div class="q-head">
@@ -620,7 +658,7 @@ function buildQuestion(rk, idx, q) {
       </div>
       <div class="input-row">
         <textarea class="q-ta" id="${id}" placeholder="${lang.startsWith('en') ? 'Type or speak your answer…' : lang.startsWith('es') ? 'Escribe o habla tu respuesta…' : 'Antwort eingeben oder einsprechen…'}"
-          oninput="schedSave('${rk}'); countProgress('${rk}')"></textarea>
+          oninput="schedSave('${rk}'); countProgress('${rk}'); checkGamification('${rk}')"></textarea>
         <button class="mic-btn" id="mic-${id}" ${micDis}
           onclick="Mic.toggle('${id}','${lang}')">
           <span class="mic-ico">${MIC_SVG}</span>
@@ -634,7 +672,7 @@ function buildQuestion(rk, idx, q) {
         <div class="q-stars">${stars}</div>
       </div>
     </div>
-  `;
+  ` + milestoneAfter;
 }
 
 function buildPanels() {
@@ -668,6 +706,7 @@ function switchTab(k) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
   document.getElementById('tab-' + k).classList.add('on');
   document.getElementById('panel-' + k).classList.add('on');
+  checkGamification(k);
 }
 
 function addChip(id, text) {
@@ -711,6 +750,66 @@ function countProgress(rk) {
   }).length;
   const el = document.getElementById('cnt-' + rk);
   if (el) el.textContent = n + '/' + REGIONS[rk].qs.length;
+}
+
+// ═══════════════════════════════════════════════════════
+//  GAMIFICATION
+// ═══════════════════════════════════════════════════════
+const MILESTONES = {
+  ch:    { 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' },
+  deat:  { 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' },
+  mena:  { 1:'🎯 First answer! Keep going.', 3:'🔥 3 questions — you\'re in the flow!', 6:'⚡ Halfway there! 6 of 12 done.', 9:'💪 Almost done — just the Awareness questions!' },
+  iberia:{ 1:'🎯 ¡Primera respuesta! ¡Sigue así!', 3:'🔥 3 preguntas — ¡estás en modo flow!', 6:'⚡ ¡A mitad! 6 de 12 completadas.', 9:'💪 ¡Casi listo — solo las preguntas de Awareness!' }
+};
+const _shownMilestones = {};
+const _confettiFired = {};
+
+function checkGamification(rk) {
+  const n = REGIONS[rk].qs.filter((_, i) => {
+    const el = document.getElementById(rk + '-q' + (i + 1));
+    return el && el.value.trim().length > 0;
+  }).length;
+  const total = REGIONS[rk].qs.length;
+
+  const fill = document.getElementById('progress-fill');
+  const lbl  = document.getElementById('progress-label');
+  if (fill) fill.style.width = Math.round(n / total * 100) + '%';
+  if (lbl)  lbl.textContent  = n + ' / ' + total;
+
+  const key = rk + '-' + n;
+  if (!_shownMilestones[key] && MILESTONES[rk]?.[n]) {
+    _shownMilestones[key] = true;
+    showGameToast(MILESTONES[rk][n]);
+  }
+
+  if (n >= 4) showMilestoneCard(rk, 4);
+  if (n >= 8) showMilestoneCard(rk, 8);
+
+  if (n === total && !_confettiFired[rk]) {
+    _confettiFired[rk] = true;
+    setTimeout(fireConfetti, 300);
+  }
+}
+
+function showGameToast(msg) {
+  const el = document.getElementById('game-toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+function showMilestoneCard(rk, afterQ) {
+  const el = document.getElementById('milestone-' + rk + '-' + afterQ);
+  if (el && !el.classList.contains('show')) setTimeout(() => el.classList.add('show'), 200);
+}
+
+function fireConfetti() {
+  if (typeof confetti === 'undefined') return;
+  const colors = ['#3c57e1','#f8ff76','#001a64','#d8ddf9','#ffffff'];
+  confetti({ particleCount: 120, spread: 80,  origin: { y: 0.5 }, colors });
+  setTimeout(() => confetti({ particleCount: 80,  spread: 100, origin: { y: 0.3 }, colors }), 400);
+  setTimeout(() => confetti({ particleCount: 60,  spread: 120, origin: { y: 0.6 }, colors }), 800);
 }
 
 // ═══════════════════════════════════════════════════════
@@ -791,6 +890,9 @@ function reset(rk) {
   document.querySelectorAll('#panel-' + rk + ' .qs-star').forEach(s => s.classList.remove('on'));
   REGIONS[rk].qs.forEach((q, i) => setPhase(rk, i + 1, q.phase, false));
   countProgress(rk);
+  delete _confettiFired[rk];
+  Object.keys(_shownMilestones).forEach(k => { if (k.startsWith(rk + '-')) delete _shownMilestones[k]; });
+  checkGamification(rk);
 
   document.getElementById('confirm').classList.remove('on');
   document.getElementById('confirm').innerHTML = '';
@@ -818,6 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildPanels();
   Object.keys(REGIONS).forEach(rk => load(rk));
   if (!Mic.ok()) document.querySelectorAll('.mic-btn').forEach(b => { b.disabled = true; });
+  checkGamification(Object.keys(REGIONS)[0]);
 });
 </script>
 </body>
