@@ -450,6 +450,27 @@ const REGIONS = {
       { q: '¿Qué canal funciona mejor para captar nuevos clientes en Iberia?', phase: 'Awareness', chips: ['Referencias / boca a boca', 'Eventos del sector', 'LinkedIn', 'Prospección directa'] },
       { q: '¿Cuál es el mayor obstáculo para captar clientes que no conocen Beyonity?', phase: 'Awareness', chips: ['Falta de notoriedad', 'Sin referencias locales', 'Precio percibido alto', 'Competencia local fuerte'] }
     ]
+  },
+  africa: {
+    label: '🌍 Afrika', name: 'Afrika',
+    who: 'Laura', role: 'Regional Lead Afrika',
+    greeting: 'Hello <em>Laura</em> 👋',
+    intro: 'Your answers are auto-saved locally. Use the microphone button for voice input — speech is transcribed directly into the text field.',
+    lang: 'en-KE',
+    qs: [
+      { q: 'How is the real estate market developing in your key African markets (Kenya, Nigeria, South Africa, Egypt)? What is the current mood among developers and investors?', phase: 'Development', chips: ['Strong growth momentum', 'Selective — tier-1 cities only', 'Cautious due to currency risk', 'Institutional interest rising'] },
+      { q: 'Which customer segments have the highest Beyonity adoption potential in Africa — large developers, diaspora investors, or commercial property owners?', phase: 'Development', chips: ['Large developers (Nairobi / Lagos)', 'Diaspora investors', 'Commercial / retail developers', 'Government housing projects'] },
+      { q: 'What are the key pain points for African clients in the Development phase — visualization, off-plan selling, infrastructure gaps?', phase: 'Development', chips: ['Off-plan trust issues', 'No 3D tools available locally', 'Infrastructure reliability', 'Long approval cycles'] },
+      { q: 'How do African clients approach pricing conversations for Beyonity — ROI-driven, budget-constrained, or value-first?', phase: 'Pricing', chips: ['ROI-driven — need clear numbers', 'Budget-constrained', 'Value-first if trust is built', 'Comparing to local alternatives'] },
+      { q: 'Which Beyonity products resonate most in Africa — Navigator for off-plan sales, Realtime Tour for showrooms, or Portfolio Overview for investors?', phase: 'Sales', chips: ['Navigator (off-plan)', 'Realtime Tour (showroom)', 'Portfolio Overview (investors)', 'Data Dashboard'] },
+      { q: 'How do sales cycles in Africa differ from Europe — timeline, decision-makers, relationship dynamics?', phase: 'Sales', chips: ['Longer — relationship first', 'C-suite decides fast', 'Multiple stakeholders', 'Project-by-project only'] },
+      { q: 'What cultural, technical or infrastructure factors most affect selling Beyonity in Africa — connectivity, language, local partnerships?', phase: 'Sales', chips: ['Internet connectivity issues', 'Local language support needed', 'Trust requires local presence', 'Mobile-first users'] },
+      { q: 'Where do you see the biggest growth opportunities for Beyonity in Africa in the next 12 months?', phase: 'Portfolio', chips: ['Nairobi tech hub', 'Lagos mega-developments', 'South Africa luxury market', 'Pan-African institutional investors'] },
+      { q: 'What support or resources from Beyonity Central would help you close deals faster in Africa?', phase: 'Portfolio', chips: ['Local case studies', 'Swahili / French UI option', 'On-site demo capability', 'Flexible pricing model'] },
+      { q: 'How well known is Beyonity among new prospects in Africa — are you building awareness from scratch?', phase: 'Awareness', chips: ['Unknown — building from zero', 'Known in select circles', 'Growing via word of mouth', 'Strong in expat / diaspora community'] },
+      { q: 'What is the most effective channel to reach new clients in Africa?', phase: 'Awareness', chips: ['Referral / Word of mouth', 'Local real estate events', 'LinkedIn', 'Direct outreach / cold calls'] },
+      { q: 'What is the biggest barrier to winning new clients in Africa who do not know Beyonity yet?', phase: 'Awareness', chips: ['No local brand awareness', 'Trust gap — foreign company', 'No local references', 'Price perception vs. local tools'] }
+    ]
   }
 };
 
@@ -765,7 +786,8 @@ const MILESTONES = {
   ch:    { 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' },
   deat:  { 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' },
   mena:  { 1:'🎯 First answer! Keep going.', 3:'🔥 3 questions — you\'re in the flow!', 6:'⚡ Halfway there! 6 of 12 done.', 9:'💪 Almost done — just the Awareness questions!' },
-  iberia:{ 1:'🎯 ¡Primera respuesta! ¡Sigue así!', 3:'🔥 3 preguntas — ¡estás en modo flow!', 6:'⚡ ¡A mitad! 6 de 12 completadas.', 9:'💪 ¡Casi listo — solo las preguntas de Awareness!' }
+  iberia:{ 1:'🎯 ¡Primera respuesta! ¡Sigue así!', 3:'🔥 3 preguntas — ¡estás en modo flow!', 6:'⚡ ¡A mitad! 6 de 12 completadas.', 9:'💪 ¡Casi listo — solo las preguntas de Awareness!' },
+  africa:{ 1:'🎯 First answer! Keep going.', 3:'🔥 3 questions — you\'re in the flow!', 6:'⚡ Halfway there! 6 of 12 done.', 9:'💪 Almost done — just the Awareness questions!' }
 };
 const _shownMilestones = {};
 const _confettiFired = {};
