@@ -157,7 +157,6 @@
     }
 
     /* CHIPS */
-    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
     .chip {
       background: rgba(60,87,225,.07); border: 1px solid rgba(60,87,225,.2);
       color: rgba(0,26,100,.6);
@@ -168,10 +167,10 @@
     .chip:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 
     /* PHASE + RATING FOOTER */
-    .q-footer{display:flex;flex-direction:column;gap:10px}
-    .q-footer-bottom{display:flex;align-items:center;gap:12px}
-    .q-footer-divider{width:1px;height:20px;background:rgba(0,26,100,.15);flex-shrink:0}
-    .rating-wrap{display:flex;align-items:center;gap:6px}
+    .q-footer{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .q-footer-chips{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+    .q-footer-divider{width:1px;height:28px;background:rgba(0,26,100,.15);flex-shrink:0;align-self:center}
+    .q-footer-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 
     .phase-label{display:inline-flex;align-items:center;gap:6px;font:700 11px/1 'Sora',sans-serif;color:rgba(0,26,100,.5);background:rgba(0,26,100,.07);border:1px solid rgba(0,26,100,.12);padding:5px 12px;border-radius:100px}
     .phase-label.awareness{background:rgba(248,255,118,.25);border-color:rgba(200,207,0,.4);color:#5a4a00}
@@ -285,7 +284,9 @@
       .wrap, #confirm { padding: 36px 20px 64px; }
       .greeting h1 { font-size: 30px; letter-spacing: -1px; }
       .mic-btn { width: 60px; font-size: 9.5px; }
-      .q-footer { align-items: flex-start; }
+      .q-footer { align-items: flex-start; flex-direction: column; }
+      .q-footer-divider { display: none; }
+      .q-footer-right { flex-wrap: wrap; }
     }
   </style>
 </head>
@@ -650,6 +651,9 @@ function buildQuestion(rk, idx, q) {
   ).join('');
 
   const phaseLabel = `<div class="phase-label${q.phase === 'Awareness' ? ' awareness' : ''}"><span>📍</span> ${q.phase}</div>`;
+  const ratingTooltip = lang.startsWith('en') ? 'Rate how relevant this phase is<br>for your region (1 = low, 5 = high)'
+    : lang.startsWith('es') ? 'Valora la relevancia de esta fase<br>para tu región (1 = baja, 5 = alta)'
+    : 'Bewerte wie relevant diese Phase<br>für deine Region ist (1 = gering, 5 = hoch)';
 
   const stars = [1,2,3,4,5].map(v =>
     `<button class="qs-star" id="st-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
@@ -687,15 +691,15 @@ function buildQuestion(rk, idx, q) {
         </button>
       </div>
       <div class="voice-pre" id="pre-${id}"></div>
-      <div class="chips">${chips}</div>
       <div class="q-footer">
-        <div>${phaseLabel}</div>
-        <div class="q-footer-bottom">
+        <div class="q-footer-chips">${chips}</div>
+        <div class="q-footer-divider"></div>
+        <div class="q-footer-right">
+          ${phaseLabel}
           <div class="q-stars">${stars}</div>
-          <div class="q-footer-divider"></div>
           <div class="rating-info">
             <span class="rating-info-icon">i</span>
-            <div class="rating-info-tooltip">${lang.startsWith('en') ? 'Rate how relevant this phase is<br>for your region (1 = low, 5 = high)' : lang.startsWith('es') ? 'Valora la relevancia de esta fase<br>para tu región (1 = baja, 5 = alta)' : 'Bewerte wie relevant diese Phase<br>für deine Region ist (1 = gering, 5 = hoch)'}</div>
+            <div class="rating-info-tooltip">${ratingTooltip}</div>
           </div>
         </div>
       </div>
