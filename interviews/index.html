@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyonity · Regional Sales Interview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --blue:   #3c57e1;
+      --yellow: #f8ff76;
+      --dark:   #001a64;
+      --bg:     #efefef;
+      --card:   #ffffff;
+      --border: #d8ddf9;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .hdr {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--dark);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 0;
+    }
+    .hdr-inner { max-width: 860px; margin: 0 auto; width: 100%; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 58px; }
+    .logo { font-size: 17px; font-weight: 800; letter-spacing: -.4px; color: #fff; }
+    .logo em { color: var(--yellow); font-style: normal; }
+    .hdr-right { display: flex; align-items: center; gap: 16px; }
+    .autosave {
+      font-size: 10px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
+      color: rgba(255,255,255,.35); display: flex; align-items: center; gap: 5px;
+      transition: color .3s;
+    }
+    .autosave.ok { color: rgba(80,220,120,.75); }
+    .autosave-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .hdr-label { font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,.35); }
+
+    /* ── TABS ── */
+    .tabs {
+      background: var(--dark);
+      border-bottom: 2px solid rgba(255,255,255,.06);
+      padding: 0;
+      position: sticky; top: 58px; z-index: 198;
+    }
+    .tabs-inner { max-width: 860px; margin: 0 auto; width: 100%; padding: 0 48px; display: flex; overflow-x: auto; scrollbar-width: none; }
+    .tabs-inner::-webkit-scrollbar { display: none; }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      display: flex; align-items: center; gap: 8px;
+      background: none; border: none; border-bottom: 2px solid transparent;
+      color: rgba(255,255,255,.45);
+      font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 15px 22px; cursor: pointer; white-space: nowrap;
+      transition: color .18s, border-color .18s;
+    }
+    .tab:hover { color: rgba(255,255,255,.78); }
+    .tab.on { color: var(--yellow); border-bottom-color: var(--yellow); }
+    .tab-count {
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+      background: rgba(255,255,255,.1); color: rgba(255,255,255,.45);
+      transition: background .18s, color .18s;
+    }
+    .tab.on .tab-count { background: rgba(248,255,118,.16); color: var(--yellow); }
+
+    /* ── PANELS ── */
+    .panel { display: none; }
+    .panel.on { display: block; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 52px 48px 96px; }
+
+    /* GREETING */
+    .greeting { margin-bottom: 48px; }
+    .region-tag {
+      display: inline-flex; align-items: center;
+      background: rgba(60,87,225,.1); border: 1px solid rgba(60,87,225,.25);
+      color: var(--blue); font-size: 10px; font-weight: 700;
+      letter-spacing: 1.4px; text-transform: uppercase;
+      padding: 5px 13px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .greeting h1 { font-size: 46px; font-weight: 800; letter-spacing: -2px; line-height: 1.03; margin-bottom: 14px; color: var(--dark); }
+    .greeting h1 em { color: var(--blue); font-style: normal; }
+    .greeting p { font-size: 14px; font-weight: 300; color: rgba(0,26,100,.52); line-height: 1.78; max-width: 500px; }
+
+    /* QUESTION CARDS */
+    .qs { display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px; }
+
+    .q-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 26px 26px 22px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .q-card:focus-within { border-color: rgba(60,87,225,.45); box-shadow: 0 4px 24px rgba(60,87,225,.08); }
+
+    .q-head { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 18px; }
+    .q-n {
+      flex-shrink: 0; width: 26px; height: 26px; margin-top: 2px;
+      background: var(--blue); border-radius: 50%;
+      font-size: 10px; font-weight: 800; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .q-q { font-size: 14.5px; font-weight: 600; line-height: 1.52; color: var(--dark); }
+
+    /* TEXTAREA + MIC ROW */
+    .input-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
+    .q-ta {
+      flex: 1; min-height: 88px;
+      background: #f5f6fb; border: 1.5px solid var(--border);
+      border-radius: 10px;
+      color: var(--dark);
+      font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.72;
+      padding: 12px 14px; resize: vertical; outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .q-ta::placeholder { color: rgba(0,26,100,.28); }
+    .q-ta:focus { border-color: rgba(60,87,225,.5); background: #eef0fa; }
+    .q-ta.mic-active { border-color: rgba(255,60,60,.45); background: rgba(255,60,60,.04); }
+
+    .mic-btn {
+      flex-shrink: 0; width: 80px; min-height: 88px;
+      background: #f5f6fb; border: 1.5px solid var(--border);
+      border-radius: 10px; color: rgba(0,26,100,.42);
+      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 600; line-height: 1.4;
+      cursor: pointer; padding: 10px 6px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      text-align: center; letter-spacing: .1px;
+      transition: background .14s, border-color .14s, color .14s;
+    }
+    .mic-btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .mic-btn.rec {
+      background: rgba(255,40,40,.08); border-color: rgba(255,60,60,.45); color: #e53535;
+      animation: pulse-ring 1.3s ease-in-out infinite;
+    }
+    .mic-btn:disabled { opacity: .3; cursor: default; pointer-events: none; }
+    .mic-ico { font-size: 20px; line-height: 1; }
+
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,60,60,.3); }
+      50%       { box-shadow: 0 0 0 8px rgba(255,60,60,0); }
+    }
+
+    .voice-pre {
+      font-size: 11.5px; font-weight: 400; font-style: italic;
+      color: rgba(60,87,225,.65); min-height: 16px; margin-bottom: 4px;
+      padding-left: 2px; line-height: 1.5;
+    }
+
+    /* CHIPS */
+    .chip {
+      background: rgba(60,87,225,.07); border: 1px solid rgba(60,87,225,.2);
+      color: rgba(0,26,100,.6);
+      font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 500;
+      padding: 4px 10px; border-radius: 20px; cursor: pointer; white-space: nowrap;
+      transition: background .12s, border-color .12s, color .12s;
+    }
+    .chip:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+    /* PHASE + RATING FOOTER */
+    .q-footer{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .q-footer-chips{display:flex;flex-wrap:wrap;gap:6px;flex:1}
+    .q-footer-divider{width:1px;height:28px;background:rgba(0,26,100,.15);flex-shrink:0;align-self:center}
+    .q-footer-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+
+    .phase-label{display:inline-flex;align-items:center;gap:6px;font:700 11px/1 'Sora',sans-serif;color:rgba(0,26,100,.5);background:rgba(0,26,100,.07);border:1px solid rgba(0,26,100,.12);padding:5px 12px;border-radius:100px}
+    .phase-label.awareness{background:rgba(248,255,118,.25);border-color:rgba(200,207,0,.4);color:#5a4a00}
+
+    .q-stars { display: flex; gap: 2px; flex-shrink: 0; }
+    .rating-info{position:relative;display:inline-flex;align-items:center;margin-left:6px;cursor:help}
+    .rating-info-icon{width:16px;height:16px;border-radius:50%;background:rgba(0,26,100,.12);border:1px solid rgba(0,26,100,.2);color:rgba(0,26,100,.5);font:700 10px/16px 'Sora',sans-serif;text-align:center;display:inline-block;transition:background .15s}
+    .rating-info:hover .rating-info-icon{background:var(--blue);border-color:var(--blue);color:#fff}
+    .rating-info-tooltip{position:absolute;bottom:calc(100% + 8px);right:0;background:var(--dark);color:#fff;font:400 12px/1.5 'Sora',sans-serif;padding:10px 14px;border-radius:10px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;z-index:300;box-shadow:0 4px 16px rgba(0,26,100,.2)}
+    .rating-info-tooltip::after{content:'';position:absolute;top:100%;right:10px;border:6px solid transparent;border-top-color:var(--dark)}
+    .rating-info:hover .rating-info-tooltip{opacity:1}
+    .qs-star {
+      background: none; border: none; cursor: pointer;
+      font-size: 16px; line-height: 1; padding: 2px;
+      color: rgba(0,26,100,.15); transition: color .1s, transform .1s;
+    }
+    .qs-star:hover { color: #d4a800; transform: scale(1.22); }
+    .qs-star.on { color: #c9a000; }
+
+    /* FINISH */
+    .finish-wrap {
+      text-align: center;
+      background: rgba(60,87,225,.04); border: 1.5px solid var(--border);
+      border-radius: 20px; padding: 36px 32px;
+    }
+    .finish-hint { font-size: 12px; font-weight: 300; color: rgba(0,26,100,.45); margin-bottom: 20px; }
+    .finish-btn {
+      background: var(--blue); color: #fff;
+      border: none; font-family: 'Sora', sans-serif;
+      font-size: 14px; font-weight: 800; letter-spacing: .3px;
+      padding: 15px 52px; border-radius: 100px; cursor: pointer;
+      transition: background .13s, transform .13s, box-shadow .13s;
+    }
+    .finish-btn:hover { background: #2f47cc; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(60,87,225,.25); }
+    .finish-btn:active { transform: none; }
+
+    /* ── CONFIRM ── */
+    #confirm { display: none; max-width: 820px; margin: 0 auto; padding: 68px 48px 96px; }
+    #confirm.on { display: block; }
+
+    .confirm-top { text-align: center; margin-bottom: 52px; }
+    .confirm-icon { font-size: 48px; display: block; margin-bottom: 16px; }
+    .confirm-top h2 { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; color: var(--dark); }
+    .confirm-top h2 em { color: var(--blue); font-style: normal; }
+    .confirm-top p { font-size: 14px; font-weight: 300; color: rgba(0,26,100,.5); }
+
+    .sum-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden; }
+    .sum-head { background: var(--dark); padding: 14px 24px; font-size: 13px; font-weight: 700; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+    .sum-date { font-size: 11px; font-weight: 400; opacity: .65; }
+
+    .sum-row { padding: 16px 24px; border-bottom: 1px solid #eaecf4; }
+    .sum-row:last-child { border-bottom: none; }
+    .sum-meta-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .sum-qn { font-size: 10px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; color: rgba(0,26,100,.38); }
+    .sum-phase-tag {
+      font-size: 9.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 20px;
+      background: var(--blue); color: #fff;
+    }
+    .sum-stars-val { font-size: 11px; color: #c9a000; }
+    .sum-q { font-size: 12px; font-weight: 400; color: rgba(0,26,100,.5); margin-bottom: 5px; line-height: 1.5; }
+    .sum-a { font-size: 13.5px; font-weight: 300; line-height: 1.65; color: var(--dark); }
+    .sum-a.none { color: rgba(0,26,100,.3); font-style: italic; }
+
+    .confirm-btns { display: flex; gap: 12px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+    .btn-y {
+      background: var(--blue); color: #fff;
+      border: none; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 800;
+      padding: 13px 28px; border-radius: 100px; cursor: pointer;
+      transition: background .13s, transform .13s;
+    }
+    .btn-y:hover { background: #2f47cc; transform: translateY(-1px); }
+    .btn-g {
+      background: transparent; border: 1.5px solid var(--border);
+      color: rgba(0,26,100,.6);
+      font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 13px 28px; border-radius: 100px; cursor: pointer;
+      transition: background .18s, border-color .18s, color .18s;
+    }
+    .btn-g:hover { background: rgba(0,26,100,.06); border-color: rgba(0,26,100,.25); color: var(--dark); }
+
+    /* TOAST */
+    #toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(70px);
+      background: var(--dark);
+      color: rgba(255,255,255,.9);
+      font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 500;
+      padding: 10px 20px; border-radius: 100px; white-space: nowrap;
+      transition: transform .28s, opacity .28s; opacity: 0; pointer-events: none; z-index: 999;
+      box-shadow: 0 8px 32px rgba(0,26,100,.18);
+    }
+    #toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar-wrap{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:105px;z-index:197}
+    .progress-bar-inner{max-width:860px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px}
+    .progress-bar-track{flex:1;height:8px;background:var(--border);border-radius:8px;overflow:hidden}
+    .progress-bar-fill{height:100%;background:var(--blue);border-radius:8px;transition:width .4s ease;width:0%}
+    .progress-label{font:700 13px/1 'Sora',sans-serif;color:var(--dark);white-space:nowrap;min-width:60px;text-align:right}
+
+    /* ── GAMIFICATION TOAST ── */
+    .game-toast{position:fixed;top:80px;right:24px;background:var(--yellow);color:var(--dark);font:700 13px/1 'Sora',sans-serif;padding:10px 20px;border-radius:100px;box-shadow:0 4px 20px rgba(0,26,100,.15);transform:translateY(-20px);opacity:0;transition:all .3s ease;z-index:500;pointer-events:none}
+    .game-toast.show{transform:translateY(0);opacity:1}
+
+    /* ── MILESTONE CARDS ── */
+    .milestone-card{background:#d8ddf9;border:1px solid rgba(60,87,225,.2);border-radius:12px;padding:14px 20px;margin:8px 0 16px;font:600 13px/1.4 'Sora',sans-serif;color:var(--dark);opacity:0;transform:translateY(8px);transition:all .4s ease}
+    .milestone-card.show{opacity:1;transform:translateY(0)}
+
+    @media (max-width: 640px) {
+      .hdr-inner, .tabs-inner, .progress-bar-inner { padding: 0 20px; }
+      .wrap, #confirm { padding: 36px 20px 64px; }
+      .greeting h1 { font-size: 30px; letter-spacing: -1px; }
+      .mic-btn { width: 60px; font-size: 9.5px; }
+      .q-footer { align-items: flex-start; flex-direction: column; }
+      .q-footer-divider { display: none; }
+      .q-footer-right { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="logo">beyonity<em>.</em></div>
+    <div class="hdr-right">
+      <div class="autosave" id="autosave">
+        <span class="autosave-dot"></span>
+        <span id="autosave-lbl">Autospeichern</span>
+      </div>
+      <div class="hdr-label">Sales Interview</div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs"><div class="tabs-inner" id="tabs-inner"></div></nav>
+
+<div class="progress-bar-wrap" id="progress-wrap">
+  <div class="progress-bar-inner">
+    <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill"></div></div>
+    <span class="progress-label" id="progress-label">0 / 12</span>
+  </div>
+</div>
+
+<div id="main">
+  <div id="panels"></div>
+</div>
+
+<div id="confirm"></div>
+<div id="toast"></div>
+<div class="game-toast" id="game-toast"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════════════════
+const REGIONS = {
+  ch: {
+    label: '🇨🇭 Schweiz', name: 'Schweiz',
+    who: 'Fabian & Dave', role: 'Regional Lead CH',
+    greeting: 'Hallo <em>Fabian & Dave</em> 👋',
+    intro: 'Eure Antworten werden automatisch lokal gespeichert. Nutzt das Mikrofon für direkte Spracheingabe — der Text wird ins Feld transkribiert.',
+    lang: 'de-CH',
+    qs: [
+      { q: 'Wie ist der aktuelle Marktmoment in der Schweiz? Eher Neubauprojekte in der Development-Phase oder Bestandspflege und Portfolio-Management?',
+        phase: 'Development', chips: ['Neubauvolumen steigt', 'Stagnierender Markt', 'Portfolio dominiert', 'Luxury-Segment aktiv'] },
+      { q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle Eigentümer, C: Vermarkter) haben im CH-Markt das größte Wachstumspotenzial?',
+        phase: 'Development', chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Alle gleichwertig'] },
+      { q: 'Was sind die konkreten Pain Points eurer CH-Kunden in der Development-Phase — Projektkonzeption, Ausstattungsdefinition, Einheitenplanung?',
+        phase: 'Development', chips: ['Fehlende 3D-Visualisierung', 'Intransparenz Einheiten', 'Lange Abstimmungszyklen', 'Fehlende Datenbasis'] },
+      { q: 'Wie reagieren CH-Kunden auf das Beyonity Pricing-Modell? Welche Einwände tauchen am häufigsten auf?',
+        phase: 'Pricing', chips: ['Zu teuer', 'Unklarer ROI', 'Konkurrenz günstiger', 'Modell zu komplex'] },
+      { q: 'Welche Beyonity-Produkte laufen in der Schweiz am stärksten — Navigator, Realtime Tour, Commercial Configurator oder Data Dashboard?',
+        phase: 'Sales', chips: ['Navigator 5.0', 'Realtime Tour', 'Commercial Configurator', 'Data Dashboard'] },
+      { q: 'Wie sieht ein typischer Sales-Zyklus im CH-Markt aus — vom Erstkontakt bis zum Abschluss?',
+        phase: 'Sales', chips: ['< 4 Wochen', '1–3 Monate', '3–6 Monate', '> 6 Monate'] },
+      { q: 'Gibt es regulatorische, kulturelle oder sprachliche Besonderheiten in der Schweiz (DE / FR / IT), die den Vertrieb prägen?',
+        phase: 'Sales', chips: ['Mehrsprachigkeit relevant', 'Datenschutz CH-spezifisch', 'Konservative Entscheidungskultur', 'Regionale Unterschiede'] },
+      { q: 'Wo siehst du die drei größten Wachstumschancen für Beyonity Schweiz in den nächsten 12 Monaten?',
+        phase: 'Portfolio', chips: ['Neue Segmente erschließen', 'Upsell Bestandskunden', 'Neue DACH-Regionen', 'Partnerkanal aufbauen'] },
+      { q: 'Was braucht das Sales-Team Schweiz von Beyonity Central, um noch effektiver zu werden?',
+        phase: 'Portfolio', chips: ['Bessere Demo-Materialien', 'Mehr Case Studies CH', 'Schnellerer Support', 'Angepasstes Preismodell'] },
+      { q: 'Wie bekannt ist Beyonity bei Neukunden in der Schweiz — müsst ihr viel erklären oder kennen die meisten das Produkt bereits?', phase: 'Awareness', chips: ['Sehr bekannt', 'Mittel bekannt', 'Kaum bekannt', 'Regional unterschiedlich'] },
+      { q: 'Über welche Kanäle kommen neue Kunden auf Beyonity zu — Empfehlung, LinkedIn, Events, Kaltakquise?', phase: 'Awareness', chips: ['Empfehlung / Referral', 'LinkedIn', 'Events / Messen', 'Kaltakquise'] },
+      { q: 'Was ist das grösste Hindernis bei der Neukundengewinnung in der Schweiz?', phase: 'Awareness', chips: ['Fehlende Bekanntheit', 'Preis zu hoch', 'Starke Konkurrenz', 'Skepsis gegenüber neuem Tool'] }
+    ]
+  },
+
+  deat: {
+    label: '🇩🇪🇦🇹 DE/AT', name: 'DE/AT',
+    who: 'Heike', role: 'Regional Lead DE/AT',
+    greeting: 'Hallo <em>Heike</em> 👋',
+    intro: 'Deine Antworten werden automatisch lokal gespeichert. Nutze das Mikrofon für direkte Spracheingabe — der Text wird ins Feld transkribiert.',
+    lang: 'de-DE',
+    qs: [
+      { q: 'Wie entwickelt sich der Immobilienmarkt in DE/AT aktuell — nach der Zinswende wieder Aufwind oder noch verhalten?',
+        phase: 'Development', chips: ['Markt erholt sich', 'Nachfrage stagniert', 'Entwickler zurückhaltend', 'Institutionelle weiter aktiv'] },
+      { q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle, C: Vermarkter, D: Kiban) treiben das Wachstum in DE/AT?',
+        phase: 'Development', chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Segment D: Kiban'] },
+      { q: 'Was sind die größten Herausforderungen für DE/AT-Kunden in der Development-Phase — Produktdefinition, Konfiguration, Variantenplanung?',
+        phase: 'Development', chips: ['Baugenehmigungen verzögert', 'Finanzierungsengpässe', 'Fehlende Digitalisierung', 'Hohe Baukosten'] },
+      { q: 'Wie ist die digitale Reife der Immobilienprojekte in DE/AT — bereit für 3D-Konfiguratoren und Realtime Touren?',
+        phase: 'Pricing', chips: ['Digital-First vorhanden', 'Teils aufgeschlossen', 'Eher traditionell', 'Großprojekte schon digital'] },
+      { q: 'Welche Beyonity-Produkte funktionieren in DE/AT besonders gut, welche brauchen noch Überzeugungsarbeit?',
+        phase: 'Sales', chips: ['Navigator klar vorne', 'Realtime Tour gut angenommen', 'Comm. Configurator erklärungsbedürftig', 'Data Dashboard komplex'] },
+      { q: 'Wie unterscheidet sich die Entscheidungskultur in Deutschland vs. Österreich?',
+        phase: 'Sales', chips: ['DE: mehr Gremienentscheide', 'AT: schnellere Einzelentscheide', 'Kaum Unterschied', 'AT: Beziehung wichtiger'] },
+      { q: 'Was sind die häufigsten Konkurrenzprodukte, die du im DE/AT-Markt siehst?',
+        phase: 'Sales', chips: ['Matterport', 'Ogulo', 'Lokale Proptech-Startups', 'Inhouse-Entwicklungen'] },
+      { q: 'Wo liegen die stärksten Wachstumshebel für DE/AT in 2026?',
+        phase: 'Portfolio', chips: ['Upsell Bestandskunden', 'Neue Segmente erschließen', 'Partnerkanal ausbauen', 'Events & Messen'] },
+      { q: 'Was wäre das eine Feature oder die eine Verbesserung, die DE/AT-Kunden am meisten helfen würde?',
+        phase: 'Portfolio', chips: ['Offline-Modus für Demos', 'Bessere CRM-Integration', 'Mehr Sprachoptionen', 'Einfacheres Onboarding'] },
+      { q: 'Wie ist der Bekanntheitsgrad von Beyonity in DE/AT im Vergleich zur Schweiz?', phase: 'Awareness', chips: ['Höher als CH', 'Ähnlich wie CH', 'Niedriger als CH', 'Sehr regional unterschiedlich'] },
+      { q: 'Welche Akquise-Strategie funktioniert in DE/AT am besten für Neukunden?', phase: 'Awareness', chips: ['Empfehlung', 'EXPO REAL / Messen', 'LinkedIn Outreach', 'Direktansprache'] },
+      { q: 'Was müsste sich ändern damit Beyonity in DE/AT schneller bei Neukunden bekannt wird?', phase: 'Awareness', chips: ['Mehr PR / Presse', 'Lokale Case Studies', 'Partner-Netzwerk', 'Mehr Events'] }
+    ]
+  },
+
+  mena: {
+    label: '🌍 MENA', name: 'MENA',
+    who: 'Osama', role: 'Regional Lead MENA',
+    greeting: 'Hello <em>Osama</em> 👋',
+    intro: 'Your answers are auto-saved locally. Use the microphone button for voice input — speech is transcribed directly into the text field.',
+    lang: 'en-US',
+    qs: [
+      { q: 'Which markets within MENA have the highest Beyonity adoption potential right now?',
+        phase: 'Development', chips: ['UAE (Dubai / AD)', 'Saudi Arabia (Vision 2030)', 'Egypt', 'Kuwait / Qatar'] },
+      { q: 'Which customer segments dominate MENA projects — large-scale developers, sovereign wealth funds, or brokers?',
+        phase: 'Development', chips: ['Large developers (Emaar, Aldar)', 'Sovereign / government', 'International brokers', 'Mixed-use developers'] },
+      { q: 'What are the key pain points for MENA clients in the Development phase of large-scale projects?',
+        phase: 'Development', chips: ['Visualization scale', 'Off-plan selling complexity', 'Multi-language requirements', 'Short project timelines'] },
+      { q: 'How do MENA clients approach the pricing conversation for Beyonity products?',
+        phase: 'Pricing', chips: ['ROI-driven discussions', 'Budget approved top-down', 'Multi-year contracts preferred', 'High price sensitivity'] },
+      { q: 'Which Beyonity products resonate most in MENA — Realtime Tour for showrooms, Navigator for agents?',
+        phase: 'Sales', chips: ['Realtime Tour (showrooms)', 'Navigator (agent portals)', 'Commercial Configurator', 'Data Dashboard'] },
+      { q: 'How do sales cycles in MENA differ from European markets in terms of timeline and decision-making?',
+        phase: 'Sales', chips: ['Faster C-suite decisions', 'Relationship-first, longer', 'Complex procurement', 'Project-by-project only'] },
+      { q: 'What cultural or regulatory factors matter most when selling Beyonity in MENA?',
+        phase: 'Sales', chips: ['Arabic UI needed', 'Local data hosting required', 'Trust / relationship critical', 'Government mandates apply'] },
+      { q: 'Where do you see the biggest growth opportunities in MENA for the next 12 months?',
+        phase: 'Portfolio', chips: ['Saudi Vision 2030 projects', 'Dubai luxury sector', 'New hospitality vertical', 'Affordable housing scale'] },
+      { q: 'What support or resources would help you close deals faster in MENA?',
+        phase: 'Portfolio', chips: ['Arabic localization', 'On-site demo capability', 'Local success stories', 'Local partner integrations'] },
+      { q: 'How well known is Beyonity among new prospects in MENA — do you need to build awareness from scratch?', phase: 'Awareness', chips: ['Well known', 'Somewhat known', 'Unknown — must educate', 'Depends on country'] },
+      { q: 'What is the most effective channel to reach new clients in MENA?', phase: 'Awareness', chips: ['Referral / Word of mouth', 'Industry events', 'LinkedIn', 'Direct outreach'] },
+      { q: 'What is the biggest barrier to winning new clients who do not know Beyonity yet?', phase: 'Awareness', chips: ['No brand awareness', 'Trust / credibility gap', 'No local references', 'Price perception'] }
+    ]
+  },
+
+  iberia: {
+    label: '🇪🇸 Iberia', name: 'Iberia',
+    who: 'Alejandro & Miguel', role: 'Regional Lead Iberia',
+    greeting: 'Hola <em>Alejandro & Miguel</em> 👋',
+    intro: 'Tus respuestas se guardan automáticamente. Usa el micrófono para responder de voz — el texto se transcribe directamente al campo.',
+    lang: 'es-ES',
+    qs: [
+      { q: '¿Cómo está evolucionando el mercado inmobiliario en España y Portugal — cuál es el sentimiento general?',
+        phase: 'Development', chips: ['Mercado en alza', 'Demanda residencial fuerte', 'Sector lujo muy activo', 'Incertidumbre regulatoria'] },
+      { q: '¿Qué segmentos de clientes (promotores, propietarios institucionales, comercializadores) tienen mayor potencial en Iberia?',
+        phase: 'Development', chips: ['Promotores (Seg. A)', 'Institucionales (Seg. B)', 'Comercializadores (Seg. C)', 'Todos por igual'] },
+      { q: '¿Cuáles son los principales pain points de los clientes ibéricos en la fase de desarrollo de proyectos?',
+        phase: 'Development', chips: ['Visualización 3D insuficiente', 'Ciclos de aprobación lentos', 'Difícil diferenciación', 'Datos fragmentados'] },
+      { q: '¿Cómo responden los clientes ibéricos al pitch de Beyonity — qué les convence y qué genera dudas?',
+        phase: 'Pricing', chips: ['ROI claro convence', 'Precio genera dudas', 'Demo en vivo cierra', 'Referencias locales faltan'] },
+      { q: '¿Qué productos Beyonity funcionan mejor en Iberia y cuáles necesitan más evangelización?',
+        phase: 'Sales', chips: ['Navigator (fuerte)', 'Realtime Tour (bien recibida)', 'Commercial Configurator (+trabajo)', 'Data Dashboard (complejo)'] },
+      { q: '¿Cómo es el ciclo de ventas típico en Iberia desde el primer contacto hasta el cierre?',
+        phase: 'Sales', chips: ['< 4 semanas', '1–3 meses', '3–6 meses', '> 6 meses'] },
+      { q: '¿Qué diferencias ves entre el mercado español y el portugués en términos de adopción digital?',
+        phase: 'Sales', chips: ['Portugal más receptivo digitalmente', 'España más volumen pero más lento', 'Sin diferencias relevantes', 'Ciudades vs. regiones difieren'] },
+      { q: '¿Cuáles son las mayores oportunidades de crecimiento para Iberia en los próximos 12 meses?',
+        phase: 'Portfolio', chips: ['Turismo / lujo residencial', 'Nuevos clientes en ES/PT', 'Upsell clientes existentes', 'Canal de partners'] },
+      { q: '¿Qué necesitarías de Beyonity para acelerar el pipeline en Iberia?',
+        phase: 'Portfolio', chips: ['Materiales en español/portugués', 'Casos de éxito locales', 'Soporte técnico más ágil', 'Modelo de precios adaptado'] },
+      { q: '¿Qué tan conocida es Beyonity entre los nuevos prospectos en Iberia?', phase: 'Awareness', chips: ['Bien conocida', 'Algo conocida', 'Prácticamente desconocida', 'Varía por ciudad'] },
+      { q: '¿Qué canal funciona mejor para captar nuevos clientes en Iberia?', phase: 'Awareness', chips: ['Referencias / boca a boca', 'Eventos del sector', 'LinkedIn', 'Prospección directa'] },
+      { q: '¿Cuál es el mayor obstáculo para captar clientes que no conocen Beyonity?', phase: 'Awareness', chips: ['Falta de notoriedad', 'Sin referencias locales', 'Precio percibido alto', 'Competencia local fuerte'] }
+    ]
+  },
+  africa: {
+    label: '🌍 Afrika', name: 'Afrika',
+    who: 'Laura', role: 'Regional Lead Afrika',
+    greeting: 'Hallo <em>Laura</em> 👋',
+    intro: 'Deine Antworten werden automatisch lokal gespeichert. Nutze das Mikrofon für direkte Spracheingabe — der Text wird ins Feld transkribiert.',
+    lang: 'de-DE',
+    qs: [
+      { q: 'Wie entwickelt sich der Immobilienmarkt in deinen Kernmärkten in Afrika (Kenia, Nigeria, Südafrika, Ägypten)? Was ist die aktuelle Stimmung bei Entwicklern und Investoren?', phase: 'Development', chips: ['Starkes Wachstumsmomentum', 'Selektiv — nur Tier-1-Städte', 'Vorsichtig wegen Währungsrisiko', 'Steigendes institutionelles Interesse'] },
+      { q: 'Welche Kundensegmente haben in Afrika das grösste Beyonity-Adoptionspotenzial — grosse Projektentwickler, Diaspora-Investoren oder Gewerbeimmobilienbesitzer?', phase: 'Development', chips: ['Grosse Entwickler (Nairobi / Lagos)', 'Diaspora-Investoren', 'Gewerbe- / Einzelhandels-Entwickler', 'Staatliche Wohnbauprojekte'] },
+      { q: 'Was sind die grössten Pain Points afrikanischer Kunden in der Development-Phase — Visualisierung, Off-Plan-Verkauf, Infrastrukturlücken?', phase: 'Development', chips: ['Vertrauensprobleme beim Off-Plan', 'Keine 3D-Tools lokal verfügbar', 'Infrastrukturzuverlässigkeit', 'Lange Genehmigungszyklen'] },
+      { q: 'Wie gehen afrikanische Kunden Preisgespräche für Beyonity an — ROI-getrieben, budgetbeschränkt oder Value-First?', phase: 'Pricing', chips: ['ROI-getrieben — klare Zahlen nötig', 'Budgetbeschränkt', 'Value-First wenn Vertrauen besteht', 'Vergleich mit lokalen Alternativen'] },
+      { q: 'Welche Beyonity-Produkte kommen in Afrika am besten an — Navigator für Off-Plan-Verkauf, Realtime Tour für Showrooms oder Portfolio Overview für Investoren?', phase: 'Sales', chips: ['Navigator (Off-Plan)', 'Realtime Tour (Showroom)', 'Portfolio Overview (Investoren)', 'Data Dashboard'] },
+      { q: 'Wie unterscheiden sich Verkaufszyklen in Afrika von Europa — Zeitrahmen, Entscheider, Beziehungsdynamiken?', phase: 'Sales', chips: ['Länger — Beziehung zuerst', 'C-Suite entscheidet schnell', 'Mehrere Stakeholder', 'Nur projektweise'] },
+      { q: 'Welche kulturellen, technischen oder infrastrukturellen Faktoren beeinflussen den Beyonity-Vertrieb in Afrika am stärksten — Konnektivität, Sprache, lokale Partnerschaften?', phase: 'Sales', chips: ['Internetkonnektivität problematisch', 'Lokale Sprachunterstützung nötig', 'Vertrauen braucht lokale Präsenz', 'Mobile-First-Nutzer'] },
+      { q: 'Wo siehst du die grössten Wachstumschancen für Beyonity in Afrika in den nächsten 12 Monaten?', phase: 'Portfolio', chips: ['Nairobi Tech-Hub', 'Lagos Mega-Entwicklungen', 'Südafrika Luxusmarkt', 'Panafrik. institutionelle Investoren'] },
+      { q: 'Welche Unterstützung oder Ressourcen von Beyonity Central würden dir helfen, Deals in Afrika schneller abzuschliessen?', phase: 'Portfolio', chips: ['Lokale Fallstudien', 'Swahili / Französisch UI-Option', 'Vor-Ort-Demo-Kapazität', 'Flexibles Preismodell'] },
+      { q: 'Wie bekannt ist Beyonity bei neuen Interessenten in Afrika — baust du Bekanntheit von null auf?', phase: 'Awareness', chips: ['Unbekannt — von null aufbauen', 'In ausgewählten Kreisen bekannt', 'Wächst durch Empfehlungen', 'Stark in Expat- / Diaspora-Community'] },
+      { q: 'Welcher Kanal ist am effektivsten, um neue Kunden in Afrika zu erreichen?', phase: 'Awareness', chips: ['Empfehlung / Mund-zu-Mund', 'Lokale Immobilien-Events', 'LinkedIn', 'Direktansprache / Kaltakquise'] },
+      { q: 'Was ist die grösste Hürde, um neue Kunden in Afrika zu gewinnen, die Beyonity noch nicht kennen?', phase: 'Awareness', chips: ['Keine lokale Markenbekanntheit', 'Vertrauenslücke — ausländisches Unternehmen', 'Keine lokalen Referenzen', 'Preiswahrnehmung vs. lokale Tools'] }
+    ]
+  }
+};
+
+// ═══════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════
+const state = {
+  ratings: {},   // 'ch-q1' → 1-5
+};
+let saveDebounce = null;
+
+// ═══════════════════════════════════════════════════════
+//  SPEECH (singleton)
+// ═══════════════════════════════════════════════════════
+const Mic = (() => {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let cur = null; // { rec, id }
+
+  const ok = () => !!SR;
+
+  function _labelFor(id) {
+    const rk = id.split('-q')[0];
+    const lang = REGIONS[rk]?.lang || 'de-DE';
+    if (lang.startsWith('en')) return 'Speak your\nanswer';
+    if (lang.startsWith('es')) return 'Habla tu\nrespuesta';
+    return 'Antwort\neinsprechen';
+  }
+
+  function _clear(id) {
+    const btn = document.getElementById('mic-' + id);
+    const ta  = document.getElementById(id);
+    const pre = document.getElementById('pre-' + id);
+    if (btn) { btn.classList.remove('rec'); btn.querySelector('.mic-lbl').textContent = _labelFor(id); }
+    if (ta)  ta.classList.remove('mic-active');
+    if (pre) pre.textContent = '';
+  }
+
+  function stop() {
+    if (!cur) return;
+    cur.rec.abort();
+    _clear(cur.id);
+    cur = null;
+  }
+
+  function toggle(id, lang) {
+    if (!SR) { toast('Sprachaufnahme nicht verfügbar in diesem Browser'); return; }
+    if (cur && cur.id === id) { stop(); return; }
+    stop();
+
+    const rec = new SR();
+    rec.lang = lang;
+    rec.continuous = true;
+    rec.interimResults = true;
+
+    rec.onresult = e => {
+      const ta  = document.getElementById(id);
+      const pre = document.getElementById('pre-' + id);
+      let interim = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) {
+          const t = e.results[i][0].transcript.trim();
+          if (ta) { ta.value += (ta.value.trim() ? ' ' : '') + t; ta.dispatchEvent(new Event('input')); }
+          interim = '';
+        } else { interim += e.results[i][0].transcript; }
+      }
+      if (pre) pre.textContent = interim ? '🎙 ' + interim : '';
+    };
+
+    rec.onerror = e => { if (e.error !== 'aborted') toast('Mikrofon: ' + e.error); stop(); };
+    rec.onend   = () => { if (cur && cur.id === id) stop(); };
+
+    try { rec.start(); } catch { toast('Mikrofon konnte nicht gestartet werden'); return; }
+
+    cur = { rec, id };
+    const btn = document.getElementById('mic-' + id);
+    const ta  = document.getElementById(id);
+    if (btn) { btn.classList.add('rec'); btn.querySelector('.mic-lbl').textContent = 'Stopp'; }
+    if (ta)  ta.classList.add('mic-active');
+  }
+
+  return { ok, toggle, stop };
+})();
+
+// ═══════════════════════════════════════════════════════
+//  LOCALSTORAGE
+// ═══════════════════════════════════════════════════════
+function lsKey(rk) { return 'bey-interview-' + rk; }
+
+function collect(rk) {
+  const r = REGIONS[rk];
+  return {
+    region:      rk,
+    region_name: r.name,
+    interviewer: r.who,
+    role:        r.role,
+    date:        new Date().toISOString().slice(0, 10),
+    exported_at: new Date().toISOString(),
+    questions:   r.qs.map((q, i) => {
+      const id = rk + '-q' + (i + 1);
+      return {
+        id,
+        question: q.q,
+        answer:   document.getElementById(id)?.value.trim() || '',
+        rating:   state.ratings[id] || 0,
+        phase:    q.phase
+      };
+    })
+  };
+}
+
+function save(rk) {
+  try { localStorage.setItem(lsKey(rk), JSON.stringify(collect(rk))); flashSave(); } catch {}
+}
+
+function load(rk) {
+  try {
+    const raw = localStorage.getItem(lsKey(rk));
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    data.questions?.forEach((item, i) => {
+      const id = rk + '-q' + (i + 1);
+      const ta = document.getElementById(id);
+      if (ta && item.answer) ta.value = item.answer;
+
+      if (item.rating) { state.ratings[id] = item.rating; renderStars(id, item.rating); }
+    });
+    countProgress(rk);
+  } catch {}
+}
+
+function schedSave(rk) {
+  clearTimeout(saveDebounce);
+  saveDebounce = setTimeout(() => save(rk), 500);
+}
+
+function flashSave() {
+  const el = document.getElementById('autosave');
+  const lb = document.getElementById('autosave-lbl');
+  if (!el) return;
+  el.classList.add('ok');
+  if (lb) lb.textContent = 'Gespeichert ✓';
+  setTimeout(() => { el.classList.remove('ok'); if (lb) lb.textContent = 'Autospeichern'; }, 2000);
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER
+// ═══════════════════════════════════════════════════════
+const MIC_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`;
+
+function buildTabs() {
+  document.getElementById('tabs-inner').innerHTML =
+    Object.entries(REGIONS).map(([k, r], i) => `
+      <button class="tab${i === 0 ? ' on' : ''}" id="tab-${k}" onclick="switchTab('${k}')">
+        ${r.label} <span class="tab-count" id="cnt-${k}">0/12</span>
+      </button>
+    `).join('');
+}
+
+function buildQuestion(rk, idx, q) {
+  const id   = rk + '-q' + (idx + 1);
+  const lang = REGIONS[rk].lang;
+
+  const divider = idx === 9 ? `
+    <div style="display:flex;align-items:center;gap:12px;margin:8px 0 4px;">
+      <div style="flex:1;height:1.5px;background:var(--border);"></div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.6px;color:var(--blue);white-space:nowrap;">
+        ${lang.startsWith('en') ? '🎯 New Client Acquisition &amp; Awareness' : lang.startsWith('es') ? '🎯 Captación de Nuevos Clientes' : '🎯 Neukundengewinnung &amp; Bekanntheit'}
+      </span>
+      <div style="flex:1;height:1.5px;background:var(--border);"></div>
+    </div>
+  ` : '';
+  const hint = lang.startsWith('en') ? 'Speak your\nanswer'
+             : lang.startsWith('es') ? 'Habla tu\nrespuesta'
+             : 'Antwort\neinsprechen';
+  const micDis = Mic.ok() ? '' : 'disabled';
+
+  const chips = q.chips.map(c =>
+    `<button class="chip" onclick="addChip('${id}','${c.replace(/'/g,"\\'")}')">+ ${c}</button>`
+  ).join('');
+
+  const phaseLabel = `<div class="phase-label${q.phase === 'Awareness' ? ' awareness' : ''}"><span>📍</span> ${q.phase}</div>`;
+  const ratingTooltip = lang.startsWith('en') ? 'Rate how relevant this phase is<br>for your region (1 = low, 5 = high)'
+    : lang.startsWith('es') ? 'Valora la relevancia de esta fase<br>para tu región (1 = baja, 5 = alta)'
+    : 'Bewerte wie relevant diese Phase<br>für deine Region ist (1 = gering, 5 = hoch)';
+
+  const stars = [1,2,3,4,5].map(v =>
+    `<button class="qs-star" id="st-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
+  ).join('');
+
+  const milestoneAfter = (() => {
+    if (idx === 3) {
+      const msg = lang.startsWith('en') ? '✅ Market context done — on to the journey!'
+                : lang.startsWith('es') ? '✅ ¡Contexto de mercado listo — a por el journey!'
+                : '✅ Marktkontext verstanden — jetzt zur Customer Journey!';
+      return `<div class="milestone-card" id="milestone-${rk}-4">${msg}</div>`;
+    }
+    if (idx === 7) {
+      const msg = lang.startsWith('en') ? '🚀 Almost there — 4 Awareness questions to go!'
+                : lang.startsWith('es') ? '🚀 ¡Casi! — ¡solo 4 preguntas de Awareness!'
+                : '🚀 Fast da — noch 4 Awareness-Fragen!';
+      return `<div class="milestone-card" id="milestone-${rk}-8">${msg}</div>`;
+    }
+    return '';
+  })();
+
+  return divider + `
+    <div class="q-card">
+      <div class="q-head">
+        <div class="q-n">${idx + 1}</div>
+        <div class="q-q">${q.q}</div>
+      </div>
+      <div class="input-row">
+        <textarea class="q-ta" id="${id}" placeholder="${lang.startsWith('en') ? 'Type or speak your answer…' : lang.startsWith('es') ? 'Escribe o habla tu respuesta…' : 'Antwort eingeben oder einsprechen…'}"
+          oninput="schedSave('${rk}'); countProgress('${rk}'); checkGamification('${rk}')"></textarea>
+        <button class="mic-btn" id="mic-${id}" ${micDis}
+          onclick="Mic.toggle('${id}','${lang}')">
+          <span class="mic-ico">${MIC_SVG}</span>
+          <span class="mic-lbl">${hint}</span>
+        </button>
+      </div>
+      <div class="voice-pre" id="pre-${id}"></div>
+      <div class="q-footer">
+        <div class="q-footer-chips">${chips}</div>
+        <div class="q-footer-divider"></div>
+        <div class="q-footer-right">
+          ${phaseLabel}
+          <div class="q-stars">${stars}</div>
+          <div class="rating-info">
+            <span class="rating-info-icon">i</span>
+            <div class="rating-info-tooltip">${ratingTooltip}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ` + milestoneAfter;
+}
+
+function buildPanels() {
+  document.getElementById('panels').innerHTML =
+    Object.entries(REGIONS).map(([k, r], i) => `
+      <div class="panel${i === 0 ? ' on' : ''}" id="panel-${k}">
+        <div class="wrap">
+          <div class="greeting">
+            <div class="region-tag">${r.label}</div>
+            <h1>${r.greeting}</h1>
+            <p>${r.intro}</p>
+          </div>
+          <div class="qs">
+            ${r.qs.map((q, idx) => buildQuestion(k, idx, q)).join('')}
+          </div>
+          <div class="finish-wrap">
+            <p class="finish-hint">Antworten werden automatisch gespeichert. Klick auf "Abschliessen" zum Speichern und Senden.</p>
+            <button class="finish-btn" onclick="finish('${k}', this)">Interview abschliessen →</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  INTERACTIONS
+// ═══════════════════════════════════════════════════════
+function switchTab(k) {
+  Mic.stop();
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  document.getElementById('tab-' + k).classList.add('on');
+  document.getElementById('panel-' + k).classList.add('on');
+  checkGamification(k);
+}
+
+function addChip(id, text) {
+  const ta = document.getElementById(id);
+  if (!ta) return;
+  ta.value = ta.value.trim() ? ta.value.trim() + '\n· ' + text : '· ' + text;
+  ta.dispatchEvent(new Event('input'));
+  ta.focus();
+}
+
+
+function setRating(rk, qIdx, v) {
+  const id = rk + '-q' + qIdx;
+  state.ratings[id] = v;
+  renderStars(id, v);
+  schedSave(rk);
+}
+
+function renderStars(id, v) {
+  for (let i = 1; i <= 5; i++) {
+    const s = document.getElementById('st-' + id + '-' + i);
+    if (s) s.classList.toggle('on', i <= v);
+  }
+}
+
+function countProgress(rk) {
+  const n = REGIONS[rk].qs.filter((_, i) => {
+    const el = document.getElementById(rk + '-q' + (i + 1));
+    return el && el.value.trim().length > 0;
+  }).length;
+  const el = document.getElementById('cnt-' + rk);
+  if (el) el.textContent = n + '/' + REGIONS[rk].qs.length;
+}
+
+// ═══════════════════════════════════════════════════════
+//  GAMIFICATION
+// ═══════════════════════════════════════════════════════
+const MILESTONES = {
+  ch:    { 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' },
+  deat:  { 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' },
+  mena:  { 1:'🎯 First answer! Keep going.', 3:'🔥 3 questions — you\'re in the flow!', 6:'⚡ Halfway there! 6 of 12 done.', 9:'💪 Almost done — just the Awareness questions!' },
+  iberia:{ 1:'🎯 ¡Primera respuesta! ¡Sigue así!', 3:'🔥 3 preguntas — ¡estás en modo flow!', 6:'⚡ ¡A mitad! 6 de 12 completadas.', 9:'💪 ¡Casi listo — solo las preguntas de Awareness!' },
+  africa:{ 1:'🎯 Erste Antwort! Weiter so.', 3:'🔥 3 Fragen — du bist im Flow!', 6:'⚡ Halbzeit! 6 von 12 geschafft.', 9:'💪 Fast fertig — noch die Awareness-Fragen!' }
+};
+const _shownMilestones = {};
+const _confettiFired = {};
+
+function checkGamification(rk) {
+  const n = REGIONS[rk].qs.filter((_, i) => {
+    const el = document.getElementById(rk + '-q' + (i + 1));
+    return el && el.value.trim().length > 0;
+  }).length;
+  const total = REGIONS[rk].qs.length;
+
+  const fill = document.getElementById('progress-fill');
+  const lbl  = document.getElementById('progress-label');
+  if (fill) fill.style.width = Math.round(n / total * 100) + '%';
+  if (lbl)  lbl.textContent  = n + ' / ' + total;
+
+  const key = rk + '-' + n;
+  if (!_shownMilestones[key] && MILESTONES[rk]?.[n]) {
+    _shownMilestones[key] = true;
+    showGameToast(MILESTONES[rk][n]);
+  }
+
+  if (n >= 4) showMilestoneCard(rk, 4);
+  if (n >= 8) showMilestoneCard(rk, 8);
+
+  if (n === total && !_confettiFired[rk]) {
+    _confettiFired[rk] = true;
+    setTimeout(fireConfetti, 300);
+  }
+}
+
+function showGameToast(msg) {
+  const el = document.getElementById('game-toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+function showMilestoneCard(rk, afterQ) {
+  const el = document.getElementById('milestone-' + rk + '-' + afterQ);
+  if (el && !el.classList.contains('show')) setTimeout(() => el.classList.add('show'), 200);
+}
+
+function fireConfetti() {
+  if (typeof confetti === 'undefined') return;
+  const colors = ['#3c57e1','#f8ff76','#001a64','#d8ddf9','#ffffff'];
+  confetti({ particleCount: 120, spread: 80,  origin: { y: 0.5 }, colors });
+  setTimeout(() => confetti({ particleCount: 80,  spread: 100, origin: { y: 0.3 }, colors }), 400);
+  setTimeout(() => confetti({ particleCount: 60,  spread: 120, origin: { y: 0.6 }, colors }), 800);
+}
+
+// ═══════════════════════════════════════════════════════
+//  DOWNLOAD JSON
+// ═══════════════════════════════════════════════════════
+function dlJSON(rk) {
+  const data     = collect(rk);
+  const json     = JSON.stringify(data, null, 2);
+  const filename = 'interview-' + rk + '-' + data.date + '.json';
+  const a = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(new Blob([json], { type: 'application/json' })),
+    download: filename
+  });
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('↓ ' + filename);
+}
+
+// ═══════════════════════════════════════════════════════
+//  FINISH → SUBMIT → CONFIRM PAGE
+// ═══════════════════════════════════════════════════════
+async function finish(rk, btn) {
+  Mic.stop();
+  save(rk);
+  const r    = REGIONS[rk];
+  const data = collect(rk);
+
+  const rows = data.questions.map(item => {
+    const stars = item.rating > 0
+      ? '★'.repeat(item.rating) + '☆'.repeat(5 - item.rating)
+      : '—';
+    return `
+      <div class="sum-row">
+        <div class="sum-meta-row">
+          <div class="sum-qn">Frage ${item.id.split('-q')[1]}</div>
+          <span class="sum-phase-tag">${item.phase}</span>
+          <div class="sum-stars-val">${stars}</div>
+        </div>
+        <div class="sum-q">${item.question}</div>
+        <div class="sum-a${!item.answer ? ' none' : ''}">${
+          item.answer ? item.answer.replace(/\n/g, '<br>') : 'Keine Antwort'
+        }</div>
+      </div>
+    `;
+  }).join('');
+
+  if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet…'; }
+
+  let submitted = false;
+  try {
+    const res = await fetch('https://beyonity-ops.vercel.app/api/interviews/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    submitted = true;
+  } catch (e) {
+    toast('Fehler beim Senden — bitte nochmal versuchen');
+    if (btn) { btn.disabled = false; btn.textContent = 'Interview abschliessen →'; }
+  }
+
+  if (!submitted) {
+    document.getElementById('confirm').innerHTML = `
+      <div class="confirm-top">
+        <span class="confirm-icon">⚠️</span>
+        <h2>Senden fehlgeschlagen</h2>
+        <p>Die Antworten sind lokal gespeichert. Bitte nochmal versuchen oder als JSON sichern.</p>
+      </div>
+      <div class="sum-card">
+        <div class="sum-head">
+          <span>${r.label} · ${r.who} · ${r.role}</span>
+          <span class="sum-date">${data.date}</span>
+        </div>
+        ${rows}
+      </div>
+      <div class="confirm-btns">
+        <button class="btn-y" onclick="finish('${rk}', this)">Nochmal senden →</button>
+        <button class="btn-g" style="background:none;border:1px solid rgba(0,26,100,.2);color:rgba(0,26,100,.6)" onclick="dlJSON('${rk}')">↓ JSON als Backup herunterladen</button>
+        <button class="btn-g" onclick="reset('${rk}')">← Neues Interview</button>
+      </div>
+    `;
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('tabs').style.display = 'none';
+    document.getElementById('confirm').classList.add('on');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  document.getElementById('confirm').innerHTML = `
+    <div class="confirm-top">
+      <span class="confirm-icon">✅</span>
+      <h2>Danke, <em>${r.who}</em>!</h2>
+      <p style="font-size:16px;font-weight:600;color:var(--dark);margin-bottom:6px">Deine Antworten wurden gespeichert.</p>
+      <p>Vollständige Zusammenfassung unten.</p>
+    </div>
+    <div class="sum-card">
+      <div class="sum-head">
+        <span>${r.label} · ${r.who} · ${r.role}</span>
+        <span class="sum-date">${data.date}</span>
+      </div>
+      ${rows}
+    </div>
+    <div class="confirm-btns">
+      <button class="btn-g" onclick="reset('${rk}')">← Neues Interview</button>
+      <button class="btn-g" style="background:none;border:1px solid rgba(0,26,100,.2);color:rgba(0,26,100,.6)" onclick="dlJSON('${rk}')">↓ JSON als Backup herunterladen</button>
+    </div>
+  `;
+
+  document.getElementById('main').style.display = 'none';
+  document.getElementById('tabs').style.display = 'none';
+  document.getElementById('confirm').classList.add('on');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function reset(rk) {
+  if (!confirm('Alle Antworten für ' + REGIONS[rk].name + ' löschen?')) return;
+  localStorage.removeItem(lsKey(rk));
+  Object.keys(state.ratings).forEach(k => { if (k.startsWith(rk + '-')) delete state.ratings[k]; });
+  document.querySelectorAll('#panel-' + rk + ' .q-ta').forEach(el => { el.value = ''; });
+  document.querySelectorAll('#panel-' + rk + ' .qs-star').forEach(s => s.classList.remove('on'));
+  countProgress(rk);
+  delete _confettiFired[rk];
+  Object.keys(_shownMilestones).forEach(k => { if (k.startsWith(rk + '-')) delete _shownMilestones[k]; });
+  checkGamification(rk);
+
+  document.getElementById('confirm').classList.remove('on');
+  document.getElementById('confirm').innerHTML = '';
+  document.getElementById('main').style.display = '';
+  document.getElementById('tabs').style.display = '';
+  switchTab(rk);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════════════
+//  TOAST
+// ═══════════════════════════════════════════════════════
+let _tt = null;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(_tt); _tt = setTimeout(() => el.classList.remove('on'), 3200);
+}
+
+// ═══════════════════════════════════════════════════════
+//  BOOT
+// ═══════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  buildTabs();
+  buildPanels();
+  Object.keys(REGIONS).forEach(rk => load(rk));
+  if (!Mic.ok()) document.querySelectorAll('.mic-btn').forEach(b => { b.disabled = true; });
+  checkGamification(Object.keys(REGIONS)[0]);
+});
+</script>
+</body>
+</html>
