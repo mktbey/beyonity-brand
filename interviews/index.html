@@ -12,15 +12,13 @@
       --blue:   #3c57e1;
       --yellow: #f8ff76;
       --dark:   #001a64;
-      --white:  #ffffff;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Sora', sans-serif;
       background: var(--dark);
-      color: var(--white);
+      color: #fff;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
@@ -31,401 +29,431 @@
       background: rgba(0,26,100,.96);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,.07);
-      height: 58px; padding: 0 52px;
+      height: 58px; padding: 0 48px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .hdr-logo { font-size: 17px; font-weight: 800; letter-spacing: -.4px; }
-    .hdr-logo em { color: var(--yellow); font-style: normal; }
+    .logo { font-size: 17px; font-weight: 800; letter-spacing: -.4px; }
+    .logo em { color: var(--yellow); font-style: normal; }
     .hdr-right { display: flex; align-items: center; gap: 16px; }
-    .save-indicator {
+    .autosave {
       font-size: 10px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
-      color: rgba(255,255,255,.22); transition: color .3s;
-      display: flex; align-items: center; gap: 5px;
+      color: rgba(255,255,255,.2); display: flex; align-items: center; gap: 5px;
+      transition: color .3s;
     }
-    .save-indicator.saved { color: rgba(120,255,150,.6); }
-    .save-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; display: inline-block; }
-    .hdr-meta { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255,255,255,.2); }
+    .autosave.ok { color: rgba(80,220,120,.65); }
+    .autosave-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+    .hdr-label { font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,.18); }
 
     /* ── TABS ── */
-    .tab-nav {
-      background: rgba(0,20,90,.55);
+    .tabs {
+      background: rgba(0,18,80,.55);
       border-bottom: 1px solid rgba(255,255,255,.07);
-      padding: 0 52px;
+      padding: 0 48px;
       display: flex; overflow-x: auto; scrollbar-width: none;
     }
-    .tab-nav::-webkit-scrollbar { display: none; }
-
-    .tab-btn {
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
       display: flex; align-items: center; gap: 8px;
-      background: none; border: none;
-      border-bottom: 2px solid transparent;
-      color: rgba(255,255,255,.36);
+      background: none; border: none; border-bottom: 2px solid transparent;
+      color: rgba(255,255,255,.35);
       font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
       padding: 15px 22px; cursor: pointer; white-space: nowrap;
       transition: color .18s, border-color .18s;
     }
-    .tab-btn:hover { color: rgba(255,255,255,.68); }
-    .tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
-
-    .tab-prog {
-      font-size: 10px; font-weight: 700;
-      background: rgba(255,255,255,.08); color: rgba(255,255,255,.36);
-      padding: 2px 8px; border-radius: 20px;
+    .tab:hover { color: rgba(255,255,255,.66); }
+    .tab.on { color: var(--yellow); border-bottom-color: var(--yellow); }
+    .tab-count {
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+      background: rgba(255,255,255,.08); color: rgba(255,255,255,.35);
       transition: background .18s, color .18s;
     }
-    .tab-btn.active .tab-prog { background: rgba(248,255,118,.14); color: var(--yellow); }
+    .tab.on .tab-count { background: rgba(248,255,118,.14); color: var(--yellow); }
 
     /* ── PANELS ── */
     .panel { display: none; }
-    .panel.active { display: block; }
-
-    .main { max-width: 800px; margin: 0 auto; padding: 52px 52px 96px; }
+    .panel.on { display: block; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 52px 48px 96px; }
 
     /* GREETING */
     .greeting { margin-bottom: 48px; }
-    .region-pill {
+    .region-tag {
       display: inline-flex; align-items: center;
-      background: rgba(60,87,225,.18); border: 1px solid rgba(60,87,225,.36);
-      color: rgba(255,255,255,.55); font-size: 10px; font-weight: 700;
+      background: rgba(60,87,225,.17); border: 1px solid rgba(60,87,225,.35);
+      color: rgba(255,255,255,.52); font-size: 10px; font-weight: 700;
       letter-spacing: 1.4px; text-transform: uppercase;
       padding: 5px 13px; border-radius: 20px; margin-bottom: 20px;
     }
-    .greeting-h { font-size: 44px; font-weight: 800; letter-spacing: -1.8px; line-height: 1.04; margin-bottom: 14px; }
-    .greeting-h em { color: var(--yellow); font-style: normal; }
-    .greeting-p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.75; max-width: 520px; }
+    .greeting h1 { font-size: 46px; font-weight: 800; letter-spacing: -2px; line-height: 1.03; margin-bottom: 14px; }
+    .greeting h1 em { color: var(--yellow); font-style: normal; }
+    .greeting p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.38); line-height: 1.78; max-width: 500px; }
 
-    /* QUESTIONS */
-    .qs-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px; }
+    /* QUESTION CARDS */
+    .qs { display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px; }
 
     .q-card {
-      background: rgba(255,255,255,.03);
+      background: rgba(255,255,255,.028);
       border: 1px solid rgba(255,255,255,.07);
-      border-radius: 20px; padding: 26px 26px 20px;
-      transition: border-color .22s, background .22s;
+      border-radius: 20px; padding: 26px 26px 22px;
+      transition: border-color .2s, background .2s;
     }
-    .q-card:focus-within { border-color: rgba(60,87,225,.42); background: rgba(60,87,225,.04); }
+    .q-card:focus-within { border-color: rgba(60,87,225,.4); background: rgba(60,87,225,.035); }
 
-    .q-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
-    .q-num {
-      flex-shrink: 0; width: 26px; height: 26px; margin-top: 1px;
+    .q-head { display: flex; gap: 13px; align-items: flex-start; margin-bottom: 18px; }
+    .q-n {
+      flex-shrink: 0; width: 26px; height: 26px; margin-top: 2px;
       background: var(--blue); border-radius: 50%;
       font-size: 10px; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
     }
-    .q-text { font-size: 14.5px; font-weight: 600; line-height: 1.52; color: rgba(255,255,255,.88); }
+    .q-q { font-size: 14.5px; font-weight: 600; line-height: 1.52; color: rgba(255,255,255,.88); }
 
-    /* TEXTAREA + MIC */
-    .ta-wrap { position: relative; margin-bottom: 6px; }
+    /* TEXTAREA + MIC ROW */
+    .input-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 8px; }
     .q-ta {
-      display: block; width: 100%; min-height: 88px;
+      flex: 1; min-height: 88px;
       background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.08);
       border-radius: 10px;
       color: rgba(255,255,255,.84);
       font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.72;
-      padding: 12px 44px 12px 14px; resize: vertical; outline: none;
+      padding: 12px 14px; resize: vertical; outline: none;
       transition: border-color .2s, background .2s;
     }
     .q-ta::placeholder { color: rgba(255,255,255,.14); }
-    .q-ta:focus { border-color: rgba(60,87,225,.48); background: rgba(0,0,0,.24); }
-    .q-ta.mic-on { border-color: rgba(255,80,80,.45); background: rgba(40,0,0,.18); }
+    .q-ta:focus { border-color: rgba(60,87,225,.46); background: rgba(0,0,0,.25); }
+    .q-ta.mic-active { border-color: rgba(255,60,60,.42); background: rgba(35,0,0,.18); }
 
     .mic-btn {
-      position: absolute; top: 9px; right: 9px;
-      width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
-      color: rgba(255,255,255,.38); cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background .14s, color .14s, border-color .14s;
+      flex-shrink: 0; width: 80px; min-height: 88px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; color: rgba(255,255,255,.42);
+      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 600; line-height: 1.4;
+      cursor: pointer; padding: 10px 6px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+      text-align: center; letter-spacing: .1px;
+      transition: background .14s, border-color .14s, color .14s;
     }
-    .mic-btn:hover { background: rgba(60,87,225,.28); border-color: rgba(60,87,225,.5); color: rgba(255,255,255,.78); }
+    .mic-btn:hover { background: rgba(60,87,225,.22); border-color: rgba(60,87,225,.45); color: rgba(255,255,255,.8); }
     .mic-btn.rec {
-      background: rgba(255,50,50,.18); border-color: rgba(255,60,60,.5); color: #ff6060;
-      animation: mic-pulse 1.2s ease-in-out infinite;
+      background: rgba(255,40,40,.16); border-color: rgba(255,60,60,.45); color: #ff6868;
+      animation: pulse-ring 1.3s ease-in-out infinite;
     }
-    .mic-btn:disabled { opacity: .22; cursor: default; pointer-events: none; }
-    @keyframes mic-pulse {
+    .mic-btn:disabled { opacity: .2; cursor: default; pointer-events: none; }
+    .mic-ico { font-size: 20px; line-height: 1; }
+
+    @keyframes pulse-ring {
       0%, 100% { box-shadow: 0 0 0 0 rgba(255,60,60,.35); }
-      50%       { box-shadow: 0 0 0 7px rgba(255,60,60,0); }
+      50%       { box-shadow: 0 0 0 8px rgba(255,60,60,0); }
     }
 
-    .voice-preview {
-      font-size: 11.5px; font-weight: 300; color: rgba(248,255,118,.48);
-      min-height: 16px; margin-bottom: 2px; font-style: italic; padding-left: 2px;
+    .voice-pre {
+      font-size: 11.5px; font-weight: 300; font-style: italic;
+      color: rgba(248,255,118,.5); min-height: 16px; margin-bottom: 4px;
+      padding-left: 2px; line-height: 1.5;
     }
 
-    /* CHIPS + RATING */
-    .q-footer { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
-    .chips { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
+    /* CHIPS */
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
     .chip {
       background: rgba(60,87,225,.1); border: 1px solid rgba(60,87,225,.22);
       color: rgba(255,255,255,.44);
       font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 500;
       padding: 4px 10px; border-radius: 20px; cursor: pointer; white-space: nowrap;
+      transition: background .12s, border-color .12s, color .12s;
+    }
+    .chip:hover { background: rgba(60,87,225,.26); border-color: rgba(60,87,225,.48); color: rgba(255,255,255,.82); }
+
+    /* PHASE + RATING FOOTER */
+    .q-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+
+    .phase-btns { display: flex; gap: 5px; flex-wrap: wrap; }
+    .pb {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.38);
+      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 700;
+      letter-spacing: .4px; padding: 5px 11px; border-radius: 20px; cursor: pointer;
       transition: background .13s, border-color .13s, color .13s;
     }
-    .chip:hover { background: rgba(60,87,225,.27); border-color: rgba(60,87,225,.5); color: rgba(255,255,255,.82); }
+    .pb:hover { background: rgba(60,87,225,.22); border-color: rgba(60,87,225,.44); color: rgba(255,255,255,.75); }
+    .pb.on { background: var(--blue); border-color: var(--blue); color: #fff; }
 
-    .q-rating { display: flex; gap: 2px; flex-shrink: 0; padding-top: 4px; }
-    .qstar {
+    .q-stars { display: flex; gap: 2px; flex-shrink: 0; }
+    .qs-star {
       background: none; border: none; cursor: pointer;
-      font-size: 15px; line-height: 1; padding: 2px;
-      color: rgba(255,255,255,.12); transition: color .12s, transform .1s;
+      font-size: 16px; line-height: 1; padding: 2px;
+      color: rgba(255,255,255,.12); transition: color .1s, transform .1s;
     }
-    .qstar:hover { color: rgba(248,255,118,.5); transform: scale(1.22); }
-    .qstar.on { color: var(--yellow); }
+    .qs-star:hover { color: rgba(248,255,118,.5); transform: scale(1.22); }
+    .qs-star.on { color: var(--yellow); }
 
     /* FINISH */
-    .finish-area {
+    .finish-wrap {
       text-align: center;
-      background: rgba(248,255,118,.04); border: 1px solid rgba(248,255,118,.13);
-      border-radius: 20px; padding: 36px;
+      background: rgba(248,255,118,.04); border: 1px solid rgba(248,255,118,.12);
+      border-radius: 20px; padding: 36px 32px;
     }
-    .finish-hint { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.26); margin-bottom: 20px; }
+    .finish-hint { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.25); margin-bottom: 20px; }
     .finish-btn {
       background: var(--yellow); color: var(--dark);
       border: none; font-family: 'Sora', sans-serif;
       font-size: 14px; font-weight: 800; letter-spacing: .3px;
-      padding: 15px 56px; border-radius: 100px; cursor: pointer;
-      transition: background .14s, transform .14s, box-shadow .14s;
+      padding: 15px 52px; border-radius: 100px; cursor: pointer;
+      transition: background .13s, transform .13s, box-shadow .13s;
     }
-    .finish-btn:hover { background: #ecf160; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(248,255,118,.2); }
-    .finish-btn:active { transform: translateY(0); }
+    .finish-btn:hover { background: #edf160; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(248,255,118,.18); }
+    .finish-btn:active { transform: none; }
 
-    /* ── CONFIRMATION ── */
-    #confirm-view { display: none; max-width: 800px; margin: 0 auto; padding: 68px 52px 96px; }
-    #confirm-view.show { display: block; }
+    /* ── CONFIRM ── */
+    #confirm { display: none; max-width: 820px; margin: 0 auto; padding: 68px 48px 96px; }
+    #confirm.on { display: block; }
 
     .confirm-top { text-align: center; margin-bottom: 52px; }
-    .confirm-icon { font-size: 48px; display: block; margin-bottom: 18px; }
-    .confirm-h { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; }
-    .confirm-h em { color: var(--yellow); font-style: normal; }
-    .confirm-p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.38); }
+    .confirm-icon { font-size: 48px; display: block; margin-bottom: 16px; }
+    .confirm-top h2 { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; }
+    .confirm-top h2 em { color: var(--yellow); font-style: normal; }
+    .confirm-top p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.36); }
 
-    .sum-block { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 20px; overflow: hidden; margin-bottom: 14px; }
-    .sum-hdr { background: var(--blue); padding: 14px 24px; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
-    .sum-meta { font-size: 11px; font-weight: 400; opacity: .72; }
-    .sum-qa { padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,.05); }
-    .sum-qa:last-child { border-bottom: none; }
-    .sum-qrow { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
-    .sum-qn { font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,255,255,.3); white-space: nowrap; }
-    .sum-stars { font-size: 11px; color: var(--yellow); white-space: nowrap; opacity: .85; }
-    .sum-qt { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.44); margin-bottom: 6px; line-height: 1.5; }
-    .sum-a { font-size: 13.5px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,.8); }
-    .sum-a.empty { color: rgba(255,255,255,.2); font-style: italic; }
+    .sum-card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 20px; overflow: hidden; }
+    .sum-head { background: var(--blue); padding: 14px 24px; font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+    .sum-date { font-size: 11px; font-weight: 400; opacity: .72; }
 
-    .confirm-actions { display: flex; gap: 12px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-    .btn-yellow {
-      background: var(--yellow); color: var(--dark);
-      border: none; font-family: 'Sora', sans-serif;
-      font-size: 13px; font-weight: 800; padding: 13px 28px; border-radius: 100px; cursor: pointer;
-      transition: background .14s, transform .14s;
+    .sum-row { padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .sum-row:last-child { border-bottom: none; }
+    .sum-meta-row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+    .sum-qn { font-size: 10px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; color: rgba(255,255,255,.28); }
+    .sum-phase-tag {
+      font-size: 9.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 20px;
+      background: rgba(60,87,225,.3); color: rgba(255,255,255,.6);
     }
-    .btn-yellow:hover { background: #ecf160; transform: translateY(-1px); }
-    .btn-ghost {
+    .sum-stars-val { font-size: 11px; color: var(--yellow); opacity: .85; }
+    .sum-q { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.42); margin-bottom: 5px; line-height: 1.5; }
+    .sum-a { font-size: 13.5px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,.8); }
+    .sum-a.none { color: rgba(255,255,255,.2); font-style: italic; }
+
+    .confirm-btns { display: flex; gap: 12px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+    .btn-y {
+      background: var(--yellow); color: var(--dark);
+      border: none; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 800;
+      padding: 13px 28px; border-radius: 100px; cursor: pointer;
+      transition: background .13s, transform .13s;
+    }
+    .btn-y:hover { background: #edf160; transform: translateY(-1px); }
+    .btn-g {
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.6);
+      color: rgba(255,255,255,.58);
       font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
       padding: 13px 28px; border-radius: 100px; cursor: pointer;
       transition: background .18s, color .18s;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,.1); color: #fff; }
+    .btn-g:hover { background: rgba(255,255,255,.1); color: #fff; }
 
     /* TOAST */
     #toast {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(72px);
-      background: rgba(20,20,50,.96); border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.78); font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 500;
-      padding: 10px 20px; border-radius: 100px;
-      transition: transform .28s ease, opacity .28s ease; opacity: 0; pointer-events: none; z-index: 999;
-      white-space: nowrap;
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(70px);
+      background: rgba(10,15,45,.97); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.78);
+      font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 500;
+      padding: 10px 20px; border-radius: 100px; white-space: nowrap;
+      transition: transform .28s, opacity .28s; opacity: 0; pointer-events: none; z-index: 999;
     }
-    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+    #toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-    /* RESPONSIVE */
-    @media (max-width: 660px) {
-      .hdr, .tab-nav { padding: 0 20px; }
-      .main, #confirm-view { padding: 36px 20px 64px; }
-      .greeting-h { font-size: 30px; letter-spacing: -1px; }
-      .q-footer { flex-direction: column; }
+    @media (max-width: 640px) {
+      .hdr, .tabs { padding: 0 20px; }
+      .wrap, #confirm { padding: 36px 20px 64px; }
+      .greeting h1 { font-size: 30px; letter-spacing: -1px; }
+      .mic-btn { width: 60px; font-size: 9.5px; }
+      .q-footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
 <header class="hdr">
-  <div class="hdr-logo">beyonity<em>.</em></div>
+  <div class="logo">beyonity<em>.</em></div>
   <div class="hdr-right">
-    <div class="save-indicator" id="save-ind">
-      <span class="save-dot"></span>
-      <span id="save-lbl">Autospeichern</span>
+    <div class="autosave" id="autosave">
+      <span class="autosave-dot"></span>
+      <span id="autosave-lbl">Autospeichern</span>
     </div>
-    <div class="hdr-meta">Sales Interview</div>
+    <div class="hdr-label">Sales Interview</div>
   </div>
 </header>
 
-<nav class="tab-nav" id="tab-nav"></nav>
+<nav class="tabs" id="tabs"></nav>
 
-<div id="interview-view">
-  <div id="panels-wrap"></div>
+<div id="main">
+  <div id="panels"></div>
 </div>
 
-<div id="confirm-view"></div>
+<div id="confirm"></div>
 <div id="toast"></div>
 
 <script>
-// ──────────────────────────────────────────────────────
-//  REGION DATA
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════════════════
+const PHASES = ['Development','Pricing','Sales','Portfolio'];
+
 const REGIONS = {
   ch: {
-    label: '🇨🇭 Schweiz', name: 'Schweiz', who: 'Fabian & Dave',
+    label: '🇨🇭 Schweiz', name: 'Schweiz',
+    who: 'Fabian & Dave', role: 'Regional Lead CH',
     greeting: 'Hallo <em>Fabian & Dave</em> 👋',
-    intro: 'Eure Antworten werden automatisch im Browser gespeichert. Nutzt das Mikrofon für schnelle Spracheingabe — der Text wird direkt ins Feld transkribiert.',
+    intro: 'Eure Antworten werden automatisch lokal gespeichert. Nutzt das Mikrofon für direkte Spracheingabe — der Text wird ins Feld transkribiert.',
     lang: 'de-CH',
-    questions: [
+    qs: [
       { q: 'Wie ist der aktuelle Marktmoment in der Schweiz? Eher Neubauprojekte in der Development-Phase oder Bestandspflege und Portfolio-Management?',
-        chips: ['Neubauvolumen steigt', 'Stagnierender Markt', 'Portfolio dominiert', 'Luxury-Segment aktiv'] },
+        phase: 'Development', chips: ['Neubauvolumen steigt', 'Stagnierender Markt', 'Portfolio dominiert', 'Luxury-Segment aktiv'] },
       { q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle Eigentümer, C: Vermarkter) haben im CH-Markt das größte Wachstumspotenzial?',
-        chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Alle gleichwertig'] },
+        phase: 'Development', chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Alle gleichwertig'] },
       { q: 'Was sind die konkreten Pain Points eurer CH-Kunden in der Development-Phase — Projektkonzeption, Ausstattungsdefinition, Einheitenplanung?',
-        chips: ['Fehlende 3D-Visualisierung', 'Intransparenz Einheiten', 'Lange Abstimmungszyklen', 'Fehlende Datenbasis'] },
+        phase: 'Development', chips: ['Fehlende 3D-Visualisierung', 'Intransparenz Einheiten', 'Lange Abstimmungszyklen', 'Fehlende Datenbasis'] },
       { q: 'Wie reagieren CH-Kunden auf das Beyonity Pricing-Modell? Welche Einwände tauchen am häufigsten auf?',
-        chips: ['Zu teuer', 'Unklarer ROI', 'Konkurrenz günstiger', 'Modell zu komplex'] },
+        phase: 'Pricing', chips: ['Zu teuer', 'Unklarer ROI', 'Konkurrenz günstiger', 'Modell zu komplex'] },
       { q: 'Welche Beyonity-Produkte laufen in der Schweiz am stärksten — Navigator, Realtime Tour, Commercial Configurator oder Data Dashboard?',
-        chips: ['Navigator 5.0', 'Realtime Tour', 'Commercial Configurator', 'Data Dashboard'] },
+        phase: 'Sales', chips: ['Navigator 5.0', 'Realtime Tour', 'Commercial Configurator', 'Data Dashboard'] },
       { q: 'Wie sieht ein typischer Sales-Zyklus im CH-Markt aus — vom Erstkontakt bis zum Abschluss?',
-        chips: ['< 4 Wochen', '1–3 Monate', '3–6 Monate', '> 6 Monate'] },
+        phase: 'Sales', chips: ['< 4 Wochen', '1–3 Monate', '3–6 Monate', '> 6 Monate'] },
       { q: 'Gibt es regulatorische, kulturelle oder sprachliche Besonderheiten in der Schweiz (DE / FR / IT), die den Vertrieb prägen?',
-        chips: ['Mehrsprachigkeit relevant', 'Datenschutz CH-spezifisch', 'Konservative Entscheidungskultur', 'Regionale Unterschiede'] },
+        phase: 'Sales', chips: ['Mehrsprachigkeit relevant', 'Datenschutz CH-spezifisch', 'Konservative Entscheidungskultur', 'Regionale Unterschiede'] },
       { q: 'Wo siehst du die drei größten Wachstumschancen für Beyonity Schweiz in den nächsten 12 Monaten?',
-        chips: ['Neue Segmente erschließen', 'Upsell Bestandskunden', 'Neue DACH-Regionen', 'Partnerkanal aufbauen'] },
+        phase: 'Portfolio', chips: ['Neue Segmente erschließen', 'Upsell Bestandskunden', 'Neue DACH-Regionen', 'Partnerkanal aufbauen'] },
       { q: 'Was braucht das Sales-Team Schweiz von Beyonity Central, um noch effektiver zu werden?',
-        chips: ['Bessere Demo-Materialien', 'Mehr Case Studies CH', 'Schnellerer Support', 'Angepasstes Preismodell'] }
+        phase: 'Portfolio', chips: ['Bessere Demo-Materialien', 'Mehr Case Studies CH', 'Schnellerer Support', 'Angepasstes Preismodell'] }
     ]
   },
 
   deat: {
-    label: '🇩🇪🇦🇹 DE/AT', name: 'DE/AT', who: 'Heike',
+    label: '🇩🇪🇦🇹 DE/AT', name: 'DE/AT',
+    who: 'Heike', role: 'Regional Lead DE/AT',
     greeting: 'Hallo <em>Heike</em> 👋',
-    intro: 'Deine Antworten werden automatisch im Browser gespeichert. Nutze das Mikrofon für schnelle Spracheingabe — der Text wird direkt ins Feld transkribiert.',
+    intro: 'Deine Antworten werden automatisch lokal gespeichert. Nutze das Mikrofon für direkte Spracheingabe — der Text wird ins Feld transkribiert.',
     lang: 'de-DE',
-    questions: [
+    qs: [
       { q: 'Wie entwickelt sich der Immobilienmarkt in DE/AT aktuell — nach der Zinswende wieder Aufwind oder noch verhalten?',
-        chips: ['Markt erholt sich', 'Nachfrage stagniert', 'Entwickler zurückhaltend', 'Institutionelle weiter aktiv'] },
+        phase: 'Development', chips: ['Markt erholt sich', 'Nachfrage stagniert', 'Entwickler zurückhaltend', 'Institutionelle weiter aktiv'] },
       { q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle, C: Vermarkter, D: Kiban) treiben das Wachstum in DE/AT?',
-        chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Segment D: Kiban'] },
+        phase: 'Development', chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Segment D: Kiban'] },
       { q: 'Was sind die größten Herausforderungen für DE/AT-Kunden in der Development-Phase — Produktdefinition, Konfiguration, Variantenplanung?',
-        chips: ['Baugenehmigungen verzögert', 'Finanzierungsengpässe', 'Fehlende Digitalisierung', 'Hohe Baukosten'] },
+        phase: 'Development', chips: ['Baugenehmigungen verzögert', 'Finanzierungsengpässe', 'Fehlende Digitalisierung', 'Hohe Baukosten'] },
       { q: 'Wie ist die digitale Reife der Immobilienprojekte in DE/AT — bereit für 3D-Konfiguratoren und Realtime Touren?',
-        chips: ['Digital-First vorhanden', 'Teils aufgeschlossen', 'Eher traditionell', 'Großprojekte schon digital'] },
+        phase: 'Pricing', chips: ['Digital-First vorhanden', 'Teils aufgeschlossen', 'Eher traditionell', 'Großprojekte schon digital'] },
       { q: 'Welche Beyonity-Produkte funktionieren in DE/AT besonders gut, welche brauchen noch Überzeugungsarbeit?',
-        chips: ['Navigator klar vorne', 'Realtime Tour gut angenommen', 'Comm. Configurator erklärungsbedürftig', 'Data Dashboard komplex'] },
+        phase: 'Sales', chips: ['Navigator klar vorne', 'Realtime Tour gut angenommen', 'Comm. Configurator erklärungsbedürftig', 'Data Dashboard komplex'] },
       { q: 'Wie unterscheidet sich die Entscheidungskultur in Deutschland vs. Österreich?',
-        chips: ['DE: mehr Gremienentscheide', 'AT: schnellere Einzelentscheide', 'Kaum Unterschied', 'AT: Beziehung wichtiger'] },
+        phase: 'Sales', chips: ['DE: mehr Gremienentscheide', 'AT: schnellere Einzelentscheide', 'Kaum Unterschied', 'AT: Beziehung wichtiger'] },
       { q: 'Was sind die häufigsten Konkurrenzprodukte, die du im DE/AT-Markt siehst?',
-        chips: ['Matterport', 'Ogulo', 'Lokale Proptech-Startups', 'Inhouse-Entwicklungen'] },
+        phase: 'Sales', chips: ['Matterport', 'Ogulo', 'Lokale Proptech-Startups', 'Inhouse-Entwicklungen'] },
       { q: 'Wo liegen die stärksten Wachstumshebel für DE/AT in 2026?',
-        chips: ['Upsell Bestandskunden', 'Neue Segmente erschließen', 'Partnerkanal ausbauen', 'Events & Messen'] },
+        phase: 'Portfolio', chips: ['Upsell Bestandskunden', 'Neue Segmente erschließen', 'Partnerkanal ausbauen', 'Events & Messen'] },
       { q: 'Was wäre das eine Feature oder die eine Verbesserung, die DE/AT-Kunden am meisten helfen würde?',
-        chips: ['Offline-Modus für Demos', 'Bessere CRM-Integration', 'Mehr Sprachoptionen', 'Einfacheres Onboarding'] }
+        phase: 'Portfolio', chips: ['Offline-Modus für Demos', 'Bessere CRM-Integration', 'Mehr Sprachoptionen', 'Einfacheres Onboarding'] }
     ]
   },
 
   mena: {
-    label: '🌍 MENA', name: 'MENA', who: 'Osama',
+    label: '🌍 MENA', name: 'MENA',
+    who: 'Osama', role: 'Regional Lead MENA',
     greeting: 'Hello <em>Osama</em> 👋',
-    intro: 'Your answers are auto-saved in the browser. Use the microphone button for quick voice input — speech is transcribed directly into the text field.',
+    intro: 'Your answers are auto-saved locally. Use the microphone button for voice input — speech is transcribed directly into the text field.',
     lang: 'en-US',
-    questions: [
+    qs: [
       { q: 'Which markets within MENA have the highest Beyonity adoption potential right now?',
-        chips: ['UAE (Dubai / AD)', 'Saudi Arabia (Vision 2030)', 'Egypt', 'Kuwait / Qatar'] },
+        phase: 'Development', chips: ['UAE (Dubai / AD)', 'Saudi Arabia (Vision 2030)', 'Egypt', 'Kuwait / Qatar'] },
       { q: 'Which customer segments dominate MENA projects — large-scale developers, sovereign wealth funds, or brokers?',
-        chips: ['Large developers (Emaar, Aldar)', 'Sovereign / government', 'International brokers', 'Mixed-use developers'] },
+        phase: 'Development', chips: ['Large developers (Emaar, Aldar)', 'Sovereign / government', 'International brokers', 'Mixed-use developers'] },
       { q: 'What are the key pain points for MENA clients in the Development phase of large-scale projects?',
-        chips: ['Visualization scale', 'Off-plan selling complexity', 'Multi-language requirements', 'Short project timelines'] },
+        phase: 'Development', chips: ['Visualization scale', 'Off-plan selling complexity', 'Multi-language requirements', 'Short project timelines'] },
       { q: 'How do MENA clients approach the pricing conversation for Beyonity products?',
-        chips: ['ROI-driven discussions', 'Budget approved top-down', 'Multi-year contracts preferred', 'High price sensitivity'] },
+        phase: 'Pricing', chips: ['ROI-driven discussions', 'Budget approved top-down', 'Multi-year contracts preferred', 'High price sensitivity'] },
       { q: 'Which Beyonity products resonate most in MENA — Realtime Tour for showrooms, Navigator for agents?',
-        chips: ['Realtime Tour (showrooms)', 'Navigator (agent portals)', 'Commercial Configurator', 'Data Dashboard'] },
+        phase: 'Sales', chips: ['Realtime Tour (showrooms)', 'Navigator (agent portals)', 'Commercial Configurator', 'Data Dashboard'] },
       { q: 'How do sales cycles in MENA differ from European markets in terms of timeline and decision-making?',
-        chips: ['Faster C-suite decisions', 'Relationship-first, longer', 'Complex procurement', 'Project-by-project only'] },
+        phase: 'Sales', chips: ['Faster C-suite decisions', 'Relationship-first, longer', 'Complex procurement', 'Project-by-project only'] },
       { q: 'What cultural or regulatory factors matter most when selling Beyonity in MENA?',
-        chips: ['Arabic UI needed', 'Local data hosting required', 'Trust / relationship critical', 'Government mandates apply'] },
+        phase: 'Sales', chips: ['Arabic UI needed', 'Local data hosting required', 'Trust / relationship critical', 'Government mandates apply'] },
       { q: 'Where do you see the biggest growth opportunities in MENA for the next 12 months?',
-        chips: ['Saudi Vision 2030 projects', 'Dubai luxury sector', 'New hospitality vertical', 'Affordable housing scale'] },
+        phase: 'Portfolio', chips: ['Saudi Vision 2030 projects', 'Dubai luxury sector', 'New hospitality vertical', 'Affordable housing scale'] },
       { q: 'What support or resources would help you close deals faster in MENA?',
-        chips: ['Arabic localization', 'On-site demo capability', 'Local success stories', 'Local partner integrations'] }
+        phase: 'Portfolio', chips: ['Arabic localization', 'On-site demo capability', 'Local success stories', 'Local partner integrations'] }
     ]
   },
 
   iberia: {
-    label: '🇪🇸 Iberia', name: 'Iberia', who: 'Alejandro',
+    label: '🇪🇸 Iberia', name: 'Iberia',
+    who: 'Alejandro', role: 'Regional Lead Iberia',
     greeting: 'Hola <em>Alejandro</em> 👋',
-    intro: 'Tus respuestas se guardan automáticamente en el navegador. Usa el micrófono para responder de voz — el texto se transcribe directamente al campo.',
+    intro: 'Tus respuestas se guardan automáticamente. Usa el micrófono para responder de voz — el texto se transcribe directamente al campo.',
     lang: 'es-ES',
-    questions: [
+    qs: [
       { q: '¿Cómo está evolucionando el mercado inmobiliario en España y Portugal — cuál es el sentimiento general?',
-        chips: ['Mercado en alza', 'Demanda residencial fuerte', 'Sector lujo muy activo', 'Incertidumbre regulatoria'] },
+        phase: 'Development', chips: ['Mercado en alza', 'Demanda residencial fuerte', 'Sector lujo muy activo', 'Incertidumbre regulatoria'] },
       { q: '¿Qué segmentos de clientes (promotores, propietarios institucionales, comercializadores) tienen mayor potencial en Iberia?',
-        chips: ['Promotores (Seg. A)', 'Institucionales (Seg. B)', 'Comercializadores (Seg. C)', 'Todos por igual'] },
+        phase: 'Development', chips: ['Promotores (Seg. A)', 'Institucionales (Seg. B)', 'Comercializadores (Seg. C)', 'Todos por igual'] },
       { q: '¿Cuáles son los principales pain points de los clientes ibéricos en la fase de desarrollo de proyectos?',
-        chips: ['Visualización 3D insuficiente', 'Ciclos de aprobación lentos', 'Difícil diferenciación', 'Datos fragmentados'] },
+        phase: 'Development', chips: ['Visualización 3D insuficiente', 'Ciclos de aprobación lentos', 'Difícil diferenciación', 'Datos fragmentados'] },
       { q: '¿Cómo responden los clientes ibéricos al pitch de Beyonity — qué les convence y qué genera dudas?',
-        chips: ['ROI claro convence', 'Precio genera dudas', 'Demo en vivo cierra', 'Referencias locales faltan'] },
+        phase: 'Pricing', chips: ['ROI claro convence', 'Precio genera dudas', 'Demo en vivo cierra', 'Referencias locales faltan'] },
       { q: '¿Qué productos Beyonity funcionan mejor en Iberia y cuáles necesitan más evangelización?',
-        chips: ['Navigator (fuerte)', 'Realtime Tour (bien recibida)', 'Commercial Configurator (+trabajo)', 'Data Dashboard (complejo)'] },
+        phase: 'Sales', chips: ['Navigator (fuerte)', 'Realtime Tour (bien recibida)', 'Commercial Configurator (+trabajo)', 'Data Dashboard (complejo)'] },
       { q: '¿Cómo es el ciclo de ventas típico en Iberia desde el primer contacto hasta el cierre?',
-        chips: ['< 4 semanas', '1–3 meses', '3–6 meses', '> 6 meses'] },
+        phase: 'Sales', chips: ['< 4 semanas', '1–3 meses', '3–6 meses', '> 6 meses'] },
       { q: '¿Qué diferencias ves entre el mercado español y el portugués en términos de adopción digital?',
-        chips: ['Portugal más receptivo digitalmente', 'España más volumen pero más lento', 'Sin diferencias relevantes', 'Ciudades vs. regiones difieren'] },
+        phase: 'Sales', chips: ['Portugal más receptivo digitalmente', 'España más volumen pero más lento', 'Sin diferencias relevantes', 'Ciudades vs. regiones difieren'] },
       { q: '¿Cuáles son las mayores oportunidades de crecimiento para Iberia en los próximos 12 meses?',
-        chips: ['Turismo / lujo residencial', 'Nuevos clientes en ES/PT', 'Upsell clientes existentes', 'Canal de partners'] },
+        phase: 'Portfolio', chips: ['Turismo / lujo residencial', 'Nuevos clientes en ES/PT', 'Upsell clientes existentes', 'Canal de partners'] },
       { q: '¿Qué necesitarías de Beyonity para acelerar el pipeline en Iberia?',
-        chips: ['Materiales en español/portugués', 'Casos de éxito locales', 'Soporte técnico más ágil', 'Modelo de precios adaptado'] }
+        phase: 'Portfolio', chips: ['Materiales en español/portugués', 'Casos de éxito locales', 'Soporte técnico más ágil', 'Modelo de precios adaptado'] }
     ]
   }
 };
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  STATE
-// ──────────────────────────────────────────────────────
-const qRatings = {};   // key: 'ch-q1' → value: 0-5
-let saveTimer  = null;
+// ═══════════════════════════════════════════════════════
+const state = {
+  phases:  {},   // 'ch-q1' → 'Development'
+  ratings: {},   // 'ch-q1' → 1-5
+};
+let saveDebounce = null;
 
-// ──────────────────────────────────────────────────────
-//  SPEECH MANAGER (singleton)
-// ──────────────────────────────────────────────────────
-const Speech = (() => {
+// ═══════════════════════════════════════════════════════
+//  SPEECH (singleton)
+// ═══════════════════════════════════════════════════════
+const Mic = (() => {
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-  let active = null; // { rec, taId }
+  let cur = null; // { rec, id }
 
-  function isSupported() { return !!SR; }
+  const ok = () => !!SR;
 
-  function _cleanup(taId) {
-    const btn = document.getElementById('mic-' + taId);
-    const ta  = document.getElementById(taId);
-    const pre = document.getElementById('pre-' + taId);
-    if (btn) { btn.classList.remove('rec'); btn.title = _hint(taId); }
-    if (ta)  ta.classList.remove('mic-on');
+  function _labelFor(id) {
+    const rk = id.split('-q')[0];
+    const lang = REGIONS[rk]?.lang || 'de-DE';
+    if (lang.startsWith('en')) return 'Speak your\nanswer';
+    if (lang.startsWith('es')) return 'Habla tu\nrespuesta';
+    return 'Antwort\neinsprechen';
+  }
+
+  function _clear(id) {
+    const btn = document.getElementById('mic-' + id);
+    const ta  = document.getElementById(id);
+    const pre = document.getElementById('pre-' + id);
+    if (btn) { btn.classList.remove('rec'); btn.querySelector('.mic-lbl').textContent = _labelFor(id); }
+    if (ta)  ta.classList.remove('mic-active');
     if (pre) pre.textContent = '';
   }
 
-  function _hint(taId) {
-    const rk = taId.split('-q')[0];
-    const lang = REGIONS[rk]?.lang || 'de-DE';
-    return lang.startsWith('en') ? 'Speak your answer' : lang.startsWith('es') ? 'Habla tu respuesta' : 'Antwort einsprechen';
-  }
-
   function stop() {
-    if (!active) return;
-    active.rec.abort();
-    _cleanup(active.taId);
-    active = null;
+    if (!cur) return;
+    cur.rec.abort();
+    _clear(cur.id);
+    cur = null;
   }
 
-  function toggle(taId, lang) {
-    if (!SR) { showToast('Sprachaufnahme wird in diesem Browser nicht unterstützt'); return; }
-    if (active && active.taId === taId) { stop(); return; }
+  function toggle(id, lang) {
+    if (!SR) { toast('Sprachaufnahme nicht verfügbar in diesem Browser'); return; }
+    if (cur && cur.id === id) { stop(); return; }
     stop();
 
     const rec = new SR();
@@ -433,172 +461,171 @@ const Speech = (() => {
     rec.continuous = true;
     rec.interimResults = true;
 
-    rec.onresult = (e) => {
-      const ta  = document.getElementById(taId);
-      const pre = document.getElementById('pre-' + taId);
+    rec.onresult = e => {
+      const ta  = document.getElementById(id);
+      const pre = document.getElementById('pre-' + id);
       let interim = '';
       for (let i = e.resultIndex; i < e.results.length; i++) {
         if (e.results[i].isFinal) {
           const t = e.results[i][0].transcript.trim();
-          if (ta) {
-            ta.value += (ta.value.trim() ? ' ' : '') + t;
-            ta.dispatchEvent(new Event('input'));
-          }
+          if (ta) { ta.value += (ta.value.trim() ? ' ' : '') + t; ta.dispatchEvent(new Event('input')); }
           interim = '';
-        } else {
-          interim += e.results[i][0].transcript;
-        }
+        } else { interim += e.results[i][0].transcript; }
       }
       if (pre) pre.textContent = interim ? '🎙 ' + interim : '';
     };
 
-    rec.onerror = (e) => {
-      if (e.error !== 'aborted') showToast('Mikrofon: ' + e.error);
-      stop();
-    };
-    rec.onend = () => { if (active && active.taId === taId) stop(); };
+    rec.onerror = e => { if (e.error !== 'aborted') toast('Mikrofon: ' + e.error); stop(); };
+    rec.onend   = () => { if (cur && cur.id === id) stop(); };
 
-    try {
-      rec.start();
-    } catch(e) {
-      showToast('Mikrofon konnte nicht gestartet werden');
-      return;
-    }
+    try { rec.start(); } catch { toast('Mikrofon konnte nicht gestartet werden'); return; }
 
-    active = { rec, taId };
-    const btn = document.getElementById('mic-' + taId);
-    const ta  = document.getElementById(taId);
-    if (btn) { btn.classList.add('rec'); btn.title = 'Aufnahme stoppen'; }
-    if (ta)  ta.classList.add('mic-on');
+    cur = { rec, id };
+    const btn = document.getElementById('mic-' + id);
+    const ta  = document.getElementById(id);
+    if (btn) { btn.classList.add('rec'); btn.querySelector('.mic-lbl').textContent = 'Stopp'; }
+    if (ta)  ta.classList.add('mic-active');
   }
 
-  return { isSupported, toggle, stop };
+  return { ok, toggle, stop };
 })();
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  LOCALSTORAGE
-// ──────────────────────────────────────────────────────
-function lsKey(rk) { return 'beyonity-interview-' + rk; }
+// ═══════════════════════════════════════════════════════
+function lsKey(rk) { return 'bey-interview-' + rk; }
 
-function collectData(rk) {
+function collect(rk) {
   const r = REGIONS[rk];
   return {
     region:      rk,
     region_name: r.name,
     interviewer: r.who,
+    role:        r.role,
     date:        new Date().toISOString().slice(0, 10),
     exported_at: new Date().toISOString(),
-    questions:   r.questions.map((q, i) => ({
-      index:    i + 1,
-      question: q.q,
-      answer:   document.getElementById(rk + '-q' + (i+1))?.value.trim() || '',
-      rating:   qRatings[rk + '-q' + (i+1)] || 0
-    }))
+    questions:   r.qs.map((q, i) => {
+      const id = rk + '-q' + (i + 1);
+      return {
+        id,
+        question: q.q,
+        answer:   document.getElementById(id)?.value.trim() || '',
+        rating:   state.ratings[id] || 0,
+        phase:    state.phases[id] || q.phase
+      };
+    })
   };
 }
 
-function saveRegion(rk) {
-  try {
-    localStorage.setItem(lsKey(rk), JSON.stringify(collectData(rk)));
-    flashSaved();
-  } catch(e) {}
+function save(rk) {
+  try { localStorage.setItem(lsKey(rk), JSON.stringify(collect(rk))); flashSave(); } catch {}
 }
 
-function loadRegion(rk) {
+function load(rk) {
   try {
     const raw = localStorage.getItem(lsKey(rk));
     if (!raw) return;
     const data = JSON.parse(raw);
     data.questions?.forEach((item, i) => {
-      const ta = document.getElementById(rk + '-q' + (i+1));
+      const id = rk + '-q' + (i + 1);
+      const ta = document.getElementById(id);
       if (ta && item.answer) ta.value = item.answer;
-      if (item.rating > 0) {
-        qRatings[rk + '-q' + (i+1)] = item.rating;
-        renderStars(rk, i+1, item.rating);
-      }
+      if (item.phase)  { state.phases[id]  = item.phase;  setPhase(rk, i + 1, item.phase, false); }
+      if (item.rating) { state.ratings[id] = item.rating; renderStars(id, item.rating); }
     });
-    updateProgress(rk);
-  } catch(e) {}
+    countProgress(rk);
+  } catch {}
 }
 
-function scheduleSave(rk) {
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => saveRegion(rk), 500);
+function schedSave(rk) {
+  clearTimeout(saveDebounce);
+  saveDebounce = setTimeout(() => save(rk), 500);
 }
 
-function flashSaved() {
-  const ind = document.getElementById('save-ind');
-  const lbl = document.getElementById('save-lbl');
-  if (!ind) return;
-  ind.classList.add('saved');
-  if (lbl) lbl.textContent = 'Gespeichert ✓';
-  setTimeout(() => { ind.classList.remove('saved'); if (lbl) lbl.textContent = 'Autospeichern'; }, 2000);
+function flashSave() {
+  const el = document.getElementById('autosave');
+  const lb = document.getElementById('autosave-lbl');
+  if (!el) return;
+  el.classList.add('ok');
+  if (lb) lb.textContent = 'Gespeichert ✓';
+  setTimeout(() => { el.classList.remove('ok'); if (lb) lb.textContent = 'Autospeichern'; }, 2000);
 }
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  RENDER
-// ──────────────────────────────────────────────────────
-const MIC_ICO = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`;
+// ═══════════════════════════════════════════════════════
+const MIC_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`;
 
-function renderTabs() {
-  document.getElementById('tab-nav').innerHTML =
+function buildTabs() {
+  document.getElementById('tabs').innerHTML =
     Object.entries(REGIONS).map(([k, r], i) => `
-      <button class="tab-btn${i===0?' active':''}" id="tab-${k}" onclick="switchTab('${k}')">
-        ${r.label} <span class="tab-prog" id="prog-${k}">0/9</span>
+      <button class="tab${i === 0 ? ' on' : ''}" id="tab-${k}" onclick="switchTab('${k}')">
+        ${r.label} <span class="tab-count" id="cnt-${k}">0/9</span>
       </button>
     `).join('');
 }
 
-function renderQuestion(rk, idx, q) {
-  const id   = rk + '-q' + (idx+1);
+function buildQuestion(rk, idx, q) {
+  const id   = rk + '-q' + (idx + 1);
   const lang = REGIONS[rk].lang;
-  const hint = lang.startsWith('en') ? 'Speak your answer' : lang.startsWith('es') ? 'Habla tu respuesta' : 'Antwort einsprechen';
-  const micDis = Speech.isSupported() ? '' : 'disabled';
+  const hint = lang.startsWith('en') ? 'Speak your\nanswer'
+             : lang.startsWith('es') ? 'Habla tu\nrespuesta'
+             : 'Antwort\neinsprechen';
+  const micDis = Mic.ok() ? '' : 'disabled';
 
   const chips = q.chips.map(c =>
     `<button class="chip" onclick="addChip('${id}','${c.replace(/'/g,"\\'")}')">+ ${c}</button>`
   ).join('');
 
+  const phaseBtns = PHASES.map(p =>
+    `<button class="pb${p === q.phase ? ' on' : ''}" id="pb-${id}-${p}"
+      onclick="setPhase('${rk}',${idx+1},'${p}',true)">${p}</button>`
+  ).join('');
+
   const stars = [1,2,3,4,5].map(v =>
-    `<button class="qstar" id="qs-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
+    `<button class="qs-star" id="st-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
   ).join('');
 
   return `
     <div class="q-card">
-      <div class="q-top">
-        <div class="q-num">${idx+1}</div>
-        <div class="q-text">${q.q}</div>
+      <div class="q-head">
+        <div class="q-n">${idx + 1}</div>
+        <div class="q-q">${q.q}</div>
       </div>
-      <div class="ta-wrap">
-        <textarea class="q-ta" id="${id}" placeholder="${hint}…"
-          oninput="scheduleSave('${rk}'); updateProgress('${rk}')"></textarea>
+      <div class="input-row">
+        <textarea class="q-ta" id="${id}" placeholder="${lang.startsWith('en') ? 'Type or speak your answer…' : lang.startsWith('es') ? 'Escribe o habla tu respuesta…' : 'Antwort eingeben oder einsprechen…'}"
+          oninput="schedSave('${rk}'); countProgress('${rk}')"></textarea>
         <button class="mic-btn" id="mic-${id}" ${micDis}
-          title="${hint}" onclick="Speech.toggle('${id}','${lang}')">${MIC_ICO}</button>
+          onclick="Mic.toggle('${id}','${lang}')">
+          <span class="mic-ico">${MIC_SVG}</span>
+          <span class="mic-lbl">${hint}</span>
+        </button>
       </div>
-      <div class="voice-preview" id="pre-${id}"></div>
+      <div class="voice-pre" id="pre-${id}"></div>
+      <div class="chips">${chips}</div>
       <div class="q-footer">
-        <div class="chips">${chips}</div>
-        <div class="q-rating">${stars}</div>
+        <div class="phase-btns">${phaseBtns}</div>
+        <div class="q-stars">${stars}</div>
       </div>
     </div>
   `;
 }
 
-function renderPanels() {
-  document.getElementById('panels-wrap').innerHTML =
+function buildPanels() {
+  document.getElementById('panels').innerHTML =
     Object.entries(REGIONS).map(([k, r], i) => `
-      <div class="panel${i===0?' active':''}" id="panel-${k}">
-        <div class="main">
+      <div class="panel${i === 0 ? ' on' : ''}" id="panel-${k}">
+        <div class="wrap">
           <div class="greeting">
-            <div class="region-pill">${r.label}</div>
-            <h1 class="greeting-h">${r.greeting}</h1>
-            <p class="greeting-p">${r.intro}</p>
+            <div class="region-tag">${r.label}</div>
+            <h1>${r.greeting}</h1>
+            <p>${r.intro}</p>
           </div>
-          <div class="qs-list">
-            ${r.questions.map((q, idx) => renderQuestion(k, idx, q)).join('')}
+          <div class="qs">
+            ${r.qs.map((q, idx) => buildQuestion(k, idx, q)).join('')}
           </div>
-          <div class="finish-area">
-            <p class="finish-hint">Antworten sind lokal gespeichert. "Abschliessen" zeigt die Zusammenfassung und lädt die JSON-Datei herunter.</p>
+          <div class="finish-wrap">
+            <p class="finish-hint">Antworten werden automatisch gespeichert. Klick auf "Abschliessen" für die Zusammenfassung und den JSON-Export.</p>
             <button class="finish-btn" onclick="finish('${k}')">Interview abschliessen →</button>
           </div>
         </div>
@@ -606,162 +633,163 @@ function renderPanels() {
     `).join('');
 }
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  INTERACTIONS
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 function switchTab(k) {
-  Speech.stop();
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById('tab-' + k).classList.add('active');
-  document.getElementById('panel-' + k).classList.add('active');
+  Mic.stop();
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  document.getElementById('tab-' + k).classList.add('on');
+  document.getElementById('panel-' + k).classList.add('on');
 }
 
-function addChip(taId, text) {
-  const ta = document.getElementById(taId);
+function addChip(id, text) {
+  const ta = document.getElementById(id);
   if (!ta) return;
   ta.value = ta.value.trim() ? ta.value.trim() + '\n· ' + text : '· ' + text;
   ta.dispatchEvent(new Event('input'));
   ta.focus();
 }
 
-function setRating(rk, qIdx, v) {
-  const key = rk + '-q' + qIdx;
-  qRatings[key] = v;
-  renderStars(rk, qIdx, v);
-  scheduleSave(rk);
+function setPhase(rk, qIdx, phase, doSave) {
+  const id = rk + '-q' + qIdx;
+  state.phases[id] = phase;
+  PHASES.forEach(p => {
+    const btn = document.getElementById('pb-' + id + '-' + p);
+    if (btn) btn.classList.toggle('on', p === phase);
+  });
+  if (doSave) schedSave(rk);
 }
 
-function renderStars(rk, qIdx, v) {
-  const key = rk + '-q' + qIdx;
+function setRating(rk, qIdx, v) {
+  const id = rk + '-q' + qIdx;
+  state.ratings[id] = v;
+  renderStars(id, v);
+  schedSave(rk);
+}
+
+function renderStars(id, v) {
   for (let i = 1; i <= 5; i++) {
-    const s = document.getElementById('qs-' + key + '-' + i);
+    const s = document.getElementById('st-' + id + '-' + i);
     if (s) s.classList.toggle('on', i <= v);
   }
 }
 
-function updateProgress(rk) {
-  const r = REGIONS[rk];
-  const n = r.questions.filter((_, i) => {
-    const el = document.getElementById(rk + '-q' + (i+1));
+function countProgress(rk) {
+  const n = REGIONS[rk].qs.filter((_, i) => {
+    const el = document.getElementById(rk + '-q' + (i + 1));
     return el && el.value.trim().length > 0;
   }).length;
-  const el = document.getElementById('prog-' + rk);
+  const el = document.getElementById('cnt-' + rk);
   if (el) el.textContent = n + '/9';
 }
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  DOWNLOAD JSON
-// ──────────────────────────────────────────────────────
-function downloadJSON(rk) {
-  const data     = collectData(rk);
+// ═══════════════════════════════════════════════════════
+function dlJSON(rk) {
+  const data     = collect(rk);
   const json     = JSON.stringify(data, null, 2);
   const filename = 'interview-' + rk + '-' + data.date + '.json';
-  const blob     = new Blob([json], { type: 'application/json' });
-  const url      = URL.createObjectURL(blob);
-  const a        = Object.assign(document.createElement('a'), { href: url, download: filename });
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-  showToast('↓ ' + filename);
+  const a = Object.assign(document.createElement('a'), {
+    href:     URL.createObjectURL(new Blob([json], { type: 'application/json' })),
+    download: filename
+  });
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('↓ ' + filename);
 }
 
-// ──────────────────────────────────────────────────────
-//  FINISH → CONFIRMATION
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
+//  FINISH → CONFIRM PAGE
+// ═══════════════════════════════════════════════════════
 function finish(rk) {
-  Speech.stop();
-  saveRegion(rk);
-
+  Mic.stop();
+  save(rk);
   const r    = REGIONS[rk];
-  const data = collectData(rk);
+  const data = collect(rk);
 
-  const qaRows = data.questions.map(item => {
+  const rows = data.questions.map(item => {
     const stars = item.rating > 0
       ? '★'.repeat(item.rating) + '☆'.repeat(5 - item.rating)
       : '—';
     return `
-      <div class="sum-qa">
-        <div class="sum-qrow">
-          <div class="sum-qn">Frage ${item.index}</div>
-          <div class="sum-stars">${stars}</div>
+      <div class="sum-row">
+        <div class="sum-meta-row">
+          <div class="sum-qn">Frage ${item.id.split('-q')[1]}</div>
+          <span class="sum-phase-tag">${item.phase}</span>
+          <div class="sum-stars-val">${stars}</div>
         </div>
-        <div class="sum-qt">${item.question}</div>
-        <div class="sum-a${!item.answer ? ' empty' : ''}">${
+        <div class="sum-q">${item.question}</div>
+        <div class="sum-a${!item.answer ? ' none' : ''}">${
           item.answer ? item.answer.replace(/\n/g, '<br>') : 'Keine Antwort'
         }</div>
       </div>
     `;
   }).join('');
 
-  document.getElementById('confirm-view').innerHTML = `
+  document.getElementById('confirm').innerHTML = `
     <div class="confirm-top">
       <span class="confirm-icon">✅</span>
-      <h2 class="confirm-h">Danke, <em>${r.who}</em>!</h2>
-      <p class="confirm-p">Vollständige Zusammenfassung. JSON wird automatisch heruntergeladen — speichere die Datei in <code style="font-size:11px;opacity:.6">interviews/data/</code>.</p>
+      <h2>Danke, <em>${r.who}</em>!</h2>
+      <p>Vollständige Zusammenfassung. Die JSON-Datei wird automatisch heruntergeladen.</p>
     </div>
-    <div class="sum-block">
-      <div class="sum-hdr">
-        <span>${r.label} · ${r.who}</span>
-        <span class="sum-meta">${data.date}</span>
+    <div class="sum-card">
+      <div class="sum-head">
+        <span>${r.label} · ${r.who} · ${r.role}</span>
+        <span class="sum-date">${data.date}</span>
       </div>
-      ${qaRows}
+      ${rows}
     </div>
-    <div class="confirm-actions">
-      <button class="btn-yellow" onclick="downloadJSON('${rk}')">Als JSON exportieren ↓</button>
-      <button class="btn-ghost" onclick="resetRegion('${rk}')">← Neues Interview starten</button>
+    <div class="confirm-btns">
+      <button class="btn-y" onclick="dlJSON('${rk}')">Als JSON exportieren ↓</button>
+      <button class="btn-g" onclick="reset('${rk}')">← Neues Interview</button>
     </div>
   `;
 
-  document.getElementById('interview-view').style.display = 'none';
-  document.getElementById('tab-nav').style.display = 'none';
-  document.getElementById('confirm-view').classList.add('show');
+  document.getElementById('main').style.display = 'none';
+  document.getElementById('tabs').style.display = 'none';
+  document.getElementById('confirm').classList.add('on');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  // Auto-download
-  setTimeout(() => downloadJSON(rk), 300);
+  setTimeout(() => dlJSON(rk), 350);
 }
 
-function resetRegion(rk) {
-  if (!confirm('Alle Antworten für diese Region löschen?')) return;
+function reset(rk) {
+  if (!confirm('Alle Antworten für ' + REGIONS[rk].name + ' löschen?')) return;
   localStorage.removeItem(lsKey(rk));
-  Object.keys(qRatings).forEach(k => { if (k.startsWith(rk + '-')) delete qRatings[k]; });
-
+  Object.keys(state.phases).forEach(k  => { if (k.startsWith(rk + '-')) delete state.phases[k]; });
+  Object.keys(state.ratings).forEach(k => { if (k.startsWith(rk + '-')) delete state.ratings[k]; });
   document.querySelectorAll('#panel-' + rk + ' .q-ta').forEach(el => { el.value = ''; });
-  document.querySelectorAll('#panel-' + rk + ' .qstar').forEach(s => s.classList.remove('on'));
-  updateProgress(rk);
+  document.querySelectorAll('#panel-' + rk + ' .qs-star').forEach(s => s.classList.remove('on'));
+  REGIONS[rk].qs.forEach((q, i) => setPhase(rk, i + 1, q.phase, false));
+  countProgress(rk);
 
-  document.getElementById('confirm-view').classList.remove('show');
-  document.getElementById('confirm-view').innerHTML = '';
-  document.getElementById('interview-view').style.display = '';
-  document.getElementById('tab-nav').style.display = '';
+  document.getElementById('confirm').classList.remove('on');
+  document.getElementById('confirm').innerHTML = '';
+  document.getElementById('main').style.display = '';
+  document.getElementById('tabs').style.display = '';
   switchTab(rk);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  TOAST
-// ──────────────────────────────────────────────────────
-let toastTimer = null;
-function showToast(msg) {
+// ═══════════════════════════════════════════════════════
+let _tt = null;
+function toast(msg) {
   const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(_tt); _tt = setTimeout(() => el.classList.remove('on'), 3200);
 }
 
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 //  BOOT
-// ──────────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
-  renderTabs();
-  renderPanels();
-  Object.keys(REGIONS).forEach(rk => loadRegion(rk));
-  if (!Speech.isSupported()) {
-    document.querySelectorAll('.mic-btn').forEach(b => { b.disabled = true; });
-  }
+  buildTabs();
+  buildPanels();
+  Object.keys(REGIONS).forEach(rk => load(rk));
+  if (!Mic.ok()) document.querySelectorAll('.mic-btn').forEach(b => { b.disabled = true; });
 });
 </script>
 </body>
