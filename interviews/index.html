@@ -9,11 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --blue:      #3c57e1;
-      --yellow:    #f8ff76;
-      --dark:      #001a64;
-      --dark2:     #021470;
-      --lightblue: #d8ddf9;
+      --blue:   #3c57e1;
+      --yellow: #f8ff76;
+      --dark:   #001a64;
+      --white:  #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,7 +20,7 @@
     body {
       font-family: 'Sora', sans-serif;
       background: var(--dark);
-      color: #fff;
+      color: var(--white);
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
@@ -29,17 +28,25 @@
     /* ── HEADER ── */
     .hdr {
       position: sticky; top: 0; z-index: 200;
-      background: rgba(0,26,100,.95);
+      background: rgba(0,26,100,.96);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,.07);
-      height: 60px; padding: 0 52px;
+      height: 58px; padding: 0 52px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .hdr-logo { font-size: 18px; font-weight: 800; letter-spacing: -.5px; }
+    .hdr-logo { font-size: 17px; font-weight: 800; letter-spacing: -.4px; }
     .hdr-logo em { color: var(--yellow); font-style: normal; }
-    .hdr-meta { font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,.25); }
+    .hdr-right { display: flex; align-items: center; gap: 16px; }
+    .save-indicator {
+      font-size: 10px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
+      color: rgba(255,255,255,.22); transition: color .3s;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .save-indicator.saved { color: rgba(120,255,150,.6); }
+    .save-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; display: inline-block; }
+    .hdr-meta { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: rgba(255,255,255,.2); }
 
-    /* ── TAB NAV ── */
+    /* ── TABS ── */
     .tab-nav {
       background: rgba(0,20,90,.55);
       border-bottom: 1px solid rgba(255,255,255,.07);
@@ -49,21 +56,20 @@
     .tab-nav::-webkit-scrollbar { display: none; }
 
     .tab-btn {
-      display: flex; align-items: center; gap: 9px;
+      display: flex; align-items: center; gap: 8px;
       background: none; border: none;
       border-bottom: 2px solid transparent;
-      color: rgba(255,255,255,.38);
+      color: rgba(255,255,255,.36);
       font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
       padding: 15px 22px; cursor: pointer; white-space: nowrap;
       transition: color .18s, border-color .18s;
     }
-    .tab-btn:hover { color: rgba(255,255,255,.7); }
+    .tab-btn:hover { color: rgba(255,255,255,.68); }
     .tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
 
     .tab-prog {
       font-size: 10px; font-weight: 700;
-      background: rgba(255,255,255,.08);
-      color: rgba(255,255,255,.38);
+      background: rgba(255,255,255,.08); color: rgba(255,255,255,.36);
       padding: 2px 8px; border-radius: 20px;
       transition: background .18s, color .18s;
     }
@@ -73,56 +79,20 @@
     .panel { display: none; }
     .panel.active { display: block; }
 
-    .main {
-      max-width: 800px; margin: 0 auto;
-      padding: 52px 52px 96px;
-    }
+    .main { max-width: 800px; margin: 0 auto; padding: 52px 52px 96px; }
 
     /* GREETING */
     .greeting { margin-bottom: 48px; }
     .region-pill {
       display: inline-flex; align-items: center;
-      background: rgba(60,87,225,.18); border: 1px solid rgba(60,87,225,.38);
+      background: rgba(60,87,225,.18); border: 1px solid rgba(60,87,225,.36);
       color: rgba(255,255,255,.55); font-size: 10px; font-weight: 700;
       letter-spacing: 1.4px; text-transform: uppercase;
       padding: 5px 13px; border-radius: 20px; margin-bottom: 20px;
     }
-    .greeting-h {
-      font-size: 44px; font-weight: 800; letter-spacing: -1.8px;
-      line-height: 1.04; margin-bottom: 15px;
-    }
+    .greeting-h { font-size: 44px; font-weight: 800; letter-spacing: -1.8px; line-height: 1.04; margin-bottom: 14px; }
     .greeting-h em { color: var(--yellow); font-style: normal; }
-    .greeting-p {
-      font-size: 14px; font-weight: 300; color: rgba(255,255,255,.4);
-      line-height: 1.75; max-width: 520px;
-    }
-
-    /* PHASE RATING */
-    .rating-block {
-      background: rgba(255,255,255,.03);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 20px; padding: 28px 32px; margin-bottom: 48px;
-    }
-    .block-lbl {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 22px;
-    }
-    .phases-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-    .phase-col { text-align: center; padding: 0 8px; }
-    .phase-col + .phase-col { border-left: 1px solid rgba(255,255,255,.06); }
-    .phase-lbl {
-      font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
-      text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 10px;
-    }
-    .stars { display: flex; justify-content: center; gap: 2px; }
-    .star-btn {
-      background: none; border: none; cursor: pointer;
-      font-size: 16px; line-height: 1; padding: 3px;
-      color: rgba(255,255,255,.13);
-      transition: color .12s, transform .12s;
-    }
-    .star-btn:hover { color: rgba(248,255,118,.5); transform: scale(1.22); }
-    .star-btn.on { color: var(--yellow); transform: scale(1.06); }
+    .greeting-p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.75; max-width: 520px; }
 
     /* QUESTIONS */
     .qs-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 44px; }
@@ -133,10 +103,7 @@
       border-radius: 20px; padding: 26px 26px 20px;
       transition: border-color .22s, background .22s;
     }
-    .q-card:focus-within {
-      border-color: rgba(60,87,225,.45);
-      background: rgba(60,87,225,.04);
-    }
+    .q-card:focus-within { border-color: rgba(60,87,225,.42); background: rgba(60,87,225,.04); }
 
     .q-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
     .q-num {
@@ -147,91 +114,139 @@
     }
     .q-text { font-size: 14.5px; font-weight: 600; line-height: 1.52; color: rgba(255,255,255,.88); }
 
+    /* TEXTAREA + MIC */
+    .ta-wrap { position: relative; margin-bottom: 6px; }
     .q-ta {
-      display: block; width: 100%; min-height: 84px;
+      display: block; width: 100%; min-height: 88px;
       background: rgba(0,0,0,.18); border: 1px solid rgba(255,255,255,.08);
       border-radius: 10px;
       color: rgba(255,255,255,.84);
       font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.72;
-      padding: 12px 14px; resize: vertical; outline: none;
-      transition: border-color .2s, background .2s; margin-bottom: 13px;
+      padding: 12px 44px 12px 14px; resize: vertical; outline: none;
+      transition: border-color .2s, background .2s;
     }
-    .q-ta::placeholder { color: rgba(255,255,255,.15); }
-    .q-ta:focus { border-color: rgba(60,87,225,.5); background: rgba(0,0,0,.25); }
+    .q-ta::placeholder { color: rgba(255,255,255,.14); }
+    .q-ta:focus { border-color: rgba(60,87,225,.48); background: rgba(0,0,0,.24); }
+    .q-ta.mic-on { border-color: rgba(255,80,80,.45); background: rgba(40,0,0,.18); }
 
-    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .mic-btn {
+      position: absolute; top: 9px; right: 9px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.38); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .14s, color .14s, border-color .14s;
+    }
+    .mic-btn:hover { background: rgba(60,87,225,.28); border-color: rgba(60,87,225,.5); color: rgba(255,255,255,.78); }
+    .mic-btn.rec {
+      background: rgba(255,50,50,.18); border-color: rgba(255,60,60,.5); color: #ff6060;
+      animation: mic-pulse 1.2s ease-in-out infinite;
+    }
+    .mic-btn:disabled { opacity: .22; cursor: default; pointer-events: none; }
+    @keyframes mic-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,60,60,.35); }
+      50%       { box-shadow: 0 0 0 7px rgba(255,60,60,0); }
+    }
+
+    .voice-preview {
+      font-size: 11.5px; font-weight: 300; color: rgba(248,255,118,.48);
+      min-height: 16px; margin-bottom: 2px; font-style: italic; padding-left: 2px;
+    }
+
+    /* CHIPS + RATING */
+    .q-footer { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; min-width: 0; }
     .chip {
       background: rgba(60,87,225,.1); border: 1px solid rgba(60,87,225,.22);
-      color: rgba(255,255,255,.46);
-      font-family: 'Sora', sans-serif; font-size: 11.5px; font-weight: 500;
-      padding: 5px 11px; border-radius: 20px; cursor: pointer;
-      transition: background .14s, border-color .14s, color .14s;
+      color: rgba(255,255,255,.44);
+      font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 500;
+      padding: 4px 10px; border-radius: 20px; cursor: pointer; white-space: nowrap;
+      transition: background .13s, border-color .13s, color .13s;
     }
-    .chip:hover { background: rgba(60,87,225,.28); border-color: rgba(60,87,225,.5); color: rgba(255,255,255,.84); }
+    .chip:hover { background: rgba(60,87,225,.27); border-color: rgba(60,87,225,.5); color: rgba(255,255,255,.82); }
 
-    /* SUBMIT */
-    .submit-area {
+    .q-rating { display: flex; gap: 2px; flex-shrink: 0; padding-top: 4px; }
+    .qstar {
+      background: none; border: none; cursor: pointer;
+      font-size: 15px; line-height: 1; padding: 2px;
+      color: rgba(255,255,255,.12); transition: color .12s, transform .1s;
+    }
+    .qstar:hover { color: rgba(248,255,118,.5); transform: scale(1.22); }
+    .qstar.on { color: var(--yellow); }
+
+    /* FINISH */
+    .finish-area {
       text-align: center;
-      background: rgba(248,255,118,.04);
-      border: 1px solid rgba(248,255,118,.14);
+      background: rgba(248,255,118,.04); border: 1px solid rgba(248,255,118,.13);
       border-radius: 20px; padding: 36px;
     }
-    .submit-hint {
-      font-size: 12px; font-weight: 300; color: rgba(255,255,255,.27);
-      margin-bottom: 20px; letter-spacing: .2px;
-    }
-    .submit-btn {
+    .finish-hint { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.26); margin-bottom: 20px; }
+    .finish-btn {
       background: var(--yellow); color: var(--dark);
       border: none; font-family: 'Sora', sans-serif;
       font-size: 14px; font-weight: 800; letter-spacing: .3px;
       padding: 15px 56px; border-radius: 100px; cursor: pointer;
       transition: background .14s, transform .14s, box-shadow .14s;
     }
-    .submit-btn:hover {
-      background: #ecf160; transform: translateY(-2px);
-      box-shadow: 0 10px 32px rgba(248,255,118,.2);
-    }
-    .submit-btn:active { transform: translateY(0); }
-    .submit-btn:disabled { opacity: .4; cursor: default; transform: none; box-shadow: none; }
+    .finish-btn:hover { background: #ecf160; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(248,255,118,.2); }
+    .finish-btn:active { transform: translateY(0); }
 
     /* ── CONFIRMATION ── */
     #confirm-view { display: none; max-width: 800px; margin: 0 auto; padding: 68px 52px 96px; }
     #confirm-view.show { display: block; }
 
-    .confirm-top { text-align: center; margin-bottom: 56px; }
-    .confirm-icon { font-size: 52px; display: block; margin-bottom: 20px; }
-    .confirm-h { font-size: 38px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.08; margin-bottom: 12px; }
+    .confirm-top { text-align: center; margin-bottom: 52px; }
+    .confirm-icon { font-size: 48px; display: block; margin-bottom: 18px; }
+    .confirm-h { font-size: 36px; font-weight: 800; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 12px; }
     .confirm-h em { color: var(--yellow); font-style: normal; }
     .confirm-p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.38); }
 
     .sum-block { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 20px; overflow: hidden; margin-bottom: 14px; }
-    .sum-hdr { background: var(--blue); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 700; }
-    .sum-ratings { font-size: 11px; font-weight: 400; opacity: .72; }
+    .sum-hdr { background: var(--blue); padding: 14px 24px; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; }
+    .sum-meta { font-size: 11px; font-weight: 400; opacity: .72; }
     .sum-qa { padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,.05); }
     .sum-qa:last-child { border-bottom: none; }
-    .sum-qn { font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,255,255,.32); margin-bottom: 3px; }
-    .sum-qt { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.48); margin-bottom: 6px; }
+    .sum-qrow { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+    .sum-qn { font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,255,255,.3); white-space: nowrap; }
+    .sum-stars { font-size: 11px; color: var(--yellow); white-space: nowrap; opacity: .85; }
+    .sum-qt { font-size: 12px; font-weight: 400; color: rgba(255,255,255,.44); margin-bottom: 6px; line-height: 1.5; }
     .sum-a { font-size: 13.5px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,.8); }
     .sum-a.empty { color: rgba(255,255,255,.2); font-style: italic; }
 
-    .confirm-footer { text-align: center; margin-top: 44px; }
+    .confirm-actions { display: flex; gap: 12px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+    .btn-yellow {
+      background: var(--yellow); color: var(--dark);
+      border: none; font-family: 'Sora', sans-serif;
+      font-size: 13px; font-weight: 800; padding: 13px 28px; border-radius: 100px; cursor: pointer;
+      transition: background .14s, transform .14s;
+    }
+    .btn-yellow:hover { background: #ecf160; transform: translateY(-1px); }
     .btn-ghost {
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.62);
+      color: rgba(255,255,255,.6);
       font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
-      padding: 13px 30px; border-radius: 100px; cursor: pointer;
+      padding: 13px 28px; border-radius: 100px; cursor: pointer;
       transition: background .18s, color .18s;
     }
     .btn-ghost:hover { background: rgba(255,255,255,.1); color: #fff; }
 
-    /* ── RESPONSIVE ── */
+    /* TOAST */
+    #toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(72px);
+      background: rgba(20,20,50,.96); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.78); font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 500;
+      padding: 10px 20px; border-radius: 100px;
+      transition: transform .28s ease, opacity .28s ease; opacity: 0; pointer-events: none; z-index: 999;
+      white-space: nowrap;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* RESPONSIVE */
     @media (max-width: 660px) {
       .hdr, .tab-nav { padding: 0 20px; }
       .main, #confirm-view { padding: 36px 20px 64px; }
-      .greeting-h { font-size: 30px; }
-      .phases-grid { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
-      .phase-col + .phase-col { border-left: none; }
-      .phase-col:nth-child(3), .phase-col:nth-child(4) { border-top: 1px solid rgba(255,255,255,.06); padding-top: 16px; }
+      .greeting-h { font-size: 30px; letter-spacing: -1px; }
+      .q-footer { flex-direction: column; }
     }
   </style>
 </head>
@@ -239,7 +254,13 @@
 
 <header class="hdr">
   <div class="hdr-logo">beyonity<em>.</em></div>
-  <div class="hdr-meta">Regional Sales Interview · 2026</div>
+  <div class="hdr-right">
+    <div class="save-indicator" id="save-ind">
+      <span class="save-dot"></span>
+      <span id="save-lbl">Autospeichern</span>
+    </div>
+    <div class="hdr-meta">Sales Interview</div>
+  </div>
 </header>
 
 <nav class="tab-nav" id="tab-nav"></nav>
@@ -249,28 +270,24 @@
 </div>
 
 <div id="confirm-view"></div>
+<div id="toast"></div>
 
 <script>
-// ─────────────────────────────────────
-//  DATA
-// ─────────────────────────────────────
-const FORMSPREE = 'https://formspree.io/f/xkgjpqvb';
-
-const PHASES = ['Development', 'Pricing', 'Sales', 'Portfolio'];
-
+// ──────────────────────────────────────────────────────
+//  REGION DATA
+// ──────────────────────────────────────────────────────
 const REGIONS = {
   ch: {
-    label:    '🇨🇭 Schweiz',
-    name:     'Schweiz',
-    who:      'Fabian & Dave',
+    label: '🇨🇭 Schweiz', name: 'Schweiz', who: 'Fabian & Dave',
     greeting: 'Hallo <em>Fabian & Dave</em> 👋',
-    intro:    'Dieses Interview hilft uns, die Beyonity-Strategie für den Schweizer Markt weiterzuentwickeln. Eure Antworten fließen direkt in die Produkt- und Vertriebsplanung ein.',
+    intro: 'Eure Antworten werden automatisch im Browser gespeichert. Nutzt das Mikrofon für schnelle Spracheingabe — der Text wird direkt ins Feld transkribiert.',
+    lang: 'de-CH',
     questions: [
       { q: 'Wie ist der aktuelle Marktmoment in der Schweiz? Eher Neubauprojekte in der Development-Phase oder Bestandspflege und Portfolio-Management?',
         chips: ['Neubauvolumen steigt', 'Stagnierender Markt', 'Portfolio dominiert', 'Luxury-Segment aktiv'] },
       { q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle Eigentümer, C: Vermarkter) haben im CH-Markt das größte Wachstumspotenzial?',
         chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Alle gleichwertig'] },
-      { q: 'Was sind die konkreten Pain Points eurer CH-Kunden in der Development-Phase (Projektkonzeption, Ausstattungsdefinition, Einheitenplanung)?',
+      { q: 'Was sind die konkreten Pain Points eurer CH-Kunden in der Development-Phase — Projektkonzeption, Ausstattungsdefinition, Einheitenplanung?',
         chips: ['Fehlende 3D-Visualisierung', 'Intransparenz Einheiten', 'Lange Abstimmungszyklen', 'Fehlende Datenbasis'] },
       { q: 'Wie reagieren CH-Kunden auf das Beyonity Pricing-Modell? Welche Einwände tauchen am häufigsten auf?',
         chips: ['Zu teuer', 'Unklarer ROI', 'Konkurrenz günstiger', 'Modell zu komplex'] },
@@ -288,17 +305,16 @@ const REGIONS = {
   },
 
   deat: {
-    label:    '🇩🇪🇦🇹 DE/AT',
-    name:     'DE/AT',
-    who:      'Heike',
+    label: '🇩🇪🇦🇹 DE/AT', name: 'DE/AT', who: 'Heike',
     greeting: 'Hallo <em>Heike</em> 👋',
-    intro:    'Dieses Interview hilft uns, die Beyonity-Strategie für den deutschen und österreichischen Markt weiterzuentwickeln. Deine Antworten fließen direkt in die Produkt- und Vertriebsplanung ein.',
+    intro: 'Deine Antworten werden automatisch im Browser gespeichert. Nutze das Mikrofon für schnelle Spracheingabe — der Text wird direkt ins Feld transkribiert.',
+    lang: 'de-DE',
     questions: [
       { q: 'Wie entwickelt sich der Immobilienmarkt in DE/AT aktuell — nach der Zinswende wieder Aufwind oder noch verhalten?',
         chips: ['Markt erholt sich', 'Nachfrage stagniert', 'Entwickler zurückhaltend', 'Institutionelle weiter aktiv'] },
       { q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle, C: Vermarkter, D: Kiban) treiben das Wachstum in DE/AT?',
         chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Segment D: Kiban'] },
-      { q: 'Was sind die größten Herausforderungen für DE/AT-Kunden in der Development-Phase (Produktdefinition, Konfiguration, Variantenplanung)?',
+      { q: 'Was sind die größten Herausforderungen für DE/AT-Kunden in der Development-Phase — Produktdefinition, Konfiguration, Variantenplanung?',
         chips: ['Baugenehmigungen verzögert', 'Finanzierungsengpässe', 'Fehlende Digitalisierung', 'Hohe Baukosten'] },
       { q: 'Wie ist die digitale Reife der Immobilienprojekte in DE/AT — bereit für 3D-Konfiguratoren und Realtime Touren?',
         chips: ['Digital-First vorhanden', 'Teils aufgeschlossen', 'Eher traditionell', 'Großprojekte schon digital'] },
@@ -316,11 +332,10 @@ const REGIONS = {
   },
 
   mena: {
-    label:    '🌍 MENA',
-    name:     'MENA',
-    who:      'Osama',
+    label: '🌍 MENA', name: 'MENA', who: 'Osama',
     greeting: 'Hello <em>Osama</em> 👋',
-    intro:    'This interview helps us shape the Beyonity strategy for the MENA market. Your answers feed directly into product and sales planning.',
+    intro: 'Your answers are auto-saved in the browser. Use the microphone button for quick voice input — speech is transcribed directly into the text field.',
+    lang: 'en-US',
     questions: [
       { q: 'Which markets within MENA have the highest Beyonity adoption potential right now?',
         chips: ['UAE (Dubai / AD)', 'Saudi Arabia (Vision 2030)', 'Egypt', 'Kuwait / Qatar'] },
@@ -332,7 +347,7 @@ const REGIONS = {
         chips: ['ROI-driven discussions', 'Budget approved top-down', 'Multi-year contracts preferred', 'High price sensitivity'] },
       { q: 'Which Beyonity products resonate most in MENA — Realtime Tour for showrooms, Navigator for agents?',
         chips: ['Realtime Tour (showrooms)', 'Navigator (agent portals)', 'Commercial Configurator', 'Data Dashboard'] },
-      { q: 'How do sales cycles in MENA differ from European markets in terms of timeline and decision-making hierarchy?',
+      { q: 'How do sales cycles in MENA differ from European markets in terms of timeline and decision-making?',
         chips: ['Faster C-suite decisions', 'Relationship-first, longer', 'Complex procurement', 'Project-by-project only'] },
       { q: 'What cultural or regulatory factors matter most when selling Beyonity in MENA?',
         chips: ['Arabic UI needed', 'Local data hosting required', 'Trust / relationship critical', 'Government mandates apply'] },
@@ -344,11 +359,10 @@ const REGIONS = {
   },
 
   iberia: {
-    label:    '🇪🇸 Iberia',
-    name:     'Iberia',
-    who:      'Alejandro',
+    label: '🇪🇸 Iberia', name: 'Iberia', who: 'Alejandro',
     greeting: 'Hola <em>Alejandro</em> 👋',
-    intro:    'Este cuestionario nos ayuda a desarrollar la estrategia de Beyonity para el mercado ibérico. Tus respuestas influirán directamente en la planificación de producto y ventas.',
+    intro: 'Tus respuestas se guardan automáticamente en el navegador. Usa el micrófono para responder de voz — el texto se transcribe directamente al campo.',
+    lang: 'es-ES',
     questions: [
       { q: '¿Cómo está evolucionando el mercado inmobiliario en España y Portugal — cuál es el sentimiento general?',
         chips: ['Mercado en alza', 'Demanda residencial fuerte', 'Sector lujo muy activo', 'Incertidumbre regulatoria'] },
@@ -372,41 +386,199 @@ const REGIONS = {
   }
 };
 
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
 //  STATE
-// ─────────────────────────────────────
-const ratings = { ch: [0,0,0,0], deat: [0,0,0,0], mena: [0,0,0,0], iberia: [0,0,0,0] };
+// ──────────────────────────────────────────────────────
+const qRatings = {};   // key: 'ch-q1' → value: 0-5
+let saveTimer  = null;
 
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
+//  SPEECH MANAGER (singleton)
+// ──────────────────────────────────────────────────────
+const Speech = (() => {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  let active = null; // { rec, taId }
+
+  function isSupported() { return !!SR; }
+
+  function _cleanup(taId) {
+    const btn = document.getElementById('mic-' + taId);
+    const ta  = document.getElementById(taId);
+    const pre = document.getElementById('pre-' + taId);
+    if (btn) { btn.classList.remove('rec'); btn.title = _hint(taId); }
+    if (ta)  ta.classList.remove('mic-on');
+    if (pre) pre.textContent = '';
+  }
+
+  function _hint(taId) {
+    const rk = taId.split('-q')[0];
+    const lang = REGIONS[rk]?.lang || 'de-DE';
+    return lang.startsWith('en') ? 'Speak your answer' : lang.startsWith('es') ? 'Habla tu respuesta' : 'Antwort einsprechen';
+  }
+
+  function stop() {
+    if (!active) return;
+    active.rec.abort();
+    _cleanup(active.taId);
+    active = null;
+  }
+
+  function toggle(taId, lang) {
+    if (!SR) { showToast('Sprachaufnahme wird in diesem Browser nicht unterstützt'); return; }
+    if (active && active.taId === taId) { stop(); return; }
+    stop();
+
+    const rec = new SR();
+    rec.lang = lang;
+    rec.continuous = true;
+    rec.interimResults = true;
+
+    rec.onresult = (e) => {
+      const ta  = document.getElementById(taId);
+      const pre = document.getElementById('pre-' + taId);
+      let interim = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) {
+          const t = e.results[i][0].transcript.trim();
+          if (ta) {
+            ta.value += (ta.value.trim() ? ' ' : '') + t;
+            ta.dispatchEvent(new Event('input'));
+          }
+          interim = '';
+        } else {
+          interim += e.results[i][0].transcript;
+        }
+      }
+      if (pre) pre.textContent = interim ? '🎙 ' + interim : '';
+    };
+
+    rec.onerror = (e) => {
+      if (e.error !== 'aborted') showToast('Mikrofon: ' + e.error);
+      stop();
+    };
+    rec.onend = () => { if (active && active.taId === taId) stop(); };
+
+    try {
+      rec.start();
+    } catch(e) {
+      showToast('Mikrofon konnte nicht gestartet werden');
+      return;
+    }
+
+    active = { rec, taId };
+    const btn = document.getElementById('mic-' + taId);
+    const ta  = document.getElementById(taId);
+    if (btn) { btn.classList.add('rec'); btn.title = 'Aufnahme stoppen'; }
+    if (ta)  ta.classList.add('mic-on');
+  }
+
+  return { isSupported, toggle, stop };
+})();
+
+// ──────────────────────────────────────────────────────
+//  LOCALSTORAGE
+// ──────────────────────────────────────────────────────
+function lsKey(rk) { return 'beyonity-interview-' + rk; }
+
+function collectData(rk) {
+  const r = REGIONS[rk];
+  return {
+    region:      rk,
+    region_name: r.name,
+    interviewer: r.who,
+    date:        new Date().toISOString().slice(0, 10),
+    exported_at: new Date().toISOString(),
+    questions:   r.questions.map((q, i) => ({
+      index:    i + 1,
+      question: q.q,
+      answer:   document.getElementById(rk + '-q' + (i+1))?.value.trim() || '',
+      rating:   qRatings[rk + '-q' + (i+1)] || 0
+    }))
+  };
+}
+
+function saveRegion(rk) {
+  try {
+    localStorage.setItem(lsKey(rk), JSON.stringify(collectData(rk)));
+    flashSaved();
+  } catch(e) {}
+}
+
+function loadRegion(rk) {
+  try {
+    const raw = localStorage.getItem(lsKey(rk));
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    data.questions?.forEach((item, i) => {
+      const ta = document.getElementById(rk + '-q' + (i+1));
+      if (ta && item.answer) ta.value = item.answer;
+      if (item.rating > 0) {
+        qRatings[rk + '-q' + (i+1)] = item.rating;
+        renderStars(rk, i+1, item.rating);
+      }
+    });
+    updateProgress(rk);
+  } catch(e) {}
+}
+
+function scheduleSave(rk) {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => saveRegion(rk), 500);
+}
+
+function flashSaved() {
+  const ind = document.getElementById('save-ind');
+  const lbl = document.getElementById('save-lbl');
+  if (!ind) return;
+  ind.classList.add('saved');
+  if (lbl) lbl.textContent = 'Gespeichert ✓';
+  setTimeout(() => { ind.classList.remove('saved'); if (lbl) lbl.textContent = 'Autospeichern'; }, 2000);
+}
+
+// ──────────────────────────────────────────────────────
 //  RENDER
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
+const MIC_ICO = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`;
+
 function renderTabs() {
   document.getElementById('tab-nav').innerHTML =
     Object.entries(REGIONS).map(([k, r], i) => `
-      <button class="tab-btn${i === 0 ? ' active' : ''}" id="tab-${k}" onclick="switchTab('${k}')">
-        ${r.label}
-        <span class="tab-prog" id="prog-${k}">0/9</span>
+      <button class="tab-btn${i===0?' active':''}" id="tab-${k}" onclick="switchTab('${k}')">
+        ${r.label} <span class="tab-prog" id="prog-${k}">0/9</span>
       </button>
     `).join('');
 }
 
-function renderStars(rk, pi) {
-  return [1,2,3,4,5].map(v => `
-    <button class="star-btn" id="s-${rk}-${pi}-${v}" onclick="setRating('${rk}',${pi},${v})">★</button>
-  `).join('');
-}
-
 function renderQuestion(rk, idx, q) {
-  const id = `${rk}-q${idx + 1}`;
+  const id   = rk + '-q' + (idx+1);
+  const lang = REGIONS[rk].lang;
+  const hint = lang.startsWith('en') ? 'Speak your answer' : lang.startsWith('es') ? 'Habla tu respuesta' : 'Antwort einsprechen';
+  const micDis = Speech.isSupported() ? '' : 'disabled';
+
+  const chips = q.chips.map(c =>
+    `<button class="chip" onclick="addChip('${id}','${c.replace(/'/g,"\\'")}')">+ ${c}</button>`
+  ).join('');
+
+  const stars = [1,2,3,4,5].map(v =>
+    `<button class="qstar" id="qs-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
+  ).join('');
+
   return `
     <div class="q-card">
       <div class="q-top">
-        <div class="q-num">${idx + 1}</div>
+        <div class="q-num">${idx+1}</div>
         <div class="q-text">${q.q}</div>
       </div>
-      <textarea class="q-ta" id="${id}" placeholder="Antwort eingeben…" oninput="updateProgress('${rk}')"></textarea>
-      <div class="chips">
-        ${q.chips.map(c => `<button class="chip" onclick="addChip('${id}','${c.replace(/'/g,"\\'")}')">+ ${c}</button>`).join('')}
+      <div class="ta-wrap">
+        <textarea class="q-ta" id="${id}" placeholder="${hint}…"
+          oninput="scheduleSave('${rk}'); updateProgress('${rk}')"></textarea>
+        <button class="mic-btn" id="mic-${id}" ${micDis}
+          title="${hint}" onclick="Speech.toggle('${id}','${lang}')">${MIC_ICO}</button>
+      </div>
+      <div class="voice-preview" id="pre-${id}"></div>
+      <div class="q-footer">
+        <div class="chips">${chips}</div>
+        <div class="q-rating">${stars}</div>
       </div>
     </div>
   `;
@@ -415,205 +587,181 @@ function renderQuestion(rk, idx, q) {
 function renderPanels() {
   document.getElementById('panels-wrap').innerHTML =
     Object.entries(REGIONS).map(([k, r], i) => `
-      <div class="panel${i === 0 ? ' active' : ''}" id="panel-${k}">
+      <div class="panel${i===0?' active':''}" id="panel-${k}">
         <div class="main">
-
           <div class="greeting">
             <div class="region-pill">${r.label}</div>
             <h1 class="greeting-h">${r.greeting}</h1>
             <p class="greeting-p">${r.intro}</p>
           </div>
-
-          <div class="rating-block">
-            <div class="block-lbl">Phase-Rating — Wie stark ist eure Region in jeder Phase? (1–5 Sterne)</div>
-            <div class="phases-grid">
-              ${PHASES.map((p, pi) => `
-                <div class="phase-col">
-                  <div class="phase-lbl">${p}</div>
-                  <div class="stars">${renderStars(k, pi)}</div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
           <div class="qs-list">
             ${r.questions.map((q, idx) => renderQuestion(k, idx, q)).join('')}
           </div>
-
-          <div class="submit-area">
-            <p class="submit-hint">Alle Antworten werden sicher an p.fernandes@beyonity.com übermittelt.</p>
-            <button class="submit-btn" id="sbtn-${k}" onclick="doSubmit('${k}')">
-              Interview absenden →
-            </button>
+          <div class="finish-area">
+            <p class="finish-hint">Antworten sind lokal gespeichert. "Abschliessen" zeigt die Zusammenfassung und lädt die JSON-Datei herunter.</p>
+            <button class="finish-btn" onclick="finish('${k}')">Interview abschliessen →</button>
           </div>
-
         </div>
       </div>
     `).join('');
 }
 
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
 //  INTERACTIONS
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
 function switchTab(k) {
+  Speech.stop();
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById(`tab-${k}`).classList.add('active');
-  document.getElementById(`panel-${k}`).classList.add('active');
+  document.getElementById('tab-' + k).classList.add('active');
+  document.getElementById('panel-' + k).classList.add('active');
 }
 
-function setRating(rk, pi, v) {
-  ratings[rk][pi] = v;
+function addChip(taId, text) {
+  const ta = document.getElementById(taId);
+  if (!ta) return;
+  ta.value = ta.value.trim() ? ta.value.trim() + '\n· ' + text : '· ' + text;
+  ta.dispatchEvent(new Event('input'));
+  ta.focus();
+}
+
+function setRating(rk, qIdx, v) {
+  const key = rk + '-q' + qIdx;
+  qRatings[key] = v;
+  renderStars(rk, qIdx, v);
+  scheduleSave(rk);
+}
+
+function renderStars(rk, qIdx, v) {
+  const key = rk + '-q' + qIdx;
   for (let i = 1; i <= 5; i++) {
-    const s = document.getElementById(`s-${rk}-${pi}-${i}`);
+    const s = document.getElementById('qs-' + key + '-' + i);
     if (s) s.classList.toggle('on', i <= v);
   }
 }
 
-function addChip(id, text) {
-  const ta = document.getElementById(id);
-  if (!ta) return;
-  const cur = ta.value.trim();
-  ta.value = cur ? cur + '\n· ' + text : '· ' + text;
-  ta.focus();
-  updateProgress(id.split('-q')[0]);
-}
-
 function updateProgress(rk) {
   const r = REGIONS[rk];
-  if (!r) return;
-  const filled = r.questions.filter((_, i) => {
-    const el = document.getElementById(`${rk}-q${i + 1}`);
+  const n = r.questions.filter((_, i) => {
+    const el = document.getElementById(rk + '-q' + (i+1));
     return el && el.value.trim().length > 0;
   }).length;
-  const el = document.getElementById(`prog-${rk}`);
-  if (el) el.textContent = `${filled}/9`;
+  const el = document.getElementById('prog-' + rk);
+  if (el) el.textContent = n + '/9';
 }
 
-// ─────────────────────────────────────
-//  SUBMIT
-// ─────────────────────────────────────
-async function doSubmit(rk) {
-  const r = REGIONS[rk];
-  const btn = document.getElementById(`sbtn-${rk}`);
-  btn.disabled = true;
-  btn.textContent = 'Wird gesendet…';
-
-  const answers = r.questions.map((q, i) => ({
-    question: q.q,
-    answer: document.getElementById(`${rk}-q${i + 1}`)?.value.trim() || ''
-  }));
-
-  const ratingStr = PHASES.map((p, i) => {
-    const v = ratings[rk][i];
-    return `${p}: ${'★'.repeat(v)}${'☆'.repeat(5 - v)} (${v}/5)`;
-  }).join(' | ');
-
-  const payload = {
-    _subject: `Beyonity Interview — ${r.name} (${r.who})`,
-    region: r.name,
-    interviewee: r.who,
-    phase_ratings: ratingStr
-  };
-  answers.forEach((a, i) => {
-    payload[`Q${i + 1}`] = `${a.question}\n→ ${a.answer || '(keine Antwort)'}`;
-  });
-
-  try {
-    const res = await fetch(FORMSPREE, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    if (res.ok) {
-      showConfirmation(rk, answers, ratingStr);
-    } else {
-      const d = await res.json().catch(() => ({}));
-      alert(`Fehler: ${d.error || res.status}. Bitte erneut versuchen.`);
-      btn.disabled = false;
-      btn.textContent = 'Interview absenden →';
-    }
-  } catch {
-    alert('Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen.');
-    btn.disabled = false;
-    btn.textContent = 'Interview absenden →';
-  }
+// ──────────────────────────────────────────────────────
+//  DOWNLOAD JSON
+// ──────────────────────────────────────────────────────
+function downloadJSON(rk) {
+  const data     = collectData(rk);
+  const json     = JSON.stringify(data, null, 2);
+  const filename = 'interview-' + rk + '-' + data.date + '.json';
+  const blob     = new Blob([json], { type: 'application/json' });
+  const url      = URL.createObjectURL(blob);
+  const a        = Object.assign(document.createElement('a'), { href: url, download: filename });
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  showToast('↓ ' + filename);
 }
 
-// ─────────────────────────────────────
-//  CONFIRMATION
-// ─────────────────────────────────────
-function showConfirmation(rk, answers, ratingStr) {
-  const r = REGIONS[rk];
+// ──────────────────────────────────────────────────────
+//  FINISH → CONFIRMATION
+// ──────────────────────────────────────────────────────
+function finish(rk) {
+  Speech.stop();
+  saveRegion(rk);
 
-  document.getElementById('interview-view').style.display = 'none';
-  document.getElementById('tab-nav').style.display = 'none';
+  const r    = REGIONS[rk];
+  const data = collectData(rk);
 
-  const qaRows = answers.map((a, i) => `
-    <div class="sum-qa">
-      <div class="sum-qn">Frage ${i + 1}</div>
-      <div class="sum-qt">${a.question}</div>
-      <div class="sum-a${!a.answer ? ' empty' : ''}">${
-        a.answer ? a.answer.replace(/\n/g, '<br>') : 'Keine Antwort'
-      }</div>
-    </div>
-  `).join('');
+  const qaRows = data.questions.map(item => {
+    const stars = item.rating > 0
+      ? '★'.repeat(item.rating) + '☆'.repeat(5 - item.rating)
+      : '—';
+    return `
+      <div class="sum-qa">
+        <div class="sum-qrow">
+          <div class="sum-qn">Frage ${item.index}</div>
+          <div class="sum-stars">${stars}</div>
+        </div>
+        <div class="sum-qt">${item.question}</div>
+        <div class="sum-a${!item.answer ? ' empty' : ''}">${
+          item.answer ? item.answer.replace(/\n/g, '<br>') : 'Keine Antwort'
+        }</div>
+      </div>
+    `;
+  }).join('');
 
   document.getElementById('confirm-view').innerHTML = `
     <div class="confirm-top">
       <span class="confirm-icon">✅</span>
       <h2 class="confirm-h">Danke, <em>${r.who}</em>!</h2>
-      <p class="confirm-p">Das Interview wurde erfolgreich übermittelt. Hier ist deine Zusammenfassung.</p>
+      <p class="confirm-p">Vollständige Zusammenfassung. JSON wird automatisch heruntergeladen — speichere die Datei in <code style="font-size:11px;opacity:.6">interviews/data/</code>.</p>
     </div>
-
     <div class="sum-block">
       <div class="sum-hdr">
         <span>${r.label} · ${r.who}</span>
-        <span class="sum-ratings">${ratingStr}</span>
+        <span class="sum-meta">${data.date}</span>
       </div>
       ${qaRows}
     </div>
-
-    <div class="confirm-footer">
-      <button class="btn-ghost" onclick="resetAll()">← Neues Interview starten</button>
+    <div class="confirm-actions">
+      <button class="btn-yellow" onclick="downloadJSON('${rk}')">Als JSON exportieren ↓</button>
+      <button class="btn-ghost" onclick="resetRegion('${rk}')">← Neues Interview starten</button>
     </div>
   `;
 
+  document.getElementById('interview-view').style.display = 'none';
+  document.getElementById('tab-nav').style.display = 'none';
   document.getElementById('confirm-view').classList.add('show');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Auto-download
+  setTimeout(() => downloadJSON(rk), 300);
 }
 
-function resetAll() {
+function resetRegion(rk) {
+  if (!confirm('Alle Antworten für diese Region löschen?')) return;
+  localStorage.removeItem(lsKey(rk));
+  Object.keys(qRatings).forEach(k => { if (k.startsWith(rk + '-')) delete qRatings[k]; });
+
+  document.querySelectorAll('#panel-' + rk + ' .q-ta').forEach(el => { el.value = ''; });
+  document.querySelectorAll('#panel-' + rk + ' .qstar').forEach(s => s.classList.remove('on'));
+  updateProgress(rk);
+
   document.getElementById('confirm-view').classList.remove('show');
   document.getElementById('confirm-view').innerHTML = '';
   document.getElementById('interview-view').style.display = '';
   document.getElementById('tab-nav').style.display = '';
-
-  document.querySelectorAll('.q-ta').forEach(el => { el.value = ''; });
-
-  Object.keys(ratings).forEach(rk => {
-    ratings[rk] = [0,0,0,0];
-    for (let pi = 0; pi < 4; pi++)
-      for (let v = 1; v <= 5; v++) {
-        const s = document.getElementById(`s-${rk}-${pi}-${v}`);
-        if (s) s.classList.remove('on');
-      }
-    updateProgress(rk);
-    const btn = document.getElementById(`sbtn-${rk}`);
-    if (btn) { btn.disabled = false; btn.textContent = 'Interview absenden →'; }
-  });
-
-  switchTab('ch');
+  switchTab(rk);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
+//  TOAST
+// ──────────────────────────────────────────────────────
+let toastTimer = null;
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
+}
+
+// ──────────────────────────────────────────────────────
 //  BOOT
-// ─────────────────────────────────────
+// ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   renderTabs();
   renderPanels();
+  Object.keys(REGIONS).forEach(rk => loadRegion(rk));
+  if (!Speech.isSupported()) {
+    document.querySelectorAll('.mic-btn').forEach(b => { b.disabled = true; });
+  }
 });
 </script>
 </body>
