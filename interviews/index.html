@@ -170,17 +170,8 @@
     /* PHASE + RATING FOOTER */
     .q-footer { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
 
-    .phase-btns { display: flex; gap: 5px; flex-wrap: wrap; }
-    .pb {
-      background: rgba(0,26,100,.05); border: 1px solid rgba(0,26,100,.12);
-      color: rgba(0,26,100,.45);
-      font-family: 'Sora', sans-serif; font-size: 10.5px; font-weight: 700;
-      letter-spacing: .4px; padding: 5px 11px; border-radius: 20px; cursor: pointer;
-      transition: background .13s, border-color .13s, color .13s;
-    }
-    .pb:hover { background: rgba(60,87,225,.12); border-color: rgba(60,87,225,.35); color: var(--dark); }
-    .pb.on { background: var(--blue); border-color: var(--blue); color: #fff; }
-    .pb.awareness-on { background: #f8ff76; border-color: #c8cf00; color: #001a64; }
+    .phase-label{display:inline-flex;align-items:center;gap:6px;font:700 11px/1 'Sora',sans-serif;color:rgba(0,26,100,.5);background:rgba(0,26,100,.07);border:1px solid rgba(0,26,100,.12);padding:5px 12px;border-radius:100px}
+    .phase-label.awareness{background:rgba(248,255,118,.25);border-color:rgba(200,207,0,.4);color:#5a4a00}
 
     .q-stars { display: flex; gap: 2px; flex-shrink: 0; }
     .rating-info{position:relative;display:inline-flex;align-items:center;margin-left:6px;cursor:help}
@@ -331,8 +322,6 @@
 // ═══════════════════════════════════════════════════════
 //  DATA
 // ═══════════════════════════════════════════════════════
-const PHASES = ['Development','Pricing','Sales','Portfolio','Awareness'];
-
 const REGIONS = {
   ch: {
     label: '🇨🇭 Schweiz', name: 'Schweiz',
@@ -484,7 +473,6 @@ const REGIONS = {
 //  STATE
 // ═══════════════════════════════════════════════════════
 const state = {
-  phases:  {},   // 'ch-q1' → 'Development'
   ratings: {},   // 'ch-q1' → 1-5
 };
 let saveDebounce = null;
@@ -582,7 +570,7 @@ function collect(rk) {
         question: q.q,
         answer:   document.getElementById(id)?.value.trim() || '',
         rating:   state.ratings[id] || 0,
-        phase:    state.phases[id] || q.phase
+        phase:    q.phase
       };
     })
   };
@@ -601,7 +589,7 @@ function load(rk) {
       const id = rk + '-q' + (i + 1);
       const ta = document.getElementById(id);
       if (ta && item.answer) ta.value = item.answer;
-      if (item.phase)  { state.phases[id]  = item.phase;  setPhase(rk, i + 1, item.phase, false); }
+
       if (item.rating) { state.ratings[id] = item.rating; renderStars(id, item.rating); }
     });
     countProgress(rk);
@@ -658,10 +646,7 @@ function buildQuestion(rk, idx, q) {
     `<button class="chip" onclick="addChip('${id}','${c.replace(/'/g,"\\'")}')">+ ${c}</button>`
   ).join('');
 
-  const phaseBtns = PHASES.map(p =>
-    `<button class="pb${p === q.phase ? (p === 'Awareness' ? ' awareness-on' : ' on') : ''}" id="pb-${id}-${p}"
-      onclick="setPhase('${rk}',${idx+1},'${p}',true)">${p}</button>`
-  ).join('');
+  const phaseLabel = `<div class="phase-label${q.phase === 'Awareness' ? ' awareness' : ''}"><span>📍</span> ${q.phase}</div>`;
 
   const stars = [1,2,3,4,5].map(v =>
     `<button class="qs-star" id="st-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
@@ -701,7 +686,7 @@ function buildQuestion(rk, idx, q) {
       <div class="voice-pre" id="pre-${id}"></div>
       <div class="chips">${chips}</div>
       <div class="q-footer">
-        <div class="phase-btns">${phaseBtns}</div>
+        <div>${phaseLabel}</div>
         <div style="display:flex;align-items:center">
           <div class="q-stars">${stars}</div>
           <div class="rating-info">
@@ -756,17 +741,6 @@ function addChip(id, text) {
   ta.focus();
 }
 
-function setPhase(rk, qIdx, phase, doSave) {
-  const id = rk + '-q' + qIdx;
-  state.phases[id] = phase;
-  PHASES.forEach(p => {
-    const btn = document.getElementById('pb-' + id + '-' + p);
-    if (!btn) return;
-    btn.classList.remove('on', 'awareness-on');
-    if (p === phase) btn.classList.add(phase === 'Awareness' ? 'awareness-on' : 'on');
-  });
-  if (doSave) schedSave(rk);
-}
 
 function setRating(rk, qIdx, v) {
   const id = rk + '-q' + qIdx;
@@ -967,11 +941,9 @@ async function finish(rk, btn) {
 function reset(rk) {
   if (!confirm('Alle Antworten für ' + REGIONS[rk].name + ' löschen?')) return;
   localStorage.removeItem(lsKey(rk));
-  Object.keys(state.phases).forEach(k  => { if (k.startsWith(rk + '-')) delete state.phases[k]; });
   Object.keys(state.ratings).forEach(k => { if (k.startsWith(rk + '-')) delete state.ratings[k]; });
   document.querySelectorAll('#panel-' + rk + ' .q-ta').forEach(el => { el.value = ''; });
   document.querySelectorAll('#panel-' + rk + ' .qs-star').forEach(s => s.classList.remove('on'));
-  REGIONS[rk].qs.forEach((q, i) => setPhase(rk, i + 1, q.phase, false));
   countProgress(rk);
   delete _confettiFired[rk];
   Object.keys(_shownMilestones).forEach(k => { if (k.startsWith(rk + '-')) delete _shownMilestones[k]; });
