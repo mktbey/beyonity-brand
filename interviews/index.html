@@ -32,9 +32,9 @@
       position: sticky; top: 0; z-index: 200;
       background: var(--dark);
       border-bottom: 1px solid rgba(255,255,255,.08);
-      height: 58px; padding: 0 48px;
-      display: flex; align-items: center; justify-content: space-between;
+      padding: 0;
     }
+    .hdr-inner { max-width: 860px; margin: 0 auto; width: 100%; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 58px; }
     .logo { font-size: 17px; font-weight: 800; letter-spacing: -.4px; color: #fff; }
     .logo em { color: var(--yellow); font-style: normal; }
     .hdr-right { display: flex; align-items: center; gap: 16px; }
@@ -51,9 +51,10 @@
     .tabs {
       background: var(--dark);
       border-bottom: 2px solid rgba(255,255,255,.06);
-      padding: 0 48px;
-      display: flex; overflow-x: auto; scrollbar-width: none;
+      padding: 0;
     }
+    .tabs-inner { max-width: 860px; margin: 0 auto; width: 100%; padding: 0 48px; display: flex; overflow-x: auto; scrollbar-width: none; }
+    .tabs-inner::-webkit-scrollbar { display: none; }
     .tabs::-webkit-scrollbar { display: none; }
     .tab {
       display: flex; align-items: center; gap: 8px;
@@ -264,10 +265,11 @@
     #toast.on { transform: translateX(-50%) translateY(0); opacity: 1; }
 
     /* ── PROGRESS BAR ── */
-    .progress-bar-wrap{background:#fff;border-bottom:1px solid var(--border);padding:10px 48px;display:flex;align-items:center;gap:14px;position:sticky;top:58px;z-index:199}
-    .progress-bar-track{flex:1;height:4px;background:var(--border);border-radius:4px;overflow:hidden}
-    .progress-bar-fill{height:100%;background:var(--blue);border-radius:4px;transition:width .4s ease;width:0%}
-    .progress-label{font:600 11px/1 'Sora',sans-serif;color:rgba(0,26,100,.5);white-space:nowrap}
+    .progress-bar-wrap{background:#fff;border-bottom:1px solid var(--border);padding:16px 0;position:sticky;top:58px;z-index:199}
+    .progress-bar-inner{max-width:860px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:16px}
+    .progress-bar-track{flex:1;height:8px;background:var(--border);border-radius:8px;overflow:hidden}
+    .progress-bar-fill{height:100%;background:var(--blue);border-radius:8px;transition:width .4s ease;width:0%}
+    .progress-label{font:700 13px/1 'Sora',sans-serif;color:var(--dark);white-space:nowrap;min-width:60px;text-align:right}
 
     /* ── GAMIFICATION TOAST ── */
     .game-toast{position:fixed;top:80px;right:24px;background:var(--yellow);color:var(--dark);font:700 13px/1 'Sora',sans-serif;padding:10px 20px;border-radius:100px;box-shadow:0 4px 20px rgba(0,26,100,.15);transform:translateY(-20px);opacity:0;transition:all .3s ease;z-index:500;pointer-events:none}
@@ -278,8 +280,7 @@
     .milestone-card.show{opacity:1;transform:translateY(0)}
 
     @media (max-width: 640px) {
-      .hdr, .tabs { padding: 0 20px; }
-      .progress-bar-wrap { padding: 10px 20px; }
+      .hdr-inner, .tabs-inner, .progress-bar-inner { padding: 0 20px; }
       .wrap, #confirm { padding: 36px 20px 64px; }
       .greeting h1 { font-size: 30px; letter-spacing: -1px; }
       .mic-btn { width: 60px; font-size: 9.5px; }
@@ -290,21 +291,25 @@
 <body>
 
 <header class="hdr">
-  <div class="logo">beyonity<em>.</em></div>
-  <div class="hdr-right">
-    <div class="autosave" id="autosave">
-      <span class="autosave-dot"></span>
-      <span id="autosave-lbl">Autospeichern</span>
+  <div class="hdr-inner">
+    <div class="logo">beyonity<em>.</em></div>
+    <div class="hdr-right">
+      <div class="autosave" id="autosave">
+        <span class="autosave-dot"></span>
+        <span id="autosave-lbl">Autospeichern</span>
+      </div>
+      <div class="hdr-label">Sales Interview</div>
     </div>
-    <div class="hdr-label">Sales Interview</div>
   </div>
 </header>
 
-<nav class="tabs" id="tabs"></nav>
+<nav class="tabs" id="tabs"><div class="tabs-inner" id="tabs-inner"></div></nav>
 
 <div class="progress-bar-wrap" id="progress-wrap">
-  <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill"></div></div>
-  <span class="progress-label" id="progress-label">0 / 12</span>
+  <div class="progress-bar-inner">
+    <div class="progress-bar-track"><div class="progress-bar-fill" id="progress-fill"></div></div>
+    <span class="progress-label" id="progress-label">0 / 12</span>
+  </div>
 </div>
 
 <div id="main">
@@ -595,7 +600,7 @@ function flashSave() {
 const MIC_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>`;
 
 function buildTabs() {
-  document.getElementById('tabs').innerHTML =
+  document.getElementById('tabs-inner').innerHTML =
     Object.entries(REGIONS).map(([k, r], i) => `
       <button class="tab${i === 0 ? ' on' : ''}" id="tab-${k}" onclick="switchTab('${k}')">
         ${r.label} <span class="tab-count" id="cnt-${k}">0/12</span>
