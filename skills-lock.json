@@ -1,0 +1,929 @@
+{
+  "version": 1,
+  "skills": {
+    "accessibility-auditor": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "accessibility-auditor/SKILL.md",
+      "computedHash": "0a738bffd64b503e2462aeb5137c193cee894701e47e960c904848a73762ae22"
+    },
+    "agent-army": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "agent-army/SKILL.md",
+      "computedHash": "c4091a4f21413e8e24a392104de30e5b0e663ac9afa7b264c567f864fda12aa6"
+    },
+    "agent-swarm-deployer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "agent-swarm-deployer/SKILL.md",
+      "computedHash": "4e2f0b1de365bd9075c473264b12ad4843563199fad310eafa15ed554d7cb397"
+    },
+    "agent-team-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "agent-team-builder/SKILL.md",
+      "computedHash": "8fc6f65e771ff037bc80dd3de2b8be120c6d827262a8823fb1c97824ec3a5bd0"
+    },
+    "agent-to-agent": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "agent-to-agent/SKILL.md",
+      "computedHash": "01a07ed25689817c5547ef1a366af95602f3f3b02ea98e2fc90f290b43604239"
+    },
+    "ai-readiness-assessment": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "ai-readiness-assessment/SKILL.md",
+      "computedHash": "0452d1101dceb73eb8309def292d6e4781e116bbc8cedfcb255237c30cc1ae28"
+    },
+    "animate": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "animate/SKILL.md",
+      "computedHash": "4ab3759daa89a7af301f3989e091b42221ace4b0ccec0f33e42a67a9401138d5"
+    },
+    "api-documentation-writer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "api-documentation-writer/SKILL.md",
+      "computedHash": "20380b16d44111772a84d24dee3435d7e0eaa9d74a480c77cef3a044b902a31c"
+    },
+    "api-endpoint-scaffolder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "api-endpoint-scaffolder/SKILL.md",
+      "computedHash": "d1756b2a52bfc938ebe638887d2eb0f75deb57b46222b8e377a9bb5e5ff24a7a"
+    },
+    "api-load-tester": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "api-load-tester/SKILL.md",
+      "computedHash": "a0ac1eec48b491a63925a314ab4c05ba8475664c9029f59c0535ef53d4d73dca"
+    },
+    "athlete-social-media-manager": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "athlete-social-media-manager/SKILL.md",
+      "computedHash": "6b4eba1bd374c572279adfb131cbbc1a2b89526ac5286cd8d064cbb529478004"
+    },
+    "board-deck-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "board-deck-generator/SKILL.md",
+      "computedHash": "75a1cad59908bf44dde0274ae8d67be93963e93a421bbea7d0d3f79becdd5823"
+    },
+    "bracket-predictor": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "bracket-predictor/SKILL.md",
+      "computedHash": "14e68bea5d979584105e3762c67b106b117fb3aab58fc01aa20d7a7bcdfeff77"
+    },
+    "brand-consistency-checker": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "brand-consistency-checker/SKILL.md",
+      "computedHash": "df26bf72db0bd46b905f545cacc9a06973f9d7206dedcd691ae905542685419c"
+    },
+    "brand-voice-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "brand-voice-analyzer/SKILL.md",
+      "computedHash": "1effe5c0753995a3b100559885ac6eb5415481aa7eba7043acbd1c45d1fbe0b8"
+    },
+    "budget-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "budget-optimizer/SKILL.md",
+      "computedHash": "ca99b821065c509bda3335c01da5b6b7412ce595458bb03f6ce1a31952a89f1b"
+    },
+    "champion-identifier": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "champion-identifier/SKILL.md",
+      "computedHash": "bf12e852a7b5ba7c1596994d7bfc7888ffd6c0bbe10372f0f005ef9fca444afb"
+    },
+    "churn-autopsy": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "churn-autopsy/SKILL.md",
+      "computedHash": "6cdc8bc6eed039cea51fad27675f6c773b2108f97311da237851118d4dec8e73"
+    },
+    "client-health-dashboard": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "client-health-dashboard/SKILL.md",
+      "computedHash": "1b1b9861f43804476f0275e42e3d5ba2948147ac909eddbaa2f74f5630180156"
+    },
+    "client-proposal-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "client-proposal-generator/SKILL.md",
+      "computedHash": "352ff5ac2b7efaa49dab81ae1a576d98c1aa85233d8cff3321e4b0ec52d3b3fb"
+    },
+    "code-review-pro": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "code-review-pro/SKILL.md",
+      "computedHash": "445641e6b9eaa5a00f49060259fb4e23a8f339536ec7fc313e39b817dd402a51"
+    },
+    "cold-email-sequence-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "cold-email-sequence-generator/SKILL.md",
+      "computedHash": "1921151decb557e699e6b532354d3d588e6dc728b10c99fc930e7e9a8873f4c3"
+    },
+    "color-palette-extractor": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "color-palette-extractor/SKILL.md",
+      "computedHash": "94e0871ec6551e45b47b469488788b2c4fbfd0f8dc76198085317485f4407cee"
+    },
+    "company-announcement-writer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "company-announcement-writer/SKILL.md",
+      "computedHash": "58b8f69748cf06ad1ae43206cae1d272d2511ad86a459b647a37ca778cdd7c91"
+    },
+    "competitor-content-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "competitor-content-analyzer/SKILL.md",
+      "computedHash": "222118b4ce342263501b3aba6c891e93842d2758f9b30bc6bfcfb2223f2cbe63"
+    },
+    "competitor-intel-agent": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "competitor-intel-agent/SKILL.md",
+      "computedHash": "7c8d027ee5115386ffea045821805b0605b5accd6b6a9e1ca9cdc537d8348d1e"
+    },
+    "competitor-price-tracker": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "competitor-price-tracker/SKILL.md",
+      "computedHash": "d0cfe663ad11c3ba4db8ad01aef8a1ddeaa5dd7bc2b07452bb2a805810b53388"
+    },
+    "compliance-checker": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "compliance-checker/SKILL.md",
+      "computedHash": "7f1e2ae81496ec31012b6ffe2867ba32c01a187761d939ef5dca38c5fd41e06a"
+    },
+    "contact-hunter": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "contact-hunter/SKILL.md",
+      "computedHash": "ef48a6705a345ff1ba068179bf9f2527c44afa79b211f4fc39f94d741af81ea9"
+    },
+    "contract-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "contract-analyzer/SKILL.md",
+      "computedHash": "35a470f3b83b578f67d3267c4e9c7956f979ed9135d232ca69dcdbc6137f4196"
+    },
+    "contract-redliner": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "contract-redliner/SKILL.md",
+      "computedHash": "9047448642827d1f957d5385dbb1218dfcf2e2206a783adbfa0c60d05d64f872"
+    },
+    "conversation-archaeologist": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "conversation-archaeologist/SKILL.md",
+      "computedHash": "fe6737b53e5b3652f923b7d88da5d4ca6ee5a94c425186f01a9323e0a0049d5d"
+    },
+    "cowork-deal-room": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "cowork-deal-room/SKILL.md",
+      "computedHash": "b0ac4c4666e9d2b929cb2f0b6625f9fa232deb46020e92824953fb0597122fe3"
+    },
+    "cross-conversation-project-manager": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "cross-conversation-project-manager/SKILL.md",
+      "computedHash": "92fd4e8c6c2d12f2064ca79eac9c6d41882a0003405c844c20531ae4a354fceb"
+    },
+    "css-animation-creator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "css-animation-creator/SKILL.md",
+      "computedHash": "375cfb7d194d9a4171bd03e27bcb32206c5a755691698926167412ebc7bc5a8b"
+    },
+    "csv-excel-merger": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "csv-excel-merger/SKILL.md",
+      "computedHash": "5da17e4406ccee23cc02c9a8c27d45d28679753ef8ee7d653c77e4402d7d4ae7"
+    },
+    "customer-journey-mapper": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "customer-journey-mapper/SKILL.md",
+      "computedHash": "11b08d6b216164080da96aaf35302259e935ca34efe386e8febd97c32c13927c"
+    },
+    "customer-review-aggregator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "customer-review-aggregator/SKILL.md",
+      "computedHash": "7028f369d4c2a17de109991e93715bea7aaab64294db9090bffab21e535f62ea"
+    },
+    "data-pipeline-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "data-pipeline-builder/SKILL.md",
+      "computedHash": "1ab7b8a17bda2cf4e18a9c39299e4a8767a276abfe5e861f74bbf8abad0a2b0b"
+    },
+    "database-migrator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "database-migrator/SKILL.md",
+      "computedHash": "f32812745049ab73d43ee8decd3a77100172ac754ee02691108587edd33e37e9"
+    },
+    "database-schema-designer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "database-schema-designer/SKILL.md",
+      "computedHash": "c254283bce1fb347829e92c93ab168a4772457735e4e9a1447e86600491cfa74"
+    },
+    "deal-closer-playbook": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "deal-closer-playbook/SKILL.md",
+      "computedHash": "e35eab2ac3028951339c5a9ad0a8920e9e03003eb9c87d9e1564f0e1c0c5c880"
+    },
+    "deal-momentum-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "deal-momentum-analyzer/SKILL.md",
+      "computedHash": "da1786d5e3a3a0fb519c519947191a5eb10152e7a3138a392b86d84a1b10f24f"
+    },
+    "deal-review-framework": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "deal-review-framework/SKILL.md",
+      "computedHash": "fce37569e370f87d6ae14b9b7fe0dc6807b97bdd4380477486ddedb6556e22e8"
+    },
+    "dependency-auditor": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "dependency-auditor/SKILL.md",
+      "computedHash": "922f013b2059b136568b8f4ca0a3efb36486f5ba868a91abb6c5743956cb3de0"
+    },
+    "design-system-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "design-system-generator/SKILL.md",
+      "computedHash": "9b9ccaf15f8d9c5a00b0512e4c18ff2f842b8f356a3ebaaa57923215be78c06c"
+    },
+    "docker-debugger": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "docker-debugger/SKILL.md",
+      "computedHash": "c43d1987d5c7ee6e56fe8e8961ff0b499cc60ce6baaebd98256efb4b541985b8"
+    },
+    "email-subject-line-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "email-subject-line-optimizer/SKILL.md",
+      "computedHash": "9eaa25cee7d710dac5a236c908f7013d822e3fc792a5c50d493cc5ecdcd8799a"
+    },
+    "email-template-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "email-template-generator/SKILL.md",
+      "computedHash": "c64203235d47263d0f38248c9130c62312eaf91623aa83f90396206bc76c7962"
+    },
+    "env-setup-wizard": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "env-setup-wizard/SKILL.md",
+      "computedHash": "c0371b8687080c9c028de4d23b94ac9a10ef2837c58988c6162a0b7dc215cee1"
+    },
+    "error-boundary-creator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "error-boundary-creator/SKILL.md",
+      "computedHash": "61e46a96a13e48c8e20047a0b4267c158d9b721ddd0154aa866735e1d0d07d38"
+    },
+    "executive-dashboard-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "executive-dashboard-generator/SKILL.md",
+      "computedHash": "272756bafe5aad19de839ed964bc5dd80d2c9238c31b46c04db923a88276579c"
+    },
+    "expansion-revenue-finder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "expansion-revenue-finder/SKILL.md",
+      "computedHash": "a13118ba54d939701962b9f47cd27ac3a27986e3ba713b670d81bc503e5f162b"
+    },
+    "expert-panel": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "expert-panel/SKILL.md",
+      "computedHash": "35ae0de5c8079ba32bf08aeb4e3b9a0eb21972a2e3cde7fbecf77e4600f922a2"
+    },
+    "fantasy-lineup-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "fantasy-lineup-optimizer/SKILL.md",
+      "computedHash": "feac2d8432285e84b3e5a9b27f92521890da85818195fd7d3701c1677968fc6e"
+    },
+    "financial-document-parser": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "financial-parser/SKILL.md",
+      "computedHash": "6705c3ede384049d49b28e616781a49ce1bd6908312f68ab8406bad62956ab36"
+    },
+    "financial-goal-planner": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "financial-goal-planner/SKILL.md",
+      "computedHash": "aeef9c8dacc8af3bbe1064b3eba1b1a0edd6bb730e5cf64d52c56264f6bfc3c7"
+    },
+    "font-pairing-suggester": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "font-pairing-suggester/SKILL.md",
+      "computedHash": "03b9ac9b499f962f9676bbd669584c262becb77193646c30c2c14c20ca5b353f"
+    },
+    "full-codebase-migrator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "full-codebase-migrator/SKILL.md",
+      "computedHash": "eb7eb2eb6755107f1b1fef62eedb65be2469ea38c6847524e2758eba03b4e67b"
+    },
+    "game-strategy-simulator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "game-strategy-simulator/SKILL.md",
+      "computedHash": "46607ae2a235c1e20aae7352fa276007b3c4e13fb6c10cab4c264dc97366615d"
+    },
+    "git-pr-reviewer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "git-pr-reviewer/SKILL.md",
+      "computedHash": "f9303fe0f7623cb2dbcaece1a5a01bbb727b8569d55365ec007e3449bcf10001"
+    },
+    "gmail-to-crm-pipeline": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "gmail-to-crm-pipeline/SKILL.md",
+      "computedHash": "567a78ec7676800ef88e88f8d40fd3bed2d9a4d393cd46400d9b6abfae0d86a2"
+    },
+    "highlight-reel-scripter": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "highlight-reel-scripter/SKILL.md",
+      "computedHash": "85a6e118fcb4cd628850bf9ea03912892a0c5d3a13c1b739b43ca71158c45847"
+    },
+    "hiring-scorecard": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "hiring-scorecard/SKILL.md",
+      "computedHash": "108a5842b29f53f788d001494afad8d18e94caf4b3ff35634dae088402c7cee7"
+    },
+    "inbound-lead-qualifier": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "inbound-lead-qualifier/SKILL.md",
+      "computedHash": "7bee700601248a4fec1d7270237b08b444b6e80c33ee9b34d73c7e6bf08e09be"
+    },
+    "incident-responder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "incident-responder/SKILL.md",
+      "computedHash": "06cd16a6e0467906bb4d3d5089b63edfc5a0c3dfdf474f32bdca59ca2cac7eb8"
+    },
+    "injury-report-tracker": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "injury-report-tracker/SKILL.md",
+      "computedHash": "75627015d64327ed9ba5a958a435b6a9a0e28f2fb21b1148d0c3f9f349f5bf05"
+    },
+    "intent-signal-aggregator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "intent-signal-aggregator/SKILL.md",
+      "computedHash": "153839b63b9befa518be92ad03a02b7f5191259c8424483b744f9432b233a9e1"
+    },
+    "internal-email-composer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "internal-email-composer/SKILL.md",
+      "computedHash": "eed77cd1879286380715d3335438302efbb3af1c1fcefd6c12d9e5af861f9137"
+    },
+    "investor-update-writer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "investor-update-writer/SKILL.md",
+      "computedHash": "d6bca7ec21b3beae79f947149b5d72271a7483101554b9f7045bc42f78da293c"
+    },
+    "itinerary-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "itinerary-optimizer/SKILL.md",
+      "computedHash": "170ca232525e6fe0e49006a2362e76875bf7aa7229ca5aaaf3fecaa600735fab"
+    },
+    "job-application-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "job-application-optimizer/SKILL.md",
+      "computedHash": "0c0a38f09eb72a78785c01667c03b90f25acd581cd7e9ffc62e2f7db0ef0c6f4"
+    },
+    "knowledge-base-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "knowledge-base-builder/SKILL.md",
+      "computedHash": "ce9387e7894cabb23c58bfdad21071994cb9faa53e24bae39f196ba0ed077bd9"
+    },
+    "landing-page-copywriter": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "landing-page-copywriter/SKILL.md",
+      "computedHash": "f7c7ceb8d99be73eb3e84c6281f1cd56121342f36c94b1d5d2835e4273598ab1"
+    },
+    "landing-page-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "landing-page-optimizer/SKILL.md",
+      "computedHash": "92d28eb2671888445a2b3df1d3bd38877373df2377ec6528383562aaa9b38e56"
+    },
+    "lead-scoring-model": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "lead-scoring-model/SKILL.md",
+      "computedHash": "9ec4d7065363cef68fa20bd43a4c80bc14c45e95eec7910bbacef3e8c400403d"
+    },
+    "linkedin-post-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "linkedin-post-optimizer/SKILL.md",
+      "computedHash": "c2fad48ba60e7a74074c0e0a729c3e043c2033122181077963aca382a069944f"
+    },
+    "linkedin-sales-navigator-alt": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "linkedin-sales-navigator-alt/SKILL.md",
+      "computedHash": "925f745f5dc4f9acc16801733ab3be4a687db276a202a68abfe2df1ceccca74b"
+    },
+    "lookalike-customer-finder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "lookalike-customer-finder/SKILL.md",
+      "computedHash": "913ada0a59197fcfc6b412b34e5bee0084cddd40add0b5d907ffd78a8959dca5"
+    },
+    "market-sizing": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "market-sizing/SKILL.md",
+      "computedHash": "fddf2f034bbdffbf1e7d498c2815f0e9c252e348e2c781486562d8cc852ed7cd"
+    },
+    "meeting-intelligence-system": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "meeting-intelligence/SKILL.md",
+      "computedHash": "ab9f27ca5b02bf93105ec1eb772d4f932f586f215308c6df05109429a83aafa9"
+    },
+    "meeting-to-tasks": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "meeting-to-tasks/SKILL.md",
+      "computedHash": "37f6928fe225614d136cc554ccdc13d650c1aad21420d136431638bb3de37842"
+    },
+    "multi-agent-client-onboarding": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "multi-agent-client-onboarding/SKILL.md",
+      "computedHash": "35ac801da7382252b6c81451785d3c2b0f3ddad5771135ed799e5a430c271828"
+    },
+    "mvp-case-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "mvp-case-builder/SKILL.md",
+      "computedHash": "2ab863a041971ffeb379ab72cc25f38f6d7aef039d84e12fa224f877d2c61b79"
+    },
+    "objection-pattern-detector": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "objection-pattern-detector/SKILL.md",
+      "computedHash": "837094fbe8a262a1ccbeb6f26ac29aa08bc9a5501093ed484dfdb512d697c0ed"
+    },
+    "okr-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "okr-generator/SKILL.md",
+      "computedHash": "c597c8e0e41e0c8462e2a7067cd6a1718d2cf25852379d97705e715972fb435f"
+    },
+    "onboarding-checklist": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "onboarding-checklist/SKILL.md",
+      "computedHash": "afe17029b2c3c7aad27b109e981db39b77f8d179a5996afadd778ae6fa60d4a2"
+    },
+    "overnight-repo-auditor": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "overnight-repo-auditor/SKILL.md",
+      "computedHash": "1d435a46269f9068b61c7640f5a5178ad5ad0f988a3042085932c5bc98b37932"
+    },
+    "performance-profiler": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "performance-profiler/SKILL.md",
+      "computedHash": "01bc6bcda7f239f5a1c1c99f1c9565ba67eb76392ae7b6c3ee7fe46797310789"
+    },
+    "personalization-at-scale": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "personalization-at-scale/SKILL.md",
+      "computedHash": "83693e8f164acbaa1afbebb0c993f9e761ded087ab8ba789b673fd382ad097c5"
+    },
+    "pipeline-health-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "pipeline-health-analyzer/SKILL.md",
+      "computedHash": "e8d3ea8b4144ce4a5a73827a69a537a959adbd0b3467fb5c8a6d939327e7a2f7"
+    },
+    "pitch-deck-reviewer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "pitch-deck-reviewer/SKILL.md",
+      "computedHash": "e0b5c76850091d7c8b1dfed2465e45425fb0c345aa3b29053ba5f0be69b59346"
+    },
+    "player-comparison-tool": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "player-comparison-tool/SKILL.md",
+      "computedHash": "ad0dba16f0a0f181546a44308a99c825fd142f89ecd0d2f91d835251a64cc5c8"
+    },
+    "podcast-studio": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "podcast-studio/SKILL.md",
+      "computedHash": "34e1990907d4edbe80dd4a3836d3eba5b6c752821aadd908974daadbbaf991c9"
+    },
+    "podcast-to-content-suite": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "podcast-content-suite/SKILL.md",
+      "computedHash": "b13dc74a0af1d5571ffb7510674a314ec9c2aa1eeebcb9ff3e17df48af80d53e"
+    },
+    "portfolio-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "portfolio-analyzer/SKILL.md",
+      "computedHash": "b46e8496d7c9b4fc25011cb7a9654e441ce4c64cf09d766252c75bd77e29b03c"
+    },
+    "post-game-press-conference-simulator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "post-game-press-conference-simulator/SKILL.md",
+      "computedHash": "2118e629f7b061b1701ff151a21763c005557780bbe1b7b9ee59c115d6155806"
+    },
+    "practice-plan-creator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "practice-plan-creator/SKILL.md",
+      "computedHash": "d8faf779dfbbddc9255e18935b56a6aa3dc270ad4b0c846e0f7f06dccf92f04f"
+    },
+    "presentation-design-enhancer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "presentation-design-enhancer/SKILL.md",
+      "computedHash": "68dd5531f62c85cb57a683e0cd940abbc683073d56087d41268ce743038da53b"
+    },
+    "pricing-strategy": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "pricing-strategy/SKILL.md",
+      "computedHash": "78efb389d27efc301691fbc0bb7edacd744d4607f5018a5042c96dff9119cb1f"
+    },
+    "prospect-research-compiler": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "prospect-research-compiler/SKILL.md",
+      "computedHash": "0a824943f5d9d262baacaa51414d984115522f6d3ce52543d40ce0e19fe86e9a"
+    },
+    "quiz-maker": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "quiz-maker/SKILL.md",
+      "computedHash": "1799bb34bb08244cbb1b8d1d91c753fa53283867146c5fa82abcefeb23863314"
+    },
+    "quota-setting-calculator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "quota-setting-calculator/SKILL.md",
+      "computedHash": "98512cd4218c89cfe655543ea322a175cfa489eb49d261615091bb29af767d76"
+    },
+    "raise-negotiation-prep": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "raise-negotiation-prep/SKILL.md",
+      "computedHash": "ff163137b4ade2a547981bac43edbd0135131d80d58e151821dbfb13c7e92fb5"
+    },
+    "ramping-rep-tracker": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "ramping-rep-tracker/SKILL.md",
+      "computedHash": "bb1f1d9f81aece3eb235064857cf3564689acb3965b77d084842e9e5b0598699"
+    },
+    "react-component-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "react-component-generator/SKILL.md",
+      "computedHash": "d9cc0939453b6cb9166ffba0e7016195bc977be5b1203ae29593da7672e33dd8"
+    },
+    "reddit-thread-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "reddit-analyzer/SKILL.md",
+      "computedHash": "c47bd385456b6b105f115750a7b4044849db0747f0f95e1cdaaf6adeb653a2c0"
+    },
+    "regex-visual-debugger": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "regex-debugger/SKILL.md",
+      "computedHash": "580a7947eceba99f43ca0b6bb68d9017dc170746474e24df9668e5b775370d9f"
+    },
+    "renewal-predictor": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "renewal-predictor/SKILL.md",
+      "computedHash": "112b0a21de145a1856484e096c48ed76e1df3655eddbef31fc35874a47c7c07c"
+    },
+    "responsive-layout-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "responsive-layout-builder/SKILL.md",
+      "computedHash": "b209baff88380f47a085ec02aa0674b8613b22e8fa0680cf4e966f04d91f9219"
+    },
+    "roi-calculator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "roi-calculator/SKILL.md",
+      "computedHash": "319bdcdb20fa7606685ddf7e85e08868665a3a3499acefb6eb591856a14dc116"
+    },
+    "runbook-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "runbook-generator/SKILL.md",
+      "computedHash": "36955623a0ff65adaaf20d54e461025c2428bb654593527e00e863527814baae"
+    },
+    "saas-replacement-planner": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "saas-replacement-planner/SKILL.md",
+      "computedHash": "aa588e3c91e9ce8298584f11e3fd3c21ba90b8e210bc32ce51e976f76cf79171"
+    },
+    "sales-call-prep-assistant": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sales-call-prep-assistant/SKILL.md",
+      "computedHash": "a35d5702858a787ed1c4ad13d40c4cc3ad20064f7786e1f5c72b612306fc281b"
+    },
+    "sales-coaching-plan-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sales-coaching-plan-generator/SKILL.md",
+      "computedHash": "3a953b03230a53de454a2c2c14bef8410813b3d65d4cf6729abf41a0bd73fa45"
+    },
+    "sales-comp-plan-designer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sales-comp-plan-designer/SKILL.md",
+      "computedHash": "c18dfe11a2d2e20781520ae5f079645408a174f2643633787fafc670a366bf48"
+    },
+    "sales-forecast-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sales-forecast-builder/SKILL.md",
+      "computedHash": "46380b77f57e9e0d40f834dd6f07a5a2426f64dfce3befe04e0e2fb6cc7733e7"
+    },
+    "sales-methodology-implementer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sales-methodology-implementer/SKILL.md",
+      "computedHash": "d5b85c8a332919e5d0e810fd4abd08d3661e9ac206f967915586ba103c796130"
+    },
+    "scout": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "scout/SKILL.md",
+      "computedHash": "611d49d91c9b72d9f762127f1e29b7b9c3d93fe0943038b94d51e89bef1d6755"
+    },
+    "scout-pro": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "scout-pro/SKILL.md",
+      "computedHash": "88c33304590ee266cc1557d06d8c977e0d23dab28b313603f876c2f043db4cbc"
+    },
+    "scouting-report-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "scouting-report-builder/SKILL.md",
+      "computedHash": "91aa07d0b382abb65ffaff577da5db4d376e2bdbadbce124955cf11ef3748f5e"
+    },
+    "screenshot-to-code": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "screenshot-to-code/SKILL.md",
+      "computedHash": "8a6746ad696de21a98f7f312e2ccb9ab702efb65b45726a9434e028c7acc8253"
+    },
+    "security-pentest-planner": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "security-pentest-planner/SKILL.md",
+      "computedHash": "b714c7b9a3babdfaa02063f608b78b53ab1c31d501f2b229df9d79f417d0c854"
+    },
+    "seo-content-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "seo-optimizer/SKILL.md",
+      "computedHash": "3f11d9bf32b41ede8997bc03a3a56bdd1e4fbe896e40d39f249844e1c3f5d299"
+    },
+    "seo-keyword-cluster-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "seo-keyword-cluster-builder/SKILL.md",
+      "computedHash": "7689a51ae43af32093f4a36ad82e64512e65f3e993d1035b1f39e937b59992b5"
+    },
+    "skill-composer-studio": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "skill-composer-studio/SKILL.md",
+      "computedHash": "43e887ca6a81d94cea3e929e75f0c5184c0be073b78f073389c1919a5fc078ce"
+    },
+    "skill-navigator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "skill-navigator/SKILL.md",
+      "computedHash": "4e3e50ab7c3c6ca2709f754f05ba077631d20059369233ee64019355830f3e72"
+    },
+    "slack-message-formatter": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "slack-message-formatter/SKILL.md",
+      "computedHash": "ca888159576d6fc709b693ebd84536295691c1c2a6685684f5b8be29cc9650c3"
+    },
+    "sms-text-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sms-text-optimizer/SKILL.md",
+      "computedHash": "14d6d71deca6809fb70287708231bd877983edef49a90c59efcf389cec7f0610"
+    },
+    "social-media-content-repurposer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "social-repurposer/SKILL.md",
+      "computedHash": "28c23d9124f908c445047e65ab7c842c0f16e661153aa819a367498e2b6b4faf"
+    },
+    "social-selling-content-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "social-selling-content-generator/SKILL.md",
+      "computedHash": "ea026b60a47b08b737bda61eef92d7c5bd7b1df1baae86d1ed44b0e5a5478ddb"
+    },
+    "sow-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sow-generator/SKILL.md",
+      "computedHash": "03797e301c4fd7c48f5bc3b75cc3bbe4ca186defe309fe1878f789c6284ca7a4"
+    },
+    "sports-betting-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sports-betting-analyzer/SKILL.md",
+      "computedHash": "6fdc4e49e5aa50cde742238cf3beac3838f5451193fbed5601d5a9d7be4a0abc"
+    },
+    "sports-meme-creator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sports-meme-creator/SKILL.md",
+      "computedHash": "71a1ff2db3963a2ebdca355a2782857e733359b57f2ae12b5b76a31cae3d7527"
+    },
+    "sports-podcast-outline-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sports-podcast-outline-generator/SKILL.md",
+      "computedHash": "5d14847ea8446b4dfc8b4f25a510194cff52439dcce3fe71d104383c75d1bec1"
+    },
+    "sports-trivia-builder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sports-trivia-builder/SKILL.md",
+      "computedHash": "c3e63fd40b9e5126fc7c5a2d61fa3d561729cb7614b1887fc903a06a001539cc"
+    },
+    "stock-photo-finder": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "stock-photo-finder/SKILL.md",
+      "computedHash": "82381d8454c63f5b69f430e444daf361241b7cf64843208aa08f78d272ddd5e7"
+    },
+    "sub-agent-orchestrator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "sub-agent-orchestrator/SKILL.md",
+      "computedHash": "d8ac5e2c3fb4ae2a6ffebf083f0258d9fcbbec3755b7649b1f03f45881a73fa4"
+    },
+    "tax-strategy-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "tax-strategy-optimizer/SKILL.md",
+      "computedHash": "cfffd409c1ab0751d506493da5977fbd5000596911d05518c2467905340b673c"
+    },
+    "team-chemistry-evaluator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "team-chemistry-evaluator/SKILL.md",
+      "computedHash": "012dbe412613fae3bec42bea7c8b4c06fd746b00da13e8211944933bf7a61d7a"
+    },
+    "tech-due-diligence": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "tech-due-diligence/SKILL.md",
+      "computedHash": "29eaecd70218a5c03ba19ea8a273732bfe546fd6d186633f0caf5725bc67c329"
+    },
+    "technical-writer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "technical-writer/SKILL.md",
+      "computedHash": "91f95ce88d7f311aa1eb1ca00e2dbfe629383c00a7bf076effb0e3af9e051b76"
+    },
+    "territory-planning-optimizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "territory-planning-optimizer/SKILL.md",
+      "computedHash": "99e023d70f9dde675716298201839b83c9760e7ad4ac61bc15d511ba3156ec31"
+    },
+    "test-coverage-improver": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "test-coverage-improver/SKILL.md",
+      "computedHash": "72faf33a1c46a8365ad8402c3c42b920ba7856d9afbe2fe76d41e34f608fb307"
+    },
+    "training-log-analyzer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "training-log-analyzer/SKILL.md",
+      "computedHash": "ccc13f2d2a0add05c2f6d4e07685b2d915a02c192c167944d51e221776789f8f"
+    },
+    "trash-talk-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "trash-talk-generator/SKILL.md",
+      "computedHash": "97e44b73bd204fe58fe35726682cebf171959feb8400745c5a922bbb7af53174"
+    },
+    "utm-link-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "utm-link-generator/SKILL.md",
+      "computedHash": "39936c50993946e453fc8c8a212bf8fdeed87949c8d4c40ecfca41ae1249856d"
+    },
+    "utm-parameter-generator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "utm-parameter-generator/SKILL.md",
+      "computedHash": "231d128a3f0b102320c0f2097306b0a05d60e4a90b0414d70d4adacf42d85658"
+    },
+    "weak-signal-synthesizer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "weak-signal-synthesizer/SKILL.md",
+      "computedHash": "a2d9c4e611c3a4a7f46991f9b651fcac24e6818d8cb4df2be71fa8c3e2d54259"
+    },
+    "webinar-content-repurposer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "webinar-content-repurposer/SKILL.md",
+      "computedHash": "da835622fd52f3ed5457c99a574ea0abff3980654b5f93ce2b3a61f07c94c95e"
+    },
+    "webinar-to-content-multiplier": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "webinar-to-content-multiplier/SKILL.md",
+      "computedHash": "6ac07c1045e6cfbac1708b220ed2352e8d16895ca347505dd9a767dbe12a5da7"
+    },
+    "weekly-business-report": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "weekly-business-report/SKILL.md",
+      "computedHash": "c60839b35e96a25a2deaa6b4feda0eb9f1a6c58b623a1df163d3196050546b93"
+    },
+    "workflow-automator": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "workflow-automator/SKILL.md",
+      "computedHash": "bc217a9452a6c28e2630d8e1b4554b8529d7d1d0a4b30be1f36cea0807f083e4"
+    },
+    "workout-program-designer": {
+      "source": "OneWave-AI/claude-skills",
+      "sourceType": "github",
+      "skillPath": "workout-program-designer/SKILL.md",
+      "computedHash": "16a028bf0b35bf725fc20b25f162a85880898a9485acc346bd38d69217449cdc"
+    }
+  }
+}
