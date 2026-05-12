@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyonity · Regional Sales Interview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #3c57e1;
+      --yellow: #f8ff76;
+      --dark: #001a64;
+      --dark2: #021470;
+      --lightblue: #d8ddf9;
+      --white: #ffffff;
+      --r: 14px;
+      --rl: 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    .hdr {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(0,26,100,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      height: 58px;
+      padding: 0 48px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .hdr-logo { font-size: 17px; font-weight: 800; letter-spacing: -.4px; }
+    .hdr-logo em { color: var(--yellow); font-style: normal; }
+    .hdr-badge {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.6px;
+      text-transform: uppercase; color: rgba(255,255,255,.28);
+    }
+
+    /* ─── TABS ─── */
+    .tab-nav {
+      background: rgba(0,20,85,.6);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: 0 48px;
+      display: flex; overflow-x: auto; scrollbar-width: none;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+
+    .tab-btn {
+      display: flex; align-items: center; gap: 9px;
+      background: none; border: none;
+      border-bottom: 2px solid transparent;
+      color: rgba(255,255,255,.38);
+      font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 15px 20px; cursor: pointer; white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    .tab-btn:hover { color: rgba(255,255,255,.72); }
+    .tab-btn.active { color: var(--yellow); border-bottom-color: var(--yellow); }
+
+    .tab-prog {
+      font-size: 10px; font-weight: 700; letter-spacing: 0;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.4);
+      padding: 2px 8px; border-radius: 20px;
+      transition: background .2s, color .2s;
+    }
+    .tab-btn.active .tab-prog { background: rgba(248,255,118,.14); color: var(--yellow); }
+
+    /* ─── PANELS ─── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .main {
+      max-width: 800px; margin: 0 auto;
+      padding: 52px 48px 88px;
+    }
+
+    /* GREETING */
+    .greeting { margin-bottom: 44px; }
+    .region-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(60,87,225,.18); border: 1px solid rgba(60,87,225,.38);
+      color: rgba(255,255,255,.6); font-size: 10px; font-weight: 700;
+      letter-spacing: 1.4px; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .greeting-h {
+      font-size: 42px; font-weight: 800; letter-spacing: -1.5px;
+      line-height: 1.05; margin-bottom: 14px;
+    }
+    .greeting-h em { color: var(--yellow); font-style: normal; }
+    .greeting-p {
+      font-size: 14px; font-weight: 300; color: rgba(255,255,255,.42);
+      line-height: 1.75; max-width: 540px;
+    }
+
+    /* PHASE RATING */
+    .rating-block {
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--rl); padding: 28px 32px; margin-bottom: 44px;
+    }
+    .block-lbl {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: 22px;
+    }
+    .phases-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .phase-col { text-align: center; padding: 0 10px; }
+    .phase-col + .phase-col { border-left: 1px solid rgba(255,255,255,.06); }
+    .phase-lbl {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.4px;
+      text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 10px;
+    }
+    .stars { display: flex; justify-content: center; gap: 2px; }
+    .star-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 15px; line-height: 1; padding: 3px;
+      color: rgba(255,255,255,.15); transition: color .15s, transform .12s;
+    }
+    .star-btn:hover { color: rgba(248,255,118,.55); transform: scale(1.2); }
+    .star-btn.on { color: var(--yellow); transform: scale(1.08); }
+
+    /* QUESTIONS */
+    .qs-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 40px; }
+
+    .q-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--rl); padding: 26px 26px 20px;
+      transition: border-color .22s, background .22s;
+    }
+    .q-card:focus-within {
+      border-color: rgba(60,87,225,.42);
+      background: rgba(60,87,225,.035);
+    }
+
+    .q-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+    .q-num {
+      flex-shrink: 0; width: 25px; height: 25px;
+      background: var(--blue); border-radius: 50%;
+      font-size: 10px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin-top: 2px;
+    }
+    .q-text { font-size: 14.5px; font-weight: 600; line-height: 1.5; color: rgba(255,255,255,.88); }
+
+    .q-ta {
+      display: block; width: 100%; min-height: 84px;
+      background: rgba(0,0,0,.17); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      color: rgba(255,255,255,.84);
+      font-family: 'Sora', sans-serif; font-size: 13.5px; font-weight: 300; line-height: 1.72;
+      padding: 12px 14px; resize: vertical; outline: none;
+      transition: border-color .2s, background .2s; margin-bottom: 13px;
+    }
+    .q-ta::placeholder { color: rgba(255,255,255,.16); }
+    .q-ta:focus { border-color: rgba(60,87,225,.48); background: rgba(0,0,0,.24); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip {
+      background: rgba(60,87,225,.1); border: 1px solid rgba(60,87,225,.22);
+      color: rgba(255,255,255,.48);
+      font-family: 'Sora', sans-serif; font-size: 11.5px; font-weight: 500;
+      padding: 5px 11px; border-radius: 20px; cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .chip:hover {
+      background: rgba(60,87,225,.26); border-color: rgba(60,87,225,.48);
+      color: rgba(255,255,255,.85);
+    }
+
+    /* SUBMIT */
+    .submit-area {
+      text-align: center;
+      background: rgba(248,255,118,.04); border: 1px solid rgba(248,255,118,.14);
+      border-radius: var(--rl); padding: 36px;
+    }
+    .submit-hint {
+      font-size: 12px; font-weight: 300; color: rgba(255,255,255,.28);
+      margin-bottom: 20px; letter-spacing: .2px;
+    }
+    .submit-btn {
+      background: var(--yellow); color: var(--dark);
+      border: none; font-family: 'Sora', sans-serif;
+      font-size: 14px; font-weight: 800; letter-spacing: .3px;
+      padding: 15px 54px; border-radius: 100px; cursor: pointer;
+      transition: background .15s, transform .15s, box-shadow .15s;
+    }
+    .submit-btn:hover {
+      background: #ecf160; transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(248,255,118,.2);
+    }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled { opacity: .45; cursor: default; transform: none; box-shadow: none; }
+
+    /* ─── CONFIRMATION ─── */
+    #confirm-view {
+      display: none; max-width: 800px; margin: 0 auto;
+      padding: 68px 48px 88px;
+    }
+    #confirm-view.show { display: block; }
+
+    .confirm-top { text-align: center; margin-bottom: 56px; }
+    .confirm-icon { font-size: 54px; display: block; margin-bottom: 20px; }
+    .confirm-h {
+      font-size: 38px; font-weight: 800; letter-spacing: -1.2px;
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .confirm-h em { color: var(--yellow); font-style: normal; }
+    .confirm-p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,.38); }
+
+    .sum-block {
+      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--rl); overflow: hidden; margin-bottom: 14px;
+    }
+    .sum-hdr {
+      background: var(--blue); padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 13px; font-weight: 700;
+    }
+    .sum-ratings { font-size: 11px; font-weight: 400; opacity: .72; }
+    .sum-qa { padding: 17px 24px; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .sum-qa:last-child { border-bottom: none; }
+    .sum-q {
+      font-size: 10px; font-weight: 700; letter-spacing: .8px;
+      text-transform: uppercase; color: rgba(255,255,255,.32); margin-bottom: 5px;
+    }
+    .sum-a { font-size: 13.5px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,.8); }
+    .sum-a.empty { color: rgba(255,255,255,.2); font-style: italic; }
+
+    .confirm-actions { text-align: center; margin-top: 44px; }
+    .btn-ghost {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.65);
+      font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 13px 30px; border-radius: 100px; cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); color: white; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 680px) {
+      .hdr, .tab-nav { padding: 0 20px; }
+      .main, #confirm-view { padding: 36px 20px 64px; }
+      .greeting-h { font-size: 30px; }
+      .phases-grid { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
+      .phase-col + .phase-col { border-left: none; }
+      .phase-col:nth-child(3), .phase-col:nth-child(4) { border-top: 1px solid rgba(255,255,255,.06); padding-top: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-logo">beyonity<em>.</em></div>
+  <div class="hdr-badge">Regional Sales Interview · 2026</div>
+</header>
+
+<nav class="tab-nav" id="tab-nav"></nav>
+
+<div id="interview-view">
+  <div id="panels-wrap"></div>
+</div>
+
+<div id="confirm-view"></div>
+
+<script>
+// ─────────────────────────────────────────────
+//  REGION DATA
+// ─────────────────────────────────────────────
+const REGIONS = {
+  ch: {
+    label: '🇨🇭 Schweiz',
+    name:  'Schweiz',
+    who:   'Fabian & Dave',
+    greeting: 'Hallo <em>Fabian & Dave</em> 👋',
+    intro: 'Dieses Interview hilft uns, die Beyonity-Strategie für den Schweizer Markt weiterzuentwickeln. Eure Antworten fließen direkt in die Produkt- und Vertriebsplanung ein.',
+    questions: [
+      {
+        q: 'Wie ist der aktuelle Marktmoment in der Schweiz? Eher Neubauprojekte in der Development-Phase oder Bestandspflege / Portfolio-Management?',
+        chips: ['Neubauvolumen steigt', 'Stagnierender Markt', 'Portfolio dominiert', 'Luxury-Segment aktiv']
+      },
+      {
+        q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle Eigentümer, C: Vermarkter) haben im CH-Markt das größte Wachstumspotenzial?',
+        chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Alle gleichwertig']
+      },
+      {
+        q: 'Was sind die konkreten Pain Points eurer CH-Kunden in der Development-Phase (Projektkonzeption, Produktdefinition)?',
+        chips: ['Fehlende 3D-Visualisierung', 'Intransparenz Einheiten', 'Lange Abstimmungszyklen', 'Fehlende Datenbasis']
+      },
+      {
+        q: 'Wie reagieren CH-Kunden auf das Beyonity Pricing-Modell? Welche Einwände tauchen am häufigsten auf?',
+        chips: ['Zu teuer', 'Unklarer ROI', 'Konkurrenz günstiger', 'Modell zu komplex']
+      },
+      {
+        q: 'Welche Beyonity-Produkte laufen in der Schweiz am stärksten (Navigator, Realtime Tour, Commercial Configurator, Data Dashboard)?',
+        chips: ['Navigator 5.0', 'Realtime Tour', 'Commercial Configurator', 'Data Dashboard']
+      },
+      {
+        q: 'Wie sieht ein typischer Sales-Zyklus im CH-Markt aus — vom Erstkontakt bis zum Abschluss?',
+        chips: ['< 4 Wochen', '1–3 Monate', '3–6 Monate', '> 6 Monate']
+      },
+      {
+        q: 'Gibt es regulatorische, kulturelle oder sprachliche Besonderheiten in der Schweiz (DE / FR / IT), die den Vertrieb prägen?',
+        chips: ['Mehrsprachigkeit relevant', 'Datenschutz CH-spezifisch', 'Konservative Entscheidungskultur', 'Regionale Unterschiede']
+      },
+      {
+        q: 'Wo siehst du die drei größten Wachstumschancen für Beyonity Schweiz in den nächsten 12 Monaten?',
+        chips: ['Neue Segmente', 'Upsell Bestandskunden', 'Neue DACH-Regionen', 'Partnerkanal']
+      },
+      {
+        q: 'Was braucht das Sales-Team Schweiz von Beyonity Central, um noch effektiver zu sein?',
+        chips: ['Bessere Demo-Materialien', 'Mehr Case Studies', 'Schnellerer Support', 'Angepasste Preismodelle']
+      }
+    ]
+  },
+
+  deat: {
+    label: '🇩🇪🇦🇹 DE/AT',
+    name:  'DE/AT',
+    who:   'Heike',
+    greeting: 'Hallo <em>Heike</em> 👋',
+    intro: 'Dieses Interview hilft uns, die Beyonity-Strategie für den deutschen und österreichischen Markt weiterzuentwickeln. Deine Antworten fließen direkt in die Produkt- und Vertriebsplanung ein.',
+    questions: [
+      {
+        q: 'Wie entwickelt sich der Immobilienmarkt in DE/AT aktuell — nach der Zinswende wieder Aufwind oder noch verhalten?',
+        chips: ['Markt erholt sich', 'Nachfrage stagniert', 'Entwickler zurückhaltend', 'Institutionelle weiter aktiv']
+      },
+      {
+        q: 'Welche Kundensegmente (A: Bauträger, B: Institutionelle, C: Vermarkter, D: Kiban) treiben das Wachstum in DE/AT?',
+        chips: ['Segment A: Bauträger', 'Segment B: Institutionelle', 'Segment C: Vermarkter', 'Segment D: Kiban']
+      },
+      {
+        q: 'Was sind die größten Herausforderungen für DE/AT-Kunden in der Development-Phase (Produktdefinition, Konfiguration)?',
+        chips: ['Baugenehmigungen verzögert', 'Finanzierungsengpässe', 'Fehlende Digitalisierung', 'Hohe Baukosten']
+      },
+      {
+        q: 'Wie ist die digitale Reife der Immobilienprojekte in DE/AT — bereit für 3D-Konfiguratoren und Realtime Touren?',
+        chips: ['Digital-First vorhanden', 'Teils aufgeschlossen', 'Eher traditionell', 'Großprojekte schon digital']
+      },
+      {
+        q: 'Welche Beyonity-Produkte funktionieren in DE/AT besonders gut, welche brauchen noch Überzeugungsarbeit?',
+        chips: ['Navigator klar vorne', 'Realtime Tour gut angenommen', 'Comm. Configurator erklärungsbedürftig', 'Data Dashboard komplex']
+      },
+      {
+        q: 'Wie unterscheidet sich die Entscheidungskultur in Deutschland vs. Österreich?',
+        chips: ['DE: mehr Gremienentscheide', 'AT: schnellere Einzelentscheide', 'Kaum Unterschied', 'AT: Beziehung wichtiger']
+      },
+      {
+        q: 'Was sind die häufigsten Konkurrenzprodukte, die du im DE/AT-Markt siehst?',
+        chips: ['Matterport', 'Ogulo', 'Lokale Proptech-Startups', 'Inhouse-Entwicklungen']
+      },
+      {
+        q: 'Wo liegen die stärksten Wachstumshebel für DE/AT in 2026?',
+        chips: ['Upsell Bestandskunden', 'Neue Segmente erschließen', 'Partnerkanal ausbauen', 'Events & Messen']
+      },
+      {
+        q: 'Was wäre das eine Feature oder die eine Verbesserung, die DE/AT-Kunden am meisten helfen würde?',
+        chips: ['Offline-Modus für Demos', 'Bessere CRM-Integration', 'Mehr Sprachoptionen', 'Einfacheres Onboarding']
+      }
+    ]
+  },
+
+  mena: {
+    label: '🌍 MENA',
+    name:  'MENA',
+    who:   'Osama',
+    greeting: 'Hello <em>Osama</em> 👋',
+    intro: 'This interview helps us develop the Beyonity strategy for the MENA market. Your answers feed directly into our product and sales planning.',
+    questions: [
+      {
+        q: 'Which markets within MENA have the highest Beyonity adoption potential right now?',
+        chips: ['UAE (Dubai / AD)', 'Saudi Arabia (Vision 2030)', 'Egypt', 'Kuwait / Qatar']
+      },
+      {
+        q: 'Which customer segments dominate MENA projects — large-scale developers, sovereign wealth funds, or brokers?',
+        chips: ['Large developers (Emaar, Aldar)', 'Sovereign / government', 'International brokers', 'Mixed-use developers']
+      },
+      {
+        q: 'What are the key pain points for MENA clients in the Development phase of large-scale projects?',
+        chips: ['Visualization scale', 'Off-plan selling complexity', 'Multi-language needs', 'Short project timelines']
+      },
+      {
+        q: 'How do MENA clients approach the pricing conversation for Beyonity products?',
+        chips: ['ROI-driven discussions', 'Budget approved top-down', 'Multi-year contracts preferred', 'High price sensitivity']
+      },
+      {
+        q: 'Which Beyonity products resonate most in MENA (Realtime Tour for showrooms, Navigator for agents)?',
+        chips: ['Realtime Tour (showrooms)', 'Navigator (agent portals)', 'Commercial Configurator', 'Data Dashboard']
+      },
+      {
+        q: 'How do sales cycles in MENA differ from European markets — timeline and decision-making hierarchy?',
+        chips: ['Faster C-suite decisions', 'Relationship-first, longer', 'Complex procurement', 'Project-by-project only']
+      },
+      {
+        q: 'What cultural or regulatory factors matter most when selling Beyonity in MENA?',
+        chips: ['Arabic UI needed', 'Local data hosting', 'Trust / relationship critical', 'Government mandates']
+      },
+      {
+        q: 'Where do you see the biggest growth opportunities in MENA for the next 12 months?',
+        chips: ['Saudi Vision 2030 projects', 'Dubai luxury sector', 'New hospitality vertical', 'Affordable housing scale']
+      },
+      {
+        q: 'What support or resources would help you close deals faster in MENA?',
+        chips: ['Arabic localization', 'On-site demo capability', 'Local success stories', 'Local partner integrations']
+      }
+    ]
+  },
+
+  iberia: {
+    label: '🇪🇸 Iberia',
+    name:  'Iberia',
+    who:   'Alejandro',
+    greeting: 'Hola <em>Alejandro</em> 👋',
+    intro: 'Este cuestionario nos ayuda a desarrollar la estrategia de Beyonity para el mercado ibérico. Tus respuestas influirán directamente en la planificación de producto y ventas.',
+    questions: [
+      {
+        q: '¿Cómo está evolucionando el mercado inmobiliario en España y Portugal — cuál es el sentimiento general?',
+        chips: ['Mercado en alza', 'Demanda residencial fuerte', 'Sector lujo activo', 'Incertidumbre regulatoria']
+      },
+      {
+        q: '¿Qué segmentos de clientes (promotores, propietarios institucionales, comercializadores) tienen mayor potencial en Iberia?',
+        chips: ['Promotores (Seg. A)', 'Institucionales (Seg. B)', 'Comercializadores (Seg. C)', 'Todos por igual']
+      },
+      {
+        q: '¿Cuáles son los principales pain points de los clientes ibéricos en la fase de desarrollo de proyectos?',
+        chips: ['Visualización 3D insuficiente', 'Ciclos de aprobación lentos', 'Difícil diferenciación', 'Datos fragmentados']
+      },
+      {
+        q: '¿Cómo responden los clientes ibéricos al pitch de Beyonity — qué les convence y qué genera dudas?',
+        chips: ['ROI claro convence', 'Precio genera dudas', 'Demo en vivo cierra', 'Referencias locales faltan']
+      },
+      {
+        q: '¿Qué productos Beyonity funcionan mejor en Iberia y cuáles necesitan más evangelización?',
+        chips: ['Navigator (fuerte)', 'Realtime Tour (bien recibida)', 'Commercial Configurator (+trabajo)', 'Data Dashboard (complejo)']
+      },
+      {
+        q: '¿Cómo es el ciclo de ventas típico en Iberia desde el primer contacto hasta el cierre?',
+        chips: ['< 4 semanas', '1–3 meses', '3–6 meses', '> 6 meses']
+      },
+      {
+        q: '¿Qué diferencias ves entre el mercado español y el portugués en términos de adopción digital?',
+        chips: ['Portugal más digital', 'España más volumen', 'Sin diferencias relevantes', 'Ciudades vs. regiones']
+      },
+      {
+        q: '¿Cuáles son las mayores oportunidades de crecimiento para Iberia en los próximos 12 meses?',
+        chips: ['Turismo / lujo residencial', 'Nuevos clientes ES/PT', 'Upsell existentes', 'Canal de partners']
+      },
+      {
+        q: '¿Qué necesitarías de Beyonity para acelerar el pipeline en Iberia?',
+        chips: ['Materiales en ES/PT', 'Casos de éxito locales', 'Soporte más ágil', 'Precios adaptados']
+      }
+    ]
+  }
+};
+
+const PHASES = ['Development', 'Pricing', 'Sales', 'Portfolio'];
+const FORMSPREE = 'https://formspree.io/f/p.fernandes@beyonity.com';
+
+// ─────────────────────────────────────────────
+//  STATE
+// ─────────────────────────────────────────────
+const state = {
+  current: 'ch',
+  ratings: { ch: [0,0,0,0], deat: [0,0,0,0], mena: [0,0,0,0], iberia: [0,0,0,0] }
+};
+
+// ─────────────────────────────────────────────
+//  RENDER
+// ─────────────────────────────────────────────
+function renderTabs() {
+  const nav = document.getElementById('tab-nav');
+  nav.innerHTML = Object.entries(REGIONS).map(([key, r]) => `
+    <button class="tab-btn${key === 'ch' ? ' active' : ''}" id="tab-${key}" onclick="activateTab('${key}')">
+      ${r.label}
+      <span class="tab-prog" id="prog-${key}">0/9</span>
+    </button>
+  `).join('');
+}
+
+function renderQuestion(rk, idx, q) {
+  const id = `${rk}-q${idx + 1}`;
+  const chips = q.chips.map(c =>
+    `<button class="chip" onclick="appendChip('${id}','${c.replace(/'/g, "\\'")}')">+ ${c}</button>`
+  ).join('');
+  return `
+    <div class="q-card">
+      <div class="q-top">
+        <div class="q-num">${idx + 1}</div>
+        <div class="q-text">${q.q}</div>
+      </div>
+      <textarea class="q-ta" id="${id}" placeholder="Antwort eingeben…" oninput="updateProgress('${rk}')"></textarea>
+      <div class="chips">${chips}</div>
+    </div>
+  `;
+}
+
+function renderStars(rk, phaseIdx) {
+  return PHASES.slice(0, 5).map((_, i) => i + 1).map(v => `
+    <button class="star-btn" id="star-${rk}-${phaseIdx}-${v}"
+      onclick="setRating('${rk}',${phaseIdx},${v})">★</button>
+  `).join('');
+}
+
+function renderPanel(key, r) {
+  const phases = PHASES.map((p, pi) => `
+    <div class="phase-col">
+      <div class="phase-lbl">${p}</div>
+      <div class="stars">${renderStars(key, pi)}</div>
+    </div>
+  `).join('');
+
+  const questions = r.questions.map((q, i) => renderQuestion(key, i, q)).join('');
+
+  return `
+    <div class="panel${key === 'ch' ? ' active' : ''}" id="panel-${key}">
+      <div class="main">
+        <div class="greeting">
+          <div class="region-pill">${r.label}</div>
+          <h1 class="greeting-h">${r.greeting}</h1>
+          <p class="greeting-p">${r.intro}</p>
+        </div>
+
+        <div class="rating-block">
+          <div class="block-lbl">Phase-Rating — Wie stark ist eure Region in jeder Phase? (1–5 Sterne)</div>
+          <div class="phases-grid">${phases}</div>
+        </div>
+
+        <div class="qs-list">${questions}</div>
+
+        <div class="submit-area">
+          <p class="submit-hint">Alle Antworten werden sicher an p.fernandes@beyonity.com übermittelt.</p>
+          <button class="submit-btn" id="submit-${key}" onclick="submitInterview('${key}')">
+            Interview absenden →
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function init() {
+  renderTabs();
+  const wrap = document.getElementById('panels-wrap');
+  wrap.innerHTML = Object.entries(REGIONS).map(([k, r]) => renderPanel(k, r)).join('');
+}
+
+// ─────────────────────────────────────────────
+//  INTERACTIONS
+// ─────────────────────────────────────────────
+function activateTab(key) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(`tab-${key}`).classList.add('active');
+  document.getElementById(`panel-${key}`).classList.add('active');
+  state.current = key;
+}
+
+function setRating(rk, phaseIdx, value) {
+  state.ratings[rk][phaseIdx] = value;
+  for (let v = 1; v <= 5; v++) {
+    const btn = document.getElementById(`star-${rk}-${phaseIdx}-${v}`);
+    if (btn) btn.classList.toggle('on', v <= value);
+  }
+}
+
+function appendChip(taId, text) {
+  const ta = document.getElementById(taId);
+  if (!ta) return;
+  const cur = ta.value.trim();
+  ta.value = cur ? cur + '\n· ' + text : '· ' + text;
+  ta.focus();
+  updateProgress(taId.split('-q')[0]);
+}
+
+function updateProgress(rk) {
+  const r = REGIONS[rk];
+  if (!r) return;
+  const filled = r.questions.filter((_, i) => {
+    const ta = document.getElementById(`${rk}-q${i + 1}`);
+    return ta && ta.value.trim().length > 0;
+  }).length;
+  const el = document.getElementById(`prog-${rk}`);
+  if (el) el.textContent = `${filled}/9`;
+}
+
+// ─────────────────────────────────────────────
+//  SUBMISSION
+// ─────────────────────────────────────────────
+async function submitInterview(rk) {
+  const r = REGIONS[rk];
+  const btn = document.getElementById(`submit-${rk}`);
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet…';
+
+  // Collect answers
+  const answers = r.questions.map((q, i) => ({
+    question: q.q,
+    answer: (document.getElementById(`${rk}-q${i + 1}`)?.value.trim()) || ''
+  }));
+
+  // Build rating string
+  const ratingStr = PHASES.map((p, i) => {
+    const v = state.ratings[rk][i];
+    return `${p}: ${'★'.repeat(v)}${'☆'.repeat(5 - v)} (${v}/5)`;
+  }).join('  |  ');
+
+  // Build flat payload for Formspree
+  const payload = {
+    _subject: `Beyonity Regional Interview — ${r.name} (${r.who})`,
+    region: r.name,
+    interviewee: r.who,
+    phase_ratings: ratingStr
+  };
+  answers.forEach((a, i) => {
+    payload[`Q${i + 1}: ${a.question.substring(0, 60)}…`] = a.answer || '(keine Antwort)';
+  });
+
+  try {
+    const res = await fetch(FORMSPREE, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      showConfirmation(rk, answers, ratingStr);
+    } else {
+      const data = await res.json().catch(() => ({}));
+      alert(`Fehler beim Senden: ${data.error || res.status}. Bitte erneut versuchen.`);
+      btn.disabled = false;
+      btn.textContent = 'Interview absenden →';
+    }
+  } catch (e) {
+    alert('Netzwerkfehler. Bitte Internetverbindung prüfen und erneut versuchen.');
+    btn.disabled = false;
+    btn.textContent = 'Interview absenden →';
+  }
+}
+
+// ─────────────────────────────────────────────
+//  CONFIRMATION
+// ─────────────────────────────────────────────
+function showConfirmation(rk, answers, ratingStr) {
+  const r = REGIONS[rk];
+
+  document.getElementById('interview-view').style.display = 'none';
+  document.getElementById('tab-nav').style.display = 'none';
+
+  const qaRows = answers.map((a, i) => `
+    <div class="sum-qa">
+      <div class="sum-q">Frage ${i + 1}</div>
+      <div class="sum-q" style="font-size:12px;letter-spacing:.2px;text-transform:none;font-weight:400;color:rgba(255,255,255,.55);margin-bottom:6px;">${a.question}</div>
+      <div class="sum-a${!a.answer ? ' empty' : ''}">${a.answer ? a.answer.replace(/\n/g, '<br>') : 'Keine Antwort'}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('confirm-view').innerHTML = `
+    <div class="confirm-top">
+      <span class="confirm-icon">✅</span>
+      <h2 class="confirm-h">Interview abgesendet — <em>Danke, ${r.who}!</em></h2>
+      <p class="confirm-p">Die Antworten wurden erfolgreich an p.fernandes@beyonity.com übermittelt.</p>
+    </div>
+
+    <div class="sum-block">
+      <div class="sum-hdr">
+        <span>${r.label} · ${r.who}</span>
+        <span class="sum-ratings">${ratingStr}</span>
+      </div>
+      ${qaRows}
+    </div>
+
+    <div class="confirm-actions">
+      <button class="btn-ghost" onclick="resetAll()">← Neues Interview starten</button>
+    </div>
+  `;
+
+  document.getElementById('confirm-view').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function resetAll() {
+  document.getElementById('confirm-view').classList.remove('show');
+  document.getElementById('confirm-view').innerHTML = '';
+  document.getElementById('interview-view').style.display = '';
+  document.getElementById('tab-nav').style.display = '';
+  // Reset form fields
+  document.querySelectorAll('.q-ta').forEach(ta => ta.value = '');
+  // Reset ratings
+  Object.keys(state.ratings).forEach(rk => {
+    state.ratings[rk] = [0, 0, 0, 0];
+    for (let pi = 0; pi < 4; pi++) {
+      for (let v = 1; v <= 5; v++) {
+        const btn = document.getElementById(`star-${rk}-${pi}-${v}`);
+        if (btn) btn.classList.remove('on');
+      }
+    }
+    updateProgress(rk);
+    const sb = document.getElementById(`submit-${rk}`);
+    if (sb) { sb.disabled = false; sb.textContent = 'Interview absenden →'; }
+  });
+  activateTab('ch');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ─────────────────────────────────────────────
+//  BOOT
+// ─────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
