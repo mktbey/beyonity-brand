@@ -695,8 +695,8 @@ function buildPanels() {
             ${r.qs.map((q, idx) => buildQuestion(k, idx, q)).join('')}
           </div>
           <div class="finish-wrap">
-            <p class="finish-hint">Antworten werden automatisch gespeichert. Klick auf "Abschliessen" für die Zusammenfassung und den JSON-Export.</p>
-            <button class="finish-btn" onclick="finish('${k}')">Interview abschliessen →</button>
+            <p class="finish-hint">Antworten werden automatisch gespeichert. Klick auf "Abschliessen" zum Speichern und Senden.</p>
+            <button class="finish-btn" onclick="finish('${k}', this)">Interview abschliessen →</button>
           </div>
         </div>
       </div>
@@ -834,9 +834,9 @@ function dlJSON(rk) {
 }
 
 // ═══════════════════════════════════════════════════════
-//  FINISH → CONFIRM PAGE
+//  FINISH → SUBMIT → CONFIRM PAGE
 // ═══════════════════════════════════════════════════════
-function finish(rk) {
+async function finish(rk, btn) {
   Mic.stop();
   save(rk);
   const r    = REGIONS[rk];
@@ -861,11 +861,55 @@ function finish(rk) {
     `;
   }).join('');
 
+  if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet…'; }
+
+  let submitted = false;
+  try {
+    const res = await fetch('https://beyonity-ops.vercel.app/api/interviews/submit', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    submitted = true;
+  } catch (e) {
+    toast('Fehler beim Senden — bitte nochmal versuchen');
+    if (btn) { btn.disabled = false; btn.textContent = 'Interview abschliessen →'; }
+  }
+
+  if (!submitted) {
+    document.getElementById('confirm').innerHTML = `
+      <div class="confirm-top">
+        <span class="confirm-icon">⚠️</span>
+        <h2>Senden fehlgeschlagen</h2>
+        <p>Die Antworten sind lokal gespeichert. Bitte nochmal versuchen oder als JSON sichern.</p>
+      </div>
+      <div class="sum-card">
+        <div class="sum-head">
+          <span>${r.label} · ${r.who} · ${r.role}</span>
+          <span class="sum-date">${data.date}</span>
+        </div>
+        ${rows}
+      </div>
+      <div class="confirm-btns">
+        <button class="btn-y" onclick="finish('${rk}', this)">Nochmal senden →</button>
+        <button class="btn-g" style="background:none;border:1px solid rgba(0,26,100,.2);color:rgba(0,26,100,.6)" onclick="dlJSON('${rk}')">↓ JSON als Backup herunterladen</button>
+        <button class="btn-g" onclick="reset('${rk}')">← Neues Interview</button>
+      </div>
+    `;
+    document.getElementById('main').style.display = 'none';
+    document.getElementById('tabs').style.display = 'none';
+    document.getElementById('confirm').classList.add('on');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
   document.getElementById('confirm').innerHTML = `
     <div class="confirm-top">
       <span class="confirm-icon">✅</span>
       <h2>Danke, <em>${r.who}</em>!</h2>
-      <p>Vollständige Zusammenfassung. Die JSON-Datei wird automatisch heruntergeladen.</p>
+      <p style="font-size:16px;font-weight:600;color:var(--dark);margin-bottom:6px">Deine Antworten wurden gespeichert.</p>
+      <p>Vollständige Zusammenfassung unten.</p>
     </div>
     <div class="sum-card">
       <div class="sum-head">
@@ -875,8 +919,8 @@ function finish(rk) {
       ${rows}
     </div>
     <div class="confirm-btns">
-      <button class="btn-y" onclick="dlJSON('${rk}')">Als JSON exportieren ↓</button>
       <button class="btn-g" onclick="reset('${rk}')">← Neues Interview</button>
+      <button class="btn-g" style="background:none;border:1px solid rgba(0,26,100,.2);color:rgba(0,26,100,.6)" onclick="dlJSON('${rk}')">↓ JSON als Backup herunterladen</button>
     </div>
   `;
 
@@ -884,7 +928,6 @@ function finish(rk) {
   document.getElementById('tabs').style.display = 'none';
   document.getElementById('confirm').classList.add('on');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  setTimeout(() => dlJSON(rk), 350);
 }
 
 function reset(rk) {
