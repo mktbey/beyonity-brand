@@ -177,6 +177,7 @@
     }
     .pb:hover { background: rgba(60,87,225,.12); border-color: rgba(60,87,225,.35); color: var(--dark); }
     .pb.on { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .pb.awareness-on { background: #f8ff76; border-color: #c8cf00; color: #001a64; }
 
     .q-stars { display: flex; gap: 2px; flex-shrink: 0; }
     .qs-star {
@@ -296,7 +297,7 @@
 // ═══════════════════════════════════════════════════════
 //  DATA
 // ═══════════════════════════════════════════════════════
-const PHASES = ['Development','Pricing','Sales','Portfolio'];
+const PHASES = ['Development','Pricing','Sales','Portfolio','Awareness'];
 
 const REGIONS = {
   ch: {
@@ -323,7 +324,10 @@ const REGIONS = {
       { q: 'Wo siehst du die drei größten Wachstumschancen für Beyonity Schweiz in den nächsten 12 Monaten?',
         phase: 'Portfolio', chips: ['Neue Segmente erschließen', 'Upsell Bestandskunden', 'Neue DACH-Regionen', 'Partnerkanal aufbauen'] },
       { q: 'Was braucht das Sales-Team Schweiz von Beyonity Central, um noch effektiver zu werden?',
-        phase: 'Portfolio', chips: ['Bessere Demo-Materialien', 'Mehr Case Studies CH', 'Schnellerer Support', 'Angepasstes Preismodell'] }
+        phase: 'Portfolio', chips: ['Bessere Demo-Materialien', 'Mehr Case Studies CH', 'Schnellerer Support', 'Angepasstes Preismodell'] },
+      { q: 'Wie bekannt ist Beyonity bei Neukunden in der Schweiz — müsst ihr viel erklären oder kennen die meisten das Produkt bereits?', phase: 'Awareness', chips: ['Sehr bekannt', 'Mittel bekannt', 'Kaum bekannt', 'Regional unterschiedlich'] },
+      { q: 'Über welche Kanäle kommen neue Kunden auf Beyonity zu — Empfehlung, LinkedIn, Events, Kaltakquise?', phase: 'Awareness', chips: ['Empfehlung / Referral', 'LinkedIn', 'Events / Messen', 'Kaltakquise'] },
+      { q: 'Was ist das grösste Hindernis bei der Neukundengewinnung in der Schweiz?', phase: 'Awareness', chips: ['Fehlende Bekanntheit', 'Preis zu hoch', 'Starke Konkurrenz', 'Skepsis gegenüber neuem Tool'] }
     ]
   },
 
@@ -351,7 +355,10 @@ const REGIONS = {
       { q: 'Wo liegen die stärksten Wachstumshebel für DE/AT in 2026?',
         phase: 'Portfolio', chips: ['Upsell Bestandskunden', 'Neue Segmente erschließen', 'Partnerkanal ausbauen', 'Events & Messen'] },
       { q: 'Was wäre das eine Feature oder die eine Verbesserung, die DE/AT-Kunden am meisten helfen würde?',
-        phase: 'Portfolio', chips: ['Offline-Modus für Demos', 'Bessere CRM-Integration', 'Mehr Sprachoptionen', 'Einfacheres Onboarding'] }
+        phase: 'Portfolio', chips: ['Offline-Modus für Demos', 'Bessere CRM-Integration', 'Mehr Sprachoptionen', 'Einfacheres Onboarding'] },
+      { q: 'Wie ist der Bekanntheitsgrad von Beyonity in DE/AT im Vergleich zur Schweiz?', phase: 'Awareness', chips: ['Höher als CH', 'Ähnlich wie CH', 'Niedriger als CH', 'Sehr regional unterschiedlich'] },
+      { q: 'Welche Akquise-Strategie funktioniert in DE/AT am besten für Neukunden?', phase: 'Awareness', chips: ['Empfehlung', 'EXPO REAL / Messen', 'LinkedIn Outreach', 'Direktansprache'] },
+      { q: 'Was müsste sich ändern damit Beyonity in DE/AT schneller bei Neukunden bekannt wird?', phase: 'Awareness', chips: ['Mehr PR / Presse', 'Lokale Case Studies', 'Partner-Netzwerk', 'Mehr Events'] }
     ]
   },
 
@@ -379,7 +386,10 @@ const REGIONS = {
       { q: 'Where do you see the biggest growth opportunities in MENA for the next 12 months?',
         phase: 'Portfolio', chips: ['Saudi Vision 2030 projects', 'Dubai luxury sector', 'New hospitality vertical', 'Affordable housing scale'] },
       { q: 'What support or resources would help you close deals faster in MENA?',
-        phase: 'Portfolio', chips: ['Arabic localization', 'On-site demo capability', 'Local success stories', 'Local partner integrations'] }
+        phase: 'Portfolio', chips: ['Arabic localization', 'On-site demo capability', 'Local success stories', 'Local partner integrations'] },
+      { q: 'How well known is Beyonity among new prospects in MENA — do you need to build awareness from scratch?', phase: 'Awareness', chips: ['Well known', 'Somewhat known', 'Unknown — must educate', 'Depends on country'] },
+      { q: 'What is the most effective channel to reach new clients in MENA?', phase: 'Awareness', chips: ['Referral / Word of mouth', 'Industry events', 'LinkedIn', 'Direct outreach'] },
+      { q: 'What is the biggest barrier to winning new clients who do not know Beyonity yet?', phase: 'Awareness', chips: ['No brand awareness', 'Trust / credibility gap', 'No local references', 'Price perception'] }
     ]
   },
 
@@ -407,7 +417,10 @@ const REGIONS = {
       { q: '¿Cuáles son las mayores oportunidades de crecimiento para Iberia en los próximos 12 meses?',
         phase: 'Portfolio', chips: ['Turismo / lujo residencial', 'Nuevos clientes en ES/PT', 'Upsell clientes existentes', 'Canal de partners'] },
       { q: '¿Qué necesitarías de Beyonity para acelerar el pipeline en Iberia?',
-        phase: 'Portfolio', chips: ['Materiales en español/portugués', 'Casos de éxito locales', 'Soporte técnico más ágil', 'Modelo de precios adaptado'] }
+        phase: 'Portfolio', chips: ['Materiales en español/portugués', 'Casos de éxito locales', 'Soporte técnico más ágil', 'Modelo de precios adaptado'] },
+      { q: '¿Qué tan conocida es Beyonity entre los nuevos prospectos en Iberia?', phase: 'Awareness', chips: ['Bien conocida', 'Algo conocida', 'Prácticamente desconocida', 'Varía por ciudad'] },
+      { q: '¿Qué canal funciona mejor para captar nuevos clientes en Iberia?', phase: 'Awareness', chips: ['Referencias / boca a boca', 'Eventos del sector', 'LinkedIn', 'Prospección directa'] },
+      { q: '¿Cuál es el mayor obstáculo para captar clientes que no conocen Beyonity?', phase: 'Awareness', chips: ['Falta de notoriedad', 'Sin referencias locales', 'Precio percibido alto', 'Competencia local fuerte'] }
     ]
   }
 };
@@ -563,7 +576,7 @@ function buildTabs() {
   document.getElementById('tabs').innerHTML =
     Object.entries(REGIONS).map(([k, r], i) => `
       <button class="tab${i === 0 ? ' on' : ''}" id="tab-${k}" onclick="switchTab('${k}')">
-        ${r.label} <span class="tab-count" id="cnt-${k}">0/9</span>
+        ${r.label} <span class="tab-count" id="cnt-${k}">0/12</span>
       </button>
     `).join('');
 }
@@ -571,6 +584,16 @@ function buildTabs() {
 function buildQuestion(rk, idx, q) {
   const id   = rk + '-q' + (idx + 1);
   const lang = REGIONS[rk].lang;
+
+  const divider = idx === 9 ? `
+    <div style="display:flex;align-items:center;gap:12px;margin:8px 0 4px;">
+      <div style="flex:1;height:1.5px;background:var(--border);"></div>
+      <span style="font-size:12px;font-weight:700;letter-spacing:.6px;color:var(--blue);white-space:nowrap;">
+        ${lang.startsWith('en') ? '🎯 New Client Acquisition &amp; Awareness' : lang.startsWith('es') ? '🎯 Captación de Nuevos Clientes' : '🎯 Neukundengewinnung &amp; Bekanntheit'}
+      </span>
+      <div style="flex:1;height:1.5px;background:var(--border);"></div>
+    </div>
+  ` : '';
   const hint = lang.startsWith('en') ? 'Speak your\nanswer'
              : lang.startsWith('es') ? 'Habla tu\nrespuesta'
              : 'Antwort\neinsprechen';
@@ -581,7 +604,7 @@ function buildQuestion(rk, idx, q) {
   ).join('');
 
   const phaseBtns = PHASES.map(p =>
-    `<button class="pb${p === q.phase ? ' on' : ''}" id="pb-${id}-${p}"
+    `<button class="pb${p === q.phase ? (p === 'Awareness' ? ' awareness-on' : ' on') : ''}" id="pb-${id}-${p}"
       onclick="setPhase('${rk}',${idx+1},'${p}',true)">${p}</button>`
   ).join('');
 
@@ -589,7 +612,7 @@ function buildQuestion(rk, idx, q) {
     `<button class="qs-star" id="st-${id}-${v}" onclick="setRating('${rk}',${idx+1},${v})">★</button>`
   ).join('');
 
-  return `
+  return divider + `
     <div class="q-card">
       <div class="q-head">
         <div class="q-n">${idx + 1}</div>
@@ -660,7 +683,9 @@ function setPhase(rk, qIdx, phase, doSave) {
   state.phases[id] = phase;
   PHASES.forEach(p => {
     const btn = document.getElementById('pb-' + id + '-' + p);
-    if (btn) btn.classList.toggle('on', p === phase);
+    if (!btn) return;
+    btn.classList.remove('on', 'awareness-on');
+    if (p === phase) btn.classList.add(phase === 'Awareness' ? 'awareness-on' : 'on');
   });
   if (doSave) schedSave(rk);
 }
@@ -685,7 +710,7 @@ function countProgress(rk) {
     return el && el.value.trim().length > 0;
   }).length;
   const el = document.getElementById('cnt-' + rk);
-  if (el) el.textContent = n + '/9';
+  if (el) el.textContent = n + '/' + REGIONS[rk].qs.length;
 }
 
 // ═══════════════════════════════════════════════════════
