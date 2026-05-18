@@ -1,0 +1,60 @@
+{
+  "regions": [
+    {
+      "id": "ch", "flag": "🇨🇭", "name_de": "Schweiz", "name_en": "Switzerland",
+      "team": [
+        { "name": "Fabian Hammer", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/fabian-hammer-ch/", "photo": "fabian-hammer.jpg" },
+        { "name": "David Huber",    "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/david-huber-527bb4161/", "photo": "david-huber.jpg" }
+      ],
+      "company_profile": { "label_de": "Company Profile CH", "label_en": "Company Profile CH", "url": "", "type": "pdf" },
+      "landing_pages": [],
+      "decks": [],
+      "case_studies": ["Previs", "UBS Luzern", "BVK"]
+    },
+    {
+      "id": "deat", "flag": "🇩🇪", "name_de": "DE / AT", "name_en": "DE / AT",
+      "team": [
+        { "name": "Heike Müller", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/heike-m%C3%BCller-immo/", "photo": "heike-mueller.jpg" }
+      ],
+      "company_profile": { "label_de": "Company Profile DE/AT", "label_en": "Company Profile DE/AT", "url": "", "type": "pdf" },
+      "landing_pages": [
+        { "label_de": "Smarte Lösung Immobilienvermarktung", "label_en": "Smart Real Estate Marketing Solution", "lang": "de-DE", "url": "https://lp.beyonity.com/smarte-losung-fur-ihre-immobilienvermarktung-de/" }
+      ],
+      "decks": [],
+      "case_studies": ["Trump Tower"]
+    },
+    {
+      "id": "iberia", "flag": "🇪🇸", "name_de": "Iberia", "name_en": "Iberia",
+      "team": [
+        { "name": "Alejandro Tomás", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/alejandrotomaspico/", "photo": "alejandro-tomas.jpg" },
+        { "name": "Miguel Angel Morala Perez", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "https://meetings-eu1.hubspot.com/xavier-benasco/presentation-xavier?uuid=28c4d43a-bda0-488f-95d1-086153e4fcd2", "email": "", "linkedin": "https://www.linkedin.com/in/miguel-morala/", "photo": "miguel-morala.jpg" }
+      ],
+      "company_profile": { "label_de": "Company Profile Iberia", "label_en": "Company Profile Iberia", "url": "", "type": "pdf" },
+      "landing_pages": [
+        { "label_de": "Navigator (Miguel)", "label_en": "Navigator (Miguel)", "lang": "es", "url": "https://lp.beyonity.com/es-miguel-navigator/" }
+      ],
+      "decks": [],
+      "case_studies": []
+    },
+    {
+      "id": "mena", "flag": "🇦🇪", "name_de": "MENA", "name_en": "MENA",
+      "team": [
+        { "name": "Osama Soady", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/osamasoady/", "photo": "osama-soady.jpg" }
+      ],
+      "company_profile": { "label_de": "Company Profile MENA", "label_en": "Company Profile MENA", "url": "", "type": "pdf" },
+      "landing_pages": [],
+      "decks": [],
+      "case_studies": []
+    },
+    {
+      "id": "africa", "flag": "🇰🇪", "name_de": "Africa", "name_en": "Africa",
+      "team": [
+        { "name": "Laura Salzmann", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/laura-salzmann-africa/", "photo": "laura-salzmann.jpg" }
+      ],
+      "company_profile": { "label_de": "Company Profile Africa", "label_en": "Company Profile Africa", "url": "", "type": "pdf" },
+      "landing_pages": [],
+      "decks": [],
+      "case_studies": []
+    }
+  ]
+}
