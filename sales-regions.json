@@ -3,8 +3,8 @@
     {
       "id": "ch", "flag": "🇨🇭", "name_de": "Schweiz", "name_en": "Switzerland",
       "team": [
-        { "name": "Fabian Hammer", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/fabian-hammer-ch/", "photo": "fabian-hammer.jpg" },
-        { "name": "David Huber",    "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/david-huber-527bb4161/", "photo": "david-huber.jpg" }
+        { "name": "Fabian Hammer", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/fabian-hammer-ch/", "photo": "fabian-hammer.webp" },
+        { "name": "David Huber",    "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/david-huber-527bb4161/", "photo": "david-huber.webp" }
       ],
       "company_profile": { "label_de": "Company Profile CH", "label_en": "Company Profile CH", "url": "", "type": "pdf" },
       "landing_pages": [],
@@ -14,7 +14,7 @@
     {
       "id": "deat", "flag": "🇩🇪", "name_de": "DE / AT", "name_en": "DE / AT",
       "team": [
-        { "name": "Heike Müller", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/heike-m%C3%BCller-immo/", "photo": "heike-mueller.jpg" }
+        { "name": "Heike Müller", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/heike-m%C3%BCller-immo/", "photo": "heike-mueller.webp" }
       ],
       "company_profile": { "label_de": "Company Profile DE/AT", "label_en": "Company Profile DE/AT", "url": "", "type": "pdf" },
       "landing_pages": [
@@ -26,8 +26,8 @@
     {
       "id": "iberia", "flag": "🇪🇸", "name_de": "Iberia", "name_en": "Iberia",
       "team": [
-        { "name": "Alejandro Tomás", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/alejandrotomaspico/", "photo": "alejandro-tomas.jpg" },
-        { "name": "Miguel Angel Morala Perez", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "https://meetings-eu1.hubspot.com/xavier-benasco/presentation-xavier?uuid=28c4d43a-bda0-488f-95d1-086153e4fcd2", "email": "", "linkedin": "https://www.linkedin.com/in/miguel-morala/", "photo": "miguel-morala.jpg" }
+        { "name": "Alejandro Tomás", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/alejandrotomaspico/", "photo": "alejandro-tomas.webp" },
+        { "name": "Miguel Angel Morala Perez", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "https://meetings-eu1.hubspot.com/xavier-benasco/presentation-xavier?uuid=28c4d43a-bda0-488f-95d1-086153e4fcd2", "email": "", "linkedin": "https://www.linkedin.com/in/miguel-morala/", "photo": "miguel-morala.webp" }
       ],
       "company_profile": { "label_de": "Company Profile Iberia", "label_en": "Company Profile Iberia", "url": "", "type": "pdf" },
       "landing_pages": [
@@ -39,7 +39,7 @@
     {
       "id": "mena", "flag": "🇦🇪", "name_de": "MENA", "name_en": "MENA",
       "team": [
-        { "name": "Osama Soady", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/osamasoady/", "photo": "osama-soady.jpg" }
+        { "name": "Osama Soady", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/osamasoady/", "photo": "osama-soady.webp" }
       ],
       "company_profile": { "label_de": "Company Profile MENA", "label_en": "Company Profile MENA", "url": "", "type": "pdf" },
       "landing_pages": [],
@@ -49,7 +49,7 @@
     {
       "id": "africa", "flag": "🇰🇪", "name_de": "Africa", "name_en": "Africa",
       "team": [
-        { "name": "Laura Salzmann", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/laura-salzmann-africa/", "photo": "laura-salzmann.jpg" }
+        { "name": "Laura Salzmann", "position_de": "TODO", "position_en": "TODO", "location": "", "booking_url": "", "email": "", "linkedin": "https://www.linkedin.com/in/laura-salzmann-africa/", "photo": "laura-salzmann.webp" }
       ],
       "company_profile": { "label_de": "Company Profile Africa", "label_en": "Company Profile Africa", "url": "", "type": "pdf" },
       "landing_pages": [],
