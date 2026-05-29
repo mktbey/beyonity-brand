@@ -26,6 +26,7 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 - Logos Grid: 6 SVG-Varianten (RGB Blue/White, CMYK Blue/Darkblue, Logo+Keyvisual, Signet Blue) mit ↓-Download; RGB White auf dunklem Hintergrund
 - Präsentationen Grid: 11 Slides als WebP-Thumbnail (object-fit:cover, 16:9) mit ↓-Download der Originaldatei (PNG/JPG aus assets/presentations/full/)
 - Titel aus Dateinamen (Title Case), drei Ausnahmen: "4 Regionen", "Data + 3D: More Value", "Projektgeschäft vs. SaaS"
+- Patch: Präsentationen in eigene .card ausgelagert; Figma-Button "Alle Assets in Figma öffnen" über dem Grid; Card 1 wieder "Produkt-Icons & Logos"; alle Bilddateien (11 WebP + 11 full/) committed
 
 ## [1.7.11] — 2026-05-18
 
