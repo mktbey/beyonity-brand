@@ -18,6 +18,14 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.7.13] — 2026-05-29
+
+### Added
+- Visuelles: Neue Sub-Section "Produkt-Icons & Logos" unterhalb Key Visuals
+- Produkt-Icons Grid: 5 PNG-Icons (Navigator, Portfolio Overview, Living Configurator, Commercial Configurator, Realtime Tour) mit Download-Button (↓)
+- Logos Grid: 6 SVG-Varianten (RGB Blue/White, CMYK Blue/Darkblue, Logo+Keyvisual, Signet Blue) mit Download-Button; RGB White auf dunklem Hintergrund
+- Hinweistext: "Präsentationen und weitere Sales Assets findest du unter Sales Assets bzw. im Brand Asset Folder." (DE/EN)
+
 ## [1.7.11] — 2026-05-18
 
 ### Added
