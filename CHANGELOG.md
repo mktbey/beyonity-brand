@@ -18,6 +18,11 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.8.1] — 2026-05-29
+
+### Fixed
+- Tone of Voice: Section in eigenständige Subs (`#tov-main`, `#tov-assets`) aufgeteilt; Inhalt erscheint nicht mehr unter Sales Assets. Erweiterbar ohne Sonder-CSS.
+
 ## [1.8.0] — 2026-05-29
 
 ### Added
