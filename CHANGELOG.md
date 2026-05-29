@@ -18,15 +18,23 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
-## [1.7.13] — 2026-05-29
+## [1.8.0] — 2026-05-29
 
 ### Added
-- Visuelles: Neue Sub-Section "Produkt-Icons, Logos & Präsentationen" unterhalb Key Visuals
-- Produkt-Icons Grid: 5 PNG-Icons (Navigator, Portfolio Overview, Living Configurator, Commercial Configurator, Realtime Tour) mit ↓-Download
-- Logos Grid: 6 SVG-Varianten (RGB Blue/White, CMYK Blue/Darkblue, Logo+Keyvisual, Signet Blue) mit ↓-Download; RGB White auf dunklem Hintergrund
-- Präsentationen Grid: 11 Slides als WebP-Thumbnail (object-fit:cover, 16:9) mit ↓-Download der Originaldatei (PNG/JPG aus assets/presentations/full/)
-- Titel aus Dateinamen (Title Case), drei Ausnahmen: "4 Regionen", "Data + 3D: More Value", "Projektgeschäft vs. SaaS"
-- Patch: Präsentationen in eigene .card ausgelagert; Figma-Button "Alle Assets in Figma öffnen" über dem Grid; Card 1 wieder "Produkt-Icons & Logos"; alle Bilddateien (11 WebP + 11 full/) committed
+- Visuelles: Sub-Section "Produkt-Icons & Logos" — 5 PNG-Icons + 6 SVG-Logo-Varianten, je mit ↓-Download; RGB White auf dunklem Hintergrund
+- Visuelles: Card "Elemente für Präsentationen"
+  - Figma-Button "Alle Assets in Figma öffnen"
+  - 11 Slides als WebP-Thumbnail im 6-Spalten-Grid (16:9, object-fit:cover)
+  - Responsive: 6 → 4 (≤1100px) → 2 (≤700px) Spalten
+  - Lightbox bei Klick: lädt Original aus assets/presentations/full/, zeigt Titel, ESC/X schließt
+  - ↓-Download pro Karte (stopPropagation, öffnet keine Lightbox)
+  - Alle 22 Dateien committet (11 WebP + 11 full/ PNG/JPG)
+
+## [1.7.12] — 2026-05-18
+
+### Removed
+- Sales Hub: Unused Cards entfernt (LinkedIn, Case Studies, One-Pager)
+- Sales Hub: Regionaler Untertitel bereinigt
 
 ## [1.7.11] — 2026-05-18
 
