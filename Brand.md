@@ -2,39 +2,94 @@
 
 > **Zweck dieser Datei:** Einzige Quelle der Wahrheit für alle Marken-, Kommunikations- und KI-Projekte von Beyonity. Diese Datei wird als Kontext in LLM-Prompts, Coding-Projekte (Cursor, Copilot, Claude) und Onboarding-Dokumente eingesetzt. Bitte vor jeder Änderung einen Git-Branch anlegen.
 
-**Version:** 1.0  
-**Zuletzt aktualisiert:** Mai 2026  
-**GitHub:** `https://github.com/[org]/beyonity-brand`
+**Version:** 1.1  
+**Zuletzt aktualisiert:** 2026-06-03  
+**GitHub:** `https://github.com/mktbey/beyonity-brand`
 
 ---
 
 ## 1. Identität
 
 ### Was ist Beyonity?
-[Hier: 2–3 Sätze, die das Unternehmen klar beschreiben. Was tut Beyonity? Für wen? Was macht es besonders?]
 
-**Beispiel-Format:**
-> Beyonity ist eine [Kategorie], die [Zielgruppe] dabei hilft, [Kernproblem] zu lösen — durch [differenzierender Ansatz].
+Beyonity ist eine internationale PropTech-Organisation, die E-Commerce-Prinzipien auf die Vermarktung und den Vertrieb von Immobilienprojekten überträgt. Kein singuläres Tool — ein nachhaltiger Partner. Vom Grossen ins Kleine. Von Aussen nach Innen. Alles aus einer Hand.
+
+**Tagline:** *Bringing E-Commerce to Real Estate*
 
 ### Mission
-[Ein Satz: Warum existiert Beyonity?]
+
+Mit unserem Ecosystem of Experience setzen wir konsequent auf pionierhafte Lösungen in Realtime. Wir verbinden einzigartige digitale Einkaufserlebnisse mit effizienten und automatisierten Prozessen, wie es sie vorher in der Immobilienvermarktung noch nicht gab. Wir sind bereit, uns stetig zu verbessern und die Grenzen des Möglichen immer wieder zu sprengen, um zu begeistern und uns als Marktführer zu etablieren. Dabei setzen wir auf ein perfektes Zusammenspiel von Strategie, Vertrieb, Entwicklung, Produktion und ein unschlagbares Team, das mit Freude und Spass Höchstleistungen erbringt.
 
 ### Vision
-[Ein Satz: Welche Welt will Beyonity schaffen?]
+
+Wir sind fest entschlossen, die Immobilienvermarktung mit unserem Ecosystem auf den Kopf zu stellen. Wir haben die Customer Journey revolutioniert, denn wir wollen mehr! Mehrwert, sowohl für unsere Kunden als auch für deren Interessenten. Als führender Innovator in der digitalen Immobilienvermarktung bieten wir ihnen, was sie wirklich brauchen – und nicht das, was sie bisher kennen.
 
 ### Positionierung
-[Was ist die einzigartige Marktposition? Gegen wen und wofür steht Beyonity?]
 
-### Werte
-- **[Wert 1]:** [Kurze Erklärung, was das konkret bedeutet]
-- **[Wert 2]:** [Kurze Erklärung]
-- **[Wert 3]:** [Kurze Erklärung]
+Beyonity ist eine internationale PropTech-Organisation (gegründet 2021, Hauptsitz Lengnau/Schweiz), die E-Commerce-Prinzipien auf die Vermarktung und den Vertrieb von Immobilienprojekten überträgt. Kein singuläres Tool — ein nachhaltiger Partner. Vom Grossen ins Kleine. Von Aussen nach Innen. Alles aus einer Hand.
+
+**Kernkategorie:** Ecosystem of Experience — modulare Software-Plattform für digitale Immobilienvermarktung.
+
+### Unser Versprechen
+
+**An unsere Kunden:** Wir streben danach, uns ständig weiterzuentwickeln und zu verbessern. Wir sind offen für Feedback, lernen aus unseren Erfahrungen und streben nach kontinuierlicher Verbesserung in allem, was wir tun. Die Bedürfnisse und Zufriedenheit unserer Kunden stehen im Mittelpunkt unserer Bemühungen. Wir streben danach, ihre Erwartungen zu übertreffen und langfristige, erfolgreiche Beziehungen aufzubauen. Wir setzen hohe Standards für uns selbst und streben nach herausragender Qualität in allem, was wir tun – sei es in unseren Produkten, Dienstleistungen oder im Kundenservice.
+
+**An unser Team:** Wir schätzen die Vielfalt unserer Mitarbeiter aus der ganzen Welt. Wir betrachten unterschiedliche Kulturen, Erfahrungen, Lebensgeschichten, Ideen und Sichtweisen als eine wertvolle Bereicherung, die uns immer wieder neue Horizonte eröffnet und es uns ermöglicht, global zu denken und zu arbeiten. Bei uns steht der Mensch vor dem Geld. Deshalb behandeln wir jeden einzelnen mit Respekt und Wertschätzung. Wir unterstützen alle dabei, die beste Version ihrer selbst und wertvolle Teammitglieder zu werden, denn wir gewinnen oder verlieren als Team. Die Kreativität, der Wissensdurst und die Passion unserer Mitarbeiter sind das Kapital unserer Firma, ohne sie wären wir nichts.
+
+### 6 Werte
+
+- **Neugierig:** Wir haben den Mut, Dinge zu hinterfragen und suchen neue Wege. Wir sind keine Nachahmer, sondern lassen uns aus anderen Branchen inspirieren und kreieren Neues.
+- **Partnerschaftlich:** Wir schätzen die Menschlichkeit in der Geschäftswelt und setzen auf persönliche Beziehungen, die auf Spass & Freude, Vertrauen, Ehrlichkeit, Gegenseitigkeit und Wertschätzung beruhen.
+- **Durchdacht:** Wir wollen mehr! Mehrwert, sowohl für unsere Kunden als auch für deren Interessenten. Experience, Simplizität und Usability sind unsere Prioritäten, was uns punkto Funktionalität, Qualität und Preis unschlagbar macht.
+- **Verbindlich:** Als inhabergeführtes Unternehmen sind wir agil, entscheiden schnell und entschlossen. Wir verpflichten uns gegenüber unseren Kunden und deren Kunden, mit unseren Produkten und unserem Service.
+- **Unangepasst:** Wir sind bereit, uns stetig zu verbessern und die Grenzen des Möglichen immer wieder zu sprengen und gehen unseren Weg konsequent und unangepasst.
+- **Leidenschaftlich:** Wir sind ein bunter Haufen kreativer, neugieriger und leidenschaftlicher Menschen, die einander unterstützen, die beste Version von sich selbst zu werden. Gemeinsam sind wir ein unschlagbares Team, das mit Freude und Spass Höchstleistungen erbringt.
 
 ---
 
 ## 2. Zielgruppe & ICP
 
-Beyonity adressiert drei Hauptsegmente nach primärem Geschäftsmodell.
+Beyonity adressiert vier Hauptsegmente nach primärem Geschäftsmodell.
+
+### Unternehmensdaten
+
+| | |
+|---|---|
+| **Unternehmenstyp** | Organisation (PropTech) |
+| **Gegründet** | 2021 — Fusion aus B-VR Switzerland GmbH (gegr. 2019) und begehungen.de |
+| **Tagline** | Bringing E-Commerce to Real Estate |
+| **CEO** | Oliver Grimm (CEO & Chairman of the Board of Directors) |
+| **Hauptsitz** | Fabrikstrasse 11, CH-2543 Lengnau, Schweiz |
+| **Branche** | PropTech / Digitales Immobilienmarketing |
+| **Kernleistung** | Ecosystem of Experience — modulare Software-Plattform für digitale Immobilienvermarktung |
+| **Mitarbeitende** | 50+, 12 Nationalitäten, 20+ Sprachen |
+| **Regionen** | Schweiz · Deutschland · Spanien (Iberia) · Saudi-Arabien (MENA) · USA (Amerika) |
+| **Auszeichnungen** | Swiss Real Estate Award 2021 (BäreTower) · SVIT Award 2023 (Portfolio Navigator Previs) |
+
+### Führung & Board
+
+| Name | Rolle |
+|---|---|
+| Oliver Grimm | CEO & Chairman of the Board of Directors |
+| Christina Grimm | Chief Improvement Officer (CIO) |
+| Yannick Hediger | Operational Board of Directors |
+| Michael König | Chief Technical Officer (CTO) |
+| Mattia Rüfenacht | Chief Product Officer |
+| Christian Stucki | Chief Financial Officer (CFO) |
+| Jan Jürgensen | Chief Human Resources Officer (CHRO) |
+| Bruno Olic | Board of Directors Finance |
+| Daniel Gehrig | Board of Directors Legal |
+| Herbert Zaugg | Board of Directors Acquisition |
+
+### Rechtliche Einheiten
+
+| Entität | Adresse | Land |
+|---|---|---|
+| Beyonity Switzerland GmbH (HQ) | Fabrikstrasse 11, CH-2543 Lengnau | Schweiz |
+| Beyonity Germany GmbH | Am Borsigturm 42, DE-13507 Berlin (Tegel) · HRB 229562 B | Deutschland |
+| Beyonity Iberia S.L. | Paseo de la Castellana 200, 28046 Madrid | Spanien |
+| Beyonity MENA LLC | KAFD Zone 4, Building 4.07, Level 7, Riyadh 13519 | Saudi-Arabien |
+| Beyonity America Inc. | 1150 NW 72nd Ave, Tower 1, Ste 455, Miami, Florida 33126 | USA |
 
 ---
 
@@ -80,16 +135,28 @@ Beyonity adressiert drei Hauptsegmente nach primärem Geschäftsmodell.
 
 ---
 
+### Segment D: Kiban — Kleine Projekte / Baugruppen
+*Baugruppen, Einfamilienhäuser, kleine Projekte*
+
+| | |
+|---|---|
+| **Need** | Einfacher Einstieg, klare Standardpakete, persönliche Begleitung |
+| **Kernprodukt** | Navigator S/M |
+
+**Lösung Beyonity:** Modularer Einstieg mit Navigator S/M, klare Standardpakete, persönliche Begleitung
+
+---
+
 ### ICP-Übersicht
 
-| | Segment A | Segment B | Segment C |
-|---|---|---|---|
-| **Typ** | Bauträger / Projektentwickler | Institutionelle Eigentümer | Vermarkter |
-| **Fokus** | Meist Verkauf | Meist Miete | Miete + Verkauf |
-| **Motivation** | Ertrag + Geschwindigkeit | Rendite + Leerstandsreduktion | Provision + Positionierung |
-| **Entscheider** | CEO / Projektleitung | Asset Manager | GF / Senior Broker |
-| **Kauftrigger** | Neues Projekt in Vermarktung | Leerstand steigt / neues Projekt | Auftrag + Konkurrenz-Druck |
-| **Beyonity-Kern** | Konfigurator, Price-Range | Automatisierung, Bestand-Tool | Digital-Positionierung, Leads |
+| | Segment A | Segment B | Segment C | Segment D |
+|---|---|---|---|---|
+| **Typ** | Bauträger / Projektentwickler | Institutionelle Eigentümer | Vermarkter | Kiban |
+| **Fokus** | Meist Verkauf | Meist Miete | Miete + Verkauf | Klein-Projekte |
+| **Motivation** | Ertrag + Geschwindigkeit | Rendite + Leerstandsreduktion | Provision + Positionierung | Einfachheit + Begleitung |
+| **Entscheider** | CEO / Projektleitung | Asset Manager | GF / Senior Broker | Eigentümer / GF |
+| **Kauftrigger** | Neues Projekt in Vermarktung | Leerstand steigt / neues Projekt | Auftrag + Konkurrenz-Druck | Neues Kleinprojekt |
+| **Beyonity-Kern** | Konfigurator, Price-Range | Automatisierung, Bestand-Tool | Digital-Positionierung, Leads | Navigator S/M |
 
 ---
 
@@ -116,42 +183,136 @@ Beyonity adressiert drei Hauptsegmente nach primärem Geschäftsmodell.
 - **Ton:** Skeptisch, überzeugt durch Referenzen und ROI
 - **Kanäle:** Netzwerk, LinkedIn, Branchenpresse
 
+#### Persona D: Der Kiban-Kunde
+- **Rolle:** Privatperson / Kleinbauträger / Baugruppen-Initiator
+- **Ziele:** Übersichtlicher Einstieg, einfache Lösung ohne Enterprise-Overhead
+- **Frustration:** Komplexe Enterprise-Tools für kleine Projekte ungeeignet
+- **Ton:** Persönlich, begleitend, unkompliziert
+- **Kanäle:** Empfehlungen, persönliche Beratung
+
 ## 3. Tone of Voice
 
 ### Kernprinzipien
 
 **Beyonity kommuniziert so:**
-- [Adjektiv + Erklärung, z.B. "Direkt — keine Buzzwords, klare Aussagen"]
-- [Adjektiv + Erklärung]
-- [Adjektiv + Erklärung]
-- [Adjektiv + Erklärung]
+- **Mutig** — Klare Aussagen mit Beleg, kein Konjunktiv ohne Not
+- **Lösungsorientiert** — Immer Nutzen zuerst, dann Technik
+- **Menschlich** — Tech-driven, aber nie kalt oder unpersönlich
+- **Konkret** — Zahlen statt Adjektive: „+17 Minuten Stay Time" statt „deutlich länger"
 
 ### Sprache & Stil
-- **Anrede:** [Du / Sie / gemischt je nach Kanal]
-- **Satzlänge:** [z.B. Kurz und direkt. Keine Schachtelsätze.]
-- **Fachbegriffe:** [z.B. Branchenspezifische Sprache ok, Jargon vermeiden]
-- **Zahlen & Daten:** [z.B. Konkret wo möglich: "47% schneller" statt "deutlich schneller"]
+- **Anrede:** Sie-Form (Deutsch) — professionell, auf Augenhöhe; Du bei Social / informal
+- **Satzlänge:** Kurz und direkt. Keine Schachtelsätze.
+- **Fachbegriffe:** Branchenspezifisch ok, Jargon vermeiden
+- **Zahlen & Daten:** Immer konkret — „+3% Conversion Rate" statt „messbar mehr"
+- **Produktnamen:** Exakt wie definiert — *Navigator 5.0*, nie *„Nav"*
+- **Sprache:** Code-Switching-Regel (siehe unten): Produktnamen + Tech bleiben Englisch, Real Estate bleibt Deutsch
 
 ### Dos & Don'ts
 
-| ✅ So | ❌ Nicht so |
+| ✅ So klingt Beyonity | ❌ So nicht |
 |---|---|
-| [Beispiel guter Satz] | [Beispiel schlechter Satz] |
-| Direkte Nutzenaussage | Übertriebene Versprechungen |
-| Aktive Formulierungen | Passiv-Konstruktionen |
-| Konkrete Zahlen | Vage Aussagen wie "revolutionär" |
-| [weiteres Beispiel] | [weiteres Beispiel] |
+| Direkte Nutzenaussagen: *„48 Mio. Klicks — automatisiert, in Echtzeit."* | Buzzwords ohne Beleg: *„revolutionär", „disruptiv", „synergetisch"* |
+| Konkrete Zahlen statt Adjektive: *„+17 Minuten Stay Time"* | Vage Aussagen: *„deutlich besser", „führend"* ohne Zahlen |
+| Aktive Formulierungen: *„Beyonity löst …"* statt Passiv | Passive Konstruktionen: *„Es wird ermöglicht …"* |
+| Sie-Form im Deutschen — professionell, auf Augenhöhe | CTA: *„Mehr erfahren"* — nie verwenden |
+| Headlines gerne englisch: *„See in Action", „Ecosystem of Experience"* | *„best-in-class"* ohne konkreten Beweis |
+| CTAs: *„Jetzt entdecken", „Demo buchen", „Direkt zum Angebotsformular"* | Kalt und technisch ohne menschlichen Bezug |
+| Mutig: *„kein anderer Anbieter kombiniert …"* — mit Beleg | Wettbewerber namentlich negativ erwähnen |
+| | Tech-Begriffe ins Deutsche übersetzen — z.B. „Verkaufsplattform" statt „Sales Platform" |
+| | Produktnamen übersetzen — z.B. „Vermarktungs-Navigator" statt „Navigator" |
 
-### Beispiele (Golden Samples)
+### Code-Switching-Regel
 
-**LinkedIn Post — so klingt Beyonity:**
-> [Beispiel-Post einfügen]
+**Eine Regel, vier Ebenen — über alle Sprachen.**
 
-**E-Mail-Betreffzeile — so klingt Beyonity:**
-> [Beispiel]
+| Ebene | Kategorie | Beispiele |
+|---|---|---|
+| **ALWAYS EN** | Produktnamen | Navigator® · Realtime Tour · Portfolio Overview · Living Configurator · Commercial Configurator · Integrated Website · Smart Filter · Data Dashboard |
+| **EN im DE-Text** | Tech & E-Commerce | Conversion · Dashboard · Mobile First · ERP · CRM · All-In-One · Single Point of Truth · Multilanguage |
+| **DE bleibt DE** | Real Estate | Bewirtschafter · Bestand · Liegenschaft · Mandat · Leerstand · Mehrwert |
+| **kontextabhängig** | Strategie | „Hoheit über die Daten" · „Wechselhürde" · „40 Jahre Lebenszyklus" |
 
-**Headline Website:**
-> [Beispiel]
+**Ausnahme — CEO/Personen-Quote:** Wenn die Brand-Tagline einer konkreten Person zugeschrieben wird, darf sie eingedeutscht werden. Die Marke spricht Englisch, die Person spricht Deutsch.
+- Marke: *„It's a Sales Machine"*
+- Oliver Grimm, CEO: *„Es ist eine Vermarktungsmaschine."*
+
+### Channel-Tonalität
+
+**Gleiche Marke, drei Modi — je nach Kontext.**
+
+**External** *(Deck · Site · LinkedIn · Kunden-Email)*  
+Apodiktisch, zahlen-validiert, gamifizierte CTAs.  
+✓ *„Let's match!"* · *„Ready for the future?"* · *„Buy now…"*  
+✗ kein Personae-Storytelling · keine Branchenkritik
+
+**Internal Onboarding** *(Schulung neuer Sales-Mitarbeitender)*  
+Stakkato-Wiederholungen als Lern-Anker, Filler menschlich.  
+✓ *„Sales Navigator. Sales Navigator. Sales Showcase."*  
+✗ Slang nicht kultivieren · kein Brand-Asset
+
+**Internal Coaching 1:1** *(Senior-Sparring · Strategie-Gespräch)*  
+Co-Construction-Marker erwartet, Storytelling als Lehrmittel.  
+✓ *„oder?"* · *„genau"* · *„mega"* · Peter-Meier-/Hansli-Szenarien  
+⚠️ **NIE public-facing:** „Trottel" · „krank" · „stupid" · Flüche
+
+### Gesprächsrahmen — Drei Phasen
+
+Der Coaching-Rhythmus für jedes Sales-Erstgespräch:
+
+1. **Erst zuhören** — Fragen, was der Kunde heute tut — bevor erklärt wird, was Beyonity tut.  
+   *„Wie vermarkten Sie aktuell Ihre Projekte?"*
+
+2. **Lücke benennen** — Zeigen, was heute fehlt — ohne zu kritisieren. Neutral, sachlich.  
+   *„Das sehen Sie heute erst im Nachhinein."*
+
+3. **Verbesserung andocken** — Nicht ersetzen — dazugeben. Gleicher Prozess, mehr Kontrolle.  
+   *„Was wir dazugeben: Echtzeit-Nachfrage."*
+
+### Vier Welten — Eine Plattform
+
+Das mentale Bild, das im Gespräch hängenbleibt:
+
+| Welt | Was sie tut |
+|---|---|
+| **Käufer** | informiert sich selbst, konfiguriert, entscheidet |
+| **Vertrieb** | sieht Verhalten, priorisiert, schließt ab |
+| **Marketing** | misst was funktioniert, optimiert Kampagnen |
+| **Entwicklung** | sieht Nachfrage je Einheit, steuert Preise in Echtzeit |
+
+Zentrum: **Beyonity** — Echtzeit-Daten · Ein Ökosystem
+
+### Golden Samples
+
+**LinkedIn Headline:**
+> „Interessenten verweilen 17 Minuten im Navigator 5.0. Auf klassischen Projektwebsites: 90 Sekunden. Das ist kein Zufall — das ist Wissenschaft."
+
+**Website Hero:**
+> „Beantworten Sie alle Kundenfragen in 2 Klicks — 24/7, ohne manuelle Beratung, in 9 Sprachen."
+
+**E-Mail Betreffzeile:**
+> „Ihr nächstes Projekt: 48 Mio. Klicks zeigen, wie Interessenten wirklich suchen."
+
+**Elevator Pitch:**
+> „Beyonity ist das Ecosystem of Experience für Immobilien. Fünf vernetzte Produkte — vom ersten Planungs-Klick bis zum letzten Leerstand."
+
+**Landing-Page-CTA:**
+> „Lieber Fakten statt Erstgespräch? In wenigen Klicks zum Projektangebot." → Button: „Direkt zum Angebotsformular"
+
+**Sales Pitch · Hook:**
+> „E-Commerce hat in den letzten 20 Jahren jeden Markt erreicht — Reisen, Handel, Automobil, Finanzen, Versicherungen. Jeden Markt. Bis auf einen."
+
+**Sales Pitch · Bridge:**
+> „Wer das Erlebnis kontrolliert, kontrolliert die Entscheidung."
+
+**Discovery · Pain-Frage:**
+> „Wie viele Ihrer heutigen Leads sind beim ersten Kontakt wirklich kaufbereit?"
+
+**Einwand-Handling:**
+> Kunde: „Unser Prozess funktioniert gut." — Beyonity: „Dann lohnt es sich erst recht, zu sehen, wie viel Potenzial noch darin steckt."
+
+**Demo-Einladung:**
+> „Ich kann Ihnen noch eine Stunde lang erklären, wie das funktioniert — oder ich zeige es Ihnen in 30 Minuten."
 
 ---
 
@@ -168,10 +329,11 @@ Tagline: *"Ganzheitlich. Vernetzt. Auf Sie zugeschnitten."*
 ### 1. Navigator 5.0 ⭐ Topseller
 **"Beantworten Sie alle Kundenfragen innerhalb von 2 Klicks — hinter unserer Technologie steckt eine Wissenschaft."**
 
-Herzstück des Ecosystems und jeder Projektwebsite. Bietet Interessenten klare Einblicke unabhängig von der Projektphase. Kunden verweilen messbar länger auf dem Navigator als auf klassischen Projektwebsites.
+Herzstück des Ecosystems und jeder Projektwebsite. Interaktive 360°-Web-App für Immobilienprojekte. Käufer entdecken Wohnungen, Aussenanlagen und Umgebung selbstständig — 24/7 verfügbar, ohne Installation. Kunden verweilen messbar länger auf dem Navigator als auf klassischen Projektwebsites.
 
 - **Version:** 5.0
-- **Segment:** A (Bauträger), C (Vermarkter)
+- **Segment:** A (Bauträger), C (Vermarkter), D (Kiban — Variante S/M)
+- **Grössen:** S · M · L · XL · XXL — jeweils für **Building** (Mehrfamilienhaus) oder **Villas** (EFH/DHH)
 
 **Features:**
 | Feature | Beschreibung |
@@ -198,16 +360,22 @@ Herzstück des Ecosystems und jeder Projektwebsite. Bietet Interessenten klare E
 **Credibility:**
 > "Our products are based on verified data, and profound analyses, many years of experience and proven know-how in development, design and usability."
 
-**Add-Ons (7):**
+**Add-Ons (8 bestätigt, 11 gesamt — vollständige Liste im Hub):**
 | Add-On | Beschreibung |
 |---|---|
-| Integrated Website | Website direkt in Navigator — kein separater Webauftritt nötig |
-| Sun Simulation | Dynamischer Sonnenverlauf mit realen Schatten nach Tageszeit |
-| Data Dashboard | Real-Time KPIs über gesamten Lebenszyklus |
+| Integrated Website | Vollständige Projektwebseite als Teil des Navigators — kein separates CMS erforderlich |
+| Sun Simulation | Sonnenstand zu beliebiger Tageszeit und Jahreszeit simulieren — direkt im Navigator erlebbar |
+| Data Dashboard | Nutzungsstatistiken, Verweildauer und Conversion-Daten direkt im Navigator-Backend |
 | Parking Navigator | Parkplätze + Hobbyräume mit allen Merkmalen |
 | Info Flags & Building Highlights | Symbole für Infrastruktur und Vorteile, verlinkbar |
 | POI Panorama | 360° Umgebungspanorama mit Links zu Google Maps |
 | Balcony Views | 180° Drohnen-Panorama der echten Aussicht pro Wohnung |
+| Drones Backplates | Fotorealistische Drohnen-Hintergründe für Aussenansichten |
+
+**Abos:**
+- Annual Service, Maintenance & Update — Letting
+- Annual Service, Maintenance & Update — Sales
+<!-- TODO(human): vollständige Abo-Liste aus Preisliste ergänzen -->
 
 ---
 
@@ -216,7 +384,7 @@ Herzstück des Ecosystems und jeder Projektwebsite. Bietet Interessenten klare E
 
 Virtuelle Echtzeit-Begehung durch noch nicht gebaute Wohnungen. Fotorealistisch, interaktiv, direkt im Browser — kein App-Download.
 
-- **Version:** 4.0
+- **Version:** 4.0 (v5.0 in Entwicklung 2026)
 - **Segment:** A (Bauträger), B (Neubau)
 - **Kernnutzen:** Kaufentscheidung beschleunigen, Besichtigungsaufwand reduzieren
 
@@ -267,9 +435,9 @@ Vereint alle Navigatoren und bündelt Immobilien übersichtlich an einem Ort. Eg
 
 Wohnungskonfigurator: Ausstattungspakete, Materialien und Optionen interaktiv wählen.
 
-- **Version:** 5.0
+- **Version:** 5.0 (Standalone-Produkt)
 - **Segment:** A (Verkauf), B (Neubau)
-- **Kernnutzen:** Käuferbetreuung automatisieren, Upselling
+- **Kernnutzen:** Käuferbetreuung automatisieren, Upselling; –50 Std. Käuferbetreuung pro Wohnung
 
 ---
 
@@ -278,7 +446,7 @@ Wohnungskonfigurator: Ausstattungspakete, Materialien und Optionen interaktiv w�
 
 Konfigurator für Gewerbeflächen — Raumaufteilung und Ausstattung digital konfigurierbar.
 
-- **Version:** 4.0
+- **Version:** 4.0 (v5.0 in Entwicklung 2026)
 - **Segment:** B (Bestand + Neubau), C (Vermarkter)
 - **Kernnutzen:** Leerstände reduzieren, Interessenten selbst qualifizieren
 
@@ -286,13 +454,13 @@ Konfigurator für Gewerbeflächen — Raumaufteilung und Ausstattung digital kon
 
 ### Produkt-Übersicht
 
-| Produkt | Version | Subtitle | A | B | C |
-|---|---|---|---|---|---|
-| Navigator ⭐ | 5.0 | Einheiten finden | ✅ | ✅ | ✅ |
-| Realtime Tour | 4.0 | Wohnungen und Aussicht erleben | ✅ | ✅ | ✅ |
-| Portfolio Overview | 5.0 | Komplette Übersicht über das ganze Portfolio | — | ✅ | — |
-| Living Configurator | 5.0 | Individuelle Gestaltung des Innenausbaus | ✅ | ✅ | — |
-| Commercial Configurator | 4.0 | Gewerbeflächen einfach und schnell kombinieren | — | ✅ | ✅ |
+| Produkt | Version | Subtitle | A | B | C | D |
+|---|---|---|---|---|---|---|
+| Navigator ⭐ | 5.0 | Einheiten finden | ✅ | ✅ | ✅ | ✅ (S/M) |
+| Realtime Tour | 4.0 | Wohnungen und Aussicht erleben | ✅ | ✅ | ✅ | — |
+| Portfolio Overview | 5.0 | Komplette Übersicht über das ganze Portfolio | — | ✅ | — | — |
+| Living Configurator | 5.0 | Individuelle Gestaltung des Innenausbaus | ✅ | ✅ | — | — |
+| Commercial Configurator | 4.0 | Gewerbeflächen einfach und schnell kombinieren | — | ✅ | ✅ | — |
 
 ### Namens-Konventionen
 - "Navigator 5.0" — nie "navigator" oder "Nav"
@@ -305,10 +473,10 @@ Konfigurator für Gewerbeflächen — Raumaufteilung und Ausstattung digital kon
 ## 4. Messaging Framework
 
 ### Hauptbotschaft (Core Message)
-[Ein Satz, der alles auf den Punkt bringt. Die wichtigste Aussage.]
+Beyonity bringt E-Commerce ins Immobilienmarketing — mit einem vernetzten Ecosystem, das den gesamten Lebenszyklus eines Projekts abdeckt.
 
 ### Elevator Pitch (30 Sekunden)
-[3–4 Sätze. Was tut Beyonity, für wen, warum jetzt, was ist der Unterschied?]
+Beyonity ist das Ecosystem of Experience für Immobilien. Fünf vernetzte Produkte — vom ersten Planungs-Klick bis zum letzten Leerstand. Interessenten verweilen 17 Minuten im Navigator statt 90 Sekunden auf klassischen Projektwebsites. Kein anderer Anbieter kombiniert Realtime-Visualisierung, Automatisierung und Daten-Intelligence in einem einzigen System.
 
 ### Nutzen-Säulen (Value Pillars)
 
@@ -324,7 +492,7 @@ Konfigurator für Gewerbeflächen — Raumaufteilung und Ausstattung digital kon
 
 #### Säule 3: Ecosystem statt Insellösung
 - **Aussage:** Alles aus einer Hand — vom Grossen ins Kleine, von aussen nach innen, vernetzt
-- **Beweis:** 5 Produkte + 7 Add-Ons, modular integrierbar, Price-Range bis Portfolio
+- **Beweis:** 5 Produkte + 11 Add-Ons, modular integrierbar, Price-Range bis Portfolio
 - **Für wen:** Alle Segmente, besonders Segment B (Asset Manager)
 
 ### Differentiation Statement
@@ -336,116 +504,157 @@ Beyonity ist die einzige Lösung, die den gesamten Immobilien-Lebenszyklus abdec
 
 ### Farben
 
-| Farbe | Hex | Verwendung |
+| Token | Hex | Verwendung |
 |---|---|---|
-| Primärfarbe | `#[hex]` | Hauptakzente, CTAs |
-| Sekundärfarbe | `#[hex]` | Unterstützend |
-| Hintergrund Hell | `#[hex]` | Primärer Hintergrund |
-| Hintergrund Dunkel | `#[hex]` | Dunkle Sektionen |
-| Text Primär | `#[hex]` | Haupttext |
-| Text Sekundär | `#[hex]` | Nebentext |
+| Primary Blue | `#3c57e1` | Hauptakzente, CTAs, Links, aktive States |
+| Yellow | `#f8ff76` | Highlights, CTAs auf dunklem Hintergrund, Badges |
+| Dark Blue | `#001a64` | Dunkle Backgrounds, Sidebar, Headlines auf hell |
+| Light Blue | `#d8ddf9` | Soft-Hintergrund, Cards, Tags |
+| White | `#ffffff` | Primärer Hintergrund, Karten |
+| Gray | `#efefef` | Sekundärer Hintergrund, Trennlinien |
+| Error Red | `#ff7575` | Fehlermeldungen, Don't-Indikatoren |
+| Success Green | `#a7faa9` | Erfolgsmeldungen, Do-Indikatoren |
+
+**Regeln:**
+- Gelb (`#f8ff76`) **nie** mit weißem Text — immer `#001a64` als Textfarbe auf Gelb
+- Schatten nur bei Hover- oder klickbaren Elementen: `box-shadow: 0 0 6px rgba(0,0,0,.5)`
+- Runde Ecken durchgängig (via CSS `var(--r)`)
 
 ### Typografie
-- **Hauptschrift:** [Font-Name], Gewichte: [z.B. 400, 600, 700]
-- **Sekundärschrift:** [Font-Name oder "keine"]
-- **Code/Mono:** [Font-Name oder "System Mono"]
+
+| Ebene | Schrift | Gewicht | Einsatz |
+|---|---|---|---|
+| **Primärschrift** | Bw Gradual | ExtraBold | Headlines |
+| **Primärschrift** | Bw Gradual | Medium | Body-Text |
+| **In-Use / Fallback** | Sora | 800 | Headlines, CTAs |
+| **In-Use / Fallback** | Sora | 600 | Subheads, Labels |
+| **In-Use / Fallback** | Sora | 400 | Body-Text |
+
+**Line-height:** 120% Headlines · 140% Body
 
 ### Logo
+
 - **Hauptlogo:** `/assets/logo/beyonity-logo.svg`
-- **Varianten:** Hell, Dunkel, Icon only
-- **Mindestgrösse:** [z.B. 120px Breite]
-- **Schutzraum:** [z.B. "Mindestens Logobreite/8 Abstand zu anderen Elementen"]
-- **Nicht erlaubt:** Strecken, Drehen, Farbe ändern, auf ähnlichem Hintergrund
+- **Varianten:** Hell (auf dunklem Hintergrund), Dunkel (auf hellem Hintergrund), Icon only
+- **Mindestgrösse:** 120px Breite
+- **Schutzraum:** Mindestens Logobreite/8 Abstand zu anderen Elementen
+- **Nicht erlaubt:** Strecken · Drehen · Farbe ändern · auf ähnlich farbigem Hintergrund
+<!-- TODO(human): exakte Logo-Varianten-Assets und Verwendungsbeispiele aus Brandbook ergänzen -->
+
+### Formen & UI-Regeln
+- Runde Ecken durchgängig (Button, Card, Tag, Input)
+- Schatten (`box-shadow`) **nur** bei Hover-State oder klickbaren Elementen
+- Keine dekorativen Schatten auf statischen Elementen
 
 ### Bildsprache
-- [z.B. Echte Menschen statt Stock-Fotos]
-- [z.B. Heller, aufgeräumter Stil]
-- [z.B. Technologie sichtbar, aber human]
+<!-- TODO(human): Bildsprache-Richtlinien (Fotografie, Rendering-Stil, Farbigkeit) aus Brandbook ergänzen -->
 
 ---
 
 ## 6. Kanal-Richtlinien
 
 ### Website
-- **Ton:** [z.B. Konversationell, aber professionell]
-- **Headlines:** [z.B. Nutzen-orientiert, max. 8 Wörter]
-- **CTAs:** [z.B. "Kostenlos starten", "Demo buchen" — kein "Mehr erfahren"]
+- **Ton:** Apodiktisch, zahlen-validiert — Behauptungen immer mit Zahl belegen
+- **Headlines:** Nutzen-orientiert, gerne englisch; max. 8–10 Wörter
+- **CTAs:** „Jetzt entdecken" · „Demo buchen" · „See in Action" · „Direkt zum Angebotsformular" — kein „Mehr erfahren"
+- **Hero-Claim:** *„Bringing E-Commerce to Real Estate"* (EN, beide Sprachversionen)
 
 ### LinkedIn
-- **Posting-Frequenz:** [z.B. 3x/Woche]
-- **Format-Mix:** [z.B. 60% Text, 30% Bild, 10% Video]
-- **Ton:** [z.B. Persönlich, meinungsfreudig, Insights-getrieben]
-- **Hashtags:** [z.B. max. 3, nur relevante]
-- **Was vermeiden:** [z.B. Keine leeren Inspirations-Posts]
+- **Ton:** Mutig, meinungsfreudig, Insights-getrieben — nie inspirational ohne Substanz
+- **Format:** Konkrete Zahlen als Hook — *„17 Minuten vs. 90 Sekunden"*
+- **Hashtags:** Max. 3, bevorzugt `#Automatisierung` · `#Standardisierung` · `#Mehrwert`
+- **Was vermeiden:** Leere Inspirations-Posts · generische Branchenfloskeln · Konjunktiv
 
 ### E-Mail
-- **Betreffzeilen:** [z.B. Max. 50 Zeichen, konkret, kein Clickbait]
-- **Preheader:** [Immer befüllen, ergänzt die Betreffzeile]
-- **Struktur:** [z.B. 1 Ziel pro Mail, 1 CTA]
-- **Abmeldung:** [z.B. Immer sichtbar, kein Dark Pattern]
+- **Betreffzeilen:** Konkret mit Zahl oder konkretem Nutzen; kein Clickbait
+- **Beispiel:** *„Ihr nächstes Projekt: 48 Mio. Klicks zeigen, wie Interessenten wirklich suchen."*
+- **Struktur:** 1 Ziel pro Mail, 1 CTA
+- **CTA:** Kein „Mehr erfahren" — stattdessen *„Demo buchen"* oder *„Direkt zum Angebotsformular"*
 
 ### Newsletter
-- [Richtlinien]
+<!-- TODO(human): Newsletter-Richtlinien ergänzen (Frequenz, Format-Mix, Themenplan) -->
 
 ### Pressemitteilungen / PR
-- [Richtlinien]
+<!-- TODO(human): PR-Richtlinien ergänzen (Format, Sperrfrist-Regelung, Freigabe-Prozess) -->
 
 ---
 
 ## 7. AI / LLM Instructions
 
-> Dieser Abschnitt gibt KI-Tools (Claude, GPT, Cursor, Copilot, etc.) direkte Anweisungen für die Arbeit mit Beyonity-Content.
+> Dieser Abschnitt gibt KI-Tools (Claude, GPT, Cursor, Copilot, etc.) direkte Anweisungen für die Arbeit mit Beyonity-Content. Verweise auf §3 (Tone of Voice) und §5 (Visuelles Brand) dieser Datei für vollständige Richtlinien.
 
-### System-Prompt Template
+### System-Prompt (DE) — Beyonity Brand Context v1.2
 
-Wenn du eine KI für Beyonity-Aufgaben nutzt, füge diesen Block am Anfang ein:
+Diesen Block am Anfang jedes KI-Prompts einfügen, der Beyonity-Content erstellt oder prüft:
 
 ```
-Du arbeitest für Beyonity. Hier sind die relevanten Marken-Infos:
+# Beyonity Brand Context — Grounding Page Standard v1.5 · Verifiziert: 2026-03-23
 
-UNTERNEHMEN: [Mission in 1 Satz]
-ZIELGRUPPE: [ICP in 1 Satz]
-TON: [3 Adjektive, z.B. direkt, kompetent, menschlich]
-SPRACHE: [Deutsch / Englisch / beides]
-VERMEIDEN: [z.B. Buzzwords wie "revolutionär", "disruptiv", "Synergie"]
-IMMER: [z.B. Konkrete Nutzenaussagen, aktive Sprache, Du-Anrede]
-```
+UNTERNEHMEN:
+  Beyonity ist eine internationale PropTech-Organisation, die Bauträgern, institutionellen
+  Eigentümern und Vermarktern hilft, Immobilien digital zu vermarkten —
+  durch das Ecosystem of Experience: fünf vernetzte Produkte für jeden
+  Projektmoment. CEO: Oliver Grimm. 50+ Mitarbeitende, 5 Regionen.
 
-### Content-Aufgaben
+ZIELGRUPPE:
+  Segment A — Bauträger / Projektentwickler (Instone, Implenia, Halter)
+  Segment B — Institutionelle Eigentümer (UBS, Swiss Prime Site, Allianz, AXA, Swiss Life)
+  Segment C — Vermarkter (JLL, BNP Paribas, Engel & Völkers)
+  Segment D — Kiban (Baugruppen, Einfamilienhäuser, kleine Projekte)
+  Entscheider-Niveau: C-Level, Asset Manager, Senior Broker.
 
-**Für Texterstellung-Prompts immer angeben:**
-- Kanal (LinkedIn, E-Mail, Website)
-- Ziel-Persona (aus Abschnitt 2)
-- Zweck (Awareness, Lead-Gen, Nurturing)
-- Gewünschte Länge
-- Ton-Hinweis wenn vom Standard abweichend
+TON:
+  Direkt, lösungsorientiert, menschlich — tech-driven aber nicht kalt.
+  Mutig ohne Buzzwords. Konkrete Zahlen statt vage Adjektive.
+  Sie-Form (Deutsch). Englisch für Headlines und Produktnamen ok.
 
-**Beispiel-Prompt-Struktur:**
-```
-[System-Prompt mit Marken-Infos]
+WERTE:
+  Neugierig · Partnerschaftlich · Durchdacht · Verbindlich · Unangepasst · Leidenschaftlich
 
-Aufgabe: Schreibe [Content-Typ] für [Kanal].
-Zielgruppe: [Persona-Name aus Brand.md]
-Ziel: [Was soll der Content erreichen?]
-Kernbotschaft: [Was ist die eine Aussage?]
-Länge: [z.B. max. 1500 Zeichen für LinkedIn]
-Besonderheiten: [z.B. Aktuelle Kampagne X referenzieren]
-```
+PRODUKTE:
+  Navigator 5.0 (Topseller, Standalone) · Realtime Tour (v5.0 in Entwicklung 2026)
+  Portfolio Overview 5.0 · Living Configurator 5.0 (Standalone)
+  Commercial Configurator (v5.0 in Entwicklung 2026) · 11 Add-Ons
+  Overarching: Ecosystem of Experience
 
-### Coding-Projekte (Cursor, Claude Code, etc.)
+KENNZAHLEN:
+  +500 Navigatoren live · +17 min Aufenthaltsdauer · +3% Conversion rates
+  48 Mio. Klicks verarbeitet · –25% Zwischenleerstände (Portfolio Overview)
+  –50 Std. Käuferbetreuung / Wohnung (Living Configurator)
+  +20.000 Units · CHF 11 Mrd. größtes Portfolio (CH) · USD 45 Mio. Mehreinnahmen für Kunden
 
-**Für `.cursorrules` oder `CLAUDE.md` im Projekt-Root:**
-```markdown
-# Beyonity Brand Context
+REGIONEN:
+  Schweiz · Deutschland · Spanien (Iberia) · Saudi-Arabien (MENA) · USA (America)
 
-Refer to the full brand guidelines at: /brand/Brand.md (or GitHub URL)
+AUSZEICHNUNGEN:
+  Swiss Real Estate Award 2021 (BäreTower) · SVIT Award 2023 (Portfolio Navigator Previs)
 
-Key constraints for UI/Copy work:
-- Primary color: [hex]
-- Font: [name]
-- Tone: [adjectives]
-- Button CTAs: [examples]
-- Never use: [forbidden phrases]
+ABGRENZUNG:
+  Kein Maklerunternehmen · kein Endverbraucher-Portal (kein Immoscout24/Homegate/Rightmove)
+  Kein reines 3D-Visualisierungsstudio · kein allgemeines CRM/ERP-System
+  Keine klassische Immobilienverwaltungssoftware (Property Management Software)
+
+VERMEIDEN:
+  "revolutionär" "disruptiv" "synergetisch" "best-in-class" (ohne Beleg)
+  "Mehr erfahren" · passive Konstruktionen · vage Aussagen ohne Zahlen
+  Wettbewerber namentlich negativ erwähnen
+
+IMMER:
+  Konkrete Nutzenaussagen mit Zahlen. Produktnamen exakt wie definiert.
+  CTAs: "Jetzt entdecken" · "Demo buchen" · "See in Action"
+  Keine Aussagen, die nicht durch Brand.md gedeckt sind.
+
+DIFFERENZIERUNG:
+  Einzige Lösung, die den gesamten Immobilien-Lebenszyklus abdeckt —
+  von der Bedarfsanalyse in der Entwicklungsphase bis zum Portfolio-
+  Management im Betrieb. Realtime-Visualisierung + Automatisierung +
+  Daten-Intelligence in einem vernetzten Ecosystem.
+
+GROUNDING:
+  Canonical: beyonity.com/de/groundingpage/
+  Standard: Grounding Page Standard v1.5 · Verifiziert: 2026-03-23
+
+# v1.2 · synchronisiert mit Brand.md v1.1 · Juni 2026
 ```
 
 ### Was KI tun darf
@@ -453,28 +662,114 @@ Key constraints for UI/Copy work:
 - Headlines und CTAs vorschlagen
 - Inhalte für verschiedene Kanäle adaptieren
 - Code und UI-Texte auf Markenkonsistenz prüfen
+- Segment D (Kiban) für kleine Projekte, Baugruppen, Einfamilienhäuser referenzieren
+- Alle 6 Markenwerte verwenden: Neugierig · Partnerschaftlich · Durchdacht · Verbindlich · Unangepasst · Leidenschaftlich
 
 ### Was KI nicht tun darf
-- Marken-Infos aus öffentlichen Quellen ergänzen oder "interpolieren"
+- Marken-Infos aus öffentlichen Quellen ergänzen oder „interpolieren"
 - Aussagen machen, die nicht durch Brand.md oder bereitgestellte Briefings gedeckt sind
 - Wettbewerber namentlich negativ erwähnen
+
+### Prompt-Struktur für Content-Aufgaben
+
+```
+[System-Prompt von oben einfügen]
+
+Aufgabe:       Schreibe [LinkedIn-Post / E-Mail / Website-Headline / etc.]
+Kanal:         LinkedIn / E-Mail / Website / Pitch-Deck / Pressemitteilung
+Zielgruppe:    Segment A (Bauträger) / B (Asset Manager) / C (Vermarkter) / D (Kiban)
+Ziel:          Awareness / Lead-Gen / Nurturing / Conversion
+Kernbotschaft: Was ist die eine Aussage?
+Länge:         max. 1500 Zeichen (LinkedIn) / 50 Zeichen (Betreff) / etc.
+Produkt:       Navigator 5.0 / Realtime Tour / Portfolio Overview / etc.
+Besonderheiten: Aktuelle Kampagne referenzieren / Tonabweichung / etc.
+```
+
+### Coding-Projekte (Cursor, Claude Code, etc.)
+
+Für `.cursorrules` oder `CLAUDE.md` im Projekt-Root:
+```markdown
+# Beyonity Brand Context
+
+Refer to the full brand guidelines at: Brand.md (or GitHub: https://github.com/mktbey/beyonity-brand)
+
+Key constraints for UI/Copy work:
+- Primary color: #3c57e1
+- Accent/CTA on dark: #f8ff76 (never with white text — use #001a64)
+- Font: Bw Gradual / Sora fallback
+- Tone: direkt, lösungsorientiert, menschlich
+- Button CTAs: "Jetzt entdecken" · "Demo buchen" · "See in Action"
+- Never use: "revolutionär", "disruptiv", "Mehr erfahren"
+```
 
 ---
 
 ## 8. Glossar & verbotene Wörter
 
+### Brand Lexicon
+
+#### Aktuelle Kern-Stats (verbindlich 2026)
+
++500 Navigatoren live · +17 min Aufenthaltsdauer · +3% Conversion rates · 48 Mio. Klicks · 5 Hauptprodukte · 5 Regionen · +50 Mitarbeitende
+
+#### Generation-Naming
+
+**5.0 Generation** = aktuelle Major-Release:
+- Navigator 5.0 · Portfolio Overview 5.0 · Living Configurator 5.0
+- Realtime Tour 4.0 · Commercial Configurator 4.0
+
+*Generation ≠ Pricing-Tier (S/M/L/XL/XXL) — beide Systeme laufen parallel.*
+
+#### Strategie-Argumente (extern verwendbar)
+
+Hoheit über die Daten · Wechselhürde · Strategisches Investment · 40 Jahre Lebenszyklus · Selbstbewirtschaftend vs. Asset Manager · Mehrwert
+
+#### Signature-Phrases & CTAs
+
+| Phrase | Kontext |
+|---|---|
+| *„We push the boundaries."* | EN-Hero in DE-Site |
+| *„Bringing E-Commerce to Real Estate"* | Hero-Claim, beide Sprachen |
+| *„Immobilienentscheidungen mit Emotionen und Daten"* | Bridge mit Yellow-Highlight |
+| *„Lieber Fakten statt Erstgespräch?"* + Button *„Direkt zum Angebotsformular"* | Yellow-Box-CTA-Pattern |
+| *„Wir ersetzen nichts. Wir unterfüttern, was bereits funktioniert — mit Echtzeit-Daten."* | Anti-Widerstand-Formel, Discovery-Call |
+| *„Erst zuhören. Lücke benennen. Verbesserung andocken."* | Gesprächs-Rhythmus, internes Coaching-Mantra |
+
+**Hashtag-Stil:** `#Automatisierung` · `#Standardisierung` · `#Mehrwert`
+
 ### Beyonity-spezifische Begriffe
 | Begriff | Bedeutung | Verwendung |
 |---|---|---|
-| [Produktname] | [Was ist das?] | [Wie verwenden?] |
-| [Interner Begriff] | [Bedeutung] | [Intern / Extern?] |
+| Ecosystem of Experience | Übergreifende Produktstrategie — 5 vernetzte Produkte | Immer EN, extern + intern |
+| Navigator | Herzstück-Produkt, interaktive 360°-Web-App | Exakter Produktname, nie übersetzen |
+| Kiban | Segment D — Baugruppen, EFH, kleine Projekte | Intern + extern |
+| Showcase / Factsheet | Ersatz für „Exposé" | Extern bevorzugt |
+| Bewirtschafter | Ersatz für „Hausverwaltung" | Branchenkonform, DE |
+| Hello Prozess | Interner Begriff für Bonitätsprüfung | Intern only |
+| Customer Journey | Ersatz für „Wohnungssuche" | Extern + intern |
 
-### Verbotene/Vermeidbare Begriffe
-- `revolutionär` — zu abgenutzt, ersatz: "messbar besser"
-- `disruptiv` — Buzzword, ersatz: konkrete Beschreibung
-- `Synergie` — zu korporat
-- `best-in-class` — ohne Beleg vermeiden
-- [weitere ergänzen]
+### Verbotene / Vermeidbare Begriffe
+
+| Vermeiden | Stattdessen |
+|---|---|
+| Exposé | Showcase / Factsheet |
+| Hausverwaltung | Bewirtschafter |
+| Bonitätsprüfung | Hello Prozess |
+| Wohnungssuche | Customer Journey |
+| Vermittlungsgebühr · Provision | entfällt (SaaS-Modell) |
+| Verkaufsplattform | Sales Platform |
+| Vermarktungs-Navigator | Navigator (Produktnamen nie übersetzen) |
+| „Wir ersetzen / wir lösen ab" | „Wir unterfüttern · wir erweitern · wir dazugeben" |
+| `revolutionär` | konkrete Beschreibung + Zahl |
+| `disruptiv` | konkrete Beschreibung + Zahl |
+| `Synergie` | zu korporat, immer konkret ersetzen |
+| `best-in-class` | nur mit konkretem Beleg |
+| `deutlich besser` | immer mit Zahl belegen |
+| `führend` | nur mit Beleg (Award, Marktanteil) |
+
+### ⚠️ Internal-Only — NIE public-facing
+
+Babytrottel · „krank" (für Branche) · „stupid" (für Prozesse) · F-Bombs · direkte namentliche Konkurrenten-/Kunden-Kritik · CH-DE-Marker („oder?", „mega") außerhalb 1:1-Coaching
 
 ---
 
@@ -482,7 +777,8 @@ Key constraints for UI/Copy work:
 
 | Version | Datum | Änderung | Autor |
 |---|---|---|---|
-| 1.0 | Mai 2026 | Initiale Version | [Name] |
+| 1.1 | 2026-06-03 | Inhalt aus Hub v1.8.1 konsolidiert, Platzhalter ersetzt — §1 Identität, §2 Unternehmensdaten + Segment D, §3 ToV vollständig, §5 Farben + Typo, §7 vollständiger System-Prompt, §8 Brand Lexicon | Claude (fill-brand-md) |
+| 1.0 | Mai 2026 | Initiale Version | Beyonity Marketing |
 
 ---
 
@@ -499,9 +795,32 @@ Key constraints for UI/Copy work:
 
 1. Branch anlegen: `git checkout -b brand/[beschreibung]`
 2. Änderungen vornehmen
-3. Pull Request mit Kontext zum "Warum"
-4. Review durch [z.B. Head of Marketing]
+3. Pull Request mit Kontext zum „Warum"
+4. Review durch Head of Marketing
 5. Merge + Team informieren (Slack `#brand` oder ähnlich)
 
 ### Fragen?
-Wende dich an: [Name / E-Mail / Slack-Channel]
+Wende dich an: p.fernandes@beyonity.com
+
+---
+
+## Offene Fragen (human)
+
+<!-- TODO(human): Vollständige Liste aller 11 Add-Ons (aktuell 8 bestätigt) -->
+<!-- TODO(human): Vollständige Abo-Preisstruktur (Annual Service & Maintenance Details) -->
+<!-- TODO(human): Logo-Varianten-Assets und konkrete Verwendungsbeispiele aus Brandbook -->
+<!-- TODO(human): Bildsprache-Richtlinien (Fotografie, Rendering-Stil, Farbigkeit) -->
+<!-- TODO(human): Newsletter-Richtlinien (Frequenz, Format-Mix, Themenplan) -->
+<!-- TODO(human): PR-Richtlinien (Format, Sperrfrist-Regelung, Freigabe-Prozess) -->
+<!-- TODO(human): §4 Messaging Framework — Kanal-spezifische Message Maps für A/B/C/D -->
+
+## Konflikte (Hub vs. Brand.md)
+
+| Abschnitt | Alt (Brand.md v1.0) | Neu (Hub v1.8.1) | Entscheidung |
+|---|---|---|---|
+| §5 Farben | Generische 6-Zeilen-Tabelle mit `#[hex]` | 8 konkrete Tokens aus CSS-Variablen | Hub übernommen |
+| §5 Typografie | `[Font-Name]` Platzhalter | Bw Gradual (primär) + Sora (in-use/fallback) | Hub übernommen |
+| §7 System-Prompt | Generisches Template-Gerüst | Vollständiger Grounding Page Standard v1.5 | Hub übernommen |
+| §8 Glossar | 4 generische Einträge | Brand Lexicon mit Kern-Stats, Signature-Phrases, Vermeidungstabelle | Hub übernommen |
+| §2 Segmente | Nur A/B/C | A/B/C/D (Kiban hinzugefügt) | Hub übernommen |
+| §9 Version | 1.0 | 1.1 | Bump auf 1.1 |
