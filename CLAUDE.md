@@ -16,7 +16,7 @@ https://mktbey.github.io/beyonity-brand/
 Passwort: `beyonity2025`
 
 ## Aktuelle Version
-v1.7.11 (Mai 2026) — siehe `CHANGELOG.md` für vollständige Historie.
+v1.8.1 (Mai 2026) — siehe `CHANGELOG.md` für vollständige Historie.
 
 ## Sektionen
 1. Identität · Unternehmen · Zielgruppen
