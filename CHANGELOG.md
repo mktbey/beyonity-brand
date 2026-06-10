@@ -18,6 +18,13 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.0] — 2026-06-10
+
+### Added
+- Hub: neue Top-Section "BeyonityHELLO 2026 — Social Real Commerce" als erster Navigationspunkt; Inhalt aus Pitch-Entwurf 2026 §1–§5, §8 (Leitclaim, Markenarchitektur, Formel, Vier Gesetze, Proof LOU-Luzern). Additiv — alle bestehenden Sections unverändert. EN-Texte als TODO(EN) markiert. Keine unbestätigten Zahlen (TODO(human) bleiben in Brand.md).
+- Brand.md: v2-Block "Social Real Commerce / BeyonityHELLO 2026" ganz oben prepend-eingefügt (Quelle: Pitch-Entwurf 2026). Alter Inhalt 1:1 erhalten. §9 Änderungshistorie ergänzt.
+- sources/brand-v2-social-real-commerce.md: Quelldatei archiviert.
+
 ## [1.8.1] — 2026-05-29
 
 ### Fixed
