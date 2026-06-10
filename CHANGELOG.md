@@ -18,6 +18,12 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.3] — 2026-06-10
+
+### Added
+- BeyonityHELLO® als Produkt-Suite unter der Produkte-Section (Hub) eingeordnet: Suite-Block oben vor den Tab-Einträgen mit Navigator® Gen 6, HELLO OS®, Realtime Tour, Configurators. EN authoritative, DE maschinell + Marker.
+- Brand.md §2: Einordnungs-Notiz ergänzt (BeyonityHELLO® = Dachmarke/Suite, taxonomisch unter Produkte). §9 v2.2a-Zeile ergänzt. Additiv.
+
 ## [1.9.2] — 2026-06-10
 
 ### Added

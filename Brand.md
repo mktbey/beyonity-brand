@@ -42,6 +42,8 @@ SPRACHE: Quellen englisch. EN = maßgeblich; DE für den Hub maschinell + rotes 
 
 ## 2 · Markenarchitektur — BeyonityHELLO®
 
+**BeyonityHELLO® ist die Produkt-Suite (Dachmarke) — und wird in der Taxonomie unter „Produkte" geführt.** Die Social-Real-Commerce-Section ist Positionierung/Story; der Suite-Eintrag selbst gehört unter Produkte (Navigator Gen 6, HELLO OS, Add-ons Realtime Tour & Configurators).
+
 **Four products. One identity. End-to-end coverage.**
 - **Navigator® Gen 6 — "The front door"** (mobile-first Social-Commerce-Engine; Signal-Sensor).
 - **HELLO OS® — "The operating system"** (Brücke ERP↔CRM; Pipeline-Intelligenz, dynamisches Pricing, Matching; transparente Regeln statt Black Boxes).
@@ -976,6 +978,7 @@ Babytrottel · „krank" (für Branche) · „stupid" (für Prozesse) · F-Bombs
 | v2 | Juni 2026 | v2-Wording 'Social Real Commerce' (Sales-Deck) — ersetzt durch v2.1 | — |
 | v2.1 | Juni 2026 | Neuausrichtung ersetzt v2 (Sales). EN authoritative, DE maschinell. Quelle: sources/brand-v2-neuausrichtung.md | — |
 | v2.2 | Juni 2026 | Product-Direction (Navigator + BeyonityHELLO) eingearbeitet: Premium/Lite-Tiers, HELLO-OS-Säulen/Pricing/Pipeline-KPIs. Parashift aufgelöst. Additiv. | — |
+| v2.2a | Juni 2026 | BeyonityHELLO® als Suite unter Produkte eingeordnet (Brand.md §2 + Hub-Produkte-Section). Additiv. | — |
 
 ---
 
