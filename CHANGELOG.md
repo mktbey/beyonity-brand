@@ -18,6 +18,13 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.1] — 2026-06-10
+
+### Changed / Fixed
+- Hub #social-real-commerce: Section von Sales-Version (v2) auf Neuausrichtung v2.1 umgestellt. Hero = "Bringing E-Commerce to Real Estate". EN authoritative (kein TODO(EN) mehr). DE maschinell mit rotem Sternchen + Legende. body.lang-de/lang-en Mechanik für MT-Marker ergänzt.
+- Brand.md: Prepend-Block von v2 (Sales-Deck) auf v2.1 (Neuausrichtungs-Deck) ersetzt. sources/brand-v2-neuausrichtung.md hinzugefügt; sources/brand-v2-social-real-commerce.md entfernt (Git-Historie behält es).
+- CSS: --mt-red Token + .mt / .mt-legend Klassen hinzugefügt.
+
 ## [1.9.0] — 2026-06-10
 
 ### Added

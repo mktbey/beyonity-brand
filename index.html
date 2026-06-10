@@ -27,7 +27,11 @@
   --blue:#3c57e1; --yellow:#f8ff76; --dark:#001a64; --lb:#d8ddf9;
   --white:#ffffff; --gray:#efefef; --green:#a7faa9; --red:#ff7575;
   --sw:240px; --r:14px;
+  --mt-red:#e02424;
 }
+.mt{color:var(--mt-red);font-size:.7em;vertical-align:super;margin-left:2px;cursor:help;display:none}
+body.lang-de .mt{display:inline}
+.mt-legend{font-size:11px;color:var(--mt-red);margin-top:18px;font-style:italic}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-height:100vh;display:flex}
 
@@ -733,7 +737,7 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
     <button id="lang-en" class="lang-btn" onclick="setLang('en')">EN</button>
   </div>
   <nav>
-    <button class="nav-btn" onclick="show('social-real-commerce',this)"><span>◎</span><span data-de="BeyonityHELLO 2026" data-en="TODO(EN)">BeyonityHELLO 2026</span></button>
+    <button class="nav-btn" onclick="show('social-real-commerce',this)"><span>◎</span><span data-de="BeyonityHELLO 2026" data-en="BeyonityHELLO 2026">BeyonityHELLO 2026</span></button>
     <button class="nav-btn on" onclick="show('identitaet',this)"><span>◆</span><span data-de="Identität" data-en="Identity">Identität</span></button>
     <button class="nav-btn" onclick="show('unternehmen',this)"><span>▣</span><span data-de="Unternehmen" data-en="Company">Unternehmen</span></button>
     <button class="nav-btn" onclick="show('zielgruppen',this)"><span>◉</span><span data-de="Zielgruppen" data-en="Target Groups">Zielgruppen</span></button>
@@ -746,99 +750,106 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
     <button class="nav-sub-btn" onclick="showSub('tone','tov-assets',this)"><span>↳</span>Sales Assets</button>
     <button class="nav-btn" onclick="show('llm',this)"><span>⌘</span>LLM / AI</button>
   </nav>
-  <div class="sb-foot">v1.9.0 &nbsp;·&nbsp; Juni 2026</div>
+  <div class="sb-foot">v1.9.1 &nbsp;·&nbsp; Juni 2026</div>
 </aside>
 
 <main class="main">
 
   <!-- ══════════════════════════════════════
-       0. SOCIAL REAL COMMERCE / BeyonityHELLO 2026
-       Additiv — Quelle: Pitch-Entwurf 2026. Alle alten Sections unverändert darunter.
+       0. BEYONITYHELLO 2026 / Social Real Commerce (v2.1 Neuausrichtung)
+       EN authoritative · DE maschinell (Sternchen) · Quelle: BEY New World Deck
   ══════════════════════════════════════ -->
   <section id="social-real-commerce" class="sec">
     <div class="ph">
-      <h1 data-de="BeyonityHELLO 2026 — Social Real Commerce" data-en="TODO(EN)">BeyonityHELLO 2026 — Social Real Commerce</h1>
-      <p data-de="Neue Positionierung (Entwurf Juni 2026) — additiv ergänzt, bestehende Sections bleiben unverändert." data-en="TODO(EN)">Neue Positionierung (Entwurf Juni 2026) — additiv ergänzt, bestehende Sections bleiben unverändert.</p>
+      <h1>BeyonityHELLO 2026 — Social Real Commerce</h1>
+      <p><span data-de="Neuausrichtung · Juni 2026 — Inhalt aus dem Deck 'BEY New World'. Additiv ergänzt." data-en="Realignment · June 2026 — content from the 'BEY New World' deck. Additive update.">Realignment · June 2026 — content from the 'BEY New World' deck. Additive update.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
     </div>
 
-    <!-- Kategorie + Leitclaim + Formel -->
+    <!-- Hero: Claim + Tagline + Formula -->
     <div class="pos-card" style="margin-bottom:18px">
-      <div class="eyebrow" data-de="Kategorie" data-en="TODO(EN)">Kategorie</div>
-      <p style="font-size:26px;font-weight:800;color:var(--yellow);line-height:1.15;margin-bottom:10px">Find. Click. Rent.</p>
-      <p data-de="Social Commerce for Real Estate — Immobilien sind die letzte Kategorie, die noch mit PDFs und Telefonanrufen funktioniert. Unsere Antwort: inspirierend entdecken, Amazon-Checkout-Qualität, konversionsobsessiert, für Wohnimmobilien." data-en="TODO(EN)">Social Commerce for Real Estate — Immobilien sind die letzte Kategorie, die noch mit PDFs und Telefonanrufen funktioniert. Unsere Antwort: inspirierend entdecken, Amazon-Checkout-Qualität, konversionsobsessiert, für Wohnimmobilien.</p>
+      <div class="eyebrow">Social Real Commerce</div>
+      <p style="font-size:24px;font-weight:800;color:var(--yellow);line-height:1.2;margin-bottom:8px"><span data-de="E-Commerce in die Immobilienbranche bringen" data-en="Bringing E-Commerce to Real Estate">Bringing E-Commerce to Real Estate</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+      <p style="margin-bottom:8px"><span data-de="Eine neue Ära mit BeyonityHELLO® beginnt." data-en="Introducing a new era with BeyonityHELLO®.">Introducing a new era with BeyonityHELLO®.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+      <p><span data-de="Inspirierende Entdeckung, Checkout in Amazon-Qualität, konversionsobsessiert — für Wohnimmobilien." data-en="Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.">Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
       <div style="margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span style="font-weight:800;font-size:17px;color:#fff" data-de="Experience" data-en="TODO(EN)">Experience</span>
+        <span style="font-weight:800;font-size:17px;color:#fff">Experience</span>
         <span style="color:var(--yellow);font-size:20px;font-weight:800">·</span>
-        <span style="font-weight:800;font-size:17px;color:#fff" data-de="Process" data-en="TODO(EN)">Process</span>
+        <span style="font-weight:800;font-size:17px;color:#fff">Process</span>
         <span style="color:var(--yellow);font-size:20px;font-weight:800">·</span>
-        <span style="font-weight:800;font-size:17px;color:#fff" data-de="Data" data-en="TODO(EN)">Data</span>
+        <span style="font-weight:800;font-size:17px;color:#fff">Data</span>
         <span style="color:rgba(255,255,255,.55);margin:0 6px;font-size:17px">=</span>
-        <span style="font-size:22px;font-weight:800;color:var(--yellow)" data-de="Conversion" data-en="TODO(EN)">Conversion</span>
+        <span style="font-size:22px;font-weight:800;color:var(--yellow)">Conversion</span>
       </div>
-      <div class="tag" data-de="Social Real Commerce" data-en="TODO(EN)">Social Real Commerce</div>
+      <div class="tag">Social Real Commerce</div>
     </div>
 
-    <!-- Markenarchitektur -->
+    <!-- Four products -->
+    <div class="card" style="margin-bottom:4px;padding-bottom:10px">
+      <p style="font-size:13px;font-weight:800;color:rgba(0,26,100,.45);letter-spacing:.06em"><span data-de="Vier Produkte. Eine Identität. Lückenlose Abdeckung." data-en="Four products. One identity. End-to-end coverage.">Four products. One identity. End-to-end coverage.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+    </div>
     <div class="g2" style="margin-bottom:18px">
       <div class="card">
-        <h3 data-de="Navigator® Gen 6 — Das Eintrittstor" data-en="TODO(EN)">Navigator® Gen 6 — Das Eintrittstor</h3>
-        <p style="font-size:14px;line-height:1.65" data-de="Mobile-first Social-Commerce-Engine. Social Discovery, Live-Inventar, Premium-3D-Touren für Neubauten, Drohnenaufnahmen für Bestand — das gesamte Portfolio abgedeckt. Greifbare Projektentdeckung, Verhaltenssignale, Consumer Journey." data-en="TODO(EN)">Mobile-first Social-Commerce-Engine. Social Discovery, Live-Inventar, Premium-3D-Touren für Neubauten, Drohnenaufnahmen für Bestand — das gesamte Portfolio abgedeckt. Greifbare Projektentdeckung, Verhaltenssignale, Consumer Journey.</p>
+        <h3><span data-de="Navigator® Gen 6 — Das Eintrittstor" data-en="Navigator® Gen 6 — The front door">Navigator® Gen 6 — The front door</span><sup class="mt" title="maschinell übersetzt">*</sup></h3>
+        <p style="font-size:14px;line-height:1.65"><span data-de="Mobile-first Social-Commerce-Engine: Social Discovery, Live-Inventar, Premium-3D-Touren für Neubauten, Drohnenaufnahmen für Bestand — das gesamte Portfolio abgedeckt. Greifbare Projektentdeckung · Verhaltenssignale · Consumer Journey." data-en="Mobile-first Social-Commerce-Engine: Social Discovery, live inventory, premium 3D tours for new builds, drone footage for existing stock — the full portfolio covered. Tangible project discovery · Behavioral signal capture · Consumer journey.">Mobile-first Social-Commerce-Engine: Social Discovery, live inventory, premium 3D tours for new builds, drone footage for existing stock — the full portfolio covered. Tangible project discovery · Behavioral signal capture · Consumer journey.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+        <p style="font-size:12px;margin-top:8px;color:rgba(0,26,100,.45)">+ <em>Realtime Tour</em> &amp; <em>Configurators</em></p>
       </div>
       <div class="card">
-        <h3 data-de="HELLO OS® — Das Betriebssystem" data-en="TODO(EN)">HELLO OS® — Das Betriebssystem</h3>
-        <p style="font-size:14px;line-height:1.65" data-de="Einheitliches Back-Office als Brücke zwischen ERP und CRM. Pipeline-Intelligenz, dynamisches Pricing, Bewerber-Matching — gesteuert durch transparente Regeln, keine Black Boxes. Bewerbung zu Vertrag in &lt;30 Sekunden." data-en="TODO(EN)">Einheitliches Back-Office als Brücke zwischen ERP und CRM. Pipeline-Intelligenz, dynamisches Pricing, Bewerber-Matching — gesteuert durch transparente Regeln, keine Black Boxes. Bewerbung zu Vertrag in &lt;30 Sekunden.</p>
+        <h3><span data-de="HELLO OS® — Das Betriebssystem" data-en="HELLO OS® — The operating system">HELLO OS® — The operating system</span><sup class="mt" title="maschinell übersetzt">*</sup></h3>
+        <p style="font-size:14px;line-height:1.65"><span data-de="Einheitliches Back-Office als Brücke zwischen ERP und CRM. Pipeline-Intelligenz, dynamisches Pricing, Bewerber-Matching — gesteuert durch transparente Business-Rules, keine Black Boxes. Bewerbung zu Vertrag in &lt;30 s." data-en="Unified back-office bridge between ERP and CRM. Pipeline intelligence, dynamic pricing, applicant matching — driven by transparent business rules, no black boxes. Application to contract in &lt;30 s.">Unified back-office bridge between ERP and CRM. Pipeline intelligence, dynamic pricing, applicant matching — driven by transparent business rules, no black boxes. Application to contract in &lt;30 s.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
       </div>
     </div>
 
-    <!-- Vier Gesetze -->
+    <!-- Four Laws -->
     <div class="card">
-      <h2 data-de="Die vier Gesetze des Social Real Commerce" data-en="TODO(EN)">Die vier Gesetze des Social Real Commerce</h2>
+      <h2><span data-de="Die vier Gesetze des Social Real Commerce" data-en="Four laws of Social Real Commerce">Four laws of Social Real Commerce</span><sup class="mt" title="maschinell übersetzt">*</sup></h2>
       <ul class="value-list">
         <li>
-          <span class="vn" data-de="24/7 Verkauf" data-en="TODO(EN)">24/7 Verkauf</span>
-          <span data-de="Social Discovery und kaufen, wenn die emotionale Hochstimmung da ist — kein Warten auf Bürozeiten, kein Rückruf." data-en="TODO(EN)">Social Discovery und kaufen, wenn die emotionale Hochstimmung da ist — kein Warten auf Bürozeiten, kein Rückruf.</span>
+          <span class="vn"><span data-de="24/7 Verkauf, überall" data-en="24/7 sales, where you are">24/7 sales, where you are</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Social Discovery &amp; kaufen, wenn das emotionale Hoch kommt — kein Warten auf Bürozeiten." data-en="Social discovery &amp; buy when the emotional high hits — no waiting for office hours.">Social discovery &amp; buy when the emotional high hits — no waiting for office hours.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
         </li>
         <li>
-          <span class="vn" data-de="Conversion zuerst" data-en="TODO(EN)">Conversion zuerst</span>
-          <span data-de="Jede Interaktion treibt den Deal voran — wie der beste Amazon-Flow, aber für ein Zuhause." data-en="TODO(EN)">Jede Interaktion treibt den Deal voran — wie der beste Amazon-Flow, aber für ein Zuhause.</span>
+          <span class="vn"><span data-de="Conversion zuerst" data-en="Conversion first">Conversion first</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Jede Interaktion treibt den Deal voran — wie der beste Amazon-Flow, aber für ein Zuhause." data-en="Every interaction drives the deal — like the best Amazon flow, but for a home.">Every interaction drives the deal — like the best Amazon flow, but for a home.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
         </li>
         <li>
-          <span class="vn" data-de="Transparenz &amp; Spass" data-en="TODO(EN)">Transparenz &amp; Spass</span>
-          <span data-de="Alles erkundbar, gamifiziert — wie Menschen Autos kaufen. Der Spass ist der Conversion-Motor." data-en="TODO(EN)">Alles erkundbar, gamifiziert — wie Menschen Autos kaufen. Der Spass ist der Conversion-Motor.</span>
+          <span class="vn"><span data-de="Transparenz &amp; Spaß" data-en="Transparency &amp; play">Transparency &amp; play</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Alles erkundbar, gamifiziert — wie beim Autokauf. Der Spaß ist der Conversion-Motor." data-en="Everything discoverable, gamified — like buying a car. The fun is the conversion engine.">Everything discoverable, gamified — like buying a car. The fun is the conversion engine.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
         </li>
         <li>
-          <span class="vn" data-de="Echtzeit-Daten" data-en="TODO(EN)">Echtzeit-Daten</span>
-          <span data-de="Keine retrospektiven Dashboards — Live-Verhaltenssignale steuern Pricing, Matching und Produkt." data-en="TODO(EN)">Keine retrospektiven Dashboards — Live-Verhaltenssignale steuern Pricing, Matching und Produkt.</span>
+          <span class="vn"><span data-de="Echtzeit-Daten" data-en="Realtime data">Realtime data</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Keine retrospektiven Dashboards — Live-Signale steuern Pricing, Matching, Produkt." data-en="No retrospective dashboards — live signals drive pricing, matching, product.">No retrospective dashboards — live signals drive pricing, matching, product.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
         </li>
       </ul>
     </div>
 
-    <!-- Proof LOU-Luzern -->
+    <!-- Proof LOU -->
     <div class="card" style="margin-top:18px">
-      <h2 data-de="Proof — Pilot LOU Luzern (48 h)" data-en="TODO(EN)">Proof — Pilot LOU Luzern (48 h)</h2>
+      <h2><span data-de="Proof — Pilot LOU Luzern (48 h)" data-en="Proof — Pilot LOU Lucerne (48 h)">Proof — Pilot LOU Lucerne (48 h)</span><sup class="mt" title="maschinell übersetzt">*</sup></h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-top:14px">
         <div class="stat-card">
           <div class="stat-v">45/147</div>
-          <div class="stat-l" data-de="Wohnungen" data-en="TODO(EN)">Wohnungen</div>
+          <div class="stat-l"><span data-de="Wohnungen" data-en="Units">Units</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
         </div>
         <div class="stat-card">
           <div class="stat-v">22</div>
-          <div class="stat-l" data-de="Verträge" data-en="TODO(EN)">Verträge</div>
+          <div class="stat-l"><span data-de="Verträge (100 % unterzeichnet)" data-en="Contracts (100% signed)">Contracts (100% signed)</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
         </div>
         <div class="stat-card">
           <div class="stat-v">30.6%</div>
-          <div class="stat-l" data-de="Vermietet/verkauft" data-en="TODO(EN)">Vermietet/verkauft</div>
+          <div class="stat-l"><span data-de="Vermietet" data-en="Rented out">Rented out</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
         </div>
         <div class="stat-card">
           <div class="stat-v">2′</div>
-          <div class="stat-l" data-de="Rekordzeit" data-en="TODO(EN)">Rekordzeit</div>
+          <div class="stat-l"><span data-de="Rekordzeit" data-en="Record time">Record time</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
         </div>
         <div class="stat-card">
           <div class="stat-v">26.32%</div>
-          <div class="stat-l" data-de="Lead-zu-Mieter" data-en="TODO(EN)">Lead-zu-Mieter</div>
+          <div class="stat-l"><span data-de="Lead-zu-Mieter" data-en="Lead-to-tenant">Lead-to-tenant</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
         </div>
       </div>
     </div>
+
+    <p class="mt-legend">* maschinell übersetzt</p>
 
   </section>
 
@@ -3714,6 +3725,19 @@ function renderRegions() {
 (async function initSales() {
   salesData = await loadSalesData();
   renderRegions();
+})();
+
+// v1.9.1: body lang-class for MT marker visibility
+(function() {
+  var _sl = window.setLang;
+  window.setLang = function(lang) {
+    _sl.apply(this, arguments);
+    document.body.classList.toggle('lang-de', lang === 'de');
+    document.body.classList.toggle('lang-en', lang !== 'de');
+  };
+  var cur = (typeof curLang !== 'undefined' ? curLang : null) || localStorage.getItem('bey-lang') || 'de';
+  document.body.classList.toggle('lang-de', cur === 'de');
+  document.body.classList.toggle('lang-en', cur !== 'de');
 })();
 </script>
 </body>

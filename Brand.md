@@ -1,211 +1,171 @@
 <!--
 ============================================================
-NEUE VERSION — Brand-Wording / Positionierung (v2)
-Quelle: Presentation_BEYONITY_2026_CH_DE_Entwurf (61 Folien)
+NEUE VERSION — Brand-Wording / Positionierung (v2.1 · Neuausrichtung)
+Quelle: Gesamtdeck "BEY New World" (71 Folien, Neuausrichtung)
 Stand: Juni 2026 · Status: ENTWURF (enthält TODO(human))
 
-WICHTIG: Diese Version ersetzt NICHTS.
-→ Dieser komplette Block steht GANZ OBEN in Brand.md (prepend).
-→ Der bestehende Brand.md-Inhalt bleibt 1:1 unverändert darunter stehen.
-→ Quelle ist ein Entwurf: alle markierten TODO(human) vor Freigabe klären.
+ERSETZT: Brand_neue-Version_SocialRealCommerce.md (war aus dem Sales-Deck).
+→ Die frühere Sales-Deck-Version ist veraltet; Preisliste daraus lebt in §12 weiter.
+
+EINFÜGEN: Dieser Block steht GANZ OBEN in Brand.md (prepend).
+Der bestehende Brand.md-Basis-Inhalt bleibt 1:1 unverändert darunter stehen.
+
+SPRACHE: Deck ist ENGLISCH. EN ist massgeblich. DE im Hub = maschinell (Sternchen).
 ============================================================
 -->
 
-# Brand-Wording v2 — Social Real Commerce (Stand: Juni 2026)
+# Brand-Wording v2.1 — Neuausrichtung: "Bringing E-Commerce to Real Estate" (Stand: Juni 2026)
 
-> Aktuellste Positionierung, abgeleitet aus dem Pitch-Entwurf 2026 (CH/DE).
-> Frühere Versionen folgen unverändert weiter unten in dieser Datei.
+> Aktuellste, vollständige Positionierung aus dem Neuausrichtungs-Deck.
+> Ersetzt die Sales-Deck-Version. Frühere Brand.md-Versionen folgen unverändert weiter unten.
+
+## 0 · Reconciliation — was sich ggü. der Sales-Deck-Version ändert
+
+- **Hero-Claim geändert.** Neu führend: **"Bringing E-Commerce to Real Estate"** + Kategorie **"Social Real Commerce"**. Das Sales-Deck-Tagline **"Find. Click. Rent. / Buy."** kommt in diesem Deck NICHT vor → als Sales-Variante behandeln. TODO(human): kanonischen Claim festlegen (Hero vs. Find.Click.*).
+- **Suite-Größe geändert.** Neu: **"Four products. One identity."** (Navigator Gen 6 + HELLO OS als Kern, Realtime Tour + Configurators als Add-ons). Das Sales-Deck sprach von "zwei Produkten". TODO(human): Messaging festziehen — "2 Kern + Add-ons" oder durchgängig "4 Produkte"?
+- **$7.4 RESOLVED.** Früheres TODO "B vs T" ist geklärt: **$7.4T** globale E-Commerce-Umsätze 2026 (von $6.4T 2025, >$8T erwartet bis 2027; eMarketer/Statista 2026).
+- **Datenschutz-Term.** Dieses Deck sagt **nFADP** (revidiertes Schweizer Datenschutzgesetz) — nicht "nDSG". nFADP verwenden.
+- **Preise.** In diesem Deck NICHT enthalten → Preisliste lebt aus dem Sales-Deck weiter (§12, Stand März 2026, klar als Sales-Quelle markiert).
+- **"−71.5 %" weiterhin ungeklärt.** Taucht auch hier auf (Kachel "2' record time"). Bleibt TODO(human).
 
 ## 1 · Master-Narrativ / Positionierung
 
-- **Kategorie:** Social Real Commerce — „Bringing E-Commerce to Real Estate".
-- **Leitclaim:** **Find. Click. Rent.** — *Social Commerce for Real Estate.*
-- **Kernthese:** Was sich verändert hat, ist nicht das Produkt, sondern das **Verhalten**. Kunden kaufen alles online (Kleidung, Autos, Lebensmittel, Reisen) — Immobilien sind die letzte Kategorie, die noch mit PDFs und Telefonanrufen funktioniert.
-- **Unsere Antwort:** Social Real Commerce — inspirierend entdecken, Amazon-Checkout-Qualität, konversionsobsessiert, für Wohnimmobilien.
-- **Erfolgsformel:** **Experience · Process · Data = Conversion**
-  - Experience = Orientierung & Vertrauen
-  - Process = Vom Lead zum Abschluss
-  - Data = Steuerbare Wirkung
-- **Erlebnis-/Verhaltensprinzipien:** 24/7 verfügbar · einfach bedienbar · mobile-first · ohne Medienbruch · klar geführt.
-- TODO(human): Claim-Konflikt klären — Cover sagt **„Find. Click. Rent."**, eine spätere Folie sagt **„Find. Click. Buy."**. Welcher ist kanonisch (bzw. Rent für Miete / Buy für Verkauf)?
-- TODO(human): Begriffsvariante klären — „Social Commerce for Real Estate" (Cover) vs. „Social Real Commerce" (Kategorie). Eine Schreibweise festlegen.
+- **Hero:** Bringing E-Commerce to Real Estate — *Introducing a new era with BeyonityHELLO®.*
+- **Kategorie:** Social Real Commerce.
+- **Tagline:** Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.
+- **Problem-Frame ("Ready for the future?"):** *Customers change. Real estate stays still.* Kunden kaufen alles online (Kleidung, Autos, Lebensmittel, Reisen) — Immobilien sind die letzte Kategorie, die noch über PDFs und Telefonate läuft. Zwei Zahlen erzählen die Geschichte:
+  - **$7.4T** globale E-Commerce-Umsätze 2026 (von $6.4T 2025, >$8T bis 2027).
+  - **0.4–1.2 %** Lead-to-Deal-Conversion (NAR-Benchmark der Branche) — "every other industry would call this broken."
+- **Drei Produkt-Wetten (3-Year Product Strategy):**
+  1. **Close UX gap.** Das intuitive, social-native Erlebnis der besten Apps treffen — zugeschnitten auf das, was Immobilien wirklich brauchen. Benchmark ist Social Media, nicht andere Prop-Tech.
+  2. **Suite connectivity & data are the moat.** 3D ist Anker, nicht das Produkt. Differenzierung ist der phasenübergreifende Daten-Loop, den Einzelprodukt-Wettbewerber nicht replizieren können. Die Suite kompoundiert; einzelne Tools nicht.
+  3. **Software is the work.** Beyonity kontrolliert jeden Schritt vom ersten Swipe über die Bewerbungsprüfung bis zum unterschriebenen Vertrag — dieser Hebel eliminiert operativen Aufwand und erlaubt das Testen von Customer Journeys über Hunderte Projekte.
+- **Leitsätze:** "We ship pragmatic solutions that work over polished features that don't." · "Being first mover means we carry the burden of proof — our own data is the benchmark."
 
 ## 2 · Markenarchitektur — BeyonityHELLO®
 
-**Zwei Produkte. Eine Identität. Lückenlose Abdeckung.**
+**Four products. One identity. End-to-end coverage.**
 
-- **Navigator® Gen 6 — „Das Eintrittstor."**
-  Mobile-first Social-Commerce-Engine. Social Discovery, Live-Inventar, Premium-3D-Touren für Neubauten, Drohnenaufnahmen für Bestandsobjekte — das gesamte Portfolio abgedeckt.
-  Schlagworte: greifbare Projektentdeckung · Erfassung von Verhaltenssignalen · Consumer Journey.
-- **HELLO OS® — „Das Betriebssystem."**
-  Einheitliches Back-Office-System als Brücke zwischen ERP und CRM. Pipeline-Intelligenz, dynamische Preisgestaltung, Bewerber-Matching — gesteuert durch transparente Geschäftsregeln, keine Black Boxes.
-  Schlagworte: nachfragegesteuertes Pricing · Bewerbung zu Vertrag in <30 Sekunden · portfolio-weites Matching.
-- TODO(human): ®-Schreibweisen vereinheitlichen (Navigator®, HELLO OS®, BeyonityHELLO®, Beyonity Navigator®).
+- **Navigator® Gen 6 — "The front door."** Mobile-first Social-Commerce-Engine: Social Discovery, Live-Inventar, Premium-3D-Touren für Neubauten, Drohnenaufnahmen für Bestand — das gesamte Portfolio. (Tangible project discovery · Behavioral signal capture · Consumer journey.)
+- **HELLO OS® — "The operating system."** Einheitliches Back-Office als Brücke zwischen ERP und CRM: Pipeline-Intelligenz, dynamisches Pricing, Bewerber-Matching — gesteuert durch transparente Business-Rules, keine Black Boxes. (Demand-driven price setting · Application-to-contract in <30 s · Portfolio-level matching.)
+- **Add-on: Realtime Tour.**
+- **Add-on: Configurators.**
 
 ## 3 · Produkt 01 — Navigator® Gen 6
 
-Positionierung: „Von Nischen-3D-Showcases zur massenmarktfähigen Social-Commerce-Engine."
+Positionierung: *"From niche 3D showcases to mass-market social commerce engine."*
 
 **Zwei Angebote, eine Erfahrung:**
+- **New-build Navigator (One-off license) — "Market your new project."** Immersives 3D für Neubauten, handgefertigte Qualität, Premium-Offer-Discovery, Price-Building-Model, Sales-Triage. Das Flaggschiff. Inkl.: High-fidelity 3D twins · Sun simulation, balcony view & Co · Teaser- und Vorvermarktungsphasen.
+- **Portfolio Navigator (Recurring) — "Re-letting on autopilot."** Hochwertige Drohnenaufnahmen, in 3D modelliert, um das Portfolio für alle Stakeholder greifbar zu machen; Leads fürs Cross-Portfolio-Selling. Nutzen: PM-Onboarding erleichtern · CRM-Intelligenz aufbauen · Durchsatz für PM-Operations erhöhen.
 
-- **Neubau-Navigator (einmalige Lizenz) — „Vermarkten Sie Ihr neues Projekt."**
-  Consumer Journey mit immersivem 3D für Neubauten; handgefertigte Qualität, erstklassige Angebotsdarstellung, Preisbildungsmodell und Sales-Triage. Das Flaggschiff.
-  Inkl.: Digitale Twins · Sonnensimulation, Balkonblick & Co · Teaser- und Vorvermarktungsphasen.
-- **Portfolio-Navigator (wiederkehrend) — „Wiedervermietung auf Autopilot."**
-  Hochwertige Drohnenaufnahmen, in 3D modelliert, um das Portfolio für alle Stakeholder greifbar zu machen.
-  Nutzen: Onboarding für PM erleichtern · CRM-Intelligenz aufbauen · Units under Management steigern.
+**Was Portfolio Navigator erschließt (Garaio-Kundenbasis allein):**
+- **1.7M+** Units under Management (gesamte installierte Kundenbasis in der Schweiz).
+- **~100 %** Serviceable Obtainable Market (Leichtversion fürs ganze Portfolio; jede Liegenschaft digitalisieren).
+- **CHF 1.–** wiederkehrender Umsatz pro Objekt/Monat (planbar, Massenmarkt, nicht an einmalige Projekt-Launches gebunden).
 
-**Gen-6-Sales-Engine — „Social-Media-mässig. Entdecken bis kaufen.":**
-- Mobile-first: bewährte Social-Media-UX, steigert Nutzbarkeit für alle Zielgruppen.
-- Echter Social Proof: „12 schauen gerade" erzeugt echte Knappheit und FOMO.
-- Live-Inventar & Kaufprozess: synchronisiert mit dem ERP, sperrt Einheiten für Echtzeitbewerbungen.
+**Gen-6 Sales Engine — "Social Media-ish. Discover to apply.":**
+- Mobile-first (bewährte Social-Media-UX, höhere Usability über alle Zielgruppen).
+- Real social proof ("12 watching now" → echte Knappheit & FOMO).
+- Live-Inventar & Kaufprozess (ERP-Sync, sperrt Einheiten für Echtzeit-Bewerbungen).
+
+**Lead-Intelligenz — "Every interaction is a signal."** Der Navigator ist ein verteiltes Sensornetz für "yes/no sayers"; Lead-Qualität nach digitaler Körpersprache, nicht nach Anzahl ausgefüllter Felder. *Loss signals fix the journey. Win signals score the lead.*
+- Conversion: Returns to floorplan >3× (mental ownership) · 5′ on example contract (emotional → due diligence) · Top-10 % registration speed (Dringlichkeit).
+- Loss: 10 s+ on cost breakdown then exit (Price loss) · <5 s on floorplan then exit (Product loss) · Freezes on income, abandons (Friction loss).
+
+**Cross-Portfolio Matching — "A lead lost on project A is a lead earned on project B."** Globales Suchprofil über Projekte; Privacy-by-design · nFADP-konform · anonym bis zur Conversion (außer Warteliste).
 
 ## 4 · Produkt 02 — HELLO OS®
 
-Positionierung: „Ein einheitliches Immobilien-Betriebssystem. Die Brücke zwischen ERP und CRM."
+Positionierung: *"A unified real estate operating system. The bridge between ERP and CRM."*
 
-**Hybrider Datenkern — „Eine Oberfläche. Zwei Quellen der Wahrheit. Null Doppeleingaben.":**
-- **Neubau-Projekte:** HELLO OS ist die Quelle der Wahrheit (Einheitsspezifikationen, Preise, Infrastrukturdaten — nativ erstellt; steuert den Marketing-Workflow End-to-End).
-- **Portfolio-Liegenschaften:** Das ERP wird als Quelle der Wahrheit konsumiert; HELLO OS agiert als Auslöser (Kündigung → Status „Verfügbar" → Marketing-Workflow startet; Abschlüsse & Verträge fliessen ins Kernsystem zurück).
-- **Der Auslöser:** Kündigung → Einheitsstatus grün → Marketing live. Automatisiert, kein manueller Übergabeprozess.
+**Hybrider Datenkern — "One interface. Two sources of truth. Zero double entry.":**
+- **New-build:** HELLO ist Source of Truth (Unit-Specs, Pricing, Infrastruktur nativ; steuert den Marketing-Workflow end-to-end).
+- **Portfolio:** das ERP wird als Source of Truth konsumiert; HELLO ist der Aktuator (Kündigung → Unit auto-flips auf "Available" → Marketing-Workflow startet; Abschlüsse & Verträge fließen ins Kernsystem zurück).
+- **Trigger:** Termination → unit status green → marketing live. Automatisiert, kein manueller Handoff.
 
-**HELLO-OS-Mechaniken:**
-- **Dynamisches Pricing (KrakenX):** Bauchgefühl & veraltete Listen ersetzt durch Echtzeit-Nachfragedruck; jede Einheit nach impliziter Nachfrage bewertet (Besuche, Interaktionen, Interessentenanzahl), Algorithmus schlägt Preis vor.
-- **KI-Dossier-Prüfung:** Dokumente werden beim Upload klassifiziert und gelesen — Gültigkeit und Vollständigkeit automatisch geprüft.
-- **Mieter-Konfigurator:** Bewerber nach Mieter-Mix bewerten (nicht nur Bonität); Eigentümer definieren Zielzusammensetzung/demografischen Mix pro Liegenschaft (Beispiel-Zielmix: Singles 30 % · Couples 40 % · Families 30 %).
-- **Portfolio-übergreifendes Matching:** „Ein verlorener Lead bei Projekt A ist ein gewonnener Lead bei Projekt B." Globales Suchprofil über Projekte hinweg; Privacy-by-Design, nDSG-konform, anonym bis zur Conversion (ausser Warteliste).
-- **HELLO Agent:** „HELLO ist kein Instrument. Es wird zur Arbeit selbst." Erhält zunehmend Daten und Handlungsfähigkeit; kontinuierliche Verbesserung über Projekte hinweg, Best-Practice-Sharing.
+**Mechaniken:**
+- **Dynamic Pricing (KrakenX):** Bauchgefühl & veraltete Listen ersetzt durch Echtzeit-Nachfrage-Mathematik; Ranking jeder Einheit nach impliziter Nachfrage (Visits, Interaktionen, Interessentenzahl), Algorithmus schlägt Preis vor.
+- **Dossier-Analyse (AI):** klassifiziert & liest Dokumente beim Upload, prüft Gültigkeit/Vollständigkeit automatisch.
+- **Household-Mix Configurator:** Bewerber nach Haushalts-Mix bewerten, nicht nur Bonität; Eigentümer definieren Ziel-Komposition/demografischen Mix pro Liegenschaft; KI gewichtet Kandidaten nach Beitrag zum Ziel (Beispiel-Match 87 %); PMs fokussieren nur Top-Kandidaten.
+- **HELLO Agent — "HELLO is not an instrument. It turns into the work itself."** Erhält zunehmend Daten & Handlungsfähigkeit; Continuous Improvement über Projekte, Best-Practice-Sharing, "doing the things that weren't economically viable before".
 
-## 5 · Vier Gesetze des Social Real Commerce
+## 5 · Closed-Loop / Why we win / Better together
 
-„Vier Gesetze, die wir übernehmen und niemals brechen."
+- **Why we win:** Differenzierung liegt in der Konnektivität der Suite — das erste Closed-Loop-System zur Optimierung einer gesamten Consumer Journey.
+- **Better together (Daten-Loop):** Navigator *generates the signal* (Verhalten, Intent, Nachfrageintensität, Drop-off-Gründe → event-streamed in KrakenX) → HELLO OS *acts on it* (Pricing, Mix-Scoring, Candidate-Ranking, Automation; Pipeline-Intelligenz fließt zurück in Navigators Empfehlungen).
+- **Single Resident Identity:** ein Profil vom ersten Swipe bis zum unterschriebenen Vertrag — über Navigator, HELLO und das weitere my-rubics-Ökosystem.
 
-1. **24/7 Verkauf.** Social Discovery und kaufen, wenn die emotionale Hochstimmung da ist — kein Warten auf Bürozeiten, kein Rückruf.
-2. **Conversion zuerst.** Jede Interaktion treibt den Deal voran — wie der beste Amazon-Flow, aber für ein Zuhause.
-3. **Transparenz & Spass.** Alles erkundbar, gamifiziert — wie Menschen Autos kaufen. Der Spass ist der Conversion-Motor.
-4. **Echtzeit-Daten.** Keine retrospektiven Dashboards — Live-Verhaltenssignale steuern Pricing, Matching und Produkt.
+## 6 · Vier Gesetze des Social Real Commerce
 
-## 6 · Lead-Intelligenz / Signale
+"Four laws we borrow — and never break."
+1. **24/7 sales, where you are.** Social Discovery & kaufen, wenn das emotionale Hoch landet — kein Warten auf Bürozeiten.
+2. **Conversion first.** Jede Interaktion treibt den Deal — wie der beste Amazon-Flow, aber für ein Zuhause.
+3. **Transparency & play.** Alles erkundbar, gamifiziert — wie beim Autokauf. Der Spaß ist der Conversion-Motor.
+4. **Realtime data.** Keine retrospektiven Dashboards — Live-Signale steuern Pricing, Matching, Produkt.
 
-„Jede Interaktion ist ein Signal. Lernen und anpassen." — Der Navigator ist ein verteiltes Sensornetz für „Ja- und Nein-Sager"; Lead-Qualität wird anhand digitaler Körpersprache bewertet, nicht nach Anzahl ausgefüllter Felder. **Verlustsignale lösen die Journey, Gewinnsignale bewerten den Lead.**
+## 7 · my-rubics — Ökosystem
 
-**Conversion-Signale:**
-- Kehrt >3× zum Grundriss zurück → mentale Eigenverantwortung entsteht.
-- 5 Min. auf Mustervertrag → emotionales Interesse → Due Diligence.
-- Top-10 % Registrierungsgeschwindigkeit → hohe Dringlichkeit/Motivation.
-
-**Verlustsignale:**
-- 10 s+ auf Kostenaufschlüsselung, dann Abbruch → Preisverlust (Nebenkosten-Sensibilität).
-- <5 s auf Grundriss, dann Abbruch → Produktverlust (Grundriss/Ausrichtung ungeeignet).
-- Stockt bei Einkommen, bricht ab → Reibungsverlust (Datenschutzhürde/UX-Fehler).
-
-**Pipeline-Reliability-Score:** „Volumen sagt, wer da ist. Verhalten sagt, wer abschliesst." Kombination aus Verlust- und Conversion-Signalen pro Pipeline; sagt Umsatz genauer voraus als Intuition.
-
-## 7 · Verkaufsarten (Sales-Engine-Mechanismen)
-
-„Von Build-to-Rent bis Verkauf." — Stand heute 7 Verkaufsarten:
-- **Absolute Auktion** — Höchstbietender gewinnt, kein Mindestpreis.
-- **Auktion mit Vorbehalt** — versteckter Reserve Price; Navigator zeigt „Mindestpreis nicht erreicht", bis die Schwelle überschritten ist.
-- **Mindestgebot** — Start bei öffentlich bekanntem Startpreis.
-- **Verdecktes Gebot** — private Gebote; UI zeigt „Gebote abgegeben", verbirgt Beträge bis Fristende.
-- **Offene Versteigerung** — öffentliche Echtzeit-Gebote mit schrittweiser Erhöhung.
-- **Zwangsversteigerung** — an rechtliche Metadaten geknüpft; meist absolute Auktion mit beschleunigten Fristen.
-- **Bestgebot-Verfahren** — Variante des verdeckten Gebots mit strikter Frist für finale Angebote.
+"The property at the center." my-rubics als Rubik's-Cube mit sechs Perspektiven: Prospective tenants · Tenants · Property managers · Owners · Craftsman · Third parties. Partner: Beyonity · imofix.io · GARAIO REM. "One platform. Six perspectives. One data sovereignty." → Basis für die Single Resident Identity über den gesamten Lebenszyklus.
 
 ## 8 · Kennzahlen / Proof
 
-**Pilot-Projekt LOU-Luzern (nach 48 Stunden):**
-- 45 von 147 Wohnungen · 22 finalisierte Verträge · 30.6 % Vermietung/verkauft · 2′ Rekordzeit · 26.32 % Lead-zu-Mieter.
+**Pilot LOU-Luzern (nach 48 Stunden):** 26.32 % lead-to-tenant · 22 contracts (100 % signed) · 30.6 % rented out · 2′ record time.
+- TODO(human): **"−71.5 %"** (Kachel bei "2' record time") klären — Wert/Bezug unklar, wirkt wie Platzhalter. Nicht verwenden bis bestätigt.
 
-**Plattform-/Aggregat-Kennzahlen:**
-- +500 Navigatoren live · >48 Mio. Clicks · Ø 12 Min. Aufenthalt/Verweildauer · ×3 mehr Conversions · +12 Min. Aufenthalt · ~20k Units vermarktet / in Vermarktung.
-- CHF 56 Mio. Mehrerträge (STWE / Verkaufsprojekte) · CHF 113 Mio. kapitalisierte Wertschöpfung (Mietprojekte) · −30 % Ressourcen-/Betriebsaufwand (Projektmanagement).
+## 9 · Ziele
 
-**Markt-/Kontextzahlen (Quelle laut Folie: eMarketer/Statista 2026; NAR):**
-- Globale E-Commerce-Umsätze 2026; Wachstum von 2025 → über 8 (2027 erwartet).
-- 0.4–1.2 % Lead-zu-Abschluss-Conversion (NAR-Benchmark der Immobilienbranche).
-- Ø 94 Min./Tag auf Social Media (IGEM-Digimonitor 2025); Plattform-Demografie DE/CH: TikTok Ø 31 J./1.4 Mio · Instagram Ø 39 J./4 Mio · LinkedIn Ø 47 J./3.2 Mio · Facebook Ø 46 J./2.7 Mio.
+- **Vacancy:** <3 Wochen medianer Zwischen-Leerstand (Bestand).
+- **Operations:** −30 % Betriebskostenreduktion für Kunden.
+- **Launch:** 150 Units in <24 Stunden (Neubau, beim Launch ausverkauft).
 
-- TODO(human): Wert **„−71.5 %"** klären — taucht im Entwurf identisch auf mehreren Kacheln auf (u.a. „Conversion/Effizienzsteigerung", „Hochqualifizierte Leads", „2′ Rekordzeit") und wirkt wie ein Platzhalter. Echten Wert/Kontext bestätigen, sonst NICHT verwenden.
-- TODO(human): **„$7.4B" vs. „$6.4T → $8T"** — die Einheit B/T ist inkonsistent (vermutlich $7.4T gemeint). Quelle prüfen, nicht raten.
-- TODO(human): „CHF 56 Mio." / „CHF 113 Mio." — Bezugsbasis/Zeitraum dokumentieren (aggregiert? pro Jahr? kumuliert?).
+## 10 · Roadmap (Produkt, Deck-Sicht)
 
-## 9 · Ziele (Soll-Werte BeyonityHELLO)
+- **FY 26 · this year — Portfolio digitization:** Suite-Vollständigkeit & Vielseitigkeit (Neubau → Portfolio → Commercial).
+- **FY 27 · next — Deep intelligence:** Daten/Insights über Projekte & Portfolios nutzen, das universelle "unlock recipe" finden.
+- **FY 28 · the horizon — The autonomization:** Kundenobsession at scale, Verbesserungspotenzial über die gesamte Journey heben.
 
-- **Leerstand:** <3 Wochen medianer Leerstand zwischen zwei Mietern (Bestand).
-- **Betrieb:** −30 % Betriebskostenreduktion für Kunden.
-- **Launch:** 150 Einheiten in <24 Stunden (Neubauprojekt beim Launch vollständig ausverkauft).
+## 11 · Beyonity & AI — Strategie & Haltung
 
-## 10 · Produkt-Roadmap (Pitch-Sicht)
+- **Warum AI, warum jetzt:** "no hype, no fear — just the curve we're standing on." Kosten kollabieren (~280× günstiger/Token 2023→2025) → Modelle werden Commodity. Wette auf die *Trajektorie*.
+- **Beyonity & AI heute:** model-agnostic (Anthropic, Gemini, OpenAI, Black Forest Labs); shipping: AI-Triage im Navigator-Support-Chat, Dossier-Processing, Continuous Improvement.
+- **What we deliberately don't do:** keine eigenen Frontier-Modelle · kein AI-Engineer-Hire vor 2027 · AI nicht "einbauen, nur um etwas zu haben". "You cannot out-spend a $100B training run."
+- **Der Moat:** product = model + tools + ui + **our_data** (can't be rented) + **the_journey** (can't be cloned).
+- **Zwei nicht-verhandelbare Regeln:** (1) Keine PII in nicht freigegebene Tools. (2) Ein Mensch shippt, nicht das Modell — nichts erreicht den Kunden unverifiziert.
 
-- **GJ 26 · dieses Jahr — Portfolio-Digitalisierung:** Suite-Vollständigkeit & Vielseitigkeit — Neubau, Portfolio, Verkauf, Gewerbe.
-- **GJ 27 · nächstes Jahr — Fundierte Intelligenz:** Daten/Erkenntnisse über Projekte und Portfolios hinweg nutzen, universelles Erfolgsrezept finden.
-- **GJ 28 · am Horizont — Die Autonomisierung:** Kundenobsession in grossem Massstab, Verbesserungspotenzial entlang der gesamten Customer Journey heben.
-- **Ausblick/Themen:** Digitales Portfolio · Chatbot · Personalisierung · Plattformisierung · Data-Driven AI · Buy now · Dynamic Pricing.
+## 12 · Pricing (Quelle: Sales-Deck · Stand März 2026 · unverbindlich)
 
-## 11 · Pricing (Stand März 2026 · unverbindlich)
+> Nicht im Neuausrichtungs-Deck enthalten; aus dem Sales-Deck übernommen. Disclaimer: "Stand März 2026, unverbindliche Preisangaben, je nach Produkt/Kombination abweichend."
 
-> Disclaimer aus der Quelle: „Stand März 2026. Unverbindliche Preisangaben. Preise können abweichen, je nach Produkt und Produktkombination."
+**Navigator (Neubau) — Einmallizenz:** S (max. 2 Körper, ≤20 Einh.) CHF 5'200* · M (max. 3, 21–40) CHF 7'500* · L (max. 5, 41–80) CHF 12'500* · XL (max. 10, 81–250) CHF 16'500* · Portfolio Navigator (Bestand) CHF 5'500* · >10 Gebäude: Offerte.
+- *zzgl. jährliches Service-/Maintenance-/Update-Package: Vermietung CHF 1'500 / Verkauf CHF 2'000 (12 Monate).
+- Hinweis: Steht im Spannungsfeld zum Neuausrichtungs-Deck ("CHF 1.–/Objekt/Monat" für Portfolio Navigator). TODO(human): Pricing-Modell für Portfolio Navigator vereinheitlichen.
 
-**Navigator (Neubau) — Einmallizenz:**
-- Navigator S (max. 2 Gebäudekörper, bis 20 Einheiten): CHF 5'200*
-- Navigator M (max. 3 Gebäudekörper, 21–40 Einheiten): CHF 7'500*
-- Navigator L (max. 5 Gebäudekörper, 41–80 Einheiten): CHF 12'500*
-- Navigator XL (max. 10 Gebäudekörper, 81–250 Einheiten): CHF 16'500*
-- Portfolio Navigator (Bestandesliegenschaft): CHF 5'500*
-- >10 Gebäude: individuelle Offerte (get in touch)
-- *zzgl. jährliches Service-, Maintenance- & Update-Package: Vermietung CHF 1'500 / Verkauf CHF 2'000 (für 12 Monate).
+**Touren/Konfiguratoren/Visualisierung:** Realtime Tour Living (≤150 m²) CHF 6'000 · Realtime Tour Commercial (≤500 m²) CHF 9'900 · Configurator Living ab CHF 25'000 · Configurator Commercial ab CHF 9'900 · Interior Visualization CHF 1'850 · Exterior Visualization CHF 1'500.
 
-**Touren / Konfiguratoren / Visualisierung:**
-- Realtime Tour – Living (bis 150 m²): CHF 6'000
-- Realtime Tour – Commercial (bis 500 m²): CHF 9'900
-- Configurator – Living: ab CHF 25'000 (in Kombination mit Realtime-Tour)
-- Configurator – Commercial: ab CHF 9'900 (in Kombination mit Navigator)
-- Interior Visualization: CHF 1'850
-- Exterior Visualization: CHF 1'500
+**Add-ons:** Integrated Website CHF 3'000 · Balcony View Panorama CHF 150 · Data Dashboard CHF 4'900 · 360 Pano Exterior CHF 3'500 · Sun Simulation ab CHF 2'000 · Parking Navigator CHF 2'500 · POI Panorama CHF 1'000 · Secondary Room Navigator CHF 1'000 · Floor Plan ab CHF 85 · Info Flags CHF 500.
 
-**Add-ons:**
-- Integrated Website: CHF 3'000 (im vordefinierten Layout)
-- Balcony View Panorama: CHF 150 (Echtaussicht pro Wohnung)
-- Data Dashboard: CHF 4'900
-- 360 Pano Exterior: CHF 3'500 (drehbare Aussenansicht)
-- Sun Simulation: ab CHF 2'000 (Sonnensimulation von einem Stichtag)
-- Parking Navigator: CHF 2'500 (Parkplatzübersicht in 2D)
-- POI Panorama: CHF 1'000 (Points of Interest mit Drohne)
-- Secondary Room Navigator: CHF 1'000 (Hobbyräume in 2D)
-- Floor Plan: ab CHF 85 (Grundriss mit Isometrie, pro Wohnung)
-- Info Flags: CHF 500 (Highlights des Projekts)
+## 13 · Kontakt (Quelle: Sales-Deck)
 
-## 12 · Ecosystem of Experience (Produktübersicht)
+Beyonity Switzerland GmbH · switzerland@beyonity.com · +41 32 552 50 60 · Fabrikstrasse 11, CH-2543 Lengnau · "We are in five Regions."
 
-- **Kern:** Navigator.
-- **Ergänzende Produkte:** Portfolio Overview · Exterior Visualization · Marketing Services · Commercial Configurator · Interior Visualization · Realtime Tour Interior · Living Configurator.
-- **Add-ons aus dem Ecosystem:** Movies · VR-Tour / Desktop-Tour · Factsheets · Visual Electrical Planning · POI Panorama · Secondary Room Navigator · Parking Navigator · Sun Simulation · Rendering · Dashboard · Info Flags · Balcony View Panorama · Special Light Setup · Multi language · Integrated Website · Building Highlights.
-- **Externe Schnittstellen (Opportunities):** CRM, ERP, Mieterportal etc.
-- **Connected Sales Platform — Inputs:** Google Ads · Social Media · Real Estate Marketplaces · Project Website · Point of Property · Advertising Poster (unqualified) → Navigator/Portfolio/CRM/DMS → Sales (qualified).
-- **Benefits:** 24/7 Verkaufsplattform · Datenauswertung · qualifizierte Leads · Automatisierung · systemoffen.
-- **Einheitliche Bewohneridentität (Single Resident Identity):** ein Profil vom ersten Swipe bis zum unterzeichneten Vertrag — über Navigator, HELLO und das gesamte myRubics-Ökosystem.
-- **„Im grössten ERP schon zu Hause":** voll integriert mit myRubics.
+## 14 · Offene Punkte / TODO(human)
 
-## 13 · Vertrauen / Referenzen (Logos im Pitch)
-
-- **Institutionelle:** Zürcher Kantonalbank · Allianz · Die Post · UBS · Baloise · SRG SSR · Swiss Prime Site Solutions · PSP Swiss Property · Previs · Plazza · logissuisse · AXA · Helvetia · BVK · Swiss Life.
-- **Entwickler:** HIAG · Losinger Marazzi · Instone Real Estate · Implenia · bonainvest · Halter · Al Akaria · Deutsche Wohnen · Frutiger · HRS · Alfred Müller · Dar Al Arkan · immovesta · ARTEMIS · Mettler.
-- **Vermarkter:** PRIVERA · Intercity · H&B · IT3 · JLL · thomasgraf · Livit · WALDE · Regimo · LIFESTYLE Immobilien · tend · Property One · von Graffenried · ARLEWO · SVIT (Swiss Property Owners Association).
-- TODO(human): Logo-Liste auf Freigabe/aktuelle Nennbarkeit prüfen (Referenzrechte je Kunde).
-
-## 14 · Kontakt
-
-- Beyonity Switzerland GmbH · switzerland@beyonity.com · +41 32 552 50 60
-- Fabrikstrasse 11, CH-2543 Lengnau · „We are in five Regions."
+1. Kanonischer Claim: "Bringing E-Commerce to Real Estate" vs. "Find. Click. Rent./Buy." (Sales).
+2. Suite-Messaging: "2 Kern + Add-ons" oder durchgängig "Four products".
+3. "−71.5 %" klären (oder streichen).
+4. Vendor-Name "Parashit" verifizieren (§11 AI-Strategie).
+5. Portfolio-Navigator-Pricing vereinheitlichen (CHF 1.–/Monat vs. CHF 5'500 Einmallizenz).
+6. DE-Übersetzungen des neuen Wordings für den zweisprachigen Hub formulieren (nicht maschinell).
+7. Referenz-/Logo-Listen — Nennbarkeit prüfen, falls auf den Hub übernommen.
 
 ---
 
-## Anschluss an Roadmap / Phase 1 (Hinweis, kein Brand.md-Inhalt)
+## Anschluss an Roadmap / Phase 1
 
-- **Narrative-Section (Phase 1):** §1 (Master-Narrativ) + §5 (Vier Gesetze) liefern direkt die Narrativ-Seeds (Titel · Kernaussage · Hook · Beleg). Beim Phase-1-Lauf von hier ziehen, nicht neu erfinden.
-- **Daten statt Prosa:** Pricing (§11) und Kennzahlen (§8) sind tabellarische Daten — Kandidaten für JSON statt Markdown-Fliesstext, sobald die Quelle-Struktur steht.
-- **Vor Freigabe:** alle TODO(human) auflösen — der Pitch ist als „Entwurf" gekennzeichnet.
+- **Narrative-Seeds (Phase 1):** §1 (Master-Narrativ + drei Wetten), §6 (Vier Gesetze), §5 (Closed-Loop/"Why we win"), §11 (Moat "can't curl") liefern die Narrative — Titel/Kernaussage/Hook/Beleg von hier ziehen, nicht neu erfinden.
+- **Claude-Code-Prompt anpassen:** Der Phase-1/Prepend-Prompt referenzierte `brand-v2-social-real-commerce.md`. Stattdessen DIESE Datei verwenden (`sources/brand-v2-neuausrichtung.md`), und im Prompt ergänzen: "Sales-Deck-Version verwerfen, nur deren Preisliste (§12) bleibt erhalten."
+- **Daten statt Prosa:** Pricing (§12), Kennzahlen (§8) und AI-Ziele (§11) sind tabellarische Daten — Kandidaten für JSON, sobald die Quelle-Struktur steht.
 
 ---
 
@@ -990,7 +950,8 @@ Babytrottel · „krank" (für Branche) · „stupid" (für Prozesse) · F-Bombs
 |---|---|---|---|
 | 1.1 | 2026-06-03 | Inhalt aus Hub v1.8.1 konsolidiert, Platzhalter ersetzt — §1 Identität, §2 Unternehmensdaten + Segment D, §3 ToV vollständig, §5 Farben + Typo, §7 vollständiger System-Prompt, §8 Brand Lexicon | Claude (fill-brand-md) |
 | 1.0 | Mai 2026 | Initiale Version | Beyonity Marketing |
-| v2 | Juni 2026 | v2-Wording 'Social Real Commerce' additiv ergänzt (Quelle: Pitch 2026 Entwurf). Alte Versionen erhalten. Offene TODO(human) siehe v2-Block. Quelldatei: sources/brand-v2-social-real-commerce.md | — |
+| v2 | Juni 2026 | v2-Wording 'Social Real Commerce' (Sales-Deck) — ersetzt durch v2.1 | — |
+| v2.1 | Juni 2026 | Neuausrichtung ersetzt v2 (Sales). EN authoritative, DE maschinell. Quelle: sources/brand-v2-neuausrichtung.md | — |
 
 ---
 
