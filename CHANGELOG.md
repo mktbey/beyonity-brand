@@ -18,6 +18,13 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.2] — 2026-06-10
+
+### Added
+- Product-Direction v2.2 — Navigator Premium/Lite-Tiers + HELLO-OS-Säulen (Consumer Journey · Pipeline Intelligence · Argued Intelligence) in Brand.md und Hub-Cards eingearbeitet. Parashift aufgelöst (war: „Parashit"). INTERN-Inhalte (Budget €73.8k, 1/3-Pricing-Mechanik, Liquiditätslage) nur in Brand.md, nicht live.
+- Brand.md: v2.1-Prepend-Block durch v2.2-Block ersetzt (Superset, additiv). sources/brand-v2-neuausrichtung.md auf v2.2 aktualisiert. §9 v2.2-Zeile ergänzt.
+- Hub #social-real-commerce: Navigator-Card zeigt Premium/Lite-Bifurkation; HELLO-OS-Card zeigt die drei Säulen. EN authoritative, DE maschinell + Sternchen.
+
 ## [1.9.1] — 2026-06-10
 
 ### Changed / Fixed
