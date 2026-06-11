@@ -18,6 +18,15 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.6] — 2026-06-11
+
+### Fixed
+- EPD-Klammer-Textfarben weiß→dunkel (Lesbarkeit auf heller Produkte-Section): Subline, EPD-Labels, Beschreibungstexte auf `rgba(0,26,100,…)` umgestellt.
+
+### Changed
+- BeyonityHELLO von Top-Level-Nav zu Unterpunkt unter Produkte (Muster wie Sales Assets / `showSub`-Logik); Section `#social-real-commerce` als `sec-sub` inside `#produkte`.
+- „Mehr erfahren"-Button öffnet jetzt die BeyonityHELLO-Unterseite (nav-bey-hello.click()) statt Scroll zum Katalog.
+
 ## [1.9.5] — 2026-06-11
 
 ### Added

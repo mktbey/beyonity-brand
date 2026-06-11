@@ -737,20 +737,20 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
     <button id="lang-en" class="lang-btn" onclick="setLang('en')">EN</button>
   </div>
   <nav>
-    <button class="nav-btn" onclick="show('social-real-commerce',this)"><span>◎</span><span data-de="BeyonityHELLO 2026" data-en="BeyonityHELLO 2026">BeyonityHELLO 2026</span></button>
     <button class="nav-btn on" onclick="show('identitaet',this)"><span>◆</span><span data-de="Identität" data-en="Identity">Identität</span></button>
     <button class="nav-btn" onclick="show('unternehmen',this)"><span>▣</span><span data-de="Unternehmen" data-en="Company">Unternehmen</span></button>
     <button class="nav-btn" onclick="show('zielgruppen',this)"><span>◉</span><span data-de="Zielgruppen" data-en="Target Groups">Zielgruppen</span></button>
     <button class="nav-btn" onclick="show('customer-journey',this)"><span class="material-icons" style="font-size:13px;width:18px;text-align:center">route</span><span data-de="Customer Journey" data-en="Customer Journey">Customer Journey</span></button>
     <button class="nav-sub-btn" onclick="showSub('customer-journey','cj-sources',this)"><span>↳</span>Quellen</button>
     <button class="nav-btn" onclick="show('testimonials',this)"><span>❝</span><span data-de="Kundenstimmen" data-en="Testimonials">Kundenstimmen</span></button>
-    <button class="nav-btn" onclick="show('produkte',this)"><span>▤</span><span data-de="Produkte" data-en="Products">Produkte</span></button>
+    <button class="nav-btn" onclick="showSub('produkte','produkte-main',this)"><span>▤</span><span data-de="Produkte" data-en="Products">Produkte</span></button>
+    <button id="nav-bey-hello" class="nav-sub-btn" onclick="showSub('produkte','social-real-commerce',this)"><span>↳</span>BeyonityHELLO</button>
     <button class="nav-btn" onclick="show('visuelles',this)"><span>◐</span><span data-de="Visuelles" data-en="Visuals">Visuelles</span></button>
     <button class="nav-btn" onclick="showSub('tone','tov-main',this)"><span>✦</span>Tone of Voice</button>
     <button class="nav-sub-btn" onclick="showSub('tone','tov-assets',this)"><span>↳</span>Sales Assets</button>
     <button class="nav-btn" onclick="show('llm',this)"><span>⌘</span>LLM / AI</button>
   </nav>
-  <div class="sb-foot">v1.9.5 &nbsp;·&nbsp; Juni 2026</div>
+  <div class="sb-foot">v1.9.6 &nbsp;·&nbsp; Juni 2026</div>
 </aside>
 
 <main class="main">
@@ -759,111 +759,6 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
        0. BEYONITYHELLO 2026 / Social Real Commerce (v2.2 Neuausrichtung + Product Direction)
        EN authoritative · DE maschinell (Sternchen) · Quelle: BEY New World Deck + Direction-Docs
   ══════════════════════════════════════ -->
-  <section id="social-real-commerce" class="sec">
-    <div class="ph">
-      <h1>BeyonityHELLO 2026 — Social Real Commerce</h1>
-      <p><span data-de="Neuausrichtung · Juni 2026 — Inhalt aus dem Deck 'BEY New World'. Additiv ergänzt." data-en="Realignment · June 2026 — content from the 'BEY New World' deck. Additive update.">Realignment · June 2026 — content from the 'BEY New World' deck. Additive update.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-    </div>
-
-    <!-- Hero: Claim + Tagline + Formula -->
-    <div class="pos-card" style="margin-bottom:18px">
-      <div class="eyebrow">Social Real Commerce</div>
-      <p style="font-size:24px;font-weight:800;color:var(--yellow);line-height:1.2;margin-bottom:8px"><span data-de="E-Commerce in die Immobilienbranche bringen" data-en="Bringing E-Commerce to Real Estate">Bringing E-Commerce to Real Estate</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-      <p style="margin-bottom:8px"><span data-de="Eine neue Ära mit BeyonityHELLO® beginnt." data-en="Introducing a new era with BeyonityHELLO®.">Introducing a new era with BeyonityHELLO®.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-      <p><span data-de="Inspirierende Entdeckung, Checkout in Amazon-Qualität, konversionsobsessiert — für Wohnimmobilien." data-en="Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.">Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-      <div style="margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span style="font-weight:800;font-size:17px;color:#fff">Experience</span>
-        <span style="color:var(--yellow);font-size:20px;font-weight:800">·</span>
-        <span style="font-weight:800;font-size:17px;color:#fff">Process</span>
-        <span style="color:var(--yellow);font-size:20px;font-weight:800">·</span>
-        <span style="font-weight:800;font-size:17px;color:#fff">Data</span>
-        <span style="color:rgba(255,255,255,.55);margin:0 6px;font-size:17px">=</span>
-        <span style="font-size:22px;font-weight:800;color:var(--yellow)">Conversion</span>
-      </div>
-      <div class="tag">Social Real Commerce</div>
-    </div>
-
-    <!-- Four products -->
-    <div class="card" style="margin-bottom:4px;padding-bottom:10px">
-      <p style="font-size:13px;font-weight:800;color:rgba(0,26,100,.45);letter-spacing:.06em"><span data-de="Vier Produkte. Eine Identität. Lückenlose Abdeckung." data-en="Four products. One identity. End-to-end coverage.">Four products. One identity. End-to-end coverage.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-    </div>
-    <div class="g2" style="margin-bottom:18px">
-      <div class="card">
-        <h3><span data-de="Navigator® Gen 6 — Das Eintrittstor" data-en="Navigator® Gen 6 — The front door">Navigator® Gen 6 — The front door</span><sup class="mt" title="maschinell übersetzt">*</sup></h3>
-        <p style="font-size:14px;line-height:1.65"><span data-de="Mobile-first Social-Commerce-Engine: Social Discovery, Live-Inventar, Verhaltenssignale — das gesamte Portfolio abgedeckt." data-en="Mobile-first Social-Commerce-Engine: Social Discovery, live inventory, behavioral signal capture — the full portfolio covered.">Mobile-first Social-Commerce-Engine: Social Discovery, live inventory, behavioral signal capture — the full portfolio covered.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-        <p style="font-size:13px;line-height:1.6;margin-top:10px"><span data-de="Zwei Tiers. Eine Erfahrung:" data-en="Two tiers. One experience:">Two tiers. One experience:</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-        <ul style="font-size:13px;line-height:1.6;margin:6px 0 0 0;padding-left:16px;list-style-type:disc">
-          <li><span data-de="Navigator Premium — Tiefgang. Immersive 3D/VR für Neubauten; Flaggschiff-Qualität." data-en="Navigator Premium — Depth. Immersive 3D/VR for new builds; flagship quality.">Navigator Premium — Depth. Immersive 3D/VR for new builds; flagship quality.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
-          <li><span data-de="Navigator Lite — Reichweite. Skalierbar, AI-enhanced: 2D-Fotos + 3D-Tiles für das gesamte Bestandsportfolio." data-en="Navigator Lite — Breadth. Scalable, AI-enhanced: 2D photos + 3D tiles covering the full existing portfolio.">Navigator Lite — Breadth. Scalable, AI-enhanced: 2D photos + 3D tiles covering the full existing portfolio.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
-        </ul>
-        <p style="font-size:12px;margin-top:8px;color:rgba(0,26,100,.45)">+ <em>Realtime Tour</em> &amp; <em>Configurators</em></p>
-      </div>
-      <div class="card">
-        <h3><span data-de="HELLO OS® — Das Betriebssystem" data-en="HELLO OS® — The operating system">HELLO OS® — The operating system</span><sup class="mt" title="maschinell übersetzt">*</sup></h3>
-        <p style="font-size:14px;line-height:1.65"><span data-de="Einheitliches Betriebssystem als Brücke zwischen ERP und CRM. Transparente Business-Logik — Regeln statt Rätsel." data-en="Unified real estate operating system bridging ERP and CRM. Transparent business logic — rules over guesses.">Unified real estate operating system bridging ERP and CRM. Transparent business logic — rules over guesses.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-        <p style="font-size:13px;line-height:1.6;margin-top:10px"><span data-de="Drei Säulen:" data-en="Three pillars:">Three pillars:</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
-        <ul style="font-size:13px;line-height:1.6;margin:6px 0 0 0;padding-left:16px;list-style-type:disc">
-          <li><span data-de="Consumer Journey — die richtigen Interessenten führen; Vertrag in &lt;30 s." data-en="Consumer Journey — guide the right prospects; contract in &lt;30 s.">Consumer Journey — guide the right prospects; contract in &lt;30 s.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
-          <li><span data-de="Pipeline Intelligence — den unsichtbaren Funnel sichtbar machen; Signale für Attrition und Conversion." data-en="Pipeline Intelligence — make the invisible funnel visible; signals for attrition and conversion.">Pipeline Intelligence — make the invisible funnel visible; signals for attrition and conversion.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
-          <li><span data-de="Argued Intelligence — KI-Empfehlungen sind keine Black Boxes: rules &gt; guesses." data-en="Argued Intelligence — AI recommendations are not black boxes: rules &gt; guesses.">Argued Intelligence — AI recommendations are not black boxes: rules &gt; guesses.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Four Laws -->
-    <div class="card">
-      <h2><span data-de="Die vier Gesetze des Social Real Commerce" data-en="Four laws of Social Real Commerce">Four laws of Social Real Commerce</span><sup class="mt" title="maschinell übersetzt">*</sup></h2>
-      <ul class="value-list">
-        <li>
-          <span class="vn"><span data-de="24/7 Verkauf, überall" data-en="24/7 sales, where you are">24/7 sales, where you are</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-          <span><span data-de="Social Discovery &amp; kaufen, wenn das emotionale Hoch kommt — kein Warten auf Bürozeiten." data-en="Social discovery &amp; buy when the emotional high hits — no waiting for office hours.">Social discovery &amp; buy when the emotional high hits — no waiting for office hours.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-        </li>
-        <li>
-          <span class="vn"><span data-de="Conversion zuerst" data-en="Conversion first">Conversion first</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-          <span><span data-de="Jede Interaktion treibt den Deal voran — wie der beste Amazon-Flow, aber für ein Zuhause." data-en="Every interaction drives the deal — like the best Amazon flow, but for a home.">Every interaction drives the deal — like the best Amazon flow, but for a home.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-        </li>
-        <li>
-          <span class="vn"><span data-de="Transparenz &amp; Spaß" data-en="Transparency &amp; play">Transparency &amp; play</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-          <span><span data-de="Alles erkundbar, gamifiziert — wie beim Autokauf. Der Spaß ist der Conversion-Motor." data-en="Everything discoverable, gamified — like buying a car. The fun is the conversion engine.">Everything discoverable, gamified — like buying a car. The fun is the conversion engine.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-        </li>
-        <li>
-          <span class="vn"><span data-de="Echtzeit-Daten" data-en="Realtime data">Realtime data</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-          <span><span data-de="Keine retrospektiven Dashboards — Live-Signale steuern Pricing, Matching, Produkt." data-en="No retrospective dashboards — live signals drive pricing, matching, product.">No retrospective dashboards — live signals drive pricing, matching, product.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Proof LOU -->
-    <div class="card" style="margin-top:18px">
-      <h2><span data-de="Proof — Pilot LOU Luzern (48 h)" data-en="Proof — Pilot LOU Lucerne (48 h)">Proof — Pilot LOU Lucerne (48 h)</span><sup class="mt" title="maschinell übersetzt">*</sup></h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-top:14px">
-        <div class="stat-card">
-          <div class="stat-v">45/147</div>
-          <div class="stat-l"><span data-de="Wohnungen" data-en="Units">Units</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-v">22</div>
-          <div class="stat-l"><span data-de="Verträge (100 % unterzeichnet)" data-en="Contracts (100% signed)">Contracts (100% signed)</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-v">30.6%</div>
-          <div class="stat-l"><span data-de="Vermietet" data-en="Rented out">Rented out</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-v">2′</div>
-          <div class="stat-l"><span data-de="Rekordzeit" data-en="Record time">Record time</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-v">26.32%</div>
-          <div class="stat-l"><span data-de="Lead-zu-Mieter" data-en="Lead-to-tenant">Lead-to-tenant</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
-        </div>
-      </div>
-    </div>
-
-    <p class="mt-legend">* maschinell übersetzt</p>
-
-  </section>
-
   <!-- ══════════════════════════════════════
        1. IDENTITÄT
   ══════════════════════════════════════ -->
@@ -1663,6 +1558,7 @@ Format: Klartext, klar gegliedert mit Überschriften, gut zum Einlesen für Clau
        4. PRODUKTE
   ══════════════════════════════════════ -->
   <section id="produkte" class="sec">
+  <div id="produkte-main" class="sec-sub on">
     <div class="ph">
       <h1 data-de="Produkte" data-en="Products">Produkte</h1>
       <p data-de="Product Overview V1.2 — volle Tiefe, alle Varianten &amp; Add-Ons. Stand August 2025." data-en="Product Overview V1.2 — full depth, all variants &amp; add-ons. As of August 2025.">Product Overview V1.2 — volle Tiefe, alle Varianten &amp; Add-Ons. Stand August 2025.</p>
@@ -1674,33 +1570,33 @@ Format: Klartext, klar gegliedert mit Überschriften, gut zum Einlesen für Clau
       <p style="font-size:16px;font-weight:800;line-height:1.3;margin-bottom:4px">
         <span data-de="Experience · Process · Data = Conversion" data-en="Experience · Process · Data = Conversion">Experience · Process · Data = Conversion</span>
       </p>
-      <p style="font-size:13px;color:rgba(255,255,255,.55);margin-bottom:14px">
+      <p style="font-size:13px;color:rgba(0,26,100,.55);margin-bottom:14px">
         <span data-de="Ein System. Eine Journey." data-en="One system. One journey.">One system. One journey.</span>
       </p>
       <div class="prod-card-grid" style="margin-bottom:0">
         <div class="prod-card">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Experience</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(0,26,100,.45);margin-bottom:6px">Experience</div>
           <div style="font-size:14px;font-weight:800;margin-bottom:6px">Navigator®</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.5">
+          <div style="font-size:12px;color:rgba(0,26,100,.55);line-height:1.5">
             <span data-de="Entdecken &amp; Erleben — Käufer finden, erleben und konfigurieren Immobilien. Inkl. Realtime Tour, Configurators." data-en="Discover &amp; experience — buyers find, explore and configure properties. Incl. Realtime Tour, Configurators.">Discover &amp; experience — buyers find, explore and configure properties. Incl. Realtime Tour, Configurators.</span><sup class="mt" title="maschinell übersetzt">*</sup>
           </div>
         </div>
         <div class="prod-card">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Process</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(0,26,100,.45);margin-bottom:6px">Process</div>
           <div style="font-size:14px;font-weight:800;margin-bottom:6px">HELLO OS®</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.5">
+          <div style="font-size:12px;color:rgba(0,26,100,.55);line-height:1.5">
             <span data-de="Vermarkten &amp; Steuern — Navigator verwalten, Einheiten direkt vermarkten, Pipeline Intelligence." data-en="Market &amp; manage — run Navigator, market units directly, Pipeline Intelligence.">Market &amp; manage — run Navigator, market units directly, Pipeline Intelligence.</span><sup class="mt" title="maschinell übersetzt">*</sup>
           </div>
         </div>
         <div class="prod-card">
-          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px">Data</div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(0,26,100,.45);margin-bottom:6px">Data</div>
           <div style="font-size:14px;font-weight:800;margin-bottom:6px">HELLO OS®</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.5">
+          <div style="font-size:12px;color:rgba(0,26,100,.55);line-height:1.5">
             <span data-de="Verstehen &amp; Konvertieren — CRM für Verträge &amp; Kundenverwaltung, Argued Intelligence." data-en="Understand &amp; convert — CRM for contracts &amp; client management, Argued Intelligence.">Understand &amp; convert — CRM for contracts &amp; client management, Argued Intelligence.</span><sup class="mt" title="maschinell übersetzt">*</sup>
           </div>
         </div>
       </div>
-      <button class="nav-acc-btn" style="margin-top:14px" onclick="document.getElementById('produkte-detail').scrollIntoView({behavior:'smooth'})" data-de="Mehr erfahren" data-en="Read more">Read more</button>
+      <button class="nav-acc-btn" style="margin-top:14px" onclick="document.getElementById('nav-bey-hello').click()" data-de="Mehr erfahren" data-en="Read more">Read more</button>
     </div>
 
     <!-- Experience: current products in detail -->
@@ -2127,6 +2023,111 @@ Format: Klartext, klar gegliedert mit Überschriften, gut zum Einlesen für Clau
     </div>
 
     <p class="prod-footer-note" data-de="Basierend auf Product Overview V1.2 · Stand August 2025 · Unverbindliche Produktübersicht ohne Preisangaben" data-en="Based on Product Overview V1.2 · As of August 2025 · Non-binding product overview, no pricing">Basierend auf Product Overview V1.2 · Stand August 2025 · Unverbindliche Produktübersicht ohne Preisangaben</p>
+  </div>
+
+  <div id="social-real-commerce" class="sec-sub">
+    <div class="ph">
+      <h1>BeyonityHELLO 2026 — Social Real Commerce</h1>
+      <p><span data-de="Neuausrichtung · Juni 2026 — Inhalt aus dem Deck 'BEY New World'. Additiv ergänzt." data-en="Realignment · June 2026 — content from the 'BEY New World' deck. Additive update.">Realignment · June 2026 — content from the 'BEY New World' deck. Additive update.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+    </div>
+
+    <!-- Hero: Claim + Tagline + Formula -->
+    <div class="pos-card" style="margin-bottom:18px">
+      <div class="eyebrow">Social Real Commerce</div>
+      <p style="font-size:24px;font-weight:800;color:var(--yellow);line-height:1.2;margin-bottom:8px"><span data-de="E-Commerce in die Immobilienbranche bringen" data-en="Bringing E-Commerce to Real Estate">Bringing E-Commerce to Real Estate</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+      <p style="margin-bottom:8px"><span data-de="Eine neue Ära mit BeyonityHELLO® beginnt." data-en="Introducing a new era with BeyonityHELLO®.">Introducing a new era with BeyonityHELLO®.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+      <p><span data-de="Inspirierende Entdeckung, Checkout in Amazon-Qualität, konversionsobsessiert — für Wohnimmobilien." data-en="Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.">Inspiring discovery, Amazon-grade checkout, conversion-obsessed — for residential real estate.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+      <div style="margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span style="font-weight:800;font-size:17px;color:#fff">Experience</span>
+        <span style="color:var(--yellow);font-size:20px;font-weight:800">·</span>
+        <span style="font-weight:800;font-size:17px;color:#fff">Process</span>
+        <span style="color:var(--yellow);font-size:20px;font-weight:800">·</span>
+        <span style="font-weight:800;font-size:17px;color:#fff">Data</span>
+        <span style="color:rgba(255,255,255,.55);margin:0 6px;font-size:17px">=</span>
+        <span style="font-size:22px;font-weight:800;color:var(--yellow)">Conversion</span>
+      </div>
+      <div class="tag">Social Real Commerce</div>
+    </div>
+
+    <!-- Four products -->
+    <div class="card" style="margin-bottom:4px;padding-bottom:10px">
+      <p style="font-size:13px;font-weight:800;color:rgba(0,26,100,.45);letter-spacing:.06em"><span data-de="Vier Produkte. Eine Identität. Lückenlose Abdeckung." data-en="Four products. One identity. End-to-end coverage.">Four products. One identity. End-to-end coverage.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+    </div>
+    <div class="g2" style="margin-bottom:18px">
+      <div class="card">
+        <h3><span data-de="Navigator® Gen 6 — Das Eintrittstor" data-en="Navigator® Gen 6 — The front door">Navigator® Gen 6 — The front door</span><sup class="mt" title="maschinell übersetzt">*</sup></h3>
+        <p style="font-size:14px;line-height:1.65"><span data-de="Mobile-first Social-Commerce-Engine: Social Discovery, Live-Inventar, Verhaltenssignale — das gesamte Portfolio abgedeckt." data-en="Mobile-first Social-Commerce-Engine: Social Discovery, live inventory, behavioral signal capture — the full portfolio covered.">Mobile-first Social-Commerce-Engine: Social Discovery, live inventory, behavioral signal capture — the full portfolio covered.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+        <p style="font-size:13px;line-height:1.6;margin-top:10px"><span data-de="Zwei Tiers. Eine Erfahrung:" data-en="Two tiers. One experience:">Two tiers. One experience:</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+        <ul style="font-size:13px;line-height:1.6;margin:6px 0 0 0;padding-left:16px;list-style-type:disc">
+          <li><span data-de="Navigator Premium — Tiefgang. Immersive 3D/VR für Neubauten; Flaggschiff-Qualität." data-en="Navigator Premium — Depth. Immersive 3D/VR for new builds; flagship quality.">Navigator Premium — Depth. Immersive 3D/VR for new builds; flagship quality.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
+          <li><span data-de="Navigator Lite — Reichweite. Skalierbar, AI-enhanced: 2D-Fotos + 3D-Tiles für das gesamte Bestandsportfolio." data-en="Navigator Lite — Breadth. Scalable, AI-enhanced: 2D photos + 3D tiles covering the full existing portfolio.">Navigator Lite — Breadth. Scalable, AI-enhanced: 2D photos + 3D tiles covering the full existing portfolio.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
+        </ul>
+        <p style="font-size:12px;margin-top:8px;color:rgba(0,26,100,.45)">+ <em>Realtime Tour</em> &amp; <em>Configurators</em></p>
+      </div>
+      <div class="card">
+        <h3><span data-de="HELLO OS® — Das Betriebssystem" data-en="HELLO OS® — The operating system">HELLO OS® — The operating system</span><sup class="mt" title="maschinell übersetzt">*</sup></h3>
+        <p style="font-size:14px;line-height:1.65"><span data-de="Einheitliches Betriebssystem als Brücke zwischen ERP und CRM. Transparente Business-Logik — Regeln statt Rätsel." data-en="Unified real estate operating system bridging ERP and CRM. Transparent business logic — rules over guesses.">Unified real estate operating system bridging ERP and CRM. Transparent business logic — rules over guesses.</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+        <p style="font-size:13px;line-height:1.6;margin-top:10px"><span data-de="Drei Säulen:" data-en="Three pillars:">Three pillars:</span><sup class="mt" title="maschinell übersetzt">*</sup></p>
+        <ul style="font-size:13px;line-height:1.6;margin:6px 0 0 0;padding-left:16px;list-style-type:disc">
+          <li><span data-de="Consumer Journey — die richtigen Interessenten führen; Vertrag in &lt;30 s." data-en="Consumer Journey — guide the right prospects; contract in &lt;30 s.">Consumer Journey — guide the right prospects; contract in &lt;30 s.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
+          <li><span data-de="Pipeline Intelligence — den unsichtbaren Funnel sichtbar machen; Signale für Attrition und Conversion." data-en="Pipeline Intelligence — make the invisible funnel visible; signals for attrition and conversion.">Pipeline Intelligence — make the invisible funnel visible; signals for attrition and conversion.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
+          <li><span data-de="Argued Intelligence — KI-Empfehlungen sind keine Black Boxes: rules &gt; guesses." data-en="Argued Intelligence — AI recommendations are not black boxes: rules &gt; guesses.">Argued Intelligence — AI recommendations are not black boxes: rules &gt; guesses.</span><sup class="mt" title="maschinell übersetzt">*</sup></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Four Laws -->
+    <div class="card">
+      <h2><span data-de="Die vier Gesetze des Social Real Commerce" data-en="Four laws of Social Real Commerce">Four laws of Social Real Commerce</span><sup class="mt" title="maschinell übersetzt">*</sup></h2>
+      <ul class="value-list">
+        <li>
+          <span class="vn"><span data-de="24/7 Verkauf, überall" data-en="24/7 sales, where you are">24/7 sales, where you are</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Social Discovery &amp; kaufen, wenn das emotionale Hoch kommt — kein Warten auf Bürozeiten." data-en="Social discovery &amp; buy when the emotional high hits — no waiting for office hours.">Social discovery &amp; buy when the emotional high hits — no waiting for office hours.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+        </li>
+        <li>
+          <span class="vn"><span data-de="Conversion zuerst" data-en="Conversion first">Conversion first</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Jede Interaktion treibt den Deal voran — wie der beste Amazon-Flow, aber für ein Zuhause." data-en="Every interaction drives the deal — like the best Amazon flow, but for a home.">Every interaction drives the deal — like the best Amazon flow, but for a home.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+        </li>
+        <li>
+          <span class="vn"><span data-de="Transparenz &amp; Spaß" data-en="Transparency &amp; play">Transparency &amp; play</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Alles erkundbar, gamifiziert — wie beim Autokauf. Der Spaß ist der Conversion-Motor." data-en="Everything discoverable, gamified — like buying a car. The fun is the conversion engine.">Everything discoverable, gamified — like buying a car. The fun is the conversion engine.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+        </li>
+        <li>
+          <span class="vn"><span data-de="Echtzeit-Daten" data-en="Realtime data">Realtime data</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+          <span><span data-de="Keine retrospektiven Dashboards — Live-Signale steuern Pricing, Matching, Produkt." data-en="No retrospective dashboards — live signals drive pricing, matching, product.">No retrospective dashboards — live signals drive pricing, matching, product.</span><sup class="mt" title="maschinell übersetzt">*</sup></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Proof LOU -->
+    <div class="card" style="margin-top:18px">
+      <h2><span data-de="Proof — Pilot LOU Luzern (48 h)" data-en="Proof — Pilot LOU Lucerne (48 h)">Proof — Pilot LOU Lucerne (48 h)</span><sup class="mt" title="maschinell übersetzt">*</sup></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-top:14px">
+        <div class="stat-card">
+          <div class="stat-v">45/147</div>
+          <div class="stat-l"><span data-de="Wohnungen" data-en="Units">Units</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-v">22</div>
+          <div class="stat-l"><span data-de="Verträge (100 % unterzeichnet)" data-en="Contracts (100% signed)">Contracts (100% signed)</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-v">30.6%</div>
+          <div class="stat-l"><span data-de="Vermietet" data-en="Rented out">Rented out</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-v">2′</div>
+          <div class="stat-l"><span data-de="Rekordzeit" data-en="Record time">Record time</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-v">26.32%</div>
+          <div class="stat-l"><span data-de="Lead-zu-Mieter" data-en="Lead-to-tenant">Lead-to-tenant</span><sup class="mt" title="maschinell übersetzt">*</sup></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-legend">* maschinell übersetzt</p>
+  </div>
   </section>
 
     <section id="visuelles" class="sec">
