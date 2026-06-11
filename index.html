@@ -750,7 +750,7 @@ body{font-family:'Sora',sans-serif;background:var(--gray);color:var(--dark);min-
     <button class="nav-sub-btn" onclick="showSub('tone','tov-assets',this)"><span>↳</span>Sales Assets</button>
     <button class="nav-btn" onclick="show('llm',this)"><span>⌘</span>LLM / AI</button>
   </nav>
-  <div class="sb-foot">v1.9.4 &nbsp;·&nbsp; Juni 2026</div>
+  <div class="sb-foot">v1.9.5 &nbsp;·&nbsp; Juni 2026</div>
 </aside>
 
 <main class="main">
@@ -1700,10 +1700,11 @@ Format: Klartext, klar gegliedert mit Überschriften, gut zum Einlesen für Clau
           </div>
         </div>
       </div>
+      <button class="nav-acc-btn" style="margin-top:14px" onclick="document.getElementById('produkte-detail').scrollIntoView({behavior:'smooth'})" data-de="Mehr erfahren" data-en="Read more">Read more</button>
     </div>
 
     <!-- Experience: current products in detail -->
-    <div class="prod-block-lbl" style="margin-bottom:10px" data-de="Experience — aktuelle Produkte im Detail" data-en="Experience — current products in detail">Experience — current products in detail</div>
+    <div id="produkte-detail" class="prod-block-lbl" style="margin-bottom:10px" data-de="Experience — aktuelle Produkte im Detail" data-en="Experience — current products in detail">Experience — current products in detail</div>
 
     <!-- Product Tab Pills -->
     <div class="prod-tab-pills">

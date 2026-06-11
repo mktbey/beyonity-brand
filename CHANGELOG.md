@@ -18,6 +18,12 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.5] — 2026-06-11
+
+### Added
+- „Mehr erfahren"-Button am EPD-Teaser → smooth-scroll zum Produkt-Detailkatalog (`#produkte-detail`). Kein MT-Marker (UI-Label). Nutzt bestehende `.nav-acc-btn`-Klasse.
+- `id="produkte-detail"` am „Experience — current products in detail"-Label ergänzt.
+
 ## [1.9.4] — 2026-06-10
 
 ### Changed
