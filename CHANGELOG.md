@@ -18,6 +18,11 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.8] — 2026-06-11
+
+### Changed
+- EPD-Teaser-Button „Mehr erfahren" → „Mehr Details" (konsistent mit Produkt-Expandern, raus aus der CTA-Vermeiden-Liste).
+
 ## [1.9.6] — 2026-06-11
 
 ### Fixed
