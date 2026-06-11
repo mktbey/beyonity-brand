@@ -49,6 +49,16 @@ SPRACHE: Quellen englisch. EN = maßgeblich; DE für den Hub maschinell + rotes 
 - **HELLO OS® — "The operating system"** (Brücke ERP↔CRM; Pipeline-Intelligenz, dynamisches Pricing, Matching; transparente Regeln statt Black Boxes).
 - **Add-on: Realtime Tour** · **Add-on: Configurators.**
 
+## 2a · Produkt-Kategorisierung — Experience · Process · Data (Entwurf)
+
+BeyonityHELLO® deckt den gesamten Zyklus ab. Formel: Experience · Process · Data = Conversion. „One system. One journey."
+
+- **Experience** — Navigator (+ Realtime Tour, Configurators): entdecken & erleben; Gen 6 social-media-artig. Hier liegen alle aktuellen, erlebnis-ausgerichteten Produkte.
+- **Process** — HELLO OS: Navigator verwalten, Einheiten direkt vermarkten, Werbung in Kanäle.
+- **Data** — HELLO OS: CRM für Verträge & Kundenverwaltung, v.a. für Anbieter mit Insellösungen.
+
+> INTERN (nicht live): Bisher v.a. Experience abgedeckt; Process über Drittanbieter, Data über kundeneigenes CRM (falls vorhanden). Status: Entwurf, keine Sublogos, finale Brandtexte folgen.
+
 ## 3 · Produkt 01 — Navigator® Gen 6  (vertieft)
 
 **Pivot:** von der Nischen-3D-Showcase (Tier A) zur **mass-market Social-Commerce-Engine** für Wohnimmobilien. Treiber: my-rubics-Ökosystem (Beyonity + Garaio + imofix) und FY26-Liquiditätslage → struktureller Pivot nötig.
@@ -979,6 +989,7 @@ Babytrottel · „krank" (für Branche) · „stupid" (für Prozesse) · F-Bombs
 | v2.1 | Juni 2026 | Neuausrichtung ersetzt v2 (Sales). EN authoritative, DE maschinell. Quelle: sources/brand-v2-neuausrichtung.md | — |
 | v2.2 | Juni 2026 | Product-Direction (Navigator + BeyonityHELLO) eingearbeitet: Premium/Lite-Tiers, HELLO-OS-Säulen/Pricing/Pipeline-KPIs. Parashift aufgelöst. Additiv. | — |
 | v2.2a | Juni 2026 | BeyonityHELLO® als Suite unter Produkte eingeordnet (Brand.md §2 + Hub-Produkte-Section). Additiv. | — |
+| v2.3 | Juni 2026 | Produkt-Kategorisierung Experience·Process·Data (Entwurf). Additiv. | — |
 
 ---
 

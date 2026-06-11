@@ -18,6 +18,13 @@ Format orientiert an [Keep a Changelog](https://keepachangelog.com).
 
 ---
 
+## [1.9.4] — 2026-06-10
+
+### Changed
+- Produkte-Section: BeyonityHELLO® Suite-Block (v2.2, Bullet-Liste) zur EPD-Klammer ausgebaut — 3-spaltiges Card-Grid (Experience/Navigator®, Process/HELLO OS®, Data/HELLO OS®) mit Formel „Experience · Process · Data = Conversion" und Subline „One system. One journey." EN authoritative, DE maschinell + Marker.
+- Produkte-Section: Label „Experience — current products in detail" vor Tab-Pills eingefügt.
+- Brand.md §2a: Produkt-Kategorisierung EPD (Experience·Process·Data = Conversion) ergänzt. §9 v2.3-Zeile ergänzt. Additiv.
+
 ## [1.9.3] — 2026-06-10
 
 ### Added
